@@ -6,6 +6,20 @@ RepoKernel is a repository pattern for projects that need to be continued by AI 
 
 RepoKernel turns a repository into a semantic context kernel: a structure that supports operational context awareness, source lineage and iterative improvement.
 
+## Search Summary
+
+RepoKernel helps developers, researchers, writers, product teams and AI agencies build context-aware GitHub repositories for Codex, Claude Code, OpenCode, ChatGPT projects and other AI coding or writing agents.
+
+Use RepoKernel when you need:
+
+- AI-readable repository structure;
+- project reentry without starting from zero;
+- `AGENTS.md` and `CURRENT_STATE.md` templates;
+- semantic-kernel skills for long-running projects;
+- memory-delta rules instead of raw chat history;
+- audit and scaffold scripts for agentic workflows;
+- a promotion path from local skill to reusable repository pattern.
+
 ## The Problem
 
 Most AI-assisted work loses context between sessions.
@@ -27,6 +41,18 @@ audit and scaffold scripts
 ```
 
 The repository becomes readable as a working field, not only as a file tree.
+
+## Repository Pattern
+
+RepoKernel is designed for:
+
+- context engineering;
+- AI workflow continuity;
+- agentic coding;
+- AI-assisted writing and research;
+- repository bootstrapping;
+- semantic project memory;
+- skill and meta-skill lifecycle management.
 
 ## Who It Is For
 
@@ -72,3 +98,10 @@ RepoKernel uses "context awareness" in an operational sense. It is not a claim a
 
 Starter repository. The first release goal is a public-safe set of templates, audit scripts, a minimal example and internal meta-skills for creating and promoting repository-aware skills.
 
+## Keywords
+
+```text
+ai-readable repositories, context engineering, agentic workflow, Codex, Claude Code,
+OpenCode, ChatGPT GitHub, AGENTS.md, CURRENT_STATE.md, semantic kernel,
+AI project continuity, repository bootstrap, memory delta, skill lifecycle
+```
