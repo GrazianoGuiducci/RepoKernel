@@ -1,0 +1,6 @@
+Project: RepoKernel
+
+Mission: define and maintain a public-safe pattern for AI-readable repositories that preserve state, sources, boundaries, decisions, memory deltas and next actions.
+
+Work from current state, explicit sources and claim boundaries. Favor practical continuity over abstract language. Preserve useful deltas only.
+
