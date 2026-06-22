@@ -1,0 +1,19 @@
+{
+  "schema": "repokernel.manifest.v1",
+  "name": "RepoKernel",
+  "version": "0.2.0-dev",
+  "host_model": {
+    "identity": "host-neutral",
+    "primary_public_adapter": "github",
+    "supported_adapters": ["codex", "claude-code", "opencode", "chat-project", "generic"]
+  },
+  "readiness": {
+    "levels": ["L0", "L1", "L2"],
+    "target": "L2",
+    "policy": "docs/readiness-levels.md"
+  },
+  "registry": "registry/skills.json",
+  "state": "CURRENT_STATE.md",
+  "entry_gate": "AGENTS.md",
+  "source_atlas": "sources/bootstrap/SOURCE_ATLAS_v1.0.md"
+}
