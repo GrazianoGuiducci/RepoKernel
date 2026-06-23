@@ -5,6 +5,7 @@
 | `README.md` | public surface | First-level definition and current positioning |
 | `CURRENT_STATE.md` | project state | Active surface, boundaries, verified state and next move |
 | `process/FIRST_PACKET.md` | active packet | Codex Phase 0 gate |
+| `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md` | architecture | Final ontology, installed surface and contracts |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md` | architecture | Migration, phases, tests and decision capsule |
@@ -28,6 +29,7 @@
 | `registry/skills.json` | registry | Skill state and evidence |
 | `scripts/repokernel_core.py` | source | Shared L0-L3 generation prototype |
 | `scripts/audit_repokernel_project.py` | audit | Current readiness checks |
+| `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
 | `process/evidence/LOCAL_VALIDATION.md` | provisional evidence | Local validation to supersede with repository-hosted evidence |
 | `templates/` | reusable assets | Current templates pending migration |
 | `examples/minimal/` | example | Synthetic example pending compiler regeneration |
