@@ -38,3 +38,14 @@ Phase 0 ends when:
 - no Phase 1 implementation has started.
 
 Codex must return the Phase 0 inventory, changes, validation output and blockers for review before continuing.
+
+## Post-Phase-0 Horizon Gate
+
+After Phase 0 is explicitly accepted, but before Phase 1 schemas are frozen, read:
+
+```text
+../../docs/possibility-horizon.md
+POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md
+```
+
+This second gate does not authorize implementation of future capabilities. It only decides the minimum lineage, lifecycle, authority and namespaced-extension fields needed to avoid blocking later evolution.
