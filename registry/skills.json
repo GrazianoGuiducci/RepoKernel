@@ -37,6 +37,19 @@
       "supersedes": []
     },
     {
+      "id": "autopoietic-cycle-controller",
+      "version": "0.1.0",
+      "state": "draft",
+      "path": "skills/autopoietic-cycle-controller/SKILL.md",
+      "risk": "safe",
+      "evidence": [
+        "docs/autopoietic-cycle-gap-analysis.md",
+        "packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md"
+      ],
+      "promotion_target": null,
+      "supersedes": []
+    },
+    {
       "id": "create-repokernel-project",
       "version": "0.2.0-dev",
       "state": "draft",
