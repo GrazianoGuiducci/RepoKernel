@@ -1,8 +1,8 @@
 # Runtime Adapters
 
-RepoKernel is host-neutral. Each environment maps the same logical contract to its available project surfaces.
+RepoKernel is host-neutral. Each environment maps the same project contract to the surfaces it actually supports.
 
-Every adapter declares:
+## Adapter Contract
 
 ```text
 runtime
@@ -12,15 +12,30 @@ documented-only behavior
 unsupported behavior
 entry gate
 state location
+model interface
+tool interface
+session interface
 verification rule
 ```
 
-Current targets include Codex, Claude Code, OpenCode, ChatGPT projects with repository access and generic file-reading agents.
+## Current Targets
 
-Compatibility is classified as `native`, `adapted`, `documented`, `unsupported` or `unknown`. A compatibility claim does not imply that every host loads instructions, skills or memory automatically.
+| Environment | Typical role |
+| --- | --- |
+| Codex | Repository work, shell and supported skills |
+| Claude Code | Repository instructions, skills and host lifecycle features |
+| OpenCode | Repository files and supported tools or instructions |
+| ChatGPT project | Reentry through selected repository sources |
+| Generic agent | Documented protocol over the access exposed by its host |
+| Internal reference runtime | Optional L3 body generated inside a project seed |
+| Pi adapter candidate | Optional future mapping to Pi resources, events, sessions and SDK/RPC |
 
-The invariant flow is:
+Compatibility is classified as `native`, `adapted`, `documented`, `unsupported` or `unknown`.
+
+“Works with” does not imply that every host automatically loads instructions, skills, extensions or memory.
 
 ```text
-portable logic -> host adapter -> project state
+portable kernel -> environment adapter -> runtime state -> verified delta
 ```
+
+The runtime is replaceable. Project meaning remains in the kernel plane.
