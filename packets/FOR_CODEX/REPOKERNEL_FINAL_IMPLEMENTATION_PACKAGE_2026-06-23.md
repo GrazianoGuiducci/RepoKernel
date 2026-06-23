@@ -46,6 +46,13 @@ After Phase 0 is explicitly accepted, but before Phase 1 schemas are frozen, rea
 ```text
 ../../docs/possibility-horizon.md
 POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md
+../../docs/recursive-distillation-plane.md
+../skills/recursive-improvement-distiller/SKILL.md
+POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md
 ```
 
-This second gate does not authorize implementation of future capabilities. It only decides the minimum lineage, lifecycle, authority and namespaced-extension fields needed to avoid blocking later evolution.
+The schema-horizon packet decides the minimum lineage, lifecycle, authority and namespaced-extension fields needed to avoid blocking later evolution.
+
+The recursive-distillation packet then applies the improvement method to Phase 1 itself and produces one reviewed `FORGE_R_PHASE1_RESULTANT.md` before implementation begins.
+
+Neither gate authorizes future capabilities, runtime escalation or unrestricted recursion. Their purpose is to preserve future semantic space while reducing the scope and rework of Phase 1.
