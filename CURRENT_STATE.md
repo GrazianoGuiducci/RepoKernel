@@ -32,6 +32,16 @@ L0-L2 = first stable implementation scope
 L3 = schema and architecture contract only
 ```
 
+Recursive improvement is preserved as an optional processing plane, not a new readiness level:
+
+```text
+Project Kernel + objective or tension + evidence
+  -> recursive improvement distillation
+  -> ResultantPacket
+  -> reviewed Codex implementation
+  -> verification and durable delta
+```
+
 ## Source Of Truth
 
 ```text
@@ -44,6 +54,9 @@ docs/retrofit-model.md
 docs/readiness-levels.md
 docs/runtime-adapters.md
 docs/internal-runtime-architecture.md
+docs/recursive-distillation-plane.md
+skills/recursive-improvement-distiller/SKILL.md
+packets/FOR_CODEX/POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md
 registry/skills.json
 scripts/repokernel_core.py
 ```
@@ -66,12 +79,15 @@ verified:
   - synthesis and retrofit resolved under one compiler
   - L3 deferred to contract status
   - phased Codex packet and test matrix committed
+  - recursive-improvement-distiller registered as a draft skill
+  - post-Phase-0 self-application gate committed without changing Phase 0 scope
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
   - schemas and deterministic planner
   - synthesis and retrofit implementation
+  - recursive distillation trigger fidelity, scope reduction and measured latency effect
 ```
 
 ## First Safe Action
@@ -91,4 +107,6 @@ untrusted documents or model output treated as authority
 hand-edited dist distributions
 implementation of executable L3 before permission and sandbox proof
 promotion to d-nd-seed before stable L0-L2 evidence
+recursive depth applied to every task
+unbounded self-analysis without new evidence or a stop rule
 ```
