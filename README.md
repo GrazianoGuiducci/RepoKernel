@@ -2,7 +2,7 @@
 
 Generate operational seeds for AI-assisted projects.
 
-RepoKernel creates the project-local kernel that lets an AI system reenter, understand, act within declared boundaries, verify results and preserve useful learning across sessions and hosts.
+RepoKernel creates the project-local kernel that lets an AI system reenter, understand, work within declared boundaries, verify results and preserve useful learning across sessions and hosts.
 
 GitHub is the first public carrier. The RepoKernel contract is host-neutral.
 
@@ -12,10 +12,10 @@ GitHub is the first public carrier. The RepoKernel contract is host-neutral.
 | --- | --- | --- |
 | **L0** | Reentry Core | Entry gate, current state and first packet |
 | **L1** | Semantic Kernel | Source atlas, project instructions and semantic skill |
-| **L2** | Governed Evolution | Manifest, registry, evidence, deltas and promotion policy |
-| **L3** | Operational Runtime | Optional runtime contract, event lifecycle, session lineage, extensions and action/result gates |
+| **L2** | Governed Improvement | Manifest, registry, evidence, deltas and review policy |
+| **L3** | Operational Runtime | Optional runtime contract, event lifecycle, session lineage and action/result gates |
 
-Use the lowest level that solves the project problem. L3 is optional and defaults to proposal-only authority.
+Use the lowest level that solves the project problem. L3 is optional and begins with proposal-only authority.
 
 ## Core Loop
 
@@ -23,31 +23,29 @@ Use the lowest level that solves the project problem. L3 is optional and default
 state -> sources -> semantic kernel -> packet -> action -> verification -> delta -> new state
 ```
 
-For governed improvement:
+For reviewed improvement:
 
 ```text
-observation -> proposal -> isolated experiment -> evidence -> review -> promotion
+observation -> proposal -> test -> evidence -> review -> accepted change
 ```
 
-## Generate A Seed
+## Current Usage
 
-Preview first:
+Create the current minimal project structure:
 
 ```bash
-python scripts/generate_seed.py --path /path/to/project --name "Project Name" --mission "Project mission" --level L2 --dry-run
+python scripts/scaffold_repokernel_project.py --path /path/to/project --name "Project Name" --mission "Project mission"
 ```
 
-The generator does not silently overwrite conflicts.
-
-## Audit
+Audit a project:
 
 ```bash
 python scripts/audit_repokernel_project.py --path /path/to/project --profile project
-python scripts/audit_repokernel_project.py --path /path/to/project --profile governed-project
-python scripts/audit_repokernel_project.py --path /path/to/project --profile operational-seed
 ```
 
-Readiness is evidence-backed:
+The shared L0-L3 generation library is now in `scripts/repokernel_core.py`. Its command-line integration and regression suite are the current v0.3 validation task.
+
+## Evidence Rule
 
 ```text
 files present != semantics valid
@@ -57,9 +55,9 @@ runtime present != authority granted
 
 ## Optional Internal Runtime
 
-An L3 seed receives a replaceable runtime contract with context compilation, model/provider adapters, an event lifecycle, action and result gates, append-only session lineage, trusted project extensions and an improvement proposal surface.
+An L3 seed may receive a replaceable runtime contract with context preparation, model/provider adapters, an event lifecycle, action and result gates, append-only session lineage, trusted project extensions and a candidate-improvement surface.
 
-The default runtime mode is `proposal_only`. It may propose and test candidate changes, but cannot promote them into the baseline without the project gate.
+The initial mode is proposal-only. Candidate changes still pass through project review before becoming part of the accepted baseline.
 
 ## What RepoKernel Is Not
 
@@ -67,7 +65,7 @@ RepoKernel is not unrestricted autonomous modification, a guarantee that an AI a
 
 ## Status
 
-`v0.3.0-dev`: seed-generator and optional L3 runtime contract under validation.
+`v0.3.0-dev`: generator core and optional L3 runtime contract under validation.
 
 ## License
 
