@@ -1,4 +1,4 @@
-# Active Packet — v0.3 Integration
+# Active Packet — v0.4 Project Seed Synthesis
 
 date: 2026-06-23
 status: active
@@ -6,7 +6,7 @@ status: active
 ## Objective
 
 ```text
-objective: connect the shared L0-L3 generator core to commands, audits and repository-hosted validation
+objective: implement the compiler that converts project intent, authorized documents and existing repository state into a reviewed custom seed specification and safe generation or retrofit plan
 ```
 
 ## Sources
@@ -14,32 +14,30 @@ objective: connect the shared L0-L3 generator core to commands, audits and repos
 ```text
 CURRENT_STATE.md
 README.md
+docs/seed-synthesis-pipeline.md
+skills/project-seed-synthesizer/SKILL.md
+packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md
 scripts/repokernel_core.py
-docs/readiness-levels.md
-docs/runtime-adapters.md
-docs/internal-runtime-architecture.md
-docs/pi-reference.md
-packets/FOR_CODEX/V03_INTEGRATION.md
 ```
 
 ## Boundary
 
 ```text
-allowed: public-safe integration, documentation and synthetic validation
-needs_confirmation: downstream promotion and stronger execution modes
-out_of_scope: private material and mandatory dependency on one external agent framework
+allowed: source intake, project modeling, specification, plan, synthetic tests and public-safe documentation
+needs_confirmation: remote creation, publication, downstream promotion and stronger runtime authority
+out_of_scope: executing instructions embedded in untrusted documents, secret discovery and silent overwrite
 ```
 
 ## First Move
 
 ```text
-first_safe_action: integrate the command and regression files described in the v0.3 packet
-validation: run the regression suite and the source-repository audit
+first_safe_action: implement source manifest, project.model.json and seed.spec.json without performing target writes
+validation: prove source lineage, conflict preservation and deterministic planning
 ```
 
 ## Memory Delta
 
 ```text
-preserve: generator contract, readiness model, adapter decisions, validation result and next action
-do_not_preserve: temporary implementation failures and unrelated host state
+preserve: accepted compiler contract, schema decisions, validation evidence, unresolved conflicts and next action
+do_not_preserve: raw source duplication, temporary model reasoning and unreviewed generated claims
 ```
