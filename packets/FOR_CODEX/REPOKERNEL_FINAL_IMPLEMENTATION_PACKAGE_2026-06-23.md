@@ -24,6 +24,15 @@ L0-L2 = first stable release scope
 L3 = contract and roadmap only
 ```
 
+Optional layers remain separate:
+
+```text
+repokernel-core       first stable product
+repokernel-cognition  recursive observation and ResultantPacket production
+repokernel-cycle      governed event, tension, fitness and memory metabolism
+repokernel-runtime    deferred execution body
+```
+
 ## Execution Gate
 
 Codex must execute **Phase 0 only**.
@@ -39,20 +48,34 @@ Phase 0 ends when:
 
 Codex must return the Phase 0 inventory, changes, validation output and blockers for review before continuing.
 
-## Post-Phase-0 Horizon Gate
+## Single Post-Phase-0 Convergence Gate
 
-After Phase 0 is explicitly accepted, but before Phase 1 schemas are frozen, read:
+After Phase 0 is explicitly accepted, use one gate:
 
 ```text
-../../docs/possibility-horizon.md
-POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md
-../../docs/recursive-distillation-plane.md
-../skills/recursive-improvement-distiller/SKILL.md
-POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md
+POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md
 ```
 
-The schema-horizon packet decides the minimum lineage, lifecycle, authority and namespaced-extension fields needed to avoid blocking later evolution.
+That packet reads and consolidates:
 
-The recursive-distillation packet then applies the improvement method to Phase 1 itself and produces one reviewed `FORGE_R_PHASE1_RESULTANT.md` before implementation begins.
+```text
+POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md
+POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md
+../../docs/possibility-horizon.md
+../../docs/recursive-distillation-plane.md
+../../docs/autopoietic-cycle-gap-analysis.md
+../../skills/recursive-improvement-distiller/SKILL.md
+../../skills/autopoietic-cycle-controller/SKILL.md
+```
 
-Neither gate authorizes future capabilities, runtime escalation or unrestricted recursion. Their purpose is to preserve future semantic space while reducing the scope and rework of Phase 1.
+The convergence gate must produce one reviewed `FORGE_R_PHASE1_CONVERGED_RESULTANT.md` before Phase 1 begins.
+
+It decides:
+
+- the smallest safe core schema set;
+- which future concepts remain optional references, namespaced extensions or deferrals;
+- package boundaries among core, cognition, cycle and runtime;
+- no-self-approval and no-authority-escalation invariants;
+- the proposal-only A1 proof plan.
+
+The convergence gate does not authorize runtime, scheduling, network, autonomous writes, skill-forge execution or unrestricted recursion.
