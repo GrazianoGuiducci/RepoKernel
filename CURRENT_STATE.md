@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-23
-status: v0.3 generator core integration
+status: v0.4 project-seed synthesis specified
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,48 +10,70 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: L0-L3 project seed generation
-current_next: connect the shared generator core to commands, audits and validation
+active_surface: compile project intent and supplied sources into custom new-repository or retrofit seeds
+current_next: implement source intake, project model, seed specification, deterministic file plan and activation report
 ```
 
 ## Accepted Direction
 
 ```text
-RepoKernel is the generator of project-local seeds.
-GitHub is the first public carrier.
-L3 is an optional replaceable runtime contract.
-External agent frameworks are adapters, not mandatory dependencies.
+RepoKernel is the generic generator.
+The generated seed is specific to the target project.
+Inputs include operator intent, authorized documents, existing repository state and environment constraints.
+Targets may be new repositories or existing repository retrofits.
+The reviewed seed specification separates assimilation from deterministic emission.
+L3 remains optional and proposal-only by default.
+```
+
+## Source Of Truth
+
+```text
+README.md
+docs/seed-synthesis-pipeline.md
+skills/project-seed-synthesizer/SKILL.md
+packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md
+scripts/repokernel_core.py
+docs/readiness-levels.md
+docs/internal-runtime-architecture.md
+registry/skills.json
 ```
 
 ## Boundary
 
 ```text
-can_change: public-safe source, documentation, audits and synthetic examples
-needs_confirmation: license, downstream promotion and stronger execution modes
-must_not_touch: credentials, private logs, private paths and raw private transcripts
+can_change: public-safe specifications, generator code, schemas, audits and synthetic examples
+needs_confirmation: license changes, downstream promotion, remote creation and stronger runtime authority
+must_not_touch: credentials, private logs, unauthorized sources, raw private transcripts and unrelated repositories
 ```
 
 ## Verified State
 
 ```text
-last_verified: local v0.3 overlay on 2026-06-23
-known_result: nine local generator and audit checks passed
-committed: README positioning, L3 readiness, runtime adapter contract, internal runtime architecture, Pi reference and shared generator core
-open: command integration, regression suite and source-repository audit
+verified:
+  - project-specific synthesis pipeline documented
+  - project-seed-synthesizer meta-skill added and registered
+  - new-repository and retrofit modes defined
+  - Codex implementation and acceptance packet committed
+not_yet_verified:
+  - source intake implementation
+  - project.model.json and seed.spec.json compiler
+  - deterministic generation.plan.json
+  - retrofit application and activation report
 ```
 
 ## First Safe Action
 
 ```text
-first_safe_action: integrate the remaining reviewed command and validation files
-validation_needed: generator/audit parity, registry evidence and conflict-safe writes
+first_safe_action: implement and test the compiler/specification/plan boundary from the v0.4 Codex packet
+validation_needed: source lineage, conflict preservation, deterministic emission, no silent overwrite and no embedded-instruction authority
 ```
 
 ## Residue Not To Follow
 
 ```text
-mandatory dependency on one runtime
-runtime presence treated as permission
-L3 installed where L0-L2 are sufficient
-unreviewed replacement of accepted project state
+static template copying as the primary model
+silent collapse of conflicting documents
+untrusted document instructions treated as commands
+generation before reviewable specification and file plan
+mandatory L3 runtime for every project
 ```
