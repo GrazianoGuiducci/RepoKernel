@@ -165,3 +165,202 @@ Each distribution records compiler version, SeedSpec hash and generated-tree has
 `verify-dist` regenerates every reference seed in a temporary directory and compares normalized paths and content hashes. CI fails when committed output differs.
 
 The coder-facing direct path should be one command or one generated release bundle. Cloning a starter may be supported, but the canonical artifact remains compiler-produced.
+
+---
+
+## 5. Installed Surface Contract
+
+### 5.1 Decision
+
+Use a **hybrid model with `.repokernel/` as the canonical host-neutral control plane and root/host files as adapters**.
+
+This lets new-project generation and existing-project retrofit obey one contract.
+
+### 5.2 Canonical target surface
+
+```text
+.repokernel/
+  manifest.json
+  state/current.md
+  sources/manifest.json
+  sources/atlas.md
+  model/project.model.json
+  spec/seed.spec.json
+  packets/active.md
+  skills/<project-id>-kernel/SKILL.md
+  reports/activation.json
+  reports/latest-audit.json
+  plans/last-applied.json
+  adapters/registry.json
+
+  # L2
+  registry/skills.json
+  evidence/
+  deltas/
+  proposals/
+
+  # L3 contract only
+  runtime/manifest.json
+```
+
+### 5.3 Root and host adapters
+
+For a new project, generate a short root `AGENTS.md` adapter when the selected host consumes it. It points to the canonical manifest, current state and active packet.
+
+Do not generate a second authoritative root `CURRENT_STATE.md` by default. A compatibility adapter may be emitted only when a host demonstrably requires it and must mark itself generated and non-authoritative.
+
+Do not modify `README.md` automatically. README is a product/public surface.
+
+Host-native adapters may target Claude Code, Codex, OpenCode, Cursor or another verified host. Every adapter records its canonical source hash and may be regenerated.
+
+### 5.4 Existing authoritative files
+
+A retrofit may register existing root or host files as authoritative sources. The canonical manifest indexes them; it does not automatically subordinate or replace them.
+
+An existing `AGENTS.md` remains active. RepoKernel proposes a minimal pointer block only when necessary.
+
+---
+
+## 6. Three User Journeys
+
+### 6.1 Direct Start
+
+**Inputs:** starter level, project name, mission, target path and selected adapters.
+
+**Stages:** load reference SeedSpec → bind minimal variables → deterministic plan → dry-run → materialize → audit → activate.
+
+**Artifacts:** bound SeedSpec, GenerationPlan, Project Kernel and ActivationReport.
+
+**Failure modes:** unresolved variables, conflicting non-empty target, distribution drift or failed readiness audit.
+
+### 6.2 Synthesis
+
+**Inputs:** operator intent, authorized sources, privacy classification and target environment.
+
+**Stages:** intake → SourceManifest → evidence-bearing ProjectModel → review → SeedSpec → acceptance → deterministic plan → apply → audit.
+
+**Approval gates:** source selection, ProjectModel correction, SeedSpec acceptance and exact plan approval.
+
+**Failure modes:** private or unsupported sources, unresolved conflicts, assertions without source references or a stale plan.
+
+### 6.3 Retrofit
+
+**Inputs:** existing repository, operator intent, selected sources and host declarations.
+
+**Stages:** read-only inventory → authority map → ProjectModel → reviewed SeedSpec → target snapshot → overlay plan → conflict resolution → staged application → audit → activation.
+
+**Approval gates:** every existing-file update, adapter write, state-surface change and L3 route.
+
+**Failure modes:** conflicting canon, stale target snapshot, writes outside target, partial application or activation with unresolved contradictions.
+
+---
+
+## 7. Machine-Readable Contracts
+
+### 7.1 `repokernel.source-manifest.v1` — first release
+
+Required fields:
+
+```text
+manifest_id
+created_at
+sources[]:
+  source_id
+  origin
+  media_type
+  sha256
+  authority
+  privacy
+  freshness
+  instruction_handling
+  allowed_uses
+  withheld_reason
+```
+
+### 7.2 `repokernel.project-model.v1` — first release
+
+Every material assertion carries:
+
+```text
+field
+value
+status: verified | operator_intent | inferred | conflict | unknown
+source_refs
+confidence
+notes
+```
+
+The model covers identity, mission, product, users, domain, invariants, constraints, boundaries, terminology, capabilities, interfaces, workflows, validation criteria, unknowns and source conflicts.
+
+### 7.3 `repokernel.seed-spec.v1` — first release
+
+Required groups:
+
+```text
+schema / seed_id / version
+project
+source_manifest_hash / project_model_hash
+target_mode
+canonical_namespace
+readiness_level
+selected_capabilities
+kernel_contract
+adapters
+runtime_route
+boundaries
+file_plan_policy
+validation_plan
+review
+compiler_compatibility
+```
+
+`review.status` must be `accepted` before application.
+
+### 7.4 `repokernel.generation-plan.v1` — first release
+
+Required groups:
+
+```text
+plan_id
+seed_spec_hash
+compiler_version
+target_root
+target_snapshot_hash
+items[]:
+  path
+  action
+  before_hash
+  after_hash
+  content_ref or patch_ref
+  reason
+  source_fields
+  risk
+  approval_required
+apply_policy
+rollback_manifest
+```
+
+Allowed actions are `create`, `leave_unchanged`, `propose_update`, `conflict` and `withhold`.
+
+### 7.5 Other first-release schemas
+
+- `repokernel.retrofit-report.v1`: repository inventory, authority surfaces, missing layers, conflicts, withheld paths, adapters and recommended level.
+- `repokernel.activation-report.v1`: status, selected level, checks, adapter status, unresolved items, applied plan hash, post-apply snapshot and limitations.
+- `repokernel.skill-registry.v1`: owner, maturity, risk, evidence, requirements, conflicts, supersession, runtime support and last review.
+
+### 7.6 `repokernel.runtime.v1` — schema/docs only
+
+Define provider, tool, event, append-only session, trust, authority, gate, sandbox and extension-allowlist contracts. Do not ship an executable runtime in the first stable release.
+
+---
+
+## 8. Readiness Model
+
+| Level | Purpose | Canonical minimum | Audit | Main risk | First stable release |
+| --- | --- | --- | --- | --- | --- |
+| **L0 Reentry** | Future session can orient safely. | manifest, state, active packet, entry adapter | semantics, boundary, first action | ceremonial files without useful state | Yes |
+| **L1 Semantic** | Route sources and use a local semantic skill. | L0 + SourceManifest/atlas + ProjectModel + accepted SeedSpec + skill | provenance, references, consistency, adapters | inferred claims treated as canon | Yes |
+| **L2 Governed Improvement** | Turn verified learning into proposals, evidence, deltas and reviewed skill changes. | L1 + registry, evidence, deltas, proposals, promotion policy | lifecycle evidence and rollback | silent self-modification or accumulation | Yes, after L0/L1 |
+| **L3 Operational Runtime** | Optional host-independent execution body. | L2 + runtime/event/session/tool/trust contracts | permissions, sandbox, lineage and gates | authority escaping project boundary | Contract only |
+
+Pi is useful as a reference for layered runtime, context transformation, event flow, tool preflight/postprocessing, session trees, resources and project trust. It also runs with the permissions of its launching process unless separately isolated. RepoKernel should therefore keep L3 non-executable until its own permission and sandbox policy is demonstrated.
