@@ -17,6 +17,7 @@
 | `docs/internal-runtime-architecture.md` | architecture | Optional L3 execution body and event direction |
 | `docs/recursive-distillation-plane.md` | cognitive architecture | Bounded D0-D3 improvement operator |
 | `docs/autopoietic-cycle-gap-analysis.md` | gap analysis | Closed-loop gaps, separation of duties and A1 target |
+| `docs/departmental-autonomy-spectral-analysis.md` | topology analysis | Two governance planes, bounded departments, local microcycles and entropy controls |
 | `docs/possibility-horizon.md` | strategic horizon | Bidirectional and multi-target possibilities without current authority |
 | `docs/pi-reference.md` | external reference | Transferable Pi patterns without dependency |
 | `docs/claim-boundaries.md` | boundary | Public claim limits |
@@ -25,11 +26,12 @@
 | `skills/project-seed-synthesizer/SKILL.md` | meta-skill | Project-specific SeedSpec synthesis |
 | `skills/recursive-improvement-distiller/SKILL.md` | meta-skill | Source ascent, possibility expansion and ResultantPacket distillation |
 | `skills/autopoietic-cycle-controller/SKILL.md` | meta-skill | Governed observe-align-distill-evaluate cycle contract |
-| `packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md` | convergence gate | Single post-Phase-0 decision surface before Phase 1 |
+| `packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md` | convergence gate | Single post-Phase-0 decision surface before Phase 1, including departmental topology |
 | `registry/skills.json` | registry | Skill state and evidence |
 | `scripts/repokernel_core.py` | source | Shared L0-L3 generation prototype |
 | `scripts/audit_repokernel_project.py` | audit | Current readiness checks |
 | `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
+| `process/deltas/2026-06-23-departmental-spectral-analysis.md` | durable delta | Departmental topology and entropy-control resultant |
 | `process/evidence/LOCAL_VALIDATION.md` | provisional evidence | Local validation to supersede with repository-hosted evidence |
 | `templates/` | reusable assets | Current templates pending migration |
 | `examples/minimal/` | example | Synthetic example pending compiler regeneration |
