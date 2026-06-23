@@ -5,7 +5,7 @@ Status: single convergence gate before Phase 1; no Phase 0 scope change
 
 ## Purpose
 
-Consolidate the existing post-Phase-0 schema horizon, recursive distillation and autopoietic-cycle analysis into one decision surface before Phase 1 schemas and package boundaries are frozen.
+Consolidate the existing post-Phase-0 schema horizon, recursive distillation, autopoietic-cycle analysis and departmental-autonomy analysis into one decision surface before Phase 1 schemas and package boundaries are frozen.
 
 This packet supersedes the use of the following files as separate execution gates; they remain authoritative inputs:
 
@@ -15,6 +15,7 @@ POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md
 docs/possibility-horizon.md
 docs/recursive-distillation-plane.md
 docs/autopoietic-cycle-gap-analysis.md
+docs/departmental-autonomy-spectral-analysis.md
 skills/recursive-improvement-distiller/SKILL.md
 skills/autopoietic-cycle-controller/SKILL.md
 ```
@@ -49,6 +50,17 @@ D0-D3 = cognitive depth
 
 No axis implies another.
 
+Departmental topology is constrained to:
+
+```text
+Plane 1 — constitutional/source plane
+Plane 2 — bounded departmental holons
+inside Plane 2 — ephemeral task microcycles
+between planes — synaptic membrane, not a third governance plane
+```
+
+No persistent nested departments are created by default.
+
 ## Read Order
 
 ```text
@@ -63,6 +75,7 @@ docs/recursive-distillation-plane.md
 skills/recursive-improvement-distiller/SKILL.md
 docs/autopoietic-cycle-gap-analysis.md
 skills/autopoietic-cycle-controller/SKILL.md
+docs/departmental-autonomy-spectral-analysis.md
 docs/internal-runtime-architecture.md
 registry/skills.json
 ```
@@ -110,6 +123,8 @@ ResultantEvaluation
 LearningDelta
 EvolutionProposal
 RuntimeManifest
+DepartmentContract
+SynapticEvent
 ```
 
 ### Separation Of Duties
@@ -138,10 +153,40 @@ cognitive_profile_ref
 method_profile_ref
 observer_ref
 evaluation_refs
+department_ref
 extensions
 ```
 
 Unknown extensions must round-trip without changing planning, writes or authority.
+
+### Departmental Topology
+
+Decide whether Phase 1 should preserve, but not implement, a departmental contract.
+
+The required architectural constraints are:
+
+```text
+two persistent governance planes only
+one level of persistent departments by default
+task microcycles are ephemeral
+shared principles are referenced and locally applied, not copied as new canon
+no direct cross-department state mutation
+one authoritative local state and active packet per department
+bounded event fan-out, TTL and deduplication
+local autonomy defaults to A1/propose
+promotion remains independent
+```
+
+Classify `DepartmentContract` and `SynapticEvent` as one of:
+
+```text
+core_optional
+provisional
+namespaced_extension
+deferred
+```
+
+Do not make departmental machinery a dependency of Direct Start, synthesis or retrofit.
 
 ### First Proof
 
@@ -157,6 +202,18 @@ fixture event
 ```
 
 This proof may be a schema and fixture suite after the core contracts are stable; it must not block Direct Start and retrofit unless a missing invariant would make them unsafe.
+
+Design one optional synthetic departmental perturbation fixture:
+
+```text
+one global invariant
+one department charter
+one local task microcycle
+one significant cascade event
+one irrelevant local change that must not propagate
+```
+
+The fixture tests topology and entropy controls only. It does not implement an autonomous department.
 
 ## Required Deliverables
 
@@ -225,6 +282,8 @@ process/reports/package-boundaries-v1.md
 
 It must show imports/dependencies allowed among core, cognition, cycle and runtime and demonstrate that core does not depend on optional layers.
 
+It must also show that future departmental contracts depend on core contracts but core does not depend on departments.
+
 ### D. A1 Proof Plan
 
 Create:
@@ -235,7 +294,29 @@ packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md
 
 It must include fixtures, expected artifacts, no-write assertions, independent evaluation, event deduplication and authority-escalation tests.
 
-### E. Updated Phase 1 Packet
+### E. Departmental Topology Decision
+
+Create:
+
+```text
+process/reports/departmental-topology-decision.md
+```
+
+It must state:
+
+```text
+persistent planes
+microcycle policy
+department creation criteria
+subdepartment prohibition or exception rule
+inheritance and local-application model
+synaptic event contract candidate
+entropy budget
+pilot fixture
+explicit deferrals
+```
+
+### F. Updated Phase 1 Packet
 
 Propose an amendment to the Phase 1 section of the final Codex architecture packet. Do not modify the authoritative packet until operator review.
 
@@ -258,6 +339,7 @@ G11 trigger and cascade semantics
 G12 security and trust
 G13 empirical latency proof
 G14 gate fragmentation
+G15 departmental topology and entropy control
 ```
 
 A deferral is valid only if the v1 core cannot accidentally make the deferred capability authoritative.
@@ -267,13 +349,15 @@ A deferral is valid only if the v1 core cannot accidentally make the deferred ca
 This gate passes when:
 
 - there is one Phase 1 Resultant, not multiple active implementation routes;
-- core remains independently usable without cognition, cycle or runtime packages;
+- core remains independently usable without cognition, cycle, departmental or runtime packages;
 - no self-approval and no authority escalation are testable invariants;
 - schemas preserve future lineage and namespaced extensions without implementing future features;
 - Direct Start and retrofit remain the primary release path;
 - A1 is specified as proposal-only and no-write;
+- departmental autonomy remains optional, bounded and non-recursive by default;
+- local guides are defined as applications of shared principles rather than duplicated canonical truth;
 - every additional contract is classified and justified;
-- all future runtime, scheduling, network and capability-forge implementation is explicitly deferred;
+- all future runtime, scheduling, network, department daemon and capability-forge implementation is explicitly deferred;
 - the Resultant reduces or clarifies Phase 1 rather than expanding it;
 - operator acceptance is recorded before Phase 1 begins.
 
@@ -291,6 +375,9 @@ internal model loop
 skill factory execution
 automatic promotion
 cross-repository action
+persistent nested departments
+department-to-department direct writes
+departmental runtime workers
 ```
 
-The purpose of this gate is to ensure that the first stable core is safe, minimal and evolution-compatible before code architecture is frozen.
+The purpose of this gate is to ensure that the first stable core is safe, minimal, department-compatible and evolution-compatible before code architecture is frozen.
