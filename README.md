@@ -6,27 +6,42 @@ RepoKernel assimilates project intent, supplied documents, existing repository s
 
 GitHub is the first public carrier. The RepoKernel contract is host-neutral.
 
-## Target Modes
+## One Compiler, Two Distribution Forms
+
+```text
+RepoKernel Source / Compiler
+        -> reviewed SeedSpec
+        -> Project Kernel
+```
+
+A coder may consume RepoKernel in two forms:
+
+- **Reference Seed** — a precompiled SeedSpec that can be copied or cloned directly;
+- **Synthesized ProjectSeed** — a custom SeedSpec compiled from project intent and authorized sources.
+
+These are not separate systems. Reference Seeds must be reproducible by the same compiler and schemas used for custom seeds.
+
+## Application Modes
 
 ```text
 new_repository
 existing_repository_retrofit
 ```
 
-For a new project, RepoKernel produces a complete reviewed file plan. For an existing repository, it inspects current files and proposes only the smallest conflict-safe additions or updates.
+For a new project, RepoKernel produces a complete reviewed file plan. For an existing repository, it maps current authority and proposes the smallest conflict-safe overlay. Retrofit is an application mode of the same SeedSpec, not a separate product.
 
 ## Synthesis Pipeline
 
 ```text
 intent + documents + instructions + repository state
 -> source intake
--> project model
--> seed specification
+-> ProjectModel
+-> reviewed SeedSpec
 -> file plan
 -> review gate
 -> generation or retrofit
 -> validation
--> activated local kernel
+-> activated Project Kernel
 ```
 
 The generic generator remains stable. Each emitted seed belongs to its target project.
@@ -68,7 +83,7 @@ Audit a project:
 python scripts/audit_repokernel_project.py --path /path/to/project --profile project
 ```
 
-The shared L0-L3 generation library is in `scripts/repokernel_core.py`. Intent/document assimilation, command integration and repository-hosted regression tests are the current implementation track.
+The shared L0-L3 generation library is in `scripts/repokernel_core.py`. Intent/document assimilation, precompiled distributions, command integration and repository-hosted regression tests remain under architectural review and implementation.
 
 ## Evidence Rule
 
@@ -84,13 +99,21 @@ An L3 seed may receive a replaceable runtime contract with context preparation, 
 
 The initial mode is proposal-only. Candidate changes still pass through project review before becoming part of the accepted baseline.
 
+## Current Gate
+
+The next implementation is intentionally paused until GPT Pro returns the final architecture and phased Codex packet defined in:
+
+```text
+packets/FOR_GPT_PRO/REPOKERNEL_FINAL_ARCHITECTURE_REVIEW_2026-06-23.md
+```
+
 ## What RepoKernel Is Not
 
 RepoKernel is not unrestricted autonomous modification, a guarantee that an AI action is correct, or a requirement to place a runtime in every repository.
 
 ## Status
 
-`v0.4.0-dev`: project-seed synthesis from intent and documents is now specified; compiler and retrofit implementation remain under validation.
+`v0.4.0-dev`: final architecture review gate prepared.
 
 ## License
 
