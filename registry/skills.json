@@ -24,6 +24,19 @@
       "supersedes": []
     },
     {
+      "id": "recursive-improvement-distiller",
+      "version": "0.1.0",
+      "state": "draft",
+      "path": "skills/recursive-improvement-distiller/SKILL.md",
+      "risk": "safe",
+      "evidence": [
+        "docs/recursive-distillation-plane.md",
+        "packets/FOR_CODEX/POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md"
+      ],
+      "promotion_target": null,
+      "supersedes": []
+    },
+    {
       "id": "create-repokernel-project",
       "version": "0.2.0-dev",
       "state": "draft",
