@@ -1,10 +1,35 @@
 # RepoKernel
 
-Generate operational seeds for AI-assisted projects.
+Generate project-specific operational seeds for AI-assisted work.
 
-RepoKernel creates the project-local kernel that lets an AI system reenter, understand, work within declared boundaries, verify results and preserve useful learning across sessions and hosts.
+RepoKernel assimilates project intent, supplied documents, existing repository state and environment constraints, then compiles a custom project kernel. The result is not a generic template copy: it is RepoKernel reconfigured for the target project's mission, product, sources, terminology, boundaries and validation needs.
 
 GitHub is the first public carrier. The RepoKernel contract is host-neutral.
+
+## Target Modes
+
+```text
+new_repository
+existing_repository_retrofit
+```
+
+For a new project, RepoKernel produces a complete reviewed file plan. For an existing repository, it inspects current files and proposes only the smallest conflict-safe additions or updates.
+
+## Synthesis Pipeline
+
+```text
+intent + documents + instructions + repository state
+-> source intake
+-> project model
+-> seed specification
+-> file plan
+-> review gate
+-> generation or retrofit
+-> validation
+-> activated local kernel
+```
+
+The generic generator remains stable. Each emitted seed belongs to its target project.
 
 ## What RepoKernel Generates
 
@@ -43,7 +68,7 @@ Audit a project:
 python scripts/audit_repokernel_project.py --path /path/to/project --profile project
 ```
 
-The shared L0-L3 generation library is now in `scripts/repokernel_core.py`. Its command-line integration and regression suite are the current v0.3 validation task.
+The shared L0-L3 generation library is in `scripts/repokernel_core.py`. Intent/document assimilation, command integration and repository-hosted regression tests are the current implementation track.
 
 ## Evidence Rule
 
@@ -65,7 +90,7 @@ RepoKernel is not unrestricted autonomous modification, a guarantee that an AI a
 
 ## Status
 
-`v0.3.0-dev`: generator core and optional L3 runtime contract under validation.
+`v0.4.0-dev`: project-seed synthesis from intent and documents is now specified; compiler and retrofit implementation remain under validation.
 
 ## License
 
