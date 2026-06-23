@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
-updated: 2026-06-22
-status: public starter published; v0.2 validation hardening active
+updated: 2026-06-23
+status: v0.3 generator core integration
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,83 +10,48 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: semantic validation, lifecycle governance and host-neutral evolution
-current_next: replace structural readiness with verifiable L0/L1/L2 readiness and align scaffolds, audits, registry and evidence
-```
-
-## Source Of Truth
-
-```text
-primary_sources:
-  - README.md
-  - AGENTS.md
-  - repokernel.json
-  - docs/readiness-levels.md
-  - docs/skill-repo-lifecycle.md
-  - registry/skills.json
-supporting_sources:
-  - docs/
-  - templates/
-  - skills/
-  - scripts/
-  - tests/
-  - examples/
-  - process/
-  - sources/bootstrap/
+active_surface: L0-L3 project seed generation
+current_next: connect the shared generator core to commands, audits and validation
 ```
 
 ## Accepted Direction
 
 ```text
-RepoKernel = host-neutral repo / pattern / method for project continuity.
-GitHub = first public adapter, not the identity of RepoKernel.
-Meta-skills = internal capabilities that create, evaluate, route, promote or update repository-aware skills.
-Readiness = evidence-backed state, not file presence alone.
+RepoKernel is the generator of project-local seeds.
+GitHub is the first public carrier.
+L3 is an optional replaceable runtime contract.
+External agent frameworks are adapters, not mandatory dependencies.
 ```
-
-RepoKernel is not only a template collection. It is the governed context layer through which a project exposes identity, state, sources, authority, boundaries, deltas and next actions to future AI systems.
 
 ## Boundary
 
 ```text
-can_change:
-  - public-safe docs, schemas, registry, templates, scripts, tests and synthetic examples
-needs_confirmation:
-  - license changes
-  - claims of adoption, autonomy or scientific proof
-  - downstream promotion into Seed, THIA or another repository
-  - publication of private case material
-must_not_touch:
-  - credentials, private logs, private workspace paths and raw private transcripts
-  - downstream repositories from this state alone
+can_change: public-safe source, documentation, audits and synthetic examples
+needs_confirmation: license, downstream promotion and stronger execution modes
+must_not_touch: credentials, private logs, private paths and raw private transcripts
 ```
 
 ## Verified State
 
 ```text
-last_verified: local v0.2 test bundle on 2026-06-22
-verification_commands:
-  - python -m unittest discover -s tests -v
-  - python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
-known_result:
-  - six local unit tests passed before repository integration
-  - GitHub-hosted validation must be re-run after all v0.2 files are committed
+last_verified: local v0.3 overlay on 2026-06-23
+known_result: nine local generator and audit checks passed
+committed: README positioning, L3 readiness, runtime adapter contract, internal runtime architecture, Pi reference and shared generator core
+open: command integration, regression suite and source-repository audit
 ```
 
 ## First Safe Action
 
 ```text
-first_safe_action: complete v0.2 hardening, then run semantic audit and unit tests against the committed repository
-validation_needed: confirm scaffold-to-audit parity, registry coverage, lifecycle evidence and runtime-adapter claims
+first_safe_action: integrate the remaining reviewed command and validation files
+validation_needed: generator/audit parity, registry evidence and conflict-safe writes
 ```
 
 ## Residue Not To Follow
 
 ```text
-residue:
-  - d-nd-skill-lab as primary repo name: superseded by RepoKernel
-  - raw private examples as first public examples: use synthetic examples first
-  - autonomous self-modification claims: preserve explicit review and promotion gates
-  - repokernel_ready as a single boolean based only on file existence
-  - GitHub-specific mechanics presented as universal RepoKernel behavior
+mandatory dependency on one runtime
+runtime presence treated as permission
+L3 installed where L0-L2 are sufficient
+unreviewed replacement of accepted project state
 ```
