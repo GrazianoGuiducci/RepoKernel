@@ -1,11 +1,11 @@
 {
   "schema": "repokernel.skill-registry.v1",
-  "version": "2026-06-22",
+  "version": "2026-06-23",
   "states": ["draft", "candidate", "accepted", "promoted", "private", "residue"],
   "skills": [
     {
       "id": "repokernel-semantic-kernel",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "state": "candidate",
       "path": "skills/repokernel-semantic-kernel/SKILL.md",
       "risk": "safe",
@@ -14,22 +14,32 @@
       "supersedes": []
     },
     {
+      "id": "project-seed-synthesizer",
+      "version": "0.1.0",
+      "state": "draft",
+      "path": "skills/project-seed-synthesizer/SKILL.md",
+      "risk": "writes_files",
+      "evidence": ["docs/seed-synthesis-pipeline.md"],
+      "promotion_target": null,
+      "supersedes": []
+    },
+    {
       "id": "create-repokernel-project",
       "version": "0.2.0-dev",
-      "state": "candidate",
+      "state": "draft",
       "path": "skills/create-repokernel-project/SKILL.md",
       "risk": "writes_files",
-      "evidence": ["tests/test_repokernel.py"],
+      "evidence": ["process/evidence/LOCAL_VALIDATION.md"],
       "promotion_target": null,
       "supersedes": []
     },
     {
       "id": "create-skill-repo",
       "version": "0.2.0-dev",
-      "state": "candidate",
+      "state": "draft",
       "path": "skills/create-skill-repo/SKILL.md",
       "risk": "writes_files",
-      "evidence": ["tests/test_repokernel.py"],
+      "evidence": ["process/evidence/LOCAL_VALIDATION.md"],
       "promotion_target": null,
       "supersedes": []
     },
@@ -39,7 +49,7 @@
       "state": "draft",
       "path": "skills/skill-lifecycle-auditor/SKILL.md",
       "risk": "safe",
-      "evidence": [],
+      "evidence": ["process/evidence/LOCAL_VALIDATION.md"],
       "promotion_target": null,
       "supersedes": []
     },
