@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: Phase 1 P0 hardening after independent review
-current_next: use the public-safe external-style A1 pilot packet plus private contact bridge before any real external repository test
+current_next: run the distribution readiness gate before any LinkedIn tester request or public distribution push
 ```
 
 ## Final Architecture
@@ -177,6 +177,7 @@ verified:
   - Editoriali incubation reviewed and normalized as RepoKernel transfer evidence
   - Seed/Lab promotion brief created without patching Seed, THIA or Lab
   - public-safe external-style A1 pilot packet created with private contact boundary
+  - distribution readiness gate drafted for LinkedIn tester request review
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
@@ -193,7 +194,7 @@ not_yet_verified:
 
 ```text
 first_safe_action: use the external-style A1 pilot packet as an internal method checklist; before observing a real third-party repository, confirm target, identity, allowed sources and no-write boundary
-validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check and explicit external-style proof blockers
+validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check, public claim review and explicit tester-scope boundary
 ```
 
 Operational procedure:
@@ -259,6 +260,7 @@ Next A1 proof gate:
 ```text
 packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
 packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md
+packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md
 ```
 
 Latest A1 proof report:

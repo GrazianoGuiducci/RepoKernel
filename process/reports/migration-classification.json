@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 128,
+  "tracked_file_count": 129,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -362,6 +362,12 @@
       "action": "keep_post_phase0_gate",
       "category": "post_phase0_gate",
       "reason": "Gate material only after Phase 0 acceptance."
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
     },
     {
       "path": "packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md",

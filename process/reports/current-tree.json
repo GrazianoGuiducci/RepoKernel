@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 128,
+  "tracked_file_count": 129,
   "groups": [
     "docs",
     "examples",
@@ -308,6 +308,12 @@
     },
     {
       "path": "packets/FOR_CODEX/POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md",
       "group": "packets",
       "kind": "file",
       "suffix": ".md"
