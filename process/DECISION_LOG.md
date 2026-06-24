@@ -48,3 +48,16 @@ Boundary: GPT Pro review is treated as external evidence, not authority. Phase 1
 continues under `packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md`.
 No external repository pilot, Seed promotion, runtime/L3 execution or public
 installer claim is allowed before this gate passes.
+
+## 2026-06-24 - External Pilot Public/Private Split
+
+Decision: keep external A1 pilot procedure and no-write evidence in RepoKernel,
+but keep person-specific relationship context in the correct private business
+or contact surface.
+
+Reason: RepoKernel is public and should preserve the technical method, not
+private messages, email addresses, calendar details or contact judgments.
+
+Boundary: external-style pilots may use public repository metadata and
+sanitized setup capsules. They must not expose private contact context, write to
+external repositories or imply a completed installer/apply capability.

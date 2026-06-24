@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 126,
+  "tracked_file_count": 128,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -298,6 +298,12 @@
       "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
     },
     {
+      "path": "packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md",
       "action": "classify_before_phase1",
       "category": "packet",
@@ -488,6 +494,12 @@
       "action": "keep_evidence",
       "category": "evidence",
       "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/reports/a1-external-style-pilot-2026-06-24.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
     },
     {
       "path": "process/reports/a1-local-no-write-proof-2026-06-24.md",

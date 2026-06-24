@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 126,
+  "tracked_file_count": 128,
   "groups": [
     "docs",
     "examples",
@@ -247,6 +247,12 @@
       "suffix": ".md"
     },
     {
+      "path": "packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md",
       "group": "packets",
       "kind": "file",
@@ -434,6 +440,12 @@
     },
     {
       "path": "process/evidence/README.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/a1-external-style-pilot-2026-06-24.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"
