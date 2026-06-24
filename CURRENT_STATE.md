@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: Phase 1 P0 hardening after independent review
-current_next: use the operational procedure to prepare external-style A1 review packets before any real external repository test
+current_next: use the public-safe external-style A1 pilot packet plus private contact bridge before any real external repository test
 ```
 
 ## Final Architecture
@@ -176,11 +176,12 @@ verified:
   - operational procedure documented for new, existing and external repositories
   - Editoriali incubation reviewed and normalized as RepoKernel transfer evidence
   - Seed/Lab promotion brief created without patching Seed, THIA or Lab
+  - public-safe external-style A1 pilot packet created with private contact boundary
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
-  - external-style A1 observe-and-propose proof
+  - real external-style A1 observe-and-propose proof on an approved selected target
   - d-nd-seed, THIA Seed or Lab Seed promotion
   - synthesis and retrofit implementation
   - recursive distillation trigger fidelity and measured latency effect
@@ -191,7 +192,7 @@ not_yet_verified:
 ## First Safe Action
 
 ```text
-first_safe_action: define the external-style repository review protocol before using a real third-party repository
+first_safe_action: use the external-style A1 pilot packet as an internal method checklist; before observing a real third-party repository, confirm target, identity, allowed sources and no-write boundary
 validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check and explicit external-style proof blockers
 ```
 
@@ -257,12 +258,14 @@ Next A1 proof gate:
 
 ```text
 packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
+packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md
 ```
 
 Latest A1 proof report:
 
 ```text
 process/reports/a1-local-no-write-proof-2026-06-24.md
+process/reports/a1-external-style-pilot-2026-06-24.md
 ```
 
 After explicit Phase 0 acceptance:
