@@ -26,6 +26,7 @@
 | `docs/possibility-horizon.md` | strategic horizon | Bidirectional and multi-target possibilities without current authority |
 | `docs/pi-reference.md` | external reference | Transferable Pi patterns without dependency |
 | `docs/claim-boundaries.md` | boundary | Public claim limits |
+| `docs/feedback.md` | feedback | Privacy-safe feedback request for users and coders |
 | `docs/skill-repo-lifecycle.md` | method | Skill lifecycle routing |
 | `skills/repokernel-semantic-kernel/SKILL.md` | skill | Local repository kernel |
 | `skills/project-seed-synthesizer/SKILL.md` | meta-skill | Project-specific SeedSpec synthesis |

@@ -1,10 +1,15 @@
 {
   "schema": "repokernel.phase0.link-check.v1",
   "generated_on": "2026-06-24",
-  "checked_links": 1,
+  "checked_links": 2,
   "broken_count": 0,
   "broken": [],
   "links": [
+    {
+      "source": "README.md",
+      "target": "docs/feedback.md",
+      "ok": true
+    },
     {
       "source": "README.md",
       "target": "LICENSE",

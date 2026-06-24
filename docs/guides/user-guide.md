@@ -29,3 +29,10 @@ using network or credentials
 promoting to Seed
 enabling runtime behavior
 ```
+
+## Feedback
+
+After trying RepoKernel, please consider leaving a short privacy-safe note using
+`docs/feedback.md`. The most useful feedback says what the kernel helped with,
+where the guide or installer was unclear and what would make the next use
+safer or easier.

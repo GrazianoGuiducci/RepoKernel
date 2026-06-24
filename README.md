@@ -80,6 +80,7 @@ Read the Phase 1 guides first:
 docs/guides/user-guide.md
 docs/guides/coder-guide.md
 docs/guides/architecture.md
+docs/feedback.md
 ```
 
 Create the current minimal project structure:
@@ -105,6 +106,12 @@ files present != semantics valid
 semantics valid != improvement governed
 runtime present != authority granted
 ```
+
+## Feedback
+
+If you try RepoKernel, please see [docs/feedback.md](docs/feedback.md). Short,
+privacy-safe notes about what helped, what was unclear and what was missing are
+useful for improving the kernel, guides and installer flow.
 
 ## Optional Internal Runtime
 

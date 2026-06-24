@@ -39,3 +39,11 @@ python scripts/phase0_inventory.py
 python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
 git diff --check
 ```
+
+## Feedback Hook
+
+If you build installer or CLI flows, include a non-blocking feedback prompt
+that points to `docs/feedback.md`.
+
+The prompt must be optional and privacy-safe. Do not ask for tokens, logs,
+private files, `.env` contents, client material or repository dumps.

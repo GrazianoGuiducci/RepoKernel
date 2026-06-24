@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 114,
+  "tracked_file_count": 115,
   "groups": [
     "docs",
     "examples",
@@ -86,6 +86,12 @@
     },
     {
       "path": "docs/distribution-model.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/feedback.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"

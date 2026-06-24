@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 114,
+  "tracked_file_count": 115,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -137,6 +137,12 @@
     },
     {
       "path": "docs/distribution-model.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/feedback.md",
       "action": "keep_and_normalize",
       "category": "documentation",
       "reason": "Architecture or policy doc remains source material for convergence."
