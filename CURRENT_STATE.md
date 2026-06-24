@@ -10,8 +10,8 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: Phase 0 baseline inventory and cleanup
-current_next: Phase 0 reports and validation are complete for operator review; wait for explicit acceptance before convergence gate
+active_surface: post-Phase-0 convergence gate
+current_next: convergence deliverables prepared for operator review; wait for explicit acceptance before Phase 1 implementation
 ```
 
 ## Final Architecture
@@ -187,6 +187,18 @@ Latest Phase 0 validation summary:
 
 ```text
 process/reports/phase0-validation-summary.md
+```
+
+Latest convergence outputs:
+
+```text
+packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md
+process/reports/phase1-schema-classification.json
+process/reports/package-boundaries-v1.md
+process/reports/departmental-topology-decision.md
+process/reports/guide-system-decision.md
+packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md
+packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md
 ```
 
 After explicit Phase 0 acceptance:

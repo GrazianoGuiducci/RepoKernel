@@ -14,10 +14,14 @@ process/reports/link-check.json
 Report result:
 
 ```text
-tracked_file_count: 82
+tracked_file_count: 89
 unclassified_count: 0
 broken_links: 0
 ```
+
+Note: the generated inventory is living repository evidence. It was 82 at
+Phase 0 closure and is now 89 after the post-Phase-0 convergence deliverables
+were added and classified.
 
 ## Cleanup Performed
 

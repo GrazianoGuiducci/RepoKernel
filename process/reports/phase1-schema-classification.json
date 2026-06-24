@@ -1,0 +1,207 @@
+{
+  "schema": "repokernel.phase1.schema-classification.v1",
+  "date": "2026-06-24",
+  "authority_rule": "Every authority_effect must be none. Fields may preserve future data but cannot change planning, writes or authority.",
+  "contracts": [
+    {
+      "name": "SourceManifest",
+      "classification": "core_required",
+      "reason": "All compilation and guides must preserve source provenance, privacy, freshness and use boundaries.",
+      "producer": "source intake",
+      "consumer": "ProjectModel, SeedSpec, guides, audits",
+      "authority_effect": "none",
+      "first_test": "withheld private source never appears in public output",
+      "future_migration": "add richer freshness and disclosure profiles under namespaced extensions"
+    },
+    {
+      "name": "ProjectModel",
+      "classification": "core_required",
+      "reason": "The compiler needs a normalized project understanding before SeedSpec generation.",
+      "producer": "source intake/modeler",
+      "consumer": "SeedSpec, guides, planning",
+      "authority_effect": "none",
+      "first_test": "conflicting mission statements remain visible",
+      "future_migration": "support reverse compilation and semantic diff"
+    },
+    {
+      "name": "SeedSpec",
+      "classification": "core_required",
+      "reason": "This is the reviewed build contract for deterministic generation and retrofit.",
+      "producer": "operator-reviewed synthesis",
+      "consumer": "GenerationPlan, guides, activation",
+      "authority_effect": "none",
+      "first_test": "same SeedSpec produces same canonical hash and plan",
+      "future_migration": "support lineage, lifecycle, projections and signed bundles"
+    },
+    {
+      "name": "GenerationPlan",
+      "classification": "core_required",
+      "reason": "No write or retrofit decision can happen without explicit path actions.",
+      "producer": "planner",
+      "consumer": "dry-run/apply wrapper, guides, audit",
+      "authority_effect": "none",
+      "first_test": "existing AGENTS.md becomes propose_update, not overwrite",
+      "future_migration": "add semantic diff and migration planning"
+    },
+    {
+      "name": "ActivationReport",
+      "classification": "core_required",
+      "reason": "A Project Kernel is not active until required files and references validate.",
+      "producer": "validator",
+      "consumer": "operator, README/guide, future CI",
+      "authority_effect": "none",
+      "first_test": "activation blocked when source atlas path is missing",
+      "future_migration": "add CI attestations and signed bundle evidence"
+    },
+    {
+      "name": "SkillRegistry",
+      "classification": "core_required",
+      "reason": "Skills and capability candidates need state, risk, evidence and promotion boundaries.",
+      "producer": "project kernel or package maintainer",
+      "consumer": "audit, guides, future Seed promotion",
+      "authority_effect": "none",
+      "first_test": "registry evidence paths resolve",
+      "future_migration": "add capability composition and conflict metadata"
+    },
+    {
+      "name": "GuideSet",
+      "classification": "core_required",
+      "reason": "RepoKernel must serve user and coder understanding; guides are generated/applied projections of canonical contracts.",
+      "producer": "guide model plus maintained docs",
+      "consumer": "external users, coder, operator, examples",
+      "authority_effect": "none",
+      "first_test": "user guide and coder guide cite canonical fields without redefining authority",
+      "future_migration": "role projections and selective disclosure profiles"
+    },
+    {
+      "name": "IntentContract",
+      "classification": "core_optional",
+      "reason": "Intent needs stable references, but full runtime-facing contract can wait until A1/cycle work.",
+      "producer": "SeedSpec or operator review",
+      "consumer": "A1 proof, future cycle controller",
+      "authority_effect": "none",
+      "first_test": "intent reference cannot amend SeedSpec automatically",
+      "future_migration": "promote to full schema after A1 proof"
+    },
+    {
+      "name": "ContextSnapshot",
+      "classification": "provisional",
+      "reason": "Needed for A1 proof, not for Direct Start or retrofit core.",
+      "producer": "A1 observer fixture",
+      "consumer": "TensionReport",
+      "authority_effect": "none",
+      "first_test": "snapshot contains hashes and excludes secrets",
+      "future_migration": "move to repokernel-cycle package"
+    },
+    {
+      "name": "TensionReport",
+      "classification": "provisional",
+      "reason": "Needed to prove observe-and-propose without implementing cycle runtime.",
+      "producer": "A1 observer fixture",
+      "consumer": "ResultantPacket",
+      "authority_effect": "none",
+      "first_test": "no material tension emits no_cycle",
+      "future_migration": "move to cycle/cognition boundary"
+    },
+    {
+      "name": "ResultantPacket",
+      "classification": "provisional",
+      "reason": "Carries recursive output for A1 and future cognition; core only needs to preserve references.",
+      "producer": "recursive distiller",
+      "consumer": "operator, evaluator, guide examples",
+      "authority_effect": "none",
+      "first_test": "packet cannot approve its own implementation",
+      "future_migration": "move stable form to repokernel-cognition"
+    },
+    {
+      "name": "AutonomyPolicy",
+      "classification": "core_optional",
+      "reason": "Autonomy axis must be explicit but no autonomous behavior ships in Phase 1.",
+      "producer": "SeedSpec policy field",
+      "consumer": "A1 proof and future cycle",
+      "authority_effect": "none",
+      "first_test": "A1 cannot write or increase authority",
+      "future_migration": "formalize in cycle package"
+    },
+    {
+      "name": "CycleRecord",
+      "classification": "deferred",
+      "reason": "No runtime cycle or event daemon in Phase 1.",
+      "producer": "future cycle controller",
+      "consumer": "future evaluator/recovery",
+      "authority_effect": "none",
+      "first_test": "not applicable in Phase 1",
+      "future_migration": "repokernel-cycle"
+    },
+    {
+      "name": "FitnessContract",
+      "classification": "core_optional",
+      "reason": "Evaluation refs should exist, but full fitness is later A1/A2 work.",
+      "producer": "SeedSpec or A1 proof fixture",
+      "consumer": "ActivationReport, ResultantEvaluation",
+      "authority_effect": "none",
+      "first_test": "fitness reference cannot be changed by evaluated packet",
+      "future_migration": "full schema after A1 proof"
+    },
+    {
+      "name": "ResultantEvaluation",
+      "classification": "provisional",
+      "reason": "Needed for A1 no-write proof, not core generator.",
+      "producer": "independent evaluator fixture",
+      "consumer": "A1 proof report",
+      "authority_effect": "none",
+      "first_test": "evaluator can reject ResultantPacket",
+      "future_migration": "cycle/evaluation package"
+    },
+    {
+      "name": "LearningDelta",
+      "classification": "core_optional",
+      "reason": "Memory delta is core concept, but full metabolism belongs later.",
+      "producer": "accepted review",
+      "consumer": "state and guides",
+      "authority_effect": "none",
+      "first_test": "delta preserves accepted facts only",
+      "future_migration": "memory metabolism schema"
+    },
+    {
+      "name": "EvolutionProposal",
+      "classification": "deferred",
+      "reason": "Capability forge and self-evolution are not Phase 1.",
+      "producer": "future cycle/capability forge",
+      "consumer": "future promoter",
+      "authority_effect": "none",
+      "first_test": "not applicable in Phase 1",
+      "future_migration": "A4 only after A1/A2 evidence"
+    },
+    {
+      "name": "RuntimeManifest",
+      "classification": "deferred",
+      "reason": "L3 is contract-only and executable runtime is deferred.",
+      "producer": "future runtime package",
+      "consumer": "runtime adapters",
+      "authority_effect": "none",
+      "first_test": "no runtime dependency in core",
+      "future_migration": "repokernel-runtime"
+    },
+    {
+      "name": "DepartmentContract",
+      "classification": "namespaced_extension",
+      "reason": "Departmental topology must be preserved as optional, not required for Direct Start, synthesis or retrofit.",
+      "producer": "future departmental layer",
+      "consumer": "future topology tests",
+      "authority_effect": "none",
+      "first_test": "core ignores department extension for planning authority",
+      "future_migration": "core_optional after synthetic fixture evidence"
+    },
+    {
+      "name": "SynapticEvent",
+      "classification": "namespaced_extension",
+      "reason": "Cascade semantics are useful later but must not become transport or authority now.",
+      "producer": "future event layer",
+      "consumer": "future department/constellation layer",
+      "authority_effect": "none",
+      "first_test": "event extension cannot trigger writes",
+      "future_migration": "cycle/department package after bounded event tests"
+    }
+  ]
+}

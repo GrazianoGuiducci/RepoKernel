@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 82,
+  "tracked_file_count": 89,
   "groups": [
     "docs",
     "examples",
@@ -184,6 +184,18 @@
       "suffix": ".md"
     },
     {
+      "path": "packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md",
       "group": "packets",
       "kind": "file",
@@ -191,6 +203,12 @@
     },
     {
       "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md",
       "group": "packets",
       "kind": "file",
       "suffix": ".md"
@@ -334,6 +352,18 @@
       "suffix": ".json"
     },
     {
+      "path": "process/reports/departmental-topology-decision.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/guide-system-decision.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "process/reports/link-check.json",
       "group": "process",
       "kind": "file",
@@ -346,10 +376,22 @@
       "suffix": ".json"
     },
     {
+      "path": "process/reports/package-boundaries-v1.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "process/reports/phase0-validation-summary.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"
+    },
+    {
+      "path": "process/reports/phase1-schema-classification.json",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".json"
     },
     {
       "path": "registry/skills.json",

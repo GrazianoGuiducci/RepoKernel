@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 82,
+  "tracked_file_count": 89,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -228,6 +228,18 @@
       "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
     },
     {
+      "path": "packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
+      "path": "packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md",
       "action": "keep_authoritative_packet",
       "category": "authoritative_packet",
@@ -238,6 +250,12 @@
       "action": "keep_authoritative_packet",
       "category": "authoritative_packet",
       "reason": "Final architecture or implementation gate."
+    },
+    {
+      "path": "packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
     },
     {
       "path": "packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md",
@@ -378,6 +396,18 @@
       "reason": "Generated Phase 0 evidence."
     },
     {
+      "path": "process/reports/departmental-topology-decision.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/guide-system-decision.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
       "path": "process/reports/link-check.json",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
@@ -390,7 +420,19 @@
       "reason": "Generated Phase 0 evidence."
     },
     {
+      "path": "process/reports/package-boundaries-v1.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
       "path": "process/reports/phase0-validation-summary.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/phase1-schema-classification.json",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
       "reason": "Generated Phase 0 evidence."

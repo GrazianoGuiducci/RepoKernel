@@ -31,6 +31,13 @@
 | `skills/recursive-improvement-distiller/SKILL.md` | meta-skill | Source ascent, possibility expansion and ResultantPacket distillation |
 | `skills/autopoietic-cycle-controller/SKILL.md` | meta-skill | Governed observe-align-distill-evaluate cycle contract |
 | `packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md` | convergence gate | Single post-Phase-0 decision surface before Phase 1, including departmental topology |
+| `packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md` | convergence resultant | Proposed Phase 1 scope and deferrals |
+| `process/reports/phase1-schema-classification.json` | convergence report | Schema and contract classification matrix |
+| `process/reports/package-boundaries-v1.md` | convergence report | Core/cognition/cycle/runtime package boundary |
+| `process/reports/departmental-topology-decision.md` | convergence report | Departmental topology decision and deferrals |
+| `process/reports/guide-system-decision.md` | convergence report | Guide system as core projection surface |
+| `packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md` | convergence packet | Proposal-only A1 proof plan |
+| `packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md` | convergence packet | Proposed amendment to Phase 1 scope |
 | `packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md` | classification note | Repo observer setup ownership correction; no Seed or Phase 1 authority |
 | `packets/archive/README.md` | archive index | Phase 0 supersession index for historical packets |
 | `registry/skills.json` | registry | Skill state and evidence |
