@@ -1,5 +1,43 @@
 # Quickstart
 
+## Choose The Mode
+
+```text
+new_repository
+existing_repository_retrofit
+A1 observe-and-propose
+```
+
+Use A1 when you are looking at another person's repository or a project where
+you do not yet have write authority.
+
+## Prepare A SeedSpec
+
+Minimal example:
+
+```json
+{
+  "schema": "repokernel.seed-spec.v1",
+  "seed_id": "demo-seed",
+  "project": {
+    "name": "Demo Project",
+    "intent": "Preserve continuity",
+    "product": "A project kernel"
+  },
+  "target": {
+    "mode": "new_repository",
+    "path": "DemoProject"
+  },
+  "readiness_level": "L1",
+  "authority_mode": "propose"
+}
+```
+
+## Plan Before Writing
+
+Phase 1 core creates a deterministic `GenerationPlan`. Existing repository
+files are not overwritten silently.
+
 ## Audit An Existing Repository
 
 ```bash
@@ -32,4 +70,3 @@ python scripts/scaffold_skill_repo.py --path /path/to/my-skill --name my-skill -
 ```
 
 Use this when a reusable capability should live as a small repository rather than as an unstructured prompt.
-

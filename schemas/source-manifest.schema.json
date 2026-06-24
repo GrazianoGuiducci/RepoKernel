@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.source-manifest.v1",
+  "title": "SourceManifest",
+  "type": "object",
+  "required": ["schema", "sources"],
+  "properties": {
+    "schema": { "const": "repokernel.source-manifest.v1" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "authority", "privacy", "used_for"],
+        "properties": {
+          "source_id": { "type": "string" },
+          "path_or_origin": { "type": "string" },
+          "authority": { "type": "string" },
+          "privacy": { "type": "string" },
+          "freshness": { "type": "string" },
+          "sha256": { "type": "string" },
+          "used_for": { "type": "array", "items": { "type": "string" } },
+          "withheld_reason": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "extensions": { "type": "object" }
+  }
+}

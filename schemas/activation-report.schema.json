@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.activation-report.v1",
+  "title": "ActivationReport",
+  "type": "object",
+  "required": ["schema", "state", "checks"],
+  "properties": {
+    "schema": { "const": "repokernel.activation-report.v1" },
+    "state": { "enum": ["planned", "generated", "validated", "active", "blocked"] },
+    "checks": { "type": "array" },
+    "blocked_reasons": { "type": "array", "items": { "type": "string" } },
+    "extensions": { "type": "object" }
+  }
+}

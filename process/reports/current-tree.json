@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 89,
+  "tracked_file_count": 113,
   "groups": [
     "docs",
     "examples",
@@ -9,10 +9,13 @@
     "process",
     "registry",
     "root",
+    "schemas",
     "scripts",
     "skills",
     "sources",
-    "templates"
+    "src",
+    "templates",
+    "tests"
   ],
   "files": [
     {
@@ -83,6 +86,48 @@
     },
     {
       "path": "docs/distribution-model.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/README.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/application-types.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/architecture.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/coder-guide.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/examples/minimal-project.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/use-cases.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/user-guide.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -394,6 +439,12 @@
       "suffix": ".json"
     },
     {
+      "path": "pyproject.toml",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".toml"
+    },
+    {
       "path": "registry/skills.json",
       "group": "registry",
       "kind": "file",
@@ -402,6 +453,42 @@
     {
       "path": "repokernel.json",
       "group": "root",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/activation-report.schema.json",
+      "group": "schemas",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/generation-plan.schema.json",
+      "group": "schemas",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/project-model.schema.json",
+      "group": "schemas",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/seed-spec.schema.json",
+      "group": "schemas",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/skill-registry.schema.json",
+      "group": "schemas",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "schemas/source-manifest.schema.json",
+      "group": "schemas",
       "kind": "file",
       "suffix": ".json"
     },
@@ -508,6 +595,42 @@
       "suffix": ".md"
     },
     {
+      "path": "src/repokernel/__init__.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/canonical.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/guide_model.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/models.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/paths.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/planner.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
       "path": "templates/AGENTS.template.md",
       "group": "templates",
       "kind": "file",
@@ -548,6 +671,30 @@
       "group": "templates",
       "kind": "file",
       "suffix": ".md"
+    },
+    {
+      "path": "tests/unit/test_canonical.py",
+      "group": "tests",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "tests/unit/test_guide_model.py",
+      "group": "tests",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "tests/unit/test_planner.py",
+      "group": "tests",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "tests/unit/test_schemas.py",
+      "group": "tests",
+      "kind": "file",
+      "suffix": ".py"
     }
   ]
 }

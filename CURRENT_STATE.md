@@ -10,8 +10,8 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: post-Phase-0 convergence gate
-current_next: convergence deliverables prepared for operator review; wait for explicit acceptance before Phase 1 implementation
+active_surface: Phase 1 canonical core, planner and guides
+current_next: validate Phase 1 core package, guide set, schemas and tests; do not move to Phase 2 before operator review
 ```
 
 ## Final Architecture
@@ -199,6 +199,15 @@ process/reports/departmental-topology-decision.md
 process/reports/guide-system-decision.md
 packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md
 packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md
+```
+
+Latest Phase 1 implementation surfaces:
+
+```text
+src/repokernel/
+schemas/
+docs/guides/
+tests/unit/
 ```
 
 After explicit Phase 0 acceptance:

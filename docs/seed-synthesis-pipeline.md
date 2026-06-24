@@ -144,6 +144,22 @@ The generated seed is specific.
 The project kernel belongs to the target project.
 ```
 
+## Phase 1 Core Boundary
+
+Phase 1 freezes the contract and planner boundary before expanding generation:
+
+```text
+SourceManifest
+ProjectModel
+SeedSpec
+GenerationPlan
+ActivationReport
+GuideSet
+```
+
+Compile and plan stages are no-write. Existing repository files remain
+authoritative until a reviewed plan is accepted.
+
 ## Future Evolution
 
 The same compiler can later emit beyond GitHub into other repository hosts, workspaces, document stores, databases, event systems or internal runtimes while preserving the reviewed seed specification and source lineage.

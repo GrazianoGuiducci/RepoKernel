@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 89,
+  "tracked_file_count": 113,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -20,6 +20,11 @@
     "keep_historical_delta",
     "keep_phase0_evidence",
     "keep_phase0_tool",
+    "keep_phase1_core",
+    "keep_phase1_guide",
+    "keep_phase1_package_metadata",
+    "keep_phase1_schema",
+    "keep_phase1_test",
     "keep_post_phase0_gate",
     "keep_process_record",
     "keep_prototype_or_wrapper",
@@ -42,11 +47,16 @@
     "documentation_cleanup",
     "evidence",
     "example",
+    "guide",
     "optional_architecture",
     "packet",
     "phase0_classification",
     "phase0_report",
     "phase0_tool",
+    "phase1_core",
+    "phase1_package",
+    "phase1_schema",
+    "phase1_test",
     "post_phase0_gate",
     "process",
     "registry",
@@ -130,6 +140,48 @@
       "action": "keep_and_normalize",
       "category": "documentation",
       "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/guides/README.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/application-types.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/architecture.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/coder-guide.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/examples/minimal-project.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/use-cases.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/user-guide.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
     },
     {
       "path": "docs/internal-runtime-architecture.md",
@@ -438,6 +490,12 @@
       "reason": "Generated Phase 0 evidence."
     },
     {
+      "path": "pyproject.toml",
+      "action": "keep_phase1_package_metadata",
+      "category": "phase1_package",
+      "reason": "Phase 1 package metadata for the core library."
+    },
+    {
       "path": "registry/skills.json",
       "action": "correct_and_migrate_later",
       "category": "registry",
@@ -448,6 +506,42 @@
       "action": "migrate_later",
       "category": "compatibility_adapter",
       "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "schemas/activation-report.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
+      "path": "schemas/generation-plan.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
+      "path": "schemas/project-model.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
+      "path": "schemas/seed-spec.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
+      "path": "schemas/skill-registry.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
+      "path": "schemas/source-manifest.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
     },
     {
       "path": "scripts/audit_repokernel_project.py",
@@ -552,6 +646,42 @@
       "reason": "Bootstrap remains active until .repokernel/sources migration."
     },
     {
+      "path": "src/repokernel/__init__.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/canonical.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/guide_model.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/models.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/paths.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/planner.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
       "path": "templates/AGENTS.template.md",
       "action": "migrate_to_compiler_templates",
       "category": "template",
@@ -592,6 +722,30 @@
       "action": "migrate_to_compiler_templates",
       "category": "template",
       "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "tests/unit/test_canonical.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_guide_model.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_planner.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_schemas.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
     }
   ]
 }

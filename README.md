@@ -2,6 +2,9 @@
 
 Generate project-specific operational seeds for AI-assisted work.
 
+RepoKernel now has a Phase 1 core package in `src/repokernel/`: canonical
+contracts, deterministic planning, dry-run reporting and guide projections.
+
 RepoKernel assimilates project intent, supplied documents, existing repository state and environment constraints, then compiles a custom project kernel. The result is not a generic template copy: it is RepoKernel reconfigured for the target project's mission, product, sources, terminology, boundaries and validation needs.
 
 GitHub is the first public carrier. The RepoKernel contract is host-neutral.
@@ -71,6 +74,14 @@ observation -> proposal -> test -> evidence -> review -> accepted change
 
 ## Current Usage
 
+Read the Phase 1 guides first:
+
+```text
+docs/guides/user-guide.md
+docs/guides/coder-guide.md
+docs/guides/architecture.md
+```
+
 Create the current minimal project structure:
 
 ```bash
@@ -83,7 +94,9 @@ Audit a project:
 python scripts/audit_repokernel_project.py --path /path/to/project --profile project
 ```
 
-The shared L0-L3 generation library is in `scripts/repokernel_core.py`. Intent/document assimilation, precompiled distributions, command integration and repository-hosted regression tests remain under architectural review and implementation.
+The Phase 1 core package is in `src/repokernel/`. The previous shared L0-L3
+generation library in `scripts/repokernel_core.py` remains a compatibility
+prototype until parity tests replace it.
 
 ## Evidence Rule
 
@@ -113,7 +126,7 @@ RepoKernel is not unrestricted autonomous modification, a guarantee that an AI a
 
 ## Status
 
-`v0.4.0-dev`: final architecture review gate prepared.
+`v0.3.0-dev`: Phase 1 core contracts, planner and guide surfaces under test.
 
 ## License
 

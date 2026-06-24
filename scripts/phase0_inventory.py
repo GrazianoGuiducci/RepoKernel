@@ -41,11 +41,15 @@ def action_for(path: str) -> tuple[str, str, str]:
         return ("keep", "stable_support", "Stable repository support file.")
     if path in {"README.md", "AGENTS.md", "CURRENT_STATE.md", "repokernel.json"}:
         return ("migrate_later", "compatibility_adapter", "Root file remains active until .repokernel/ self-host migration.")
+    if path == "pyproject.toml":
+        return ("keep_phase1_package_metadata", "phase1_package", "Phase 1 package metadata for the core library.")
     if path == "process/FIRST_PACKET.md":
         return ("keep_current_gate", "active_phase0_gate", "Active Phase 0 packet.")
     if path == "registry/skills.json":
         return ("correct_and_migrate_later", "registry", "Registry remains active; final schema migration is Phase 1+.")
     if path.startswith("docs/"):
+        if path.startswith("docs/guides/"):
+            return ("keep_phase1_guide", "guide", "Phase 1 guide surface; explains contracts without authority.")
         if path in {"docs/context-surface.md", "docs/quickstart.md", "docs/codex-operating-guide.md", "docs/concept.md"}:
             return ("replace_or_reduce", "documentation_cleanup", "Current docs require final-architecture alignment before stable release.")
         if path in {"docs/internal-runtime-architecture.md", "docs/recursive-distillation-plane.md", "docs/autopoietic-cycle-gap-analysis.md", "docs/departmental-autonomy-spectral-analysis.md", "docs/possibility-horizon.md"}:
@@ -61,6 +65,12 @@ def action_for(path: str) -> tuple[str, str, str]:
         if path == "scripts/phase0_inventory.py":
             return ("keep_phase0_tool", "phase0_tool", "Generates reproducible Phase 0 reports.")
         return ("keep_prototype_or_wrapper", "script", "Prototype/wrapper remains until package refactor has parity tests.")
+    if path.startswith("src/repokernel/"):
+        return ("keep_phase1_core", "phase1_core", "Phase 1 core package surface.")
+    if path.startswith("schemas/"):
+        return ("keep_phase1_schema", "phase1_schema", "Phase 1 canonical contract schema.")
+    if path.startswith("tests/"):
+        return ("keep_phase1_test", "phase1_test", "Phase 1 regression or contract test.")
     if path.startswith("process/reports/"):
         return ("keep_phase0_evidence", "phase0_report", "Generated Phase 0 evidence.")
     if path.startswith("process/evidence/"):

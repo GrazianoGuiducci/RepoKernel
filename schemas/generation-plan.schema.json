@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.generation-plan.v1",
+  "title": "GenerationPlan",
+  "type": "object",
+  "required": ["schema", "seed_hash", "items", "blocked"],
+  "properties": {
+    "schema": { "const": "repokernel.generation-plan.v1" },
+    "seed_hash": { "type": "string" },
+    "generated_on": { "type": "string" },
+    "blocked": { "type": "boolean" },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "action", "reason", "content_hash", "authority_effect"],
+        "properties": {
+          "path": { "type": "string" },
+          "action": { "enum": ["create", "leave_unchanged", "propose_update", "conflict", "withhold"] },
+          "reason": { "type": "string" },
+          "source_fields": { "type": "array", "items": { "type": "string" } },
+          "content_hash": { "type": "string" },
+          "risk": { "type": "string" },
+          "approval_needed": { "type": "boolean" },
+          "authority_effect": { "const": "none" }
+        }
+      }
+    },
+    "extensions": { "type": "object" }
+  }
+}

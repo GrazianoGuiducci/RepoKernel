@@ -44,6 +44,11 @@
 | `scripts/repokernel_core.py` | source | Shared L0-L3 generation prototype |
 | `scripts/audit_repokernel_project.py` | audit | Current readiness checks |
 | `scripts/phase0_inventory.py` | Phase 0 tool | Generates inventory, migration classification and link-check reports |
+| `pyproject.toml` | package config | Phase 1 Python package metadata |
+| `src/repokernel/` | Phase 1 core | Canonical serialization, contract validation, planner and guide model |
+| `schemas/` | Phase 1 schemas | Canonical JSON schema surfaces for core contracts |
+| `docs/guides/` | guides | User, coder, architecture, use-case and example guides |
+| `tests/unit/` | validation | Phase 1 core unit tests |
 | `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
 | `process/deltas/2026-06-23-departmental-spectral-analysis.md` | durable delta | Departmental topology and entropy-control resultant |
 | `process/evidence/LOCAL_VALIDATION.md` | provisional evidence | Local validation to supersede with repository-hosted evidence |

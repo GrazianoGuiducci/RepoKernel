@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.seed-spec.v1",
+  "title": "SeedSpec",
+  "type": "object",
+  "required": ["schema", "seed_id", "project", "target", "readiness_level", "authority_mode"],
+  "properties": {
+    "schema": { "const": "repokernel.seed-spec.v1" },
+    "seed_id": { "type": "string" },
+    "project": {
+      "type": "object",
+      "required": ["name", "intent", "product"],
+      "properties": {
+        "name": { "type": "string" },
+        "intent": { "type": "string" },
+        "product": { "type": "string" },
+        "domain": { "type": "string" },
+        "users": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "enum": ["new_repository", "existing_repository_retrofit"] },
+        "path": { "type": "string" }
+      }
+    },
+    "readiness_level": { "enum": ["L0", "L1", "L2", "L3"] },
+    "authority_mode": { "enum": ["none", "read", "propose", "proposal_only"] },
+    "lineage": { "type": "object" },
+    "lifecycle": { "type": "object" },
+    "extensions": { "type": "object" }
+  }
+}

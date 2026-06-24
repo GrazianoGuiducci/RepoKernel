@@ -2,6 +2,15 @@
 
 Readiness is demonstrated by evidence. File presence is necessary but not sufficient.
 
+Readiness does not imply autonomy or authority.
+
+```text
+readiness: L0 | L1 | L2 | L3
+authority: none | read | propose | project_write | external_action
+```
+
+Phase 1 core supports L0-L2 planning and treats L3 as contract-only.
+
 ## L0 — Reentry Core
 
 A future AI session can orient before acting.

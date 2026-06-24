@@ -79,3 +79,16 @@ Activation does not imply publication, deployment, remote creation or stronger r
 ```text
 RepoKernel discovers the structure already present and compiles the smallest compatible kernel around it.
 ```
+
+## Phase 1 Retrofit Rule
+
+In Phase 1, retrofit is planning only:
+
+```text
+existing root authority -> propose_update
+unreviewed generated path collision -> conflict
+new compatible support file -> create
+private or unsafe source -> withhold
+```
+
+No existing repository file is overwritten by the planner.

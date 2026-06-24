@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.manifest.v1",
   "name": "RepoKernel",
-  "version": "0.2.0-dev",
+  "version": "0.3.0-dev",
   "host_model": {
     "identity": "host-neutral",
     "primary_public_adapter": "github",
@@ -12,6 +12,9 @@
     "target": "L2",
     "policy": "docs/readiness-levels.md"
   },
+  "package": "src/repokernel",
+  "schemas": "schemas",
+  "guides": "docs/guides",
   "registry": "registry/skills.json",
   "state": "CURRENT_STATE.md",
   "entry_gate": "AGENTS.md",
