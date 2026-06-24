@@ -14,7 +14,7 @@ process/reports/link-check.json
 Report result:
 
 ```text
-tracked_file_count: 81
+tracked_file_count: 82
 unclassified_count: 0
 broken_links: 0
 ```
