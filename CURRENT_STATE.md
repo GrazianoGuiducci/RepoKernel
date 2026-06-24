@@ -210,6 +210,12 @@ docs/guides/
 tests/unit/
 ```
 
+External review request prepared:
+
+```text
+packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md
+```
+
 After explicit Phase 0 acceptance:
 
 ```text

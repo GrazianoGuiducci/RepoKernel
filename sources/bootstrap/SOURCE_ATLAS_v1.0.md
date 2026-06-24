@@ -11,6 +11,7 @@
 | `process/reports/phase0-validation-summary.md` | Phase 0 report | Human-readable Phase 0 validation result and Phase 1 blockers |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
+| `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md` | external review request | Complete request for independent GPT Pro review of Phase 1 core, guides and installer path |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md` | architecture | Final ontology, installed surface and contracts |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md` | architecture | Migration, phases, tests and decision capsule |
 | `docs/distribution-model.md` | architecture | Compiler, Reference Seeds, application modes and Project Kernel |

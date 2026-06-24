@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 113,
+  "tracked_file_count": 114,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -365,6 +365,12 @@
     },
     {
       "path": "packets/FOR_GPT_PRO/REPOKERNEL_FINAL_ARCHITECTURE_REVIEW_2026-06-23.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md",
       "action": "archive_after_acceptance",
       "category": "source_packet",
       "reason": "Source packet lineage; not direct implementation authority."
