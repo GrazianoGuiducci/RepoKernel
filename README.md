@@ -83,10 +83,14 @@ docs/guides/architecture.md
 docs/feedback.md
 ```
 
-Create the current minimal project structure:
+For now, treat the Phase 1 package as a reviewable planner and contract
+surface. Do not use the legacy scaffold scripts as the primary Phase 1
+installer.
 
-```bash
-python scripts/scaffold_repokernel_project.py --path /path/to/project --name "Project Name" --mission "Project mission"
+The safe path is:
+
+```text
+SeedSpec -> validation -> GenerationPlan -> human review -> later apply gate
 ```
 
 Audit a project:
@@ -96,8 +100,8 @@ python scripts/audit_repokernel_project.py --path /path/to/project --profile pro
 ```
 
 The Phase 1 core package is in `src/repokernel/`. The previous shared L0-L3
-generation library in `scripts/repokernel_core.py` remains a compatibility
-prototype until parity tests replace it.
+generation library in `scripts/repokernel_core.py` and the scaffold scripts are
+compatibility prototypes until parity tests replace them.
 
 ## Evidence Rule
 
@@ -121,11 +125,20 @@ The initial mode is proposal-only. Candidate changes still pass through project 
 
 ## Current Gate
 
-The next implementation is intentionally paused until GPT Pro returns the final architecture and phased Codex packet defined in:
+An independent GPT Pro review has been received and preserved in:
 
 ```text
-packets/FOR_GPT_PRO/REPOKERNEL_FINAL_ARCHITECTURE_REVIEW_2026-06-23.md
+packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
 ```
+
+The active gate is now:
+
+```text
+packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
+```
+
+Phase 1 is not yet collaborator/public installer ready. External repository
+tests wait until the P0 hardening gate passes.
 
 ## What RepoKernel Is Not
 

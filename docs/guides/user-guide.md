@@ -18,6 +18,9 @@ L2: evidence, deltas, registry and governed improvement
 L3: runtime contract only, not executable by default
 ```
 
+The project kernel lives primarily in `.repokernel/`. Root files are only
+adapters or ordinary project files when the host needs them.
+
 ## What Requires Approval
 
 ```text

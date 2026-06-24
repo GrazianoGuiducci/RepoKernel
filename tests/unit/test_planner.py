@@ -29,13 +29,26 @@ class PlannerTests(unittest.TestCase):
     def test_same_seed_same_plan(self):
         first = build_generation_plan(seed())
         second = build_generation_plan(seed())
+        self.assertEqual(first["generated_on"], "undated")
         self.assertEqual(canonical_hash(first["items"]), canonical_hash(second["items"]))
+
+    def test_plan_uses_repokernel_control_plane(self):
+        plan = build_generation_plan(seed())
+        paths = {item["path"] for item in plan["items"]}
+        self.assertIn("AGENTS.md", paths)
+        self.assertIn(".repokernel/state/CURRENT_STATE.md", paths)
+        self.assertIn(".repokernel/packets/FIRST_PACKET.md", paths)
+        self.assertIn(".repokernel/manifest.json", paths)
 
     def test_existing_agents_is_propose_update_not_overwrite(self):
         plan = build_generation_plan(seed(), existing_paths=["AGENTS.md"])
         agents = [item for item in plan["items"] if item["path"] == "AGENTS.md"][0]
         self.assertEqual(agents["action"], "propose_update")
         self.assertTrue(agents["approval_needed"])
+
+    def test_unsafe_existing_path_is_rejected(self):
+        with self.assertRaises(ValueError):
+            build_generation_plan(seed(), existing_paths=["C:\\tmp\\bad"])
 
     def test_dry_run_writes_nothing(self):
         plan = build_generation_plan(seed())

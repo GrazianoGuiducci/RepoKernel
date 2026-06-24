@@ -1,7 +1,6 @@
 """Deterministic GenerationPlan creation for RepoKernel Phase 1."""
 from __future__ import annotations
 
-from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
 
@@ -42,7 +41,7 @@ def build_generation_plan(seed_spec: dict[str, Any], *, existing_paths: Iterable
     return {
         "schema": "repokernel.generation-plan.v1",
         "seed_hash": canonical_hash(seed_spec),
-        "generated_on": date.today().isoformat(),
+        "generated_on": seed_spec.get("reviewed_on", "undated"),
         "target": seed_spec["target"],
         "items": items,
         "blocked": any(item["action"] == "conflict" for item in items),
@@ -69,22 +68,22 @@ def _planned_files(project: dict[str, Any], level: str) -> dict[str, str]:
     product = project["product"]
     slug = _slug(name)
     files = {
-        "AGENTS.md": f"# {name} Agent Gate\n\nRead `CURRENT_STATE.md` before editing. Work from sources, boundaries and verification.\n",
-        "CURRENT_STATE.md": f"# Current State\n\nupdated: {date.today().isoformat()}\nstatus: draft\n\n```text\nactive_surface: {name}\ncurrent_next: verify first RepoKernel cycle\n```\n",
-        "process/FIRST_PACKET.md": f"# First Packet\n\nobjective: establish RepoKernel continuity for {name}\nintent: {intent}\n",
+        "AGENTS.md": f"# {name} Agent Gate\n\nThis root file is an adapter. Read `.repokernel/state/CURRENT_STATE.md` before editing.\n",
+        ".repokernel/state/CURRENT_STATE.md": f"# Current State\n\nupdated: generated-from-seed\nstatus: draft\n\n```text\nactive_surface: {name}\ncurrent_next: verify first RepoKernel cycle\n```\n",
+        ".repokernel/packets/FIRST_PACKET.md": f"# First Packet\n\nobjective: establish RepoKernel continuity for {name}\nintent: {intent}\n",
     }
     if _level_at_least(level, "L1"):
         files.update({
             "README.md": f"# {name}\n\n{product}\n\nIntent: {intent}\n",
-            "sources/bootstrap/SOURCE_ATLAS_v1.0.md": f"# Source Atlas\n\n| Path | Role |\n| --- | --- |\n| `README.md` | project definition |\n| `CURRENT_STATE.md` | active state |\n",
-            f"skills/{slug}-semantic-kernel/SKILL.md": f"---\nname: {slug}-semantic-kernel\ndescription: Preserve continuity, sources and boundaries for {name}.\n---\n\n# {name} Semantic Kernel\n",
+            ".repokernel/sources/SOURCE_ATLAS.md": f"# Source Atlas\n\n| Path | Role |\n| --- | --- |\n| `README.md` | project definition |\n| `.repokernel/state/CURRENT_STATE.md` | active state |\n",
+            f".repokernel/skills/{slug}-semantic-kernel/SKILL.md": f"---\nname: {slug}-semantic-kernel\ndescription: Preserve continuity, sources and boundaries for {name}.\n---\n\n# {name} Semantic Kernel\n",
         })
     if _level_at_least(level, "L2"):
         files.update({
-            "repokernel.json": "{\n  \"schema\": \"repokernel.manifest.v1\",\n  \"readiness_target\": \"L2\"\n}\n",
-            "registry/skills.json": "{\n  \"schema\": \"repokernel.skill-registry.v1\",\n  \"skills\": []\n}\n",
-            "process/evidence/README.md": "# Evidence\n\nValidation records for this project kernel.\n",
-            "process/deltas/README.md": "# Deltas\n\nDurable accepted changes only.\n",
+            ".repokernel/manifest.json": "{\n  \"schema\": \"repokernel.manifest.v1\",\n  \"readiness_target\": \"L2\"\n}\n",
+            ".repokernel/registry/skills.json": "{\n  \"schema\": \"repokernel.skill-registry.v1\",\n  \"skills\": []\n}\n",
+            ".repokernel/evidence/README.md": "# Evidence\n\nValidation records for this project kernel.\n",
+            ".repokernel/deltas/README.md": "# Deltas\n\nDurable accepted changes only.\n",
         })
     return files
 

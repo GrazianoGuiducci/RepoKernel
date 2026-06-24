@@ -1,6 +1,6 @@
 # RepoKernel Roadmap
 
-Status: updated during Phase 0 cleanup.
+Status: updated after the independent Phase 1 review.
 
 ## Phase 0 - Baseline Inventory And Cleanup
 
@@ -40,6 +40,35 @@ before Phase 1 starts.
   activation report schemas.
 - Create the package skeleton only after convergence acceptance.
 - Preserve compatibility wrappers until parity tests pass.
+
+Current status:
+
+```text
+implemented_as_prototype: src/repokernel/, schemas/, docs/guides/, tests/unit/
+blocked_for_external_use: yes
+active_gate: packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
+external_review: packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
+```
+
+## Phase 1 P0 - Hardening Before External Use
+
+- Repair governance state after Phase 1 acceptance.
+- Remove unsafe legacy public paths from README and quickstart.
+- Make schemas and Python validators enforce real contracts.
+- Fix canonical serialization and path safety.
+- Make planner output deterministic and aligned to `.repokernel/`.
+- Make guide projection privacy-safe and authority-aware.
+- Correct audit readiness claims so files alone do not imply L2 readiness.
+
+Exit condition:
+
+```text
+unit tests pass
+inventory and link check pass
+audit does not overclaim readiness
+README and quickstart do not route users to legacy writer scripts as Phase 1
+remaining blockers are explicit before any A1 external-style test
+```
 
 ## Phase 2 - Deterministic Planning And Dry Run
 

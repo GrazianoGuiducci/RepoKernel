@@ -12,7 +12,7 @@ WRITE_ACTIONS = {"write", "project_write", "external_action", "publish", "deploy
 
 def canonical_dumps(value: Any) -> str:
     """Return deterministic JSON for hashing and equality checks."""
-    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    return json.dumps(value, allow_nan=False, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
 def canonical_hash(value: Any) -> str:

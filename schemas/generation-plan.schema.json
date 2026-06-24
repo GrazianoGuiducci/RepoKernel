@@ -15,7 +15,11 @@
         "type": "object",
         "required": ["path", "action", "reason", "content_hash", "authority_effect"],
         "properties": {
-          "path": { "type": "string" },
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!//)(?!.*:)(?!.*(^|/)\\.\\.?($|/)).+"
+          },
           "action": { "enum": ["create", "leave_unchanged", "propose_update", "conflict", "withhold"] },
           "reason": { "type": "string" },
           "source_fields": { "type": "array", "items": { "type": "string" } },

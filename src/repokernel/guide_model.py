@@ -17,11 +17,14 @@ def public_source_titles(source_manifest: dict[str, Any]) -> list[str]:
     """Return source labels allowed for public guide surfaces."""
     titles: list[str] = []
     for source in source_manifest.get("sources", []):
-        if source.get("privacy") in {"private", "withheld"}:
+        if source.get("privacy") != "public":
             continue
         if source.get("withheld_reason"):
             continue
-        titles.append(source.get("path_or_origin") or source.get("source_id", "source"))
+        used_for = source.get("used_for", [])
+        if not isinstance(used_for, list) or "public_guide" not in used_for:
+            continue
+        titles.append(source.get("public_label") or source.get("source_id", "source"))
     return titles
 
 

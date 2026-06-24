@@ -1,69 +1,67 @@
-# Active Packet — Codex Phase 0
+# Active Packet - Phase 1 P0 Hardening
 
-date: 2026-06-23
-status: authorized_phase_0_only
+date: 2026-06-24
+status: authorized_phase1_p0_hardening
 
 ## Objective
 
 ```text
-objective: establish a complete, classified and internally coherent baseline before implementing the final RepoKernel architecture
+objective: harden the Phase 1 RepoKernel compiler skeleton before any collaborator, public or external-repository test
 ```
 
 ## Authoritative Package
 
 ```text
-packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md
-packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md
-packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md
+packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
+packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
+packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md
 ```
 
 ## Sources
 
 ```text
-source_of_truth: authoritative package above; CURRENT_STATE.md; sources/bootstrap/SOURCE_ATLAS_v1.0.md
+source_of_truth: authoritative package above; CURRENT_STATE.md; process/DECISION_LOG.md; sources/bootstrap/SOURCE_ATLAS_v1.0.md
 ```
 
-## Phase 0 Scope
+## P0 Scope
 
 ```text
-recursive tracked-file inventory
-migration classification for every path
-registry and evidence correction
-incomplete and obsolete surface identification
-internal Markdown link check
-archive plan for superseded packets
-one isolated cleanup commit
+repair governance state after Phase 1 acceptance
+remove unsafe legacy public path from README and quickstart
+harden schemas and Python validators
+fix canonical serialization and path safety
+make planning deterministic and aligned to .repokernel/ layout
+make guide projection privacy-safe and deny-by-default
+correct audit readiness claims so prototype presence is not treated as L2 readiness
 ```
 
 ## Boundary
 
 ```text
-allowed: inventory, classification and bounded cleanup defined by Phase 0
-needs_confirmation: Phase 1, package restructuring, schema implementation, compiler replacement and downstream promotion
-out_of_scope: executable L3 runtime, network, remote creation, push outside the selected repository and changes to other repositories
+allowed: RepoKernel repository governance, documentation, Phase 1 core contracts, tests and local validation
+needs_confirmation: external repository pilot, Seed promotion, runtime/L3 execution, downstream repository mutation and public product claims beyond evidence
+out_of_scope: applying generated files to third-party repositories, changing d-nd-seed, changing Business Manager ownership, network automation and credentials
 ```
 
 ## First Move
 
 ```text
-first_safe_action: Codex reads the final package and produces current-tree.json plus migration-classification.json before changing architecture
-validation: zero unclassified tracked files, resolving registry paths, link checks, source audit and git diff --check
+first_safe_action: preserve the independent review inside RepoKernel, record Phase 1 acceptance and create this P0 hardening gate
+validation: unit tests, inventory/link check, audit, git diff --check and explicit remaining blockers
 ```
 
 ## Required Codex Return
 
 ```text
-current-tree inventory
-migration coverage
 exact files changed
 validation output
-remaining Phase 1 blockers
+remaining P0 blockers
 commit identifier
 ```
 
 ## Memory Delta
 
 ```text
-preserve: classified migration decisions, corrected evidence state, superseded paths, validation results and Phase 1 blockers
-do_not_preserve: transient implementation reasoning, duplicate summaries and speculative future runtime features
+preserve: GPT Pro review findings, accepted P0 decisions, validation results and blockers before external testing
+do_not_preserve: speculative Phase 2 work, unreviewed runtime claims and external-repository assumptions
 ```

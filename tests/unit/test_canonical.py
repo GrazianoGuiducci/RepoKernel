@@ -14,6 +14,10 @@ class CanonicalTests(unittest.TestCase):
         self.assertEqual(canonical_dumps(left), canonical_dumps(right))
         self.assertEqual(canonical_hash(left), canonical_hash(right))
 
+    def test_non_finite_numbers_are_rejected(self):
+        with self.assertRaises(ValueError):
+            canonical_dumps({"bad": float("nan")})
+
     def test_extensions_round_trip_and_cannot_raise_authority(self):
         good = {"dnd.note": {"value": "preserve me"}}
         self.assertEqual(validate_namespaced_extensions(good), [])

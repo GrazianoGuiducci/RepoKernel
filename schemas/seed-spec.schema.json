@@ -6,14 +6,14 @@
   "required": ["schema", "seed_id", "project", "target", "readiness_level", "authority_mode"],
   "properties": {
     "schema": { "const": "repokernel.seed-spec.v1" },
-    "seed_id": { "type": "string" },
+    "seed_id": { "type": "string", "minLength": 1 },
     "project": {
       "type": "object",
       "required": ["name", "intent", "product"],
       "properties": {
-        "name": { "type": "string" },
-        "intent": { "type": "string" },
-        "product": { "type": "string" },
+        "name": { "type": "string", "minLength": 1 },
+        "intent": { "type": "string", "minLength": 1 },
+        "product": { "type": "string", "minLength": 1 },
         "domain": { "type": "string" },
         "users": { "type": "array", "items": { "type": "string" } }
       }
@@ -23,7 +23,11 @@
       "required": ["mode"],
       "properties": {
         "mode": { "enum": ["new_repository", "existing_repository_retrofit"] },
-        "path": { "type": "string" }
+        "path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!//)(?!.*:)(?!.*(^|/)\\.\\.?($|/)).+"
+        }
       }
     },
     "readiness_level": { "enum": ["L0", "L1", "L2", "L3"] },

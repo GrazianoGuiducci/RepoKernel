@@ -17,6 +17,20 @@ SourceManifest
 
 Core does not depend on cognition, cycle, runtime or departments.
 
+The canonical installed control plane is `.repokernel/`. Root files are
+adapters only when the host expects them:
+
+```text
+AGENTS.md                         root adapter
+.repokernel/state/CURRENT_STATE.md
+.repokernel/packets/FIRST_PACKET.md
+.repokernel/sources/SOURCE_ATLAS.md
+.repokernel/skills/
+.repokernel/registry/
+.repokernel/evidence/
+.repokernel/deltas/
+```
+
 Phase 1 authority is proposal-oriented:
 
 ```text

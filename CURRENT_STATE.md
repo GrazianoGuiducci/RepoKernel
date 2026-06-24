@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-24
-status: final architecture accepted; critical gap review integrated; Codex Phase 0 authorized
+status: Phase 1 prototype accepted for P0 hardening only; external use blocked until hardening passes
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,8 +10,8 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: Phase 1 canonical core, planner and guides
-current_next: validate Phase 1 core package, guide set, schemas and tests; do not move to Phase 2 before operator review
+active_surface: Phase 1 P0 hardening after independent review
+current_next: implement P0 hardening in governance, docs, schemas, validators, canonical serialization, path safety, deterministic planning, guide disclosure and audit claims
 ```
 
 ## Final Architecture
@@ -106,6 +106,8 @@ docs/autopoietic-cycle-gap-analysis.md
 skills/recursive-improvement-distiller/SKILL.md
 skills/autopoietic-cycle-controller/SKILL.md
 packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md
+packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
+packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
 registry/skills.json
 scripts/repokernel_core.py
 ```
@@ -113,8 +115,8 @@ scripts/repokernel_core.py
 ## Boundary
 
 ```text
-can_change: Phase 0 inventory, classification, documentation cleanup, registry/evidence correction and packet archival
-needs_confirmation: post-Phase-0 convergence acceptance, Phase 1 schemas/package work, license changes, downstream promotion, remote actions and executable L3 work
+can_change: RepoKernel governance, Phase 1 docs, schemas, validators, planner, guide model, tests and local validation reports
+needs_confirmation: external repository pilot, d-nd-seed promotion, license changes, downstream promotion, remote actions and executable L3 work
 must_not_touch: credentials, unauthorized sources, private logs, unrelated repositories and accepted project canon without reviewed plan
 ```
 
@@ -165,6 +167,8 @@ verified:
   - autopoietic-cycle-controller registered as a draft skill
   - critical gap analysis and one post-Phase-0 convergence gate committed
   - Phase 0 scope remains unchanged
+  - GPT Pro independent review preserved inside RepoKernel
+  - Phase 1 is accepted only as a prototype surface for P0 hardening
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
@@ -179,8 +183,8 @@ not_yet_verified:
 ## First Safe Action
 
 ```text
-first_safe_action: give Codex the final implementation package and authorize Phase 0 only
-validation_needed: complete tracked-file coverage, resolved registry paths, link checks, source audit, clean diff and explicit Phase 1 blockers
+first_safe_action: preserve the independent review, align governance and remove unsafe legacy usage paths
+validation_needed: unit tests, inventory/link check, audit, git diff --check and explicit P0 blockers
 ```
 
 Latest Phase 0 validation summary:
@@ -214,6 +218,18 @@ External review request prepared:
 
 ```text
 packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md
+```
+
+External review received:
+
+```text
+packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
+```
+
+Active hardening packet:
+
+```text
+packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
 ```
 
 After explicit Phase 0 acceptance:

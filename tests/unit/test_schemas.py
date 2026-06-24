@@ -62,6 +62,17 @@ class SchemaTests(unittest.TestCase):
             "skills": [],
         }), [])
 
+    def test_seed_spec_requires_seed_id_and_safe_target_path(self):
+        errors = validate_seed_spec({
+            "schema": "repokernel.seed-spec.v1",
+            "project": {"name": "Demo", "intent": "Test", "product": "Kernel"},
+            "target": {"mode": "new_repository", "path": "C:/unsafe"},
+            "readiness_level": "L1",
+            "authority_mode": "propose",
+        })
+        self.assertIn("seed_id is required", errors)
+        self.assertTrue(any(error.startswith("target.path invalid") for error in errors))
+
 
 if __name__ == "__main__":
     unittest.main()

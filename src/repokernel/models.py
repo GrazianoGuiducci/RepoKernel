@@ -4,11 +4,13 @@ from __future__ import annotations
 from typing import Any
 
 from .canonical import validate_namespaced_extensions
+from .paths import normalize_relative_path
 
 
 VALID_LEVELS = {"L0", "L1", "L2", "L3"}
 VALID_MODES = {"new_repository", "existing_repository_retrofit"}
 VALID_AUTHORITY = {"none", "read", "propose", "proposal_only"}
+VALID_PRIVACY = {"public", "internal", "private", "withheld"}
 
 
 def require_object(value: Any, name: str) -> dict[str, Any]:
@@ -33,6 +35,14 @@ def validate_source_manifest(manifest: dict[str, Any]) -> list[str]:
             for key in ("source_id", "authority", "privacy", "used_for"):
                 if key not in source:
                     errors.append(f"sources[{index}] missing {key}")
+            if "source_id" in source and not _non_empty_string(source.get("source_id")):
+                errors.append(f"sources[{index}].source_id must be a non-empty string")
+            if "privacy" in source and source.get("privacy") not in VALID_PRIVACY:
+                errors.append(f"sources[{index}].privacy invalid")
+            if "used_for" in source and not isinstance(source.get("used_for"), list):
+                errors.append(f"sources[{index}].used_for must be a list")
+            if source.get("privacy") != "public" and source.get("public_label"):
+                errors.append(f"sources[{index}].public_label requires privacy public")
     errors.extend(validate_namespaced_extensions(manifest.get("extensions")))
     return errors
 
@@ -54,19 +64,26 @@ def validate_seed_spec(spec: dict[str, Any]) -> list[str]:
     require_object(spec, "SeedSpec")
     if spec.get("schema") != "repokernel.seed-spec.v1":
         errors.append("schema must be repokernel.seed-spec.v1")
+    if not _non_empty_string(spec.get("seed_id")):
+        errors.append("seed_id is required")
     project = spec.get("project")
     target = spec.get("target")
     if not isinstance(project, dict):
         errors.append("project must be an object")
     else:
         for key in ("name", "intent", "product"):
-            if not project.get(key):
-                errors.append(f"project.{key} is required")
+            if not _non_empty_string(project.get(key)):
+                errors.append(f"project.{key} must be a non-empty string")
     if not isinstance(target, dict):
         errors.append("target must be an object")
     else:
         if target.get("mode") not in VALID_MODES:
             errors.append("target.mode must be new_repository or existing_repository_retrofit")
+        if "path" in target:
+            try:
+                normalize_relative_path(target["path"])
+            except ValueError as exc:
+                errors.append(f"target.path invalid: {exc}")
     if spec.get("readiness_level") not in VALID_LEVELS:
         errors.append("readiness_level must be L0, L1, L2 or L3")
     if spec.get("authority_mode", "propose") not in VALID_AUTHORITY:
@@ -92,6 +109,11 @@ def validate_generation_plan(plan: dict[str, Any]) -> list[str]:
                 errors.append(f"items[{index}].action invalid")
             if item.get("action") in {"create", "propose_update"} and item.get("authority_effect") != "none":
                 errors.append(f"items[{index}] must not carry authority effect")
+            if "path" in item:
+                try:
+                    normalize_relative_path(item["path"])
+                except ValueError as exc:
+                    errors.append(f"items[{index}].path invalid: {exc}")
     errors.extend(validate_namespaced_extensions(plan.get("extensions")))
     return errors
 
@@ -116,3 +138,7 @@ def validate_skill_registry(registry: dict[str, Any]) -> list[str]:
         errors.append("skills must be a list")
     errors.extend(validate_namespaced_extensions(registry.get("extensions")))
     return errors
+
+
+def _non_empty_string(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())

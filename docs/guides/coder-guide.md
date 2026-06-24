@@ -30,6 +30,14 @@ do not let extensions affect authority
 keep guides explanatory, not authoritative
 ```
 
+Generated Project Kernel files belong under `.repokernel/` unless the file is a
+host adapter such as root `AGENTS.md` or a project-native file such as
+`README.md`. Existing root authority must become `propose_update`, not
+overwrite.
+
+Public guide projections are deny-by-default: include a source only when it is
+`privacy: public` and its `used_for` list contains `public_guide`.
+
 Test commands:
 
 ```powershell

@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | `README.md` | public surface | First-level definition and current positioning |
 | `CURRENT_STATE.md` | project state | Active surface, boundaries, verified state and next move |
-| `process/FIRST_PACKET.md` | active packet | Codex Phase 0 gate |
+| `process/FIRST_PACKET.md` | active packet | Phase 1 P0 hardening gate |
 | `process/reports/current-tree.json` | Phase 0 report | Generated tracked-file inventory |
 | `process/reports/migration-classification.json` | Phase 0 report | Generated migration classification with unclassified count |
 | `process/reports/link-check.json` | Phase 0 report | Generated internal Markdown link check |
@@ -12,6 +12,8 @@
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md` | external review request | Complete request for independent GPT Pro review of Phase 1 core, guides and installer path |
+| `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | external review | Independent Phase 1 review; accepted as P0 hardening evidence, not authority |
+| `packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md` | active packet | Current P0 hardening plan before external or public testing |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md` | architecture | Final ontology, installed surface and contracts |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md` | architecture | Migration, phases, tests and decision capsule |
 | `docs/distribution-model.md` | architecture | Compiler, Reference Seeds, application modes and Project Kernel |

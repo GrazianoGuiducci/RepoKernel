@@ -81,6 +81,14 @@ def audit(root, profile):
             check(checks, "registry-state", state in STATES, "registry/skills.json", f"valid state: {state}")
             valid_evidence = isinstance(evidence, list) and all(isinstance(item, str) and (root / item).exists() for item in evidence)
             check(checks, "registry-evidence", valid_evidence, "registry/skills.json", f"evidence resolves for: {skill_id}")
+        validation = read(root / "process/evidence/LOCAL_VALIDATION.md")
+        check(
+            checks,
+            "validation-evidence",
+            "Repository-hosted validation: passed" in validation and "Repository-hosted validation remains required" not in validation,
+            "process/evidence/LOCAL_VALIDATION.md",
+            "repository-hosted validation passed",
+        )
     evolution_ready = profile == "repokernel-source" and structure_ready and all(c["ok"] for c in checks)
     readiness = {"level": "L2" if evolution_ready else "L1" if semantic_ready else "L0" if structure_ready else "none", "structure_ready": structure_ready, "semantic_ready": semantic_ready, "evolution_ready": evolution_ready}
     failed = [c for c in checks if not c["ok"]]

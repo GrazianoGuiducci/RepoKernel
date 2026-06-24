@@ -30,4 +30,6 @@ than merge them into one global state.
 ## Public/Private Split
 
 RepoKernel can support guides or projections that include only public-safe
-sources. Private or withheld sources must not leak into public guides.
+sources. A source must be marked `privacy: public` and explicitly include
+`public_guide` in `used_for` before it can appear in a public guide. Private,
+internal or withheld sources must not leak into public guides.
