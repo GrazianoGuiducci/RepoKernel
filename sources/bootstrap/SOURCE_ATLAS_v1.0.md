@@ -10,12 +10,14 @@
 | `process/reports/link-check.json` | Phase 0 report | Generated internal Markdown link check |
 | `process/reports/phase0-validation-summary.md` | Phase 0 report | Human-readable Phase 0 validation result and Phase 1 blockers |
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Local A1 observe-and-propose proof with no target writes |
+| `process/reports/editoriali-incubation-transfer-2026-06-24.md` | transfer report | Editoriali incubation evidence normalized for RepoKernel |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md` | external review request | Complete request for independent GPT Pro review of Phase 1 core, guides and installer path |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | external review | Independent Phase 1 review; accepted as P0 hardening evidence, not authority |
 | `packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md` | active packet | Current P0 hardening plan before external or public testing |
 | `packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md` | proof gate | A1 no-write proof sequence before external-style repository tests |
+| `packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md` | promotion brief | Candidate Seed/Lab promotion brief; no downstream patch authority |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md` | architecture | Final ontology, installed surface and contracts |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md` | architecture | Migration, phases, tests and decision capsule |
 | `docs/distribution-model.md` | architecture | Compiler, Reference Seeds, application modes and Project Kernel |

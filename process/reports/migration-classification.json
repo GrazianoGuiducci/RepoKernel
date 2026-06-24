@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 124,
+  "tracked_file_count": 126,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -364,6 +364,12 @@
       "reason": "Final architecture or implementation gate."
     },
     {
+      "path": "packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/REPOKERNEL_STARTER_PACKET.md",
       "action": "classify_before_phase1",
       "category": "packet",
@@ -497,6 +503,12 @@
     },
     {
       "path": "process/reports/departmental-topology-decision.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/editoriali-incubation-transfer-2026-06-24.md",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
       "reason": "Generated Phase 0 evidence."

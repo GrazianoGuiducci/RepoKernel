@@ -99,6 +99,21 @@ Current proof evidence:
 process/reports/a1-local-no-write-proof-2026-06-24.md
 ```
 
+## Seed/Lab Promotion Track
+
+RepoKernel is a candidate D-ND/THIA/Lab/Seed capability, but it is not promoted
+yet.
+
+Current candidate brief:
+
+```text
+packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md
+```
+
+Promotion remains blocked until an external-style A1 proof and an explicit
+operator decision define whether Seed receives documentation, templates, CLI
+wrapper, installer or capability contract.
+
 ## Deferred
 
 - Executable L3 runtime.

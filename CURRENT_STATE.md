@@ -174,11 +174,14 @@ verified:
   - A1 observe-and-propose gate created for local no-write proofs before external repository tests
   - local synthetic A1 observe-and-propose proof passed with no target writes
   - operational procedure documented for new, existing and external repositories
+  - Editoriali incubation reviewed and normalized as RepoKernel transfer evidence
+  - Seed/Lab promotion brief created without patching Seed, THIA or Lab
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
   - external-style A1 observe-and-propose proof
+  - d-nd-seed, THIA Seed or Lab Seed promotion
   - synthesis and retrofit implementation
   - recursive distillation trigger fidelity and measured latency effect
   - A1 observe-and-propose cycle
@@ -196,6 +199,13 @@ Operational procedure:
 
 ```text
 docs/guides/operational-procedure.md
+```
+
+Latest incubation and promotion evidence:
+
+```text
+process/reports/editoriali-incubation-transfer-2026-06-24.md
+packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md
 ```
 
 Latest Phase 0 validation summary:

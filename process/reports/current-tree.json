@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 124,
+  "tracked_file_count": 126,
   "groups": [
     "docs",
     "examples",
@@ -313,6 +313,12 @@
       "suffix": ".md"
     },
     {
+      "path": "packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "packets/FOR_CODEX/REPOKERNEL_STARTER_PACKET.md",
       "group": "packets",
       "kind": "file",
@@ -446,6 +452,12 @@
     },
     {
       "path": "process/reports/departmental-topology-decision.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/editoriali-incubation-transfer-2026-06-24.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"
