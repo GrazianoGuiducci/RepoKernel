@@ -1,6 +1,6 @@
 # RepoKernel Current State
 
-updated: 2026-06-23
+updated: 2026-06-24
 status: final architecture accepted; critical gap review integrated; Codex Phase 0 authorized
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
@@ -63,6 +63,20 @@ approved event
 ```
 
 The first proof target is A1 `observe_and_propose`, with no project writes.
+
+## Repo Observer Setup Ownership Correction
+
+```text
+status: classification_only
+packet: packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md
+decision: dnd-repo-observer-setup is canonically a RepoKernel A1
+  observe_and_propose / retrofit adapter, not a Business Manager core function.
+business_boundary: Business Manager may use an adapter copy for relationship,
+  call, offer and follow-up routing.
+seed_boundary: no d-nd-seed mutation or portable Seed promotion before stable
+  RepoKernel L0-L2 evidence, Reference Seed reproducibility and reviewed
+  retrofit behavior.
+```
 
 ## Independent Coordinates
 
