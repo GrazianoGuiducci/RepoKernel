@@ -80,6 +80,7 @@ Read the Phase 1 guides first:
 docs/guides/user-guide.md
 docs/guides/coder-guide.md
 docs/guides/architecture.md
+docs/guides/cli-reference.md
 docs/feedback.md
 ```
 
@@ -92,6 +93,18 @@ The safe path is:
 ```text
 SeedSpec -> validation -> GenerationPlan -> human review -> later apply gate
 ```
+
+Use the Phase 1 CLI from the repository checkout:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input seed.json
+PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli guides --seed-spec seed.json --source-manifest sources.json
+PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-source
+```
+
+There is intentionally no `apply` command in Phase 1 P0.
 
 Audit a project:
 

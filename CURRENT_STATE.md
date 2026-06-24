@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: Phase 1 P0 hardening after independent review
-current_next: implement P0 hardening in governance, docs, schemas, validators, canonical serialization, path safety, deterministic planning, guide disclosure and audit claims
+current_next: prepare external-style A1 protocol with identity, source, omonimia, privacy and authorization safeguards
 ```
 
 ## Final Architecture
@@ -169,11 +169,15 @@ verified:
   - Phase 0 scope remains unchanged
   - GPT Pro independent review preserved inside RepoKernel
   - Phase 1 is accepted only as a prototype surface for P0 hardening
+  - governance, docs, validators, canonical serialization, path safety, planner determinism, guide disclosure and audit claims hardened
+  - minimal read-only CLI added: validate-spec, inspect, plan, guides and audit
+  - A1 observe-and-propose gate created for local no-write proofs before external repository tests
+  - local synthetic A1 observe-and-propose proof passed with no target writes
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
-  - schemas and deterministic planner
+  - external-style A1 observe-and-propose proof
   - synthesis and retrofit implementation
   - recursive distillation trigger fidelity and measured latency effect
   - A1 observe-and-propose cycle
@@ -183,8 +187,8 @@ not_yet_verified:
 ## First Safe Action
 
 ```text
-first_safe_action: preserve the independent review, align governance and remove unsafe legacy usage paths
-validation_needed: unit tests, inventory/link check, audit, git diff --check and explicit P0 blockers
+first_safe_action: define the external-style repository review protocol before using a real third-party repository
+validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check and explicit external-style proof blockers
 ```
 
 Latest Phase 0 validation summary:
@@ -230,6 +234,18 @@ Active hardening packet:
 
 ```text
 packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
+```
+
+Next A1 proof gate:
+
+```text
+packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
+```
+
+Latest A1 proof report:
+
+```text
+process/reports/a1-local-no-write-proof-2026-06-24.md
 ```
 
 After explicit Phase 0 acceptance:

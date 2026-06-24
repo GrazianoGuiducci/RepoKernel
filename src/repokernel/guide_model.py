@@ -6,6 +6,7 @@ from typing import Any
 
 GUIDE_FILES = {
     "architecture": "docs/guides/architecture.md",
+    "cli": "docs/guides/cli-reference.md",
     "user": "docs/guides/user-guide.md",
     "coder": "docs/guides/coder-guide.md",
     "use_cases": "docs/guides/use-cases.md",
@@ -41,6 +42,7 @@ def build_guides(seed_spec: dict[str, Any], source_manifest: dict[str, Any]) -> 
     )
     return {
         GUIDE_FILES["architecture"]: f"# Architecture\n\n{name} uses RepoKernel as a Project Kernel compiler.\n\nIntent: {intent}\n\nProduct: {product}\n\nBoundary: {common_boundary}\n",
+        GUIDE_FILES["cli"]: "# CLI Reference\n\nUse validate-spec, inspect, plan, guides and audit as read-only commands. Phase 1 P0 has no apply command.\n",
         GUIDE_FILES["user"]: f"# User Guide\n\nUse RepoKernel to choose Direct Start, Synthesis, Retrofit or Observe-and-Propose.\n\nApproval is required before writes, publication, Seed promotion or runtime use.\n\nPublic sources: {', '.join(public_sources) or 'none declared'}.\n",
         GUIDE_FILES["coder"]: "# Coder Guide\n\nImplement against SourceManifest, ProjectModel, SeedSpec, GenerationPlan, ActivationReport and SkillRegistry.\n\nRun tests before changing generator behavior. Preserve dry-run/no-overwrite behavior.\n",
         GUIDE_FILES["use_cases"]: "# Use Cases\n\n- software repository\n- AI/RAG project\n- editorial project\n- business operating function\n- research lab\n- creator portfolio\n",

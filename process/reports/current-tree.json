@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 115,
+  "tracked_file_count": 123,
   "groups": [
     "docs",
     "examples",
@@ -110,6 +110,12 @@
     },
     {
       "path": "docs/guides/architecture.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/cli-reference.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -259,6 +265,18 @@
       "suffix": ".md"
     },
     {
+      "path": "packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md",
       "group": "packets",
       "kind": "file",
@@ -331,6 +349,12 @@
       "suffix": ".md"
     },
     {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "packets/FOR_SEED_PROMOTION/REPOKERNEL_SEED_CANDIDATE_BRIEF.md",
       "group": "packets",
       "kind": "file",
@@ -398,6 +422,12 @@
     },
     {
       "path": "process/evidence/README.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/a1-local-no-write-proof-2026-06-24.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"
@@ -613,7 +643,19 @@
       "suffix": ".py"
     },
     {
+      "path": "src/repokernel/audit.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
       "path": "src/repokernel/canonical.py",
+      "group": "src",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "src/repokernel/cli.py",
       "group": "src",
       "kind": "file",
       "suffix": ".py"
@@ -686,6 +728,12 @@
     },
     {
       "path": "tests/unit/test_canonical.py",
+      "group": "tests",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "tests/unit/test_cli.py",
       "group": "tests",
       "kind": "file",
       "suffix": ".py"

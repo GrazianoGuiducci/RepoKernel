@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 115,
+  "tracked_file_count": 123,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -166,6 +166,12 @@
       "reason": "Phase 1 guide surface; explains contracts without authority."
     },
     {
+      "path": "docs/guides/cli-reference.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
       "path": "docs/guides/coder-guide.md",
       "action": "keep_phase1_guide",
       "category": "guide",
@@ -310,6 +316,18 @@
       "reason": "Final architecture or implementation gate."
     },
     {
+      "path": "packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
+      "path": "packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md",
       "action": "classify_before_phase1",
       "category": "packet",
@@ -377,6 +395,12 @@
     },
     {
       "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md",
       "action": "archive_after_acceptance",
       "category": "source_packet",
       "reason": "Source packet lineage; not direct implementation authority."
@@ -452,6 +476,12 @@
       "action": "keep_evidence",
       "category": "evidence",
       "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/reports/a1-local-no-write-proof-2026-06-24.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
     },
     {
       "path": "process/reports/current-tree.json",
@@ -664,7 +694,19 @@
       "reason": "Phase 1 core package surface."
     },
     {
+      "path": "src/repokernel/audit.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
       "path": "src/repokernel/canonical.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/cli.py",
       "action": "keep_phase1_core",
       "category": "phase1_core",
       "reason": "Phase 1 core package surface."
@@ -737,6 +779,12 @@
     },
     {
       "path": "tests/unit/test_canonical.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_cli.py",
       "action": "keep_phase1_test",
       "category": "phase1_test",
       "reason": "Phase 1 regression or contract test."

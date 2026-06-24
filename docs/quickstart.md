@@ -59,6 +59,23 @@ apply only after a later explicit apply gate exists
 Phase 1 is currently P0-hardening. Treat generated plans as proposals, not as
 installer output.
 
+## CLI
+
+Run from the RepoKernel checkout:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input seed.json
+PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli guides --seed-spec seed.json --source-manifest sources.json
+PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-source
+```
+
+The CLI is read-only with respect to target repositories. It can emit JSON
+plans and guide content, but it does not apply generated files.
+
+See `docs/guides/cli-reference.md` for command details.
+
 ## Legacy Scaffold Scripts
 
 The old scaffold scripts are compatibility prototypes, not the canonical Phase

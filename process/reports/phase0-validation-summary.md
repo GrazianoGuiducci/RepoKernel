@@ -14,7 +14,7 @@ process/reports/link-check.json
 Report result:
 
 ```text
-tracked_file_count: 115
+tracked_file_count: 123
 unclassified_count: 0
 broken_links: 0
 ```
@@ -23,7 +23,9 @@ Note: the generated inventory is living repository evidence. It was 82 at
 Phase 0 closure, 89 after the post-Phase-0 convergence deliverables, and 113
 after Phase 1 core/package/schema/guide/test surfaces were added and
 classified. It is now 115 after preserving the independent GPT Pro review and
-adding the Phase 1 P0 hardening packet.
+adding the Phase 1 P0 hardening packet, and 120 after the read-only CLI and
+package audit were added. It is now 123 after the CLI reference, A1 gate and
+local no-write proof report.
 
 ## Cleanup Performed
 

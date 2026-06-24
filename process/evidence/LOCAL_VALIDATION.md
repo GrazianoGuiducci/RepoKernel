@@ -16,7 +16,7 @@ python -m unittest discover -s tests/unit -v
 Result:
 
 ```text
-Ran 12 tests
+Ran 16 tests
 OK
 ```
 
@@ -34,9 +34,50 @@ Covered behavior:
 10. Contract validators accept minimal valid contracts.
 11. Schema files parse as JSON.
 12. SeedSpec validation requires `seed_id` and safe target paths.
+13. CLI `validate-spec` returns a valid structured report.
+14. CLI `plan` emits a GenerationPlan without writing target files.
+15. CLI `guides` withholds private source labels.
+16. CLI `inspect` is read-only.
 
 ## Historical Note
 
 The previous 2026-06-23 overlay validation remains historical evidence only.
 The active evidence for repository-hosted Phase 1 work is the command above plus
 the current audit and inventory reports.
+
+## CLI Smoke Validation
+
+Commands:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m repokernel.cli audit --path . --profile repokernel-source
+python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
+```
+
+Result:
+
+```text
+ready: true
+readiness.level: L2
+failed: []
+```
+
+## A1 Local No-Write Proof
+
+Report:
+
+```text
+process/reports/a1-local-no-write-proof-2026-06-24.md
+```
+
+Result:
+
+```text
+inspect_boundary: read_only
+SeedSpec valid: true
+AGENTS.md action: propose_update
+README.md action: propose_update
+private_label_leaked: false
+no_extra_target_files: true
+```

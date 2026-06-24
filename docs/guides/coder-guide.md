@@ -11,11 +11,13 @@ tests/unit/
 Core modules:
 
 ```text
+audit.py
 canonical.py
+cli.py
+guide_model.py
 models.py
 paths.py
 planner.py
-guide_model.py
 ```
 
 Rules:
@@ -38,6 +40,17 @@ overwrite.
 Public guide projections are deny-by-default: include a source only when it is
 `privacy: public` and its `used_for` list contains `public_guide`.
 
+CLI contract:
+
+```text
+validate-spec: validate one canonical JSON contract
+inspect: inspect a repository without writing
+plan: emit GenerationPlan JSON without writing
+guides: emit guide JSON without writing target files
+audit: run read-only RepoKernel audit
+apply: intentionally absent in Phase 1 P0
+```
+
 Test commands:
 
 ```powershell
@@ -45,6 +58,8 @@ $env:PYTHONPATH="src"
 python -m unittest discover -s tests/unit -v
 python scripts/phase0_inventory.py
 python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
+$env:PYTHONPATH="src"
+python -m repokernel.cli audit --path . --profile repokernel-source
 git diff --check
 ```
 

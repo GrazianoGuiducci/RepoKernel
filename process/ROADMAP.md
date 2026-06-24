@@ -59,6 +59,8 @@ external_review: packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIE
 - Make planner output deterministic and aligned to `.repokernel/`.
 - Make guide projection privacy-safe and authority-aware.
 - Correct audit readiness claims so files alone do not imply L2 readiness.
+- Add a minimal read-only CLI for validation, inspection, planning, guides and
+  audit. Keep `apply` absent.
 
 Exit condition:
 
@@ -67,6 +69,7 @@ unit tests pass
 inventory and link check pass
 audit does not overclaim readiness
 README and quickstart do not route users to legacy writer scripts as Phase 1
+read-only CLI exists without apply authority
 remaining blockers are explicit before any A1 external-style test
 ```
 
@@ -81,6 +84,20 @@ remaining blockers are explicit before any A1 external-style test
 - Run one synthetic new-repository proof.
 - Run one existing-repository retrofit proof.
 - Run one external-style observe-and-propose proof with no writes.
+
+Active entry gate:
+
+```text
+packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
+```
+
+The local synthetic proof must pass before any external-style repository review.
+
+Current proof evidence:
+
+```text
+process/reports/a1-local-no-write-proof-2026-06-24.md
+```
 
 ## Deferred
 

@@ -11,5 +11,8 @@ requires-python = ">=3.11"
 license = { text = "MIT" }
 authors = [{ name = "Graziano Guiducci" }]
 
+[project.scripts]
+repokernel = "repokernel.cli:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]

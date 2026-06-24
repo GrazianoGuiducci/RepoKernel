@@ -35,6 +35,8 @@ not_accepted_yet: external repository pilot, public installer path, collaborator
 6. Fix planner determinism and `.repokernel/` layout.
 7. Fix guide disclosure and authority boundaries.
 8. Correct audit readiness claims.
+9. Add a minimal read-only CLI: `validate-spec`, `inspect`, `plan`, `guides`,
+   `audit`; keep `apply` absent until a later reviewed gate.
 
 ## Boundary
 
@@ -49,6 +51,8 @@ blocked: third-party repo writes, d-nd-seed promotion, runtime/L3 implementation
 python -m unittest discover -s tests/unit -v
 python scripts/phase0_inventory.py
 python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
+$env:PYTHONPATH="src"
+python -m repokernel.cli audit --path . --profile repokernel-source
 git diff --check
 ```
 
