@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 123,
+  "tracked_file_count": 124,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -179,6 +179,12 @@
     },
     {
       "path": "docs/guides/examples/minimal-project.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/operational-procedure.md",
       "action": "keep_phase1_guide",
       "category": "guide",
       "reason": "Phase 1 guide surface; explains contracts without authority."

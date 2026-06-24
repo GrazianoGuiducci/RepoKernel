@@ -51,6 +51,15 @@ audit: run read-only RepoKernel audit
 apply: intentionally absent in Phase 1 P0
 ```
 
+Operational procedure:
+
+```text
+docs/guides/operational-procedure.md
+```
+
+Use it before running RepoKernel on a new, existing or external repository. It
+defines the source, identity, privacy, planning, no-write and review gates.
+
 Test commands:
 
 ```powershell

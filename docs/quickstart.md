@@ -74,7 +74,8 @@ PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-sour
 The CLI is read-only with respect to target repositories. It can emit JSON
 plans and guide content, but it does not apply generated files.
 
-See `docs/guides/cli-reference.md` for command details.
+See `docs/guides/cli-reference.md` for command details and
+`docs/guides/operational-procedure.md` for the full repo-intake procedure.
 
 ## Legacy Scaffold Scripts
 

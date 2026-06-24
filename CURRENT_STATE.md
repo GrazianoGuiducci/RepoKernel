@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: Phase 1 P0 hardening after independent review
-current_next: prepare external-style A1 protocol with identity, source, omonimia, privacy and authorization safeguards
+current_next: use the operational procedure to prepare external-style A1 review packets before any real external repository test
 ```
 
 ## Final Architecture
@@ -173,6 +173,7 @@ verified:
   - minimal read-only CLI added: validate-spec, inspect, plan, guides and audit
   - A1 observe-and-propose gate created for local no-write proofs before external repository tests
   - local synthetic A1 observe-and-propose proof passed with no target writes
+  - operational procedure documented for new, existing and external repositories
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
@@ -189,6 +190,12 @@ not_yet_verified:
 ```text
 first_safe_action: define the external-style repository review protocol before using a real third-party repository
 validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check and explicit external-style proof blockers
+```
+
+Operational procedure:
+
+```text
+docs/guides/operational-procedure.md
 ```
 
 Latest Phase 0 validation summary:

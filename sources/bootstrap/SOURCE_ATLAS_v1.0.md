@@ -57,6 +57,7 @@
 | `schemas/` | Phase 1 schemas | Canonical JSON schema surfaces for core contracts |
 | `docs/guides/` | guides | User, coder, architecture, use-case and example guides |
 | `docs/guides/cli-reference.md` | guide | Read-only Phase 1 CLI commands and boundaries |
+| `docs/guides/operational-procedure.md` | guide | Canonical procedure for using RepoKernel on new, existing and external repositories |
 | `tests/unit/` | validation | Phase 1 core unit tests |
 | `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
 | `process/deltas/2026-06-23-departmental-spectral-analysis.md` | durable delta | Departmental topology and entropy-control resultant |

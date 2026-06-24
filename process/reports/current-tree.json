@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-24",
-  "tracked_file_count": 123,
+  "tracked_file_count": 124,
   "groups": [
     "docs",
     "examples",
@@ -128,6 +128,12 @@
     },
     {
       "path": "docs/guides/examples/minimal-project.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/operational-procedure.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"

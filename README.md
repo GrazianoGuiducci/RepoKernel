@@ -81,6 +81,7 @@ docs/guides/user-guide.md
 docs/guides/coder-guide.md
 docs/guides/architecture.md
 docs/guides/cli-reference.md
+docs/guides/operational-procedure.md
 docs/feedback.md
 ```
 

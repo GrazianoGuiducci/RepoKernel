@@ -14,7 +14,7 @@ process/reports/link-check.json
 Report result:
 
 ```text
-tracked_file_count: 123
+tracked_file_count: 124
 unclassified_count: 0
 broken_links: 0
 ```
@@ -25,7 +25,7 @@ after Phase 1 core/package/schema/guide/test surfaces were added and
 classified. It is now 115 after preserving the independent GPT Pro review and
 adding the Phase 1 P0 hardening packet, and 120 after the read-only CLI and
 package audit were added. It is now 123 after the CLI reference, A1 gate and
-local no-write proof report.
+local no-write proof report, and 124 after the operational procedure guide.
 
 ## Cleanup Performed
 
