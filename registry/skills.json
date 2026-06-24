@@ -85,7 +85,7 @@
       "state": "draft",
       "path": "skills/skill-promotion-router/SKILL.md",
       "risk": "safe",
-      "evidence": [],
+      "evidence": ["docs/repokernel-promotion-rules.md"],
       "promotion_target": null,
       "supersedes": []
     },
@@ -95,7 +95,7 @@
       "state": "draft",
       "path": "skills/memory-delta-writer/SKILL.md",
       "risk": "writes_files",
-      "evidence": [],
+      "evidence": ["templates/MEMORY_DELTA.template.md"],
       "promotion_target": null,
       "supersedes": []
     }

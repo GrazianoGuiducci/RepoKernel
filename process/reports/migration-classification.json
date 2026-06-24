@@ -1,0 +1,555 @@
+{
+  "schema": "repokernel.phase0.migration-classification.v1",
+  "generated_on": "2026-06-24",
+  "tracked_file_count": 82,
+  "unclassified_count": 0,
+  "unclassified": [],
+  "actions": [
+    "archive_after_acceptance",
+    "classify_before_phase1",
+    "correct_and_migrate_later",
+    "keep",
+    "keep_and_normalize",
+    "keep_archive_index",
+    "keep_as_optional_reference",
+    "keep_authoritative_packet",
+    "keep_classification_note",
+    "keep_current_gate",
+    "keep_draft_no_promotion",
+    "keep_evidence",
+    "keep_historical_delta",
+    "keep_phase0_evidence",
+    "keep_phase0_tool",
+    "keep_post_phase0_gate",
+    "keep_process_record",
+    "keep_prototype_or_wrapper",
+    "keep_registered_skill",
+    "keep_until_self_host_migration",
+    "migrate_later",
+    "migrate_to_compiler_templates",
+    "replace_or_reduce",
+    "replace_with_generated_fixture",
+    "superseded_keep_until_archive_move"
+  ],
+  "categories": [
+    "active_phase0_gate",
+    "archive",
+    "authoritative_packet",
+    "bootstrap",
+    "compatibility_adapter",
+    "delta",
+    "documentation",
+    "documentation_cleanup",
+    "evidence",
+    "example",
+    "optional_architecture",
+    "packet",
+    "phase0_classification",
+    "phase0_report",
+    "phase0_tool",
+    "post_phase0_gate",
+    "process",
+    "registry",
+    "script",
+    "seed_candidate_draft",
+    "skill",
+    "source_packet",
+    "stable_support",
+    "superseded_packet",
+    "template"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "action": "keep",
+      "category": "stable_support",
+      "reason": "Stable repository support file."
+    },
+    {
+      "path": "AGENTS.md",
+      "action": "migrate_later",
+      "category": "compatibility_adapter",
+      "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "action": "migrate_later",
+      "category": "compatibility_adapter",
+      "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "LICENSE",
+      "action": "keep",
+      "category": "stable_support",
+      "reason": "Stable repository support file."
+    },
+    {
+      "path": "README.md",
+      "action": "migrate_later",
+      "category": "compatibility_adapter",
+      "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "docs/autopoietic-cycle-gap-analysis.md",
+      "action": "keep_as_optional_reference",
+      "category": "optional_architecture",
+      "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/claim-boundaries.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/codex-operating-guide.md",
+      "action": "replace_or_reduce",
+      "category": "documentation_cleanup",
+      "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/concept.md",
+      "action": "replace_or_reduce",
+      "category": "documentation_cleanup",
+      "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/context-surface.md",
+      "action": "replace_or_reduce",
+      "category": "documentation_cleanup",
+      "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/departmental-autonomy-spectral-analysis.md",
+      "action": "keep_as_optional_reference",
+      "category": "optional_architecture",
+      "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/distribution-model.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/internal-runtime-architecture.md",
+      "action": "keep_as_optional_reference",
+      "category": "optional_architecture",
+      "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/pi-reference.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/possibility-horizon.md",
+      "action": "keep_as_optional_reference",
+      "category": "optional_architecture",
+      "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/quickstart.md",
+      "action": "replace_or_reduce",
+      "category": "documentation_cleanup",
+      "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/readiness-levels.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/recovery-procedure.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/recursive-distillation-plane.md",
+      "action": "keep_as_optional_reference",
+      "category": "optional_architecture",
+      "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/repokernel-promotion-rules.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/retrofit-model.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/runtime-adapters.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/seed-synthesis-pipeline.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/skill-repo-lifecycle.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "examples/minimal/AGENTS.md",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "examples/minimal/CURRENT_STATE.md",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "examples/minimal/README.md",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "examples/minimal/process/FIRST_PACKET.md",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md",
+      "action": "keep_authoritative_packet",
+      "category": "authoritative_packet",
+      "reason": "Final architecture or implementation gate."
+    },
+    {
+      "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md",
+      "action": "keep_authoritative_packet",
+      "category": "authoritative_packet",
+      "reason": "Final architecture or implementation gate."
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md",
+      "action": "keep_post_phase0_gate",
+      "category": "post_phase0_gate",
+      "reason": "Gate material only after Phase 0 acceptance."
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md",
+      "action": "keep_post_phase0_gate",
+      "category": "post_phase0_gate",
+      "reason": "Gate material only after Phase 0 acceptance."
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md",
+      "action": "keep_post_phase0_gate",
+      "category": "post_phase0_gate",
+      "reason": "Gate material only after Phase 0 acceptance."
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md",
+      "action": "keep_authoritative_packet",
+      "category": "authoritative_packet",
+      "reason": "Final architecture or implementation gate."
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_STARTER_PACKET.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
+      "path": "packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md",
+      "action": "keep_classification_note",
+      "category": "phase0_classification",
+      "reason": "Phase 0 ownership correction; no implementation authority."
+    },
+    {
+      "path": "packets/FOR_CODEX/V03_INTEGRATION.md",
+      "action": "superseded_keep_until_archive_move",
+      "category": "superseded_packet",
+      "reason": "Superseded by final architecture; retained in place for provenance."
+    },
+    {
+      "path": "packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md",
+      "action": "superseded_keep_until_archive_move",
+      "category": "superseded_packet",
+      "reason": "Superseded by final architecture; retained in place for provenance."
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_CONTEXT_PACKET.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_FINAL_ARCHITECTURE_REVIEW_2026-06-23.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
+      "path": "packets/FOR_SEED_PROMOTION/REPOKERNEL_SEED_CANDIDATE_BRIEF.md",
+      "action": "keep_draft_no_promotion",
+      "category": "seed_candidate_draft",
+      "reason": "Seed promotion is blocked until stable L0-L2 evidence."
+    },
+    {
+      "path": "packets/archive/README.md",
+      "action": "keep_archive_index",
+      "category": "archive",
+      "reason": "Archive index for superseded packet lineage."
+    },
+    {
+      "path": "process/DECISION_LOG.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/FIRST_PACKET.md",
+      "action": "keep_current_gate",
+      "category": "active_phase0_gate",
+      "reason": "Active Phase 0 packet."
+    },
+    {
+      "path": "process/PROMOTION_LOG.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/ROADMAP.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/deltas/2026-06-23-autopoietic-gap-review.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-23-departmental-spectral-analysis.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/README.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/evidence/.gitkeep",
+      "action": "keep_evidence",
+      "category": "evidence",
+      "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/evidence/LOCAL_VALIDATION.md",
+      "action": "keep_evidence",
+      "category": "evidence",
+      "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/evidence/README.md",
+      "action": "keep_evidence",
+      "category": "evidence",
+      "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/reports/current-tree.json",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/link-check.json",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/migration-classification.json",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/phase0-validation-summary.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "registry/skills.json",
+      "action": "correct_and_migrate_later",
+      "category": "registry",
+      "reason": "Registry remains active; final schema migration is Phase 1+."
+    },
+    {
+      "path": "repokernel.json",
+      "action": "migrate_later",
+      "category": "compatibility_adapter",
+      "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "scripts/audit_repokernel_project.py",
+      "action": "keep_prototype_or_wrapper",
+      "category": "script",
+      "reason": "Prototype/wrapper remains until package refactor has parity tests."
+    },
+    {
+      "path": "scripts/audit_skill_repo.py",
+      "action": "keep_prototype_or_wrapper",
+      "category": "script",
+      "reason": "Prototype/wrapper remains until package refactor has parity tests."
+    },
+    {
+      "path": "scripts/phase0_inventory.py",
+      "action": "keep_phase0_tool",
+      "category": "phase0_tool",
+      "reason": "Generates reproducible Phase 0 reports."
+    },
+    {
+      "path": "scripts/repokernel_core.py",
+      "action": "keep_prototype_or_wrapper",
+      "category": "script",
+      "reason": "Prototype/wrapper remains until package refactor has parity tests."
+    },
+    {
+      "path": "scripts/scaffold_repokernel_project.py",
+      "action": "keep_prototype_or_wrapper",
+      "category": "script",
+      "reason": "Prototype/wrapper remains until package refactor has parity tests."
+    },
+    {
+      "path": "scripts/scaffold_skill_repo.py",
+      "action": "keep_prototype_or_wrapper",
+      "category": "script",
+      "reason": "Prototype/wrapper remains until package refactor has parity tests."
+    },
+    {
+      "path": "skills/autopoietic-cycle-controller/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/create-repokernel-project/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/create-skill-repo/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/memory-delta-writer/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/project-seed-synthesizer/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/recursive-improvement-distiller/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/repokernel-semantic-kernel/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/skill-lifecycle-auditor/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/skill-promotion-router/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "sources/bootstrap/PROJECT_INSTRUCTIONS_v1.0.txt",
+      "action": "keep_until_self_host_migration",
+      "category": "bootstrap",
+      "reason": "Bootstrap remains active until .repokernel/sources migration."
+    },
+    {
+      "path": "sources/bootstrap/SOURCE_ATLAS_v1.0.md",
+      "action": "keep_until_self_host_migration",
+      "category": "bootstrap",
+      "reason": "Bootstrap remains active until .repokernel/sources migration."
+    },
+    {
+      "path": "templates/AGENTS.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/CURRENT_STATE.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/FIRST_PACKET.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/MEMORY_DELTA.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/META_SKILL.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/SKILL_REPO.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    },
+    {
+      "path": "templates/SOURCE_ATLAS.template.md",
+      "action": "migrate_to_compiler_templates",
+      "category": "template",
+      "reason": "Template remains source material until compiler template layout exists."
+    }
+  ]
+}

@@ -10,8 +10,8 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: migrate current main toward one compiler, reproducible Reference Seeds and conflict-safe retrofit
-current_next: Codex executes Phase 0 inventory and cleanup only
+active_surface: Phase 0 baseline inventory and cleanup
+current_next: Phase 0 reports and validation are complete for operator review; wait for explicit acceptance before convergence gate
 ```
 
 ## Final Architecture
@@ -180,7 +180,13 @@ not_yet_verified:
 
 ```text
 first_safe_action: give Codex the final implementation package and authorize Phase 0 only
-validation_needed: complete tracked-file coverage, resolved registry paths, link checks, clean diff and explicit Phase 1 blockers
+validation_needed: complete tracked-file coverage, resolved registry paths, link checks, source audit, clean diff and explicit Phase 1 blockers
+```
+
+Latest Phase 0 validation summary:
+
+```text
+process/reports/phase0-validation-summary.md
 ```
 
 After explicit Phase 0 acceptance:

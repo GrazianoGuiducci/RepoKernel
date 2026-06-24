@@ -1,5 +1,18 @@
 # RepoKernel v0.4 — Project Seed Synthesis
 
+Status: superseded during Phase 0 cleanup.
+
+Superseded by:
+
+```text
+packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md
+packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md
+packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md
+```
+
+This packet remains useful as historical design pressure. It is not current
+implementation authority and does not authorize Phase 1.
+
 ## Objective
 
 Implement the path from project intent and supplied documents to a reviewed, project-specific RepoKernel seed for either a new repository or an existing repository retrofit.

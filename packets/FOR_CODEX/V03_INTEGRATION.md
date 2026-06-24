@@ -1,5 +1,18 @@
 # RepoKernel v0.3 Integration Packet
 
+Status: superseded during Phase 0 cleanup.
+
+Superseded by:
+
+```text
+packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md
+packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md
+packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md
+```
+
+This packet is retained for provenance only. It is not current implementation
+authority.
+
 ## Objective
 
 Connect the committed `scripts/repokernel_core.py` library to the existing command and validation surfaces.

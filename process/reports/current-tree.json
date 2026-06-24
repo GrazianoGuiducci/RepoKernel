@@ -1,0 +1,511 @@
+{
+  "schema": "repokernel.phase0.current-tree.v1",
+  "generated_on": "2026-06-24",
+  "tracked_file_count": 82,
+  "groups": [
+    "docs",
+    "examples",
+    "packets",
+    "process",
+    "registry",
+    "root",
+    "scripts",
+    "skills",
+    "sources",
+    "templates"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "group": "root",
+      "kind": "file",
+      "suffix": ""
+    },
+    {
+      "path": "AGENTS.md",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "CURRENT_STATE.md",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "LICENSE",
+      "group": "root",
+      "kind": "file",
+      "suffix": ""
+    },
+    {
+      "path": "README.md",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/autopoietic-cycle-gap-analysis.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/claim-boundaries.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/codex-operating-guide.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/concept.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/context-surface.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/departmental-autonomy-spectral-analysis.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/distribution-model.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/internal-runtime-architecture.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/pi-reference.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/possibility-horizon.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/quickstart.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/readiness-levels.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/recovery-procedure.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/recursive-distillation-plane.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/repokernel-promotion-rules.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/retrofit-model.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/runtime-adapters.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/seed-synthesis-pipeline.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/skill-repo-lifecycle.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "examples/minimal/AGENTS.md",
+      "group": "examples",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "examples/minimal/CURRENT_STATE.md",
+      "group": "examples",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "examples/minimal/README.md",
+      "group": "examples",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "examples/minimal/process/FIRST_PACKET.md",
+      "group": "examples",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_RECURSIVE_IMPROVEMENT_DISTILLER.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/POST_PHASE0_SCHEMA_HORIZON_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_STARTER_PACKET.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/V03_INTEGRATION.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_CONTEXT_PACKET.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_FINAL_ARCHITECTURE_REVIEW_2026-06-23.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/FOR_SEED_PROMOTION/REPOKERNEL_SEED_CANDIDATE_BRIEF.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "packets/archive/README.md",
+      "group": "packets",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/DECISION_LOG.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/FIRST_PACKET.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/PROMOTION_LOG.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/ROADMAP.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-23-autopoietic-gap-review.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-23-departmental-spectral-analysis.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/README.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/evidence/.gitkeep",
+      "group": "process",
+      "kind": "file",
+      "suffix": ""
+    },
+    {
+      "path": "process/evidence/LOCAL_VALIDATION.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/evidence/README.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/current-tree.json",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "process/reports/link-check.json",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "process/reports/migration-classification.json",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "process/reports/phase0-validation-summary.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "registry/skills.json",
+      "group": "registry",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "repokernel.json",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".json"
+    },
+    {
+      "path": "scripts/audit_repokernel_project.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "scripts/audit_skill_repo.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "scripts/phase0_inventory.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "scripts/repokernel_core.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "scripts/scaffold_repokernel_project.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "scripts/scaffold_skill_repo.py",
+      "group": "scripts",
+      "kind": "file",
+      "suffix": ".py"
+    },
+    {
+      "path": "skills/autopoietic-cycle-controller/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/create-repokernel-project/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/create-skill-repo/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/memory-delta-writer/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/project-seed-synthesizer/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/recursive-improvement-distiller/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/repokernel-semantic-kernel/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/skill-lifecycle-auditor/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "skills/skill-promotion-router/SKILL.md",
+      "group": "skills",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "sources/bootstrap/PROJECT_INSTRUCTIONS_v1.0.txt",
+      "group": "sources",
+      "kind": "file",
+      "suffix": ".txt"
+    },
+    {
+      "path": "sources/bootstrap/SOURCE_ATLAS_v1.0.md",
+      "group": "sources",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/AGENTS.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/CURRENT_STATE.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/FIRST_PACKET.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/MEMORY_DELTA.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/META_SKILL.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/SKILL_REPO.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "templates/SOURCE_ATLAS.template.md",
+      "group": "templates",
+      "kind": "file",
+      "suffix": ".md"
+    }
+  ]
+}

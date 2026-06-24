@@ -17,6 +17,12 @@ packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06
 packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md
 ```
 
+## Sources
+
+```text
+source_of_truth: authoritative package above; CURRENT_STATE.md; sources/bootstrap/SOURCE_ATLAS_v1.0.md
+```
+
 ## Phase 0 Scope
 
 ```text
@@ -41,7 +47,7 @@ out_of_scope: executable L3 runtime, network, remote creation, push outside the 
 
 ```text
 first_safe_action: Codex reads the final package and produces current-tree.json plus migration-classification.json before changing architecture
-validation: zero unclassified tracked files, resolving registry paths, link checks and git diff --check
+validation: zero unclassified tracked files, resolving registry paths, link checks, source audit and git diff --check
 ```
 
 ## Required Codex Return

@@ -5,6 +5,10 @@
 | `README.md` | public surface | First-level definition and current positioning |
 | `CURRENT_STATE.md` | project state | Active surface, boundaries, verified state and next move |
 | `process/FIRST_PACKET.md` | active packet | Codex Phase 0 gate |
+| `process/reports/current-tree.json` | Phase 0 report | Generated tracked-file inventory |
+| `process/reports/migration-classification.json` | Phase 0 report | Generated migration classification with unclassified count |
+| `process/reports/link-check.json` | Phase 0 report | Generated internal Markdown link check |
+| `process/reports/phase0-validation-summary.md` | Phase 0 report | Human-readable Phase 0 validation result and Phase 1 blockers |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md` | architecture | Final ontology, installed surface and contracts |
@@ -27,9 +31,12 @@
 | `skills/recursive-improvement-distiller/SKILL.md` | meta-skill | Source ascent, possibility expansion and ResultantPacket distillation |
 | `skills/autopoietic-cycle-controller/SKILL.md` | meta-skill | Governed observe-align-distill-evaluate cycle contract |
 | `packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md` | convergence gate | Single post-Phase-0 decision surface before Phase 1, including departmental topology |
+| `packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md` | classification note | Repo observer setup ownership correction; no Seed or Phase 1 authority |
+| `packets/archive/README.md` | archive index | Phase 0 supersession index for historical packets |
 | `registry/skills.json` | registry | Skill state and evidence |
 | `scripts/repokernel_core.py` | source | Shared L0-L3 generation prototype |
 | `scripts/audit_repokernel_project.py` | audit | Current readiness checks |
+| `scripts/phase0_inventory.py` | Phase 0 tool | Generates inventory, migration classification and link-check reports |
 | `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
 | `process/deltas/2026-06-23-departmental-spectral-analysis.md` | durable delta | Departmental topology and entropy-control resultant |
 | `process/evidence/LOCAL_VALIDATION.md` | provisional evidence | Local validation to supersede with repository-hosted evidence |
