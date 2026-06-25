@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-25
-status: Phase 1 productization under P0 hardening; external use blocked until readiness gate passes
+status: dual core-and-pilot completion gate prepared; implementation pending operator acceptance
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,75 +10,41 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: Phase 1 P0 productization after independent review
-current_next: continue local RepoKernel product hardening around the tester-safe validate -> inspect -> plan -> stage -> guides -> audit path; use only current, explicitly approved repositories or synthetic examples as proof targets
+active_surface: complete Phase 1 core conformance and qualify one version-locked private no-write pilot
+current_next: operator accepts RK-RVW-20260625-01, then Codex executes REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md
 ```
 
-## Final Architecture
+## Accepted Architecture
 
 ```text
 RepoKernel Source / Compiler
-  -> compiles a reviewed SeedSpec
-  -> materializes a project-specific Project Kernel
+  -> authorized sources and ProjectModel
+  -> reviewed SeedSpec
+  -> deterministic, target-bound GenerationPlan
+  -> staging/review
+  -> later separately authorized apply gate
+  -> validated Project Kernel under .repokernel/
 ```
 
 ```text
 Reference Seed = precompiled reproducible SeedSpec
-Synthesized ProjectSeed = custom SeedSpec compiled from authorized sources
-Retrofit Overlay = target-aware application of a SeedSpec
-Project Kernel = validated local control plane under .repokernel/
-Root and host-native files = adapters or registered existing authorities
-L0-L2 = first stable implementation scope
-L3 = schema and architecture contract only
+Synthesized ProjectSeed = custom reviewed SeedSpec
+Retrofit Overlay = existing-target application mode
+Root/host files = adapters or existing authority
+L0-L2 = first stable scope
+L3 = contract only
 ```
 
-Optional architecture layers are now explicit:
+Optional layers remain separate:
 
 ```text
-repokernel-core       compiler, schemas, Reference Seeds, retrofit and L0-L2
-repokernel-cognition  cognitive profiles and recursive ResultantPacket production
-repokernel-cycle      event, tension, fitness and memory metabolism
-repokernel-runtime    deferred execution body and host independence
+repokernel-core
+repokernel-cognition
+repokernel-cycle
+repokernel-runtime
 ```
 
-Recursive improvement remains an optional cognitive plane:
-
-```text
-Project Kernel + objective or tension + evidence
-  -> recursive improvement distillation
-  -> ResultantPacket
-  -> reviewed implementation
-```
-
-The autopoietic cycle remains a governed optional plane:
-
-```text
-approved event
-  -> ContextSnapshot
-  -> Intent alignment
-  -> TensionReport
-  -> ResultantPacket
-  -> independent evaluation
-  -> durable LearningDelta
-```
-
-The first proof target is A1 `observe_and_propose`, with no project writes.
-
-## Repo Observer Setup Ownership Correction
-
-```text
-status: classification_only
-packet: packets/FOR_CODEX/REPO_OBSERVER_SETUP_OWNERSHIP_CORRECTION_2026-06-24.md
-decision: dnd-repo-observer-setup is canonically a RepoKernel A1
-  observe_and_propose / retrofit adapter, not a Business Manager core function.
-business_boundary: Business Manager may use an adapter copy for relationship,
-  call, offer and follow-up routing.
-seed_boundary: no d-nd-seed mutation or portable Seed promotion before stable
-  RepoKernel L0-L2 evidence, Reference Seed reproducibility and reviewed
-  retrofit behavior.
-```
-
-## Independent Coordinates
+Independent coordinates remain:
 
 ```text
 readiness: L0-L3
@@ -89,217 +55,134 @@ cognitive_depth: D0-D3
 
 No coordinate implies another.
 
-## Source Of Truth
+## Current Gate
+
+Review cycle:
 
 ```text
-packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md
-packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_AND_CODEX_PACKET_2026-06-23.md
-packets/FOR_CODEX/GPT_PRO_REPOKERNEL_FINAL_ARCHITECTURE_APPENDIX_2026-06-23.md
-docs/distribution-model.md
-docs/seed-synthesis-pipeline.md
-docs/retrofit-model.md
-docs/readiness-levels.md
-docs/runtime-adapters.md
-docs/internal-runtime-architecture.md
-docs/recursive-distillation-plane.md
-docs/autopoietic-cycle-gap-analysis.md
-skills/recursive-improvement-distiller/SKILL.md
-skills/autopoietic-cycle-controller/SKILL.md
-packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md
-packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
-packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
-registry/skills.json
-scripts/repokernel_core.py
+RK-RVW-20260625-01
+```
+
+Authoritative packet:
+
+```text
+packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md
+```
+
+Independent review:
+
+```text
+process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md
+```
+
+Versioning/review protocol:
+
+```text
+docs/guides/evolution-versioning-and-review-loop.md
+docs/compatibility-matrix.md
+process/reviews/REVIEW_LEDGER.md
+```
+
+Pilot:
+
+```text
+GrazianoGuiducci/denis-repokernel-pilot
+run: RK-PILOT-20260625-01
+mode: existing_repository_retrofit / A1 observe-and-propose
+```
+
+## Verified
+
+```text
+final compiler/SeedSpec architecture accepted;
+.repokernernel canonical control plane accepted;
+Phase 1 package and console entry point exist;
+CLI commands exist: validate-spec, inspect, plan, stage, guides, audit;
+staging is separate from target apply;
+planner emits .repokernel-oriented proposal files;
+public source labels use deny-by-default filtering;
+18 repository-contained local unit tests reported passing;
+minimal validate -> plan -> stage -> guides flow reported passing;
+local synthetic A1 no-write proof exists;
+private pilot repository exists with proposal-first policy;
+full-surface review and dual completion packet committed;
+versioning protocol, compatibility matrix and review ledger committed;
+pilot protocol and version-lock template committed.
+```
+
+## Not Yet Verified
+
+```text
+Draft 2020-12 schema execution and Python-validator parity;
+review.status and source/model hashes required by SeedSpec;
+content-hashed TargetSnapshot and stale-plan protection;
+content-aware leave_unchanged/propose_update/conflict planning;
+canonical .repokernel project audit profile;
+audit evidence independent of self-attested Markdown phrases;
+clean-environment wheel/sdist and installed CLI proof;
+hosted CI tied to a commit;
+Reference Seed byte-for-byte reproducibility;
+version-locked private pilot execution;
+independent pilot evaluation;
+trusted collaborator or public experimental readiness;
+apply transaction, runtime, Seed promotion and external automation.
 ```
 
 ## Boundary
 
 ```text
-can_change: RepoKernel governance, Phase 1 docs, schemas, validators, planner, guide model, tests and local validation reports
-needs_confirmation: external repository pilot, d-nd-seed promotion, license changes, downstream promotion, remote actions and executable L3 work
-must_not_touch: credentials, unauthorized sources, private logs, unrelated repositories and accepted project canon without reviewed plan
+can_change:
+  - RepoKernel schemas, validators, planner, inspect/snapshot, audit, CLI, tests,
+    package resources, guides, governance and versioning records;
+  - private pilot technical protocol and sanitized test evidence.
+
+needs_confirmation:
+  - execute RK-RVW-20260625-01 implementation;
+  - run the private pilot after core conformance;
+  - any external repository observation or write;
+  - public tester request;
+  - apply command, runtime/L3, Seed promotion or downstream mutation.
+
+must_not_touch:
+  - credentials and .env;
+  - private relationship/contact material;
+  - Denis-owned external repositories;
+  - unrelated repositories;
+  - target project files before a later reviewed apply gate.
 ```
 
-## Critical Gap Decision
-
-The most important missing safeguard is constitutional separation of duties:
+## Separation Of Duties
 
 ```text
-Intent Custodian
-Observer
-Distiller
-Executor
-Evaluator
-Promoter
+operator: intent, sources, authority and final acceptance
+GPT Pro: independent review and readback
+Codex: accepted implementation and evidence
+independent evaluator: pilot/result evaluation
 ```
 
-The same unreviewed process may not define intent, produce a candidate, execute it, evaluate it and promote it.
-
-Further critical gaps are classified in `docs/autopoietic-cycle-gap-analysis.md`:
-
-```text
-IntentContract
-ContextSnapshot
-TensionReport
-CycleState
-FitnessContract
-safe action transaction
-autonomy axis
-memory metabolism
-capability candidate forge
-trigger and cascade semantics
-security and trust
-empirical latency proof
-post-Phase-0 gate consolidation
-```
-
-## Verified State
-
-```text
-verified:
-  - final ontology and distribution model decided
-  - .repokernel/ selected as canonical host-neutral installed control plane
-  - direct starter resolved as a precompiled SeedSpec
-  - synthesis and retrofit resolved under one compiler
-  - L3 deferred to contract status
-  - phased Codex packet and test matrix committed
-  - recursive-improvement-distiller registered as a draft skill
-  - autopoietic-cycle-controller registered as a draft skill
-  - critical gap analysis and one post-Phase-0 convergence gate committed
-  - Phase 0 scope remains unchanged
-  - GPT Pro independent review preserved inside RepoKernel
-  - Phase 1 is accepted only as a prototype surface for P0 hardening
-  - governance, docs, validators, canonical serialization, path safety, planner determinism, guide disclosure and audit claims hardened
-  - minimal read-only CLI added: validate-spec, inspect, plan, stage, guides and audit
-  - staging command added to render proposed files into an explicit empty review directory without touching target repositories
-  - minimal example SeedSpec and SourceManifest fixtures added and validated through validate-spec -> plan -> stage -> guides -> audit
-  - A1 observe-and-propose gate created for local no-write proofs before external repository tests
-  - local synthetic A1 observe-and-propose proof passed with no target writes
-  - operational procedure documented for new, existing and external repositories
-  - Editoriali incubation reviewed and normalized as RepoKernel transfer evidence
-  - Seed/Lab promotion brief created without patching Seed, THIA or Lab
-  - public-safe external-style A1 pilot packet created with private contact boundary
-  - distribution readiness gate drafted for LinkedIn tester request review
-  - distribution readiness verdict set to private_pilot_first
-  - private pilot instruction guide created for controlled technical review
-not_yet_verified:
-  - recursive current-tree migration classification
-  - registry and evidence consistency after cleanup
-  - Reference Seed reproducibility
-  - real external tester path from SeedSpec to staged review bundle
-  - human reviewer feedback on private review brief and private pilot instructions
-  - real external-style A1 observe-and-propose proof on an approved selected
-    current target, if still needed
-  - d-nd-seed, THIA Seed or Lab Seed promotion
-  - synthesis and retrofit implementation
-  - recursive distillation trigger fidelity and measured latency effect
-  - A1 observe-and-propose cycle
-  - independent evaluation and crash recovery
-```
+The same unreviewed process may not define intent, implement, evaluate and
+promote its own result.
 
 ## First Safe Action
 
 ```text
-first_safe_action: continue local RepoKernel product hardening through synthetic examples or an explicitly approved current target
-validation_needed: public claim review, staged review-bundle proof and explicit tester-scope boundary
-```
-
-Operational procedure:
-
-```text
-docs/guides/operational-procedure.md
-```
-
-Latest incubation and promotion evidence:
-
-```text
-process/reports/editoriali-incubation-transfer-2026-06-24.md
-packets/FOR_CODEX/REPOKERNEL_SEED_LAB_PROMOTION_BRIEF_2026-06-24.md
-```
-
-Latest Phase 0 validation summary:
-
-```text
-process/reports/phase0-validation-summary.md
-```
-
-Latest convergence outputs:
-
-```text
-packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md
-process/reports/phase1-schema-classification.json
-process/reports/package-boundaries-v1.md
-process/reports/departmental-topology-decision.md
-process/reports/guide-system-decision.md
-packets/FOR_CODEX/A1_OBSERVE_AND_PROPOSE_PROOF_PLAN.md
-packets/FOR_CODEX/PHASE1_PACKET_AMENDMENT_PROPOSAL.md
-```
-
-Latest Phase 1 implementation surfaces:
-
-```text
-src/repokernel/
-schemas/
-docs/guides/
-tests/unit/
-```
-
-External review request prepared:
-
-```text
-packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md
-packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md
-```
-
-External review received:
-
-```text
-packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
-```
-
-Active hardening packet:
-
-```text
-packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
-```
-
-Next A1 proof gate:
-
-```text
-packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
-packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md
-packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md
-docs/guides/private-review-brief.md
-```
-
-Latest A1 proof report:
-
-```text
-process/reports/a1-local-no-write-proof-2026-06-24.md
-process/reports/a1-external-style-pilot-2026-06-24.md
-```
-
-After explicit Phase 0 acceptance:
-
-```text
-open packets/FOR_CODEX/POST_PHASE0_AUTOPOIETIC_CONVERGENCE_GATE.md
-produce one FORGE_R_PHASE1_CONVERGED_RESULTANT.md
-require operator acceptance before Phase 1
+1. Operator accepts the dual completion packet.
+2. Codex runs Track A core conformance.
+3. GPT Pro performs readback on the exact Codex commit.
+4. Operator accepts the execution version.
+5. Codex runs Track B against the private pilot with zero target writes.
+6. Independent evaluation and operator decision close the cycle.
 ```
 
 ## Residue Not To Follow
 
 ```text
-static starter templates as a separate architecture
-cloning RepoKernel Source into target projects
-root files as competing canonical state
-untrusted documents or model output treated as authority
-hand-edited dist distributions
-implementation of executable L3 before permission and sandbox proof
-promotion to d-nd-seed before stable L0-L2 evidence
-recursive depth applied to every task
-unbounded self-analysis without new evidence or a stop rule
-one process self-approving intent, action, evaluation and promotion
-adding autonomous writes before A1 observe-and-propose is proven
-using one self-optimized scalar as the fitness definition
+legacy scaffold scripts as the primary product path;
+self-attested L2 readiness;
+hand-edited generated distributions;
+branch names used as version locks;
+pilot evidence without source revision and target hash;
+person-specific logic entering neutral core;
+automatic apply, runtime, network or Seed promotion;
+public readiness claims before dual conformance passes.
 ```
