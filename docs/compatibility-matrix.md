@@ -21,7 +21,7 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 | Canonical target | `.repokernel/` plus optional root adapters | accepted architecture |
 | L0-L2 | first stable scope | Track A core conformance implemented locally; external readback pending |
 | L3 | contract only | executable runtime deferred |
-| Public distribution | blocked | private pilot first |
+| Public distribution | blocked | final Track A readback first; any pilot fixture must be reselected |
 
 ## Evidence Matrix
 
@@ -30,13 +30,13 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 | Unit tests | Track A correction local checkout | 45 passed | hosted CI result pending |
 | Schema validator parity | Draft 2020-12 plus Python validators | passed across all current contracts | JSON Schema uniqueness limits documented via Python duplicate-path tests |
 | Minimal validate-bundle/plan/stage/guides | local checkout | passed | public external fixture pending |
-| TargetSnapshot planning | local synthetic fixtures | passed | real pilot pending Track B |
+| TargetSnapshot planning | local synthetic fixtures | passed | no active real pilot selected |
 | Local A1 no-write proof | synthetic target | passed | not an external target; independent evaluation incomplete |
 | Installed package proof | local clean venv, outside source checkout | passed | Windows local proof only; hosted matrix pending |
 | Reference Seed reproducibility | `specs/reference/starter-l1.seed.json` | compiler-regenerated verify-dist passed | one starter distribution only |
 | External-style procedure | public-safe procedure | ready | procedure only, not a completed neutral pilot |
-| Distribution verdict | 2026-06-25 | private pilot first | collaborator/public use blocked |
-| Denis pilot | private neutral scaffold | available | Track B intentionally not executed before core readback |
+| Distribution verdict | 2026-06-25 | final Track A readback first | collaborator/public use blocked |
+| Former private pilot fixture | `denis-repokernel-pilot` | frozen | not active context; not a person/contact context |
 
 ## Compatibility Rules
 
@@ -60,7 +60,7 @@ reviewed SeedSpec contract;
 target snapshot and content-aware planning;
 canonical .repokernel audit profile;
 clean-environment wheel/CLI proof;
-version-locked private pilot;
+neutral version-locked pilot or fixture only if explicitly reselected;
 review-cycle ledger and independent pilot evaluation.
 ```
 
@@ -68,6 +68,6 @@ Track A status:
 
 ```text
 Track A correction implemented locally and awaiting GPT Pro/operator readback;
-hosted CI, private pilot execution and independent pilot evaluation remain
+hosted CI, any future pilot execution and independent pilot evaluation remain
 required before 0.3.0a1.
 ```

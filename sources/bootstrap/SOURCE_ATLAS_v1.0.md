@@ -8,7 +8,7 @@
 | `process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md` | implementation return | Track A implementation, local evidence and deviations |
 | `process/reviews/RK-RVW-20260625-01/CODEX_RETURN_CORRECTION.md` | correction return | Track A correction implementation, tests and remaining blockers |
 | `process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md` | independent readback | Static review result: pass with required corrections; Track B blocked |
-| `packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md` | active implementation packet | Bounded corrections before private pilot version lock |
+| `packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md` | active implementation packet | Bounded Track A corrections before any future fixture decision |
 | `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md` | prior independent review | Full core/pilot findings and dual conformance resultant |
 | `packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md` | prior implementation packet | Original Track A and Track B completion scope |
 | `docs/guides/evolution-versioning-and-review-loop.md` | governance | GPT Pro–Codex–operator review lifecycle and artifact provenance |
@@ -59,18 +59,19 @@
 | `dist/reference/starter-l1/` | distribution artifact | Compiler-verifiable Starter L1 generated distribution |
 | `process/evidence/LOCAL_VALIDATION.md` | local evidence | Repository-contained validation, not hosted CI |
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Synthetic A1 no-write proof |
-| `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Private-pilot-first verdict, superseded by current correction gate where inconsistent |
+| `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Historical private-pilot-first verdict; superseded by current frozen-fixture boundary where inconsistent |
 | `scripts/repokernel_core.py` | compatibility prototype | Earlier generation prototype pending migration |
 | `scripts/audit_repokernel_project.py` | compatibility wrapper | Wrapper around audit implementation |
 | `scripts/phase0_inventory.py` | inventory tool | Generates inventory and link reports |
 | `packets/FOR_CODEX/V03_INTEGRATION.md` | superseded packet | Historical plan |
 | `packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md` | superseded packet | Historical plan |
 
-## Private Pilot
+## Frozen Former Pilot Fixture
 
 ```text
 repository: GrazianoGuiducci/denis-repokernel-pilot
 run: RK-PILOT-20260625-01
-status: blocked until corrected Track A is independently accepted and version locked
-boundary: no Denis-owned external repository is part of the current test
+status: frozen; not an active context; not a person/contact context
+boundary: do not read, pull, execute, mutate, stage against or cite as active
+unless the operator explicitly reauthorizes a neutral technical fixture later.
 ```

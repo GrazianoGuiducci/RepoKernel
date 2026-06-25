@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-25
-status: Track A readback corrections implemented locally; final GPT Pro/operator readback pending
+status: Track A readback corrections pushed; final GPT Pro/operator readback pending; former private pilot fixture frozen
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -11,8 +11,8 @@ branch: main
 
 ```text
 active_surface: close the remaining Track A conformance gaps identified by GPT Pro readback
-current_next: commit and push Track A correction evidence, then request final GPT Pro readback
-first_safe_action: keep Track B blocked and return one exact correction commit for final readback
+current_next: wait for final GPT Pro Track A readback on pushed correction commit; do not reactivate the former private pilot fixture
+first_safe_action: keep Track B blocked and keep denis-repokernel-pilot out of active context
 ```
 
 ## Accepted Architecture
@@ -86,12 +86,14 @@ packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md
 status: accepted and implemented locally; final readback pending
 ```
 
-Pilot:
+Former Private Pilot Fixture:
 
 ```text
 GrazianoGuiducci/denis-repokernel-pilot
 run: RK-PILOT-20260625-01
-status: blocked until correction readback and operator version-lock decision
+status: frozen; not an active context; not a Denis/person context
+boundary: do not read, pull, execute, mutate, stage against, or cite as active
+unless the operator explicitly reauthorizes a neutral technical fixture later.
 ```
 
 ## Verified
@@ -130,7 +132,8 @@ license SPDX string replacing deprecated TOML table;
 ```text
 independent re-execution of the 45-test correction suite in GPT Pro environment;
 hosted CI tied to a commit;
-version-locked private pilot execution;
+replacement neutral pilot or fixture decision;
+version-locked pilot execution if explicitly reauthorized later;
 independent pilot evaluation;
 trusted collaborator or public experimental readiness;
 apply transaction, runtime, Seed promotion and external automation.
@@ -145,15 +148,15 @@ can_change after operator acceptance:
 
 needs_confirmation:
   - execute the correction packet;
-  - run Track B after final readback;
+  - choose any future neutral pilot/fixture after final readback;
   - any external repository observation or write;
   - public tester request;
   - apply command, runtime/L3, Seed promotion or downstream mutation.
 
 must_not_touch:
-  - denis-repokernel-pilot during the correction pass;
+  - denis-repokernel-pilot as active context or default Track B target;
   - credentials, environment files and private relationship/contact material;
-  - Denis-owned external repositories;
+  - person/contact-specific repositories or context;
   - unrelated repositories;
   - target project files before a later reviewed apply gate.
 ```
@@ -172,10 +175,10 @@ Codex does not independently close Track A or authorize Track B.
 ## First Safe Action
 
 ```text
-1. Codex commits and pushes Track A corrections in RepoKernel only.
-2. Codex returns exact commit, package version, tests and deviations.
-3. GPT Pro performs final Track A readback.
-4. Operator decides whether to lock that version for Track B.
+1. GPT Pro performs final Track A readback on the pushed correction commit.
+2. Operator decides whether Track A is accepted.
+3. If a pilot is still useful, operator selects a neutral fixture explicitly.
+4. Codex keeps denis-repokernel-pilot frozen unless separately reauthorized.
 ```
 
 ## Residue Not To Follow
@@ -186,6 +189,7 @@ using a supplied snapshot without integrity verification;
 root legacy paths inside canonical project-kernel audit;
 self-attested L2 readiness;
 branch names used as evidence version locks;
+using denis-repokernel-pilot as active context or as a Denis/person context;
 pilot execution against an unaccepted correction state;
 automatic apply, runtime, network or Seed promotion;
 public readiness claims before core and pilot conformance pass.
