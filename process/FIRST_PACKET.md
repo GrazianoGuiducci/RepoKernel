@@ -1,69 +1,111 @@
-# Active Packet - Phase 1 P0 Hardening
+# Active Packet — Core And Pilot Completion
 
-date: 2026-06-24
-status: authorized_phase1_p0_hardening
+date: 2026-06-25
+status: waiting_for_operator_acceptance
+review_cycle: RK-RVW-20260625-01
 
 ## Objective
 
 ```text
-objective: harden the Phase 1 RepoKernel compiler skeleton before any collaborator, public or external-repository test
+objective: complete Phase 1 core conformance and qualify one version-locked private no-write pilot without starting Phase 2, apply, runtime or Seed promotion
 ```
 
-## Authoritative Package
+## Authoritative Sources
 
 ```text
-packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
-packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
-packets/FOR_CODEX/FORGE_R_PHASE1_CONVERGED_RESULTANT.md
+CURRENT_STATE.md
+process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md
+packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md
+docs/guides/evolution-versioning-and-review-loop.md
+docs/compatibility-matrix.md
+process/reviews/REVIEW_LEDGER.md
+sources/bootstrap/SOURCE_ATLAS_v1.0.md
 ```
 
-## Sources
+Pilot sources:
 
 ```text
-source_of_truth: authoritative package above; CURRENT_STATE.md; process/DECISION_LOG.md; sources/bootstrap/SOURCE_ATLAS_v1.0.md
+GrazianoGuiducci/denis-repokernel-pilot
+.repokernel/review/REPOKERNEL_VERSION_LOCK.md
+docs/REPOKERNEL_PRODUCT_TEST_PROTOCOL.md
+packets/FOR_CODEX/DENIS_PILOT_TEST_EXECUTION_PACKET_2026-06-25.md
 ```
 
-## P0 Scope
+## Scope
 
 ```text
-repair governance state after Phase 1 acceptance
-remove unsafe legacy public path from README and quickstart
-harden schemas and Python validators
-fix canonical serialization and path safety
-make planning deterministic and aligned to .repokernel/ layout
-make guide projection privacy-safe and deny-by-default
-correct audit readiness claims so prototype presence is not treated as L2 readiness
-add a tester-safe staging surface that renders proposed files into a separate
-  review directory without applying them to the target repository
+Track A:
+  schema-validator parity;
+  reviewed/version-bound SeedSpec;
+  TargetSnapshot and content-aware planning;
+  opaque extension policy;
+  disclosure profiles;
+  canonical audit;
+  clean package/CLI proof;
+  Reference Seed reproducibility.
+
+Track B:
+  pilot version lock;
+  read-only inspect;
+  accepted pilot SeedSpec;
+  target-bound plan;
+  external staging;
+  before/after tree equality;
+  independent evaluation;
+  operator decision.
 ```
 
 ## Boundary
 
 ```text
-allowed: RepoKernel repository governance, documentation, Phase 1 core contracts, tests and local validation
-needs_confirmation: external repository pilot, Seed promotion, runtime/L3 execution, downstream repository mutation and public product claims beyond evidence
-out_of_scope: applying generated files to third-party repositories, changing d-nd-seed, changing Business Manager ownership, network automation and credentials
+allowed after operator acceptance:
+  RepoKernel core/docs/tests/governance;
+  private pilot technical protocol and sanitized test-run evidence.
+
+blocked:
+  apply to target;
+  external repository writes;
+  network automation;
+  credentials or private relationship context;
+  public tester request;
+  runtime/L3;
+  Seed/THIA/Lab promotion;
+  downstream repository mutation.
 ```
 
-## First Move
+## First Safe Action
 
 ```text
-first_safe_action: preserve the independent review inside RepoKernel, record Phase 1 acceptance and create this P0 hardening gate
-validation: unit tests, inventory/link check, audit, git diff --check, CLI smoke tests, staged review-bundle proof and explicit remaining blockers
+first_safe_action: operator reviews and accepts or revises the dual completion packet; Codex does not implement before acceptance
 ```
 
 ## Required Codex Return
 
 ```text
-exact files changed
-validation output
-remaining P0 blockers
-commit identifier
+commits in both repositories;
+files changed;
+version lock;
+commands and actual outputs;
+core conformance report;
+pilot conformance report;
+remaining blockers;
+deviations;
+operator decisions required.
 ```
 
 ## Memory Delta
 
 ```text
-preserve: GPT Pro review findings, accepted P0 decisions, validation results, staged review-bundle behavior and blockers before external testing
-do_not_preserve: speculative Phase 2 work, unreviewed runtime claims and external-repository assumptions
+preserve:
+  accepted review dispositions;
+  versioned evidence;
+  durable contract and safety rules;
+  pilot findings transferable to neutral core;
+  compatibility and readiness changes.
+
+do_not_preserve:
+  private contact context;
+  temporary internal reasoning;
+  staged target proposals after review;
+  obsolete Codex/GPT Pro packets after cycle closure.
 ```
