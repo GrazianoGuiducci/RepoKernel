@@ -67,7 +67,8 @@ Run from the RepoKernel checkout:
 ```bash
 PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input seed.json
 PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json > plan.json
+PYTHONPATH=src python -m repokernel.cli validate-bundle --source-manifest sources.json --project-model project-model.json --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --source-manifest sources.json --project-model project-model.json > plan.json
 PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
 PYTHONPATH=src python -m repokernel.cli guides --seed-spec seed.json --source-manifest sources.json
 PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-source
@@ -81,7 +82,8 @@ For a first local smoke test, use the included minimal fixtures:
 
 ```bash
 PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+PYTHONPATH=src python -m repokernel.cli validate-bundle --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json --seed-spec examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json > plan.json
 PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
 PYTHONPATH=src python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
 ```

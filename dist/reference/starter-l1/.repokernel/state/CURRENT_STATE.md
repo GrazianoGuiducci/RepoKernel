@@ -1,8 +1,9 @@
-# Starter L1 Current State
+# Current State
+
+updated: generated-from-seed
+status: draft
 
 ```text
-active_surface: starter-l1
-current_next: verify the first project-specific RepoKernel cycle
-boundary: proposal-first; no automatic apply
-first_safe_action: inspect sources and produce a reviewed plan
+active_surface: Starter L1
+current_next: verify first RepoKernel cycle
 ```

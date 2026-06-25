@@ -33,7 +33,8 @@ Run from the RepoKernel checkout:
 
 ```bash
 PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+PYTHONPATH=src python -m repokernel.cli validate-bundle --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json --seed-spec examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json > plan.json
 PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
 PYTHONPATH=src python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
 ```
@@ -104,4 +105,3 @@ the command appears to write outside the explicit staging directory;
 the reviewer expects an installer or apply command;
 the feedback would require exposing private project details.
 ```
-

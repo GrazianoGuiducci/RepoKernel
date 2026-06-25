@@ -153,13 +153,14 @@ contract itself is demonstrably wrong.
 For a new repository:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json > plan.json
+PYTHONPATH=src python -m repokernel.cli validate-bundle --source-manifest sources.json --project-model project-model.json --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --source-manifest sources.json --project-model project-model.json > plan.json
 ```
 
 For an existing repository, provide known existing paths:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt > plan.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --source-manifest sources.json --project-model project-model.json --existing-paths-file paths.txt > plan.json
 ```
 
 Review item actions:

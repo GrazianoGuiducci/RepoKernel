@@ -73,6 +73,7 @@ Fixture:
 ```text
 examples/minimal/seed-spec.json
 examples/minimal/source-manifest.json
+examples/minimal/project-model.json
 ```
 
 Commands:
@@ -80,7 +81,8 @@ Commands:
 ```powershell
 $env:PYTHONPATH='src'
 python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
-python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+python -m repokernel.cli validate-bundle --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json --seed-spec examples/minimal/seed-spec.json
+python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json > plan.json
 python -m repokernel.cli stage --plan plan.json --output-dir <empty-staging-dir>
 python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
 python -m repokernel.cli audit --path . --profile repokernel-source
@@ -155,7 +157,7 @@ Pop-Location
 Result:
 
 ```text
-unit tests: Ran 32 tests, OK
+unit tests: Ran 45 tests, OK
 audit: ready true, readiness.level L2, failed []
 minimal SeedSpec: valid true, python_errors [], schema_errors []
 reference seed distribution: valid true
@@ -180,4 +182,64 @@ Non-blocking warning:
 ```text
 setuptools warns that pyproject project.license table form is deprecated and
 should become a simple SPDX string before 2027-02-18.
+```
+
+Superseded by Track A correction proof below: the license warning was removed.
+
+## Track A Readback Correction Proof
+
+Review cycle:
+
+```text
+RK-RVW-20260625-01
+```
+
+Commands:
+
+```powershell
+python -m unittest discover -s tests/unit -v
+$env:PYTHONPATH='src'
+python -m repokernel.cli validate-bundle --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json --seed-spec examples/minimal/seed-spec.json
+python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json
+python -m repokernel.cli verify-dist --seed-spec specs/reference/starter-l1.seed.json --dist-dir dist/reference/starter-l1
+python -m repokernel.cli audit --path . --profile repokernel-source
+python -m build --sdist --wheel
+```
+
+Installed package proof:
+
+```powershell
+python -m venv <temp-venv>
+<temp-venv>\Scripts\python.exe -m pip install dist\repokernel-0.3.0.dev0-py3-none-any.whl
+Push-Location <outside-repo-dir>
+<temp-venv>\Scripts\repokernel.exe --help
+<temp-venv>\Scripts\repokernel.exe validate-bundle --source-manifest C:\PVSC\ANTI_G\RepoKernel\examples\minimal\source-manifest.json --project-model C:\PVSC\ANTI_G\RepoKernel\examples\minimal\project-model.json --seed-spec C:\PVSC\ANTI_G\RepoKernel\examples\minimal\seed-spec.json
+<temp-venv>\Scripts\repokernel.exe verify-dist --seed-spec C:\PVSC\ANTI_G\RepoKernel\specs\reference\starter-l1.seed.json --dist-dir C:\PVSC\ANTI_G\RepoKernel\dist\reference\starter-l1
+<temp-venv>\Scripts\python.exe -c "import repokernel, jsonschema; print('imports ok')"
+Pop-Location
+```
+
+Result:
+
+```text
+unit tests: Ran 45 tests, OK
+validate-bundle: valid true, errors []
+plan: target-bound GenerationPlan emitted with bundle_provenance
+verify-dist: valid true, errors []
+audit: ready true, readiness.level L2, failed []
+clean installed CLI outside repo: package-proof-correction ok
+```
+
+Correction coverage:
+
+```text
+contract parity matrix covers every current contract;
+bundle hash/source-ref/compiler compatibility validation added;
+TargetSnapshot path/hash/duplicate/exclusion validation added;
+plan_id now binds compiler, seed, bundle, target identity, snapshot, policy and items;
+stage rejects blocked plans;
+Reference Seed verification regenerates expected output and fails on extras;
+project-kernel audit uses canonical .repokernel paths;
+source audit readiness depends on actual bundle/planner checks;
+license table warning removed with SPDX string.
 ```

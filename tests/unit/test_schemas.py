@@ -15,6 +15,7 @@ from repokernel.models import (
     validate_target_snapshot,
 )
 from repokernel.schema_validation import schema_errors_as_text
+from fixtures import project_model, seed_spec, source_manifest
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -52,31 +53,25 @@ class SchemaTests(unittest.TestCase):
                 self.assertIsInstance(json.loads(path.read_text(encoding="utf-8")), dict)
 
     def test_minimal_contracts_validate(self):
-        self.assertEqual(validate_source_manifest({
-            "schema": "repokernel.source-manifest.v1",
-            "sources": [{"source_id": "s1", "authority": "operator", "privacy": "public", "used_for": ["model"]}],
-        }), [])
-        self.assertEqual(validate_project_model({
-            "schema": "repokernel.project-model.v1",
-            "identity": {"name": "Demo"},
-            "mission": "Test",
-            "product_or_result": "Kernel",
-            "source_refs": ["s1"],
-            "boundaries": {},
-            "unknowns": [],
-        }), [])
-        self.assertEqual(validate_seed_spec(accepted_seed_spec()), [])
+        self.assertEqual(validate_source_manifest(source_manifest()), [])
+        self.assertEqual(validate_project_model(project_model()), [])
+        self.assertEqual(validate_seed_spec(seed_spec()), [])
         self.assertEqual(validate_generation_plan({
             "schema": "repokernel.generation-plan.v1",
-            "plan_id": "plan",
+            "plan_id": HASH,
             "compiler_version": "0.3.0.dev0",
-            "seed_hash": "abc",
+            "seed_hash": HASH,
+            "bundle_hash": HASH,
+            "bundle_provenance": {},
+            "target_identity": "target",
             "target_snapshot_hash": "none",
             "before_hash": "none",
-            "after_hash": "after",
+            "after_hash": HASH,
+            "after_hash_kind": "projected_after_state.v1",
             "apply_policy": "stage_only",
             "items": [],
             "blocked": False,
+            "blocked_reasons": [],
         }), [])
         self.assertEqual(validate_activation_report({
             "schema": "repokernel.activation-report.v1",
@@ -89,8 +84,9 @@ class SchemaTests(unittest.TestCase):
         }), [])
         self.assertEqual(validate_target_snapshot({
             "schema": "repokernel.target-snapshot.v1",
-            "target_snapshot_id": "abc",
-            "tree_hash": "abc",
+            "target_snapshot_id": HASH,
+            "target_identity": "target",
+            "tree_hash": HASH,
             "entries": [],
         }), [])
 
@@ -104,15 +100,13 @@ class SchemaTests(unittest.TestCase):
 
     def test_schema_and_python_acceptance_match_for_valid_contracts(self):
         cases = {
-            "seed-spec": (accepted_seed_spec(), validate_seed_spec),
-            "source-manifest": ({
-                "schema": "repokernel.source-manifest.v1",
-                "sources": [{"source_id": "s1", "authority": "operator", "privacy": "public", "used_for": ["model"]}],
-            }, validate_source_manifest),
+            "seed-spec": (seed_spec(), validate_seed_spec),
+            "source-manifest": (source_manifest(), validate_source_manifest),
             "target-snapshot": ({
                 "schema": "repokernel.target-snapshot.v1",
-                "target_snapshot_id": "abc",
-                "tree_hash": "abc",
+                "target_snapshot_id": HASH,
+                "target_identity": "target",
+                "tree_hash": HASH,
                 "entries": [],
             }, validate_target_snapshot),
         }

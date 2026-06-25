@@ -4,6 +4,26 @@
   "title": "ActivationReport",
   "type": "object",
   "required": ["schema", "state", "checks"],
+  "allOf": [
+    {
+      "if": {
+        "properties": { "state": { "const": "active" } },
+        "required": ["state"]
+      },
+      "then": {
+        "properties": {
+          "checks": {
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["ok"],
+              "properties": { "ok": { "const": true } }
+            }
+          }
+        }
+      }
+    }
+  ],
   "properties": {
     "schema": { "const": "repokernel.activation-report.v1" },
     "state": { "enum": ["planned", "generated", "validated", "active", "blocked"] },

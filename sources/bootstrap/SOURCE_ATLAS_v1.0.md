@@ -6,6 +6,7 @@
 | `CURRENT_STATE.md` | project state | Active surface, boundaries, verified state and next move |
 | `process/FIRST_PACKET.md` | active packet | Track A readback correction gate |
 | `process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md` | implementation return | Track A implementation, local evidence and deviations |
+| `process/reviews/RK-RVW-20260625-01/CODEX_RETURN_CORRECTION.md` | correction return | Track A correction implementation, tests and remaining blockers |
 | `process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md` | independent readback | Static review result: pass with required corrections; Track B blocked |
 | `packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md` | active implementation packet | Bounded corrections before private pilot version lock |
 | `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md` | prior independent review | Full core/pilot findings and dual conformance resultant |
@@ -47,12 +48,15 @@
 | `registry/skills.json` | registry | Skill state and evidence |
 | `src/repokernel/` | Phase 1 core | Serialization, validation, planning, staging, audit and CLI |
 | `src/repokernel/schema_validation.py` | contract validation | Draft 2020-12 execution surface |
-| `src/repokernel/snapshot.py` | target snapshot | Current read-only snapshot prototype requiring correction |
-| `schemas/` | contract schemas | Draft machine contracts |
-| `tests/unit/` | local validation | Repository-contained tests; full parity correction pending |
-| `examples/minimal/` | fixture | Minimal product-path example |
-| `specs/reference/starter-l1.seed.json` | reference artifact | Current hash manifest; compiler regeneration correction pending |
-| `dist/reference/starter-l1/` | distribution artifact | Current two-file distribution; level/completeness correction pending |
+| `src/repokernel/bundle.py` | bundle validation | SourceManifest, ProjectModel and SeedSpec linkage and provenance |
+| `src/repokernel/snapshot.py` | target snapshot | Read-only snapshot, exclusion policy and integrity helpers |
+| `src/repokernel/version.py` | package metadata | Runtime package version lookup for provenance |
+| `schemas/` | contract schemas | Draft machine contracts with Track A correction constraints |
+| `tests/unit/` | local validation | Repository-contained correction tests |
+| `examples/minimal/` | fixture | Minimal product-path bundle example |
+| `examples/minimal/project-model.json` | fixture | Evidence-bearing ProjectModel for bundle validation |
+| `specs/reference/starter-l1.seed.json` | reference seed | Compiler-regenerated Starter L1 SeedSpec |
+| `dist/reference/starter-l1/` | distribution artifact | Compiler-verifiable Starter L1 generated distribution |
 | `process/evidence/LOCAL_VALIDATION.md` | local evidence | Repository-contained validation, not hosted CI |
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Synthetic A1 no-write proof |
 | `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Private-pilot-first verdict, superseded by current correction gate where inconsistent |

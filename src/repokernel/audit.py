@@ -6,6 +6,9 @@ import re
 from pathlib import Path
 from typing import Any
 
+from .bundle import validate_bundle
+from .planner import build_generation_plan
+
 
 ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 STATES = {"draft", "candidate", "accepted", "promoted", "private", "residue"}
@@ -74,27 +77,32 @@ def audit(root: Path, profile: str) -> dict[str, Any]:
     for rel in dirs:
         _check(checks, "directory", (root / rel).is_dir(), rel, "present" if (root / rel).is_dir() else "missing")
 
-    state = _read(root / "CURRENT_STATE.md").lower()
-    for key in ("active_surface", "current_next", "boundary", "first_safe_action"):
-        _check(checks, "state", key in state, "CURRENT_STATE.md", f"contains {key}")
+    state_path = ".repokernel/state/CURRENT_STATE.md" if profile == "project-kernel" else "CURRENT_STATE.md"
+    packet_path = ".repokernel/packets/FIRST_PACKET.md" if profile == "project-kernel" else "process/FIRST_PACKET.md"
+    atlas_path = ".repokernel/sources/SOURCE_ATLAS.md" if profile == "project-kernel" else "sources/bootstrap/SOURCE_ATLAS_v1.0.md"
+    skills_path = ".repokernel/skills" if profile == "project-kernel" else "skills"
 
-    packet = _read(root / "process/FIRST_PACKET.md").lower()
+    state = _read(root / state_path).lower()
+    for key in ("active_surface", "current_next", "boundary", "first_safe_action"):
+        _check(checks, "state", key in state, state_path, f"contains {key}")
+
+    packet = _read(root / packet_path).lower()
     for key in ("objective", "source", "boundary", "first_safe_action", "memory delta"):
-        _check(checks, "packet", key in packet, "process/FIRST_PACKET.md", f"contains {key}")
+        _check(checks, "packet", key in packet, packet_path, f"contains {key}")
 
     structure_ready = all(c["ok"] for c in checks if c["id"] in {"file", "directory"})
     if profile != "reentry-core":
-        _audit_skills(root, checks)
-        _audit_atlas(root, checks)
+        _audit_skills(root, checks, skills_path)
+        _audit_atlas(root, checks, atlas_path)
 
-    semantic_ready = structure_ready and all(c["ok"] for c in checks)
     if profile == "repokernel-source":
         _audit_repokernel_source(root, checks)
 
-    evolution_ready = profile == "repokernel-source" and structure_ready and all(c["ok"] for c in checks)
-    repository_structure_ready = structure_ready
     contract_conformant = _contract_conformant(root, checks) if profile == "repokernel-source" else True
     planner_conformant = _planner_conformant(root, checks) if profile == "repokernel-source" else True
+    semantic_ready = structure_ready and all(c["ok"] for c in checks)
+    repository_structure_ready = structure_ready
+    evolution_ready = profile == "repokernel-source" and structure_ready and contract_conformant and planner_conformant and all(c["ok"] for c in checks)
     project_kernel_ready = structure_ready and all(c["ok"] for c in checks)
     distribution_ready = False
     readiness = {
@@ -147,9 +155,10 @@ def report_as_json(report: dict[str, Any]) -> str:
     return json.dumps(report, indent=2, ensure_ascii=False)
 
 
-def _audit_skills(root: Path, checks: list[dict[str, Any]]) -> None:
-    skill_paths = sorted((root / "skills").glob("*/SKILL.md")) if (root / "skills").is_dir() else []
-    _check(checks, "skills", bool(skill_paths), "skills", "at least one skill")
+def _audit_skills(root: Path, checks: list[dict[str, Any]], skills_rel: str) -> None:
+    skill_root = root / skills_rel
+    skill_paths = sorted(skill_root.glob("*/SKILL.md")) if skill_root.is_dir() else []
+    _check(checks, "skills", bool(skill_paths), skills_rel, "at least one skill")
     for path in skill_paths:
         meta = _frontmatter(_read(path))
         rel = str(path.relative_to(root))
@@ -162,10 +171,10 @@ def _audit_skills(root: Path, checks: list[dict[str, Any]]) -> None:
             _check(checks, "skill-description", len(desc) > 12, rel, "substantive description")
 
 
-def _audit_atlas(root: Path, checks: list[dict[str, Any]]) -> None:
-    atlas = _read(root / "sources/bootstrap/SOURCE_ATLAS_v1.0.md")
+def _audit_atlas(root: Path, checks: list[dict[str, Any]], atlas_rel: str) -> None:
+    atlas = _read(root / atlas_rel)
     for rel in re.findall(r"\|\s*`([^`*<>]+)`\s*\|", atlas):
-        _check(checks, "atlas", (root / rel).exists(), "sources/bootstrap/SOURCE_ATLAS_v1.0.md", f"path exists: {rel}")
+        _check(checks, "atlas", (root / rel).exists(), atlas_rel, f"path exists: {rel}")
 
 
 def _audit_repokernel_source(root: Path, checks: list[dict[str, Any]]) -> None:
@@ -204,16 +213,33 @@ def _audit_repokernel_source(root: Path, checks: list[dict[str, Any]]) -> None:
 
 
 def _contract_conformant(root: Path, checks: list[dict[str, Any]]) -> bool:
-    schema_files = sorted((root / "schemas").glob("*.schema.json"))
-    ok = bool(schema_files) and (root / "src/repokernel/schema_validation.py").is_file()
-    _check(checks, "contract-conformant", ok, "schemas", "schemas executed by schema_validation module")
+    try:
+        manifest = json.loads(_read(root / "examples/minimal/source-manifest.json"))
+        model = json.loads(_read(root / "examples/minimal/project-model.json"))
+        seed = json.loads(_read(root / "examples/minimal/seed-spec.json"))
+        result = validate_bundle(manifest, model, seed)
+        ok = result.valid
+        message = "minimal bundle validates" if ok else "; ".join(result.errors[:3])
+    except (json.JSONDecodeError, OSError, ValueError) as exc:
+        ok = False
+        message = str(exc)
+    _check(checks, "contract-conformant", ok, "examples/minimal", message)
     return ok
 
 
 def _planner_conformant(root: Path, checks: list[dict[str, Any]]) -> bool:
-    planner = _read(root / "src/repokernel/planner.py")
-    ok = all(token in planner for token in ("target_snapshot_hash", "before_hash", "after_hash", "apply_policy"))
-    _check(checks, "planner-conformant", ok, "src/repokernel/planner.py", "target-bound plan fields present")
+    try:
+        manifest = json.loads(_read(root / "examples/minimal/source-manifest.json"))
+        model = json.loads(_read(root / "examples/minimal/project-model.json"))
+        seed = json.loads(_read(root / "examples/minimal/seed-spec.json"))
+        bundle = validate_bundle(manifest, model, seed)
+        plan = build_generation_plan(seed, bundle_provenance=bundle.provenance)
+        ok = bundle.valid and all(plan.get(key) for key in ("plan_id", "target_identity", "target_snapshot_hash", "after_hash_kind"))
+        message = "minimal plan is target-bound" if ok else "minimal plan missing target binding or invalid bundle"
+    except (json.JSONDecodeError, OSError, ValueError) as exc:
+        ok = False
+        message = str(exc)
+    _check(checks, "planner-conformant", ok, "src/repokernel/planner.py", message)
     return ok
 
 

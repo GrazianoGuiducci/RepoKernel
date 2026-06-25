@@ -48,8 +48,8 @@ authorized sources + project intent
 -> ActivationReport
 ```
 
-The current Phase 1 line implements only part of this pipeline. Source/model
-compilation, content-aware snapshots, schema parity and apply remain incomplete.
+The current Phase 1 line implements the no-apply validation/planning path.
+Apply, runtime and public distribution remain deferred.
 
 ## Readiness Levels
 
@@ -68,8 +68,9 @@ Use RepoKernel from a checkout or installed development environment:
 
 ```bash
 repokernel validate-spec --kind seed-spec --input seed.json
+repokernel validate-bundle --source-manifest sources.json --project-model project-model.json --seed-spec seed.json
 repokernel inspect --path /path/to/project
-repokernel plan --seed-spec seed.json > plan.json
+repokernel plan --seed-spec seed.json --source-manifest sources.json --project-model project-model.json > plan.json
 repokernel stage --plan plan.json --output-dir /empty/review-directory
 repokernel guides --seed-spec seed.json --source-manifest sources.json
 repokernel audit --path . --profile repokernel-source
@@ -90,7 +91,12 @@ There is intentionally no `apply` command in the current line.
 
 ```bash
 repokernel validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
-repokernel plan --seed-spec examples/minimal/seed-spec.json > plan.json
+repokernel validate-bundle --source-manifest examples/minimal/source-manifest.json \
+  --project-model examples/minimal/project-model.json \
+  --seed-spec examples/minimal/seed-spec.json
+repokernel plan --seed-spec examples/minimal/seed-spec.json \
+  --source-manifest examples/minimal/source-manifest.json \
+  --project-model examples/minimal/project-model.json > plan.json
 repokernel stage --plan plan.json --output-dir ./repokernel-staging
 repokernel guides --seed-spec examples/minimal/seed-spec.json \
   --source-manifest examples/minimal/source-manifest.json

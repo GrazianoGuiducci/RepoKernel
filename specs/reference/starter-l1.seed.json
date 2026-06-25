@@ -1,17 +1,30 @@
 {
-  "schema": "repokernel.reference-seed.v1",
+  "schema": "repokernel.seed-spec.v1",
+  "version": "repokernel.seed-spec.v1",
   "seed_id": "starter-l1",
-  "version": "1.0.0",
-  "distribution": {
-    "files": [
-      {
-        "path": "AGENTS.md",
-        "sha256": "b764aaeb7dd0b861d0da2aa2cf303d24431cbc403cd7227928a69a8cfc380366"
-      },
-      {
-        "path": ".repokernel/state/CURRENT_STATE.md",
-        "sha256": "f48d4008588c5372b1084ccd939cd7d9e0898493d706a43dfd915abfdb5692d8"
-      }
-    ]
-  }
+  "source_manifest_hash": "1a7167ba08824e5891cd15275c8a02026f3610e73b56c8fc5c9dd6647b493fb1",
+  "project_model_hash": "a56c279466a741cb9839aba6abcd17ca68f1667bb17ed4082c87bd07d70034d9",
+  "canonical_namespace": ".repokernel",
+  "project": {
+    "name": "Starter L1",
+    "intent": "Create a minimal L1 RepoKernel project kernel",
+    "product": "A starter L1 project kernel"
+  },
+  "target": {
+    "mode": "new_repository",
+    "path": "starter-l1"
+  },
+  "readiness_level": "L1",
+  "authority_mode": "propose",
+  "review": {
+    "status": "accepted",
+    "accepted_by_role": "operator",
+    "accepted_at": "2026-06-25",
+    "review_cycle": "RK-RVW-20260625-01"
+  },
+  "compiler_compatibility": {
+    "package_version": "0.3.0.dev0"
+  },
+  "file_plan_policy": "stage_only",
+  "validation_plan": ["validate-spec", "verify-dist"]
 }

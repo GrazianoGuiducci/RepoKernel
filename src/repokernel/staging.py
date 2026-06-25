@@ -20,6 +20,9 @@ def stage_generation_plan(plan: dict[str, Any], output_dir: Path) -> dict[str, A
     errors = validate_generation_plan(plan)
     if errors:
         raise ValueError("; ".join(errors))
+    if plan.get("blocked") is True:
+        reasons = plan.get("blocked_reasons") or ["plan is blocked"]
+        raise ValueError(f"blocked plan cannot be staged: {'; '.join(str(reason) for reason in reasons)}")
 
     output_dir = output_dir.expanduser().resolve()
     if output_dir.exists() and any(output_dir.iterdir()):

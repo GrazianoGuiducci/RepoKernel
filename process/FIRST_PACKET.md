@@ -1,7 +1,7 @@
 # Active Packet — Track A Readback Corrections
 
 date: 2026-06-25
-status: waiting_for_operator_acceptance
+status: correction_implemented_pending_final_readback
 review_cycle: RK-RVW-20260625-01
 track_b_status: blocked
 
@@ -59,7 +59,7 @@ blocked:
 ## First Safe Action
 
 ```text
-first_safe_action: operator accepts or revises the correction packet; Codex does not implement or run the pilot before that decision
+first_safe_action: push the correction commit and request final GPT Pro Track A readback; Codex does not run the pilot before that decision
 ```
 
 ## Required Codex Return

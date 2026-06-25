@@ -8,27 +8,36 @@
     "plan_id",
     "compiler_version",
     "seed_hash",
+    "bundle_hash",
+    "target_identity",
     "target_snapshot_hash",
     "before_hash",
     "after_hash",
+    "after_hash_kind",
     "apply_policy",
     "items",
-    "blocked"
+    "blocked",
+    "blocked_reasons"
   ],
   "additionalProperties": false,
   "properties": {
     "schema": { "const": "repokernel.generation-plan.v1" },
-    "plan_id": { "type": "string", "minLength": 1 },
+    "plan_id": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
     "compiler_version": { "type": "string", "minLength": 1 },
-    "seed_hash": { "type": "string" },
+    "seed_hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "bundle_hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "bundle_provenance": { "type": "object" },
     "generated_on": { "type": "string" },
     "target": { "type": "object" },
+    "target_identity": { "type": "string", "minLength": 1 },
     "target_snapshot_hash": { "type": "string", "minLength": 1 },
     "before_hash": { "type": "string", "minLength": 1 },
-    "after_hash": { "type": "string", "minLength": 1 },
+    "after_hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "after_hash_kind": { "const": "projected_after_state.v1" },
     "apply_policy": { "const": "stage_only" },
     "rollback_manifest": { "type": ["object", "null"] },
     "blocked": { "type": "boolean" },
+    "blocked_reasons": { "type": "array", "items": { "type": "string" } },
     "items": {
       "type": "array",
       "items": {
@@ -44,13 +53,16 @@
           "action": { "enum": ["create", "leave_unchanged", "propose_update", "conflict", "withhold"] },
           "reason": { "type": "string" },
           "source_fields": { "type": "array", "items": { "type": "string" } },
-          "content_hash": { "type": "string" },
+          "content_hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
           "risk": { "type": "string" },
           "approval_needed": { "type": "boolean" },
           "authority_effect": { "const": "none" }
         }
       }
     },
-    "extensions": { "type": "object", "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_-]*)+$" } }
+    "extensions": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_-]*)+$" }
+    }
   }
 }

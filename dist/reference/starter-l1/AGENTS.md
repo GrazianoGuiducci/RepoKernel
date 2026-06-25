@@ -1,3 +1,3 @@
 # Starter L1 Agent Gate
 
-Read `.repokernel/state/CURRENT_STATE.md` before changing the project.
+This root file is an adapter. Read `.repokernel/state/CURRENT_STATE.md` before editing.

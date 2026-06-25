@@ -2,8 +2,8 @@
   "schema": "repokernel.seed-spec.v1",
   "version": "repokernel.seed-spec.v1",
   "seed_id": "minimal-project-seed",
-  "source_manifest_hash": "0000000000000000000000000000000000000000000000000000000000000000",
-  "project_model_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "source_manifest_hash": "1a7167ba08824e5891cd15275c8a02026f3610e73b56c8fc5c9dd6647b493fb1",
+  "project_model_hash": "a56c279466a741cb9839aba6abcd17ca68f1667bb17ed4082c87bd07d70034d9",
   "canonical_namespace": ".repokernel",
   "project": {
     "name": "Minimal Project",

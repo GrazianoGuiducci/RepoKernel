@@ -1,0 +1,28 @@
+{
+  "schema": "repokernel.project-model.v1",
+  "identity": {
+    "name": "Minimal Project"
+  },
+  "mission": "Preserve AI-assisted project continuity",
+  "product_or_result": "A minimal project kernel",
+  "source_refs": ["minimal-readme"],
+  "assertions": [
+    {
+      "id": "identity",
+      "status": "verified",
+      "text": "The project is named Minimal Project.",
+      "source_refs": ["minimal-readme"]
+    },
+    {
+      "id": "continuity-intent",
+      "status": "verified",
+      "text": "The project needs a minimal RepoKernel continuity surface.",
+      "source_refs": ["minimal-readme"]
+    }
+  ],
+  "boundaries": {
+    "authority": "proposal_only",
+    "writes": "staging_only"
+  },
+  "unknowns": []
+}

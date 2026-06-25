@@ -3,18 +3,19 @@
   "$id": "repokernel.target-snapshot.v1",
   "title": "TargetSnapshot",
   "type": "object",
-  "required": ["schema", "target_snapshot_id", "tree_hash", "entries"],
+  "required": ["schema", "target_snapshot_id", "target_identity", "tree_hash", "entries"],
   "additionalProperties": false,
   "properties": {
     "schema": { "const": "repokernel.target-snapshot.v1" },
-    "target_snapshot_id": { "type": "string", "minLength": 1 },
+    "target_snapshot_id": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "target_identity": { "type": "string", "minLength": 1 },
     "root": { "type": "string" },
-    "tree_hash": { "type": "string", "minLength": 1 },
+    "tree_hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
     "entries": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["path", "kind"],
+        "required": ["path", "kind", "authority_role"],
         "additionalProperties": false,
         "properties": {
           "path": {
@@ -23,15 +24,38 @@
             "pattern": "^(?!/)(?!//)(?!.*:)(?!.*(^|/)\\.\\.?($|/)).+"
           },
           "kind": { "enum": ["file", "directory", "symlink", "other"] },
-          "content_hash": { "type": ["string", "null"] },
-          "authority_role": { "type": "string" }
+          "content_hash": { "type": ["string", "null"], "pattern": "^[A-Fa-f0-9]{64}$" },
+          "authority_role": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "excluded": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 }
         }
       }
     },
     "warnings": {
       "type": "array",
-      "items": { "type": "object" }
+      "items": {
+        "type": "object",
+        "required": ["kind", "path"],
+        "additionalProperties": true,
+        "properties": {
+          "kind": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 }
+        }
+      }
     },
-    "extensions": { "type": "object", "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_-]*)+$" } }
+    "extensions": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_-]*)+$" }
+    }
   }
 }

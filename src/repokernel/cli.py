@@ -2,12 +2,15 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
 from typing import Any, Callable
 
 from .audit import PROFILES, audit, inspect_repository, report_as_json
+from .bundle import validate_bundle
+from .canonical import canonical_hash
 from .guide_model import build_guides
 from .models import (
     validate_activation_report,
@@ -18,9 +21,10 @@ from .models import (
     validate_source_manifest,
     validate_target_snapshot,
 )
-from .planner import build_generation_plan
+from .planner import build_generation_plan, render_seed_files
 from .schema_validation import schema_errors_as_text
 from .snapshot import build_target_snapshot
+from .version import package_version
 from .staging import stage_generation_plan
 
 
@@ -54,12 +58,20 @@ def build_parser() -> argparse.ArgumentParser:
     validate.add_argument("--input", required=True)
     validate.set_defaults(handler=_cmd_validate_spec)
 
+    validate_bundle_cmd = sub.add_parser("validate-bundle", help="validate linked SourceManifest, ProjectModel and SeedSpec")
+    validate_bundle_cmd.add_argument("--source-manifest", required=True)
+    validate_bundle_cmd.add_argument("--project-model", required=True)
+    validate_bundle_cmd.add_argument("--seed-spec", required=True)
+    validate_bundle_cmd.set_defaults(handler=_cmd_validate_bundle)
+
     inspect_cmd = sub.add_parser("inspect", help="inspect a repository without writing")
     inspect_cmd.add_argument("--path", required=True)
     inspect_cmd.set_defaults(handler=_cmd_inspect)
 
     plan = sub.add_parser("plan", help="build a deterministic GenerationPlan without writing")
     plan.add_argument("--seed-spec", required=True)
+    plan.add_argument("--source-manifest", required=True)
+    plan.add_argument("--project-model", required=True)
     plan.add_argument("--existing-paths-file")
     plan.add_argument("--target-snapshot")
     plan.set_defaults(handler=_cmd_plan)
@@ -104,6 +116,21 @@ def _cmd_validate_spec(args: argparse.Namespace) -> int:
     return 0 if not errors else 1
 
 
+def _cmd_validate_bundle(args: argparse.Namespace) -> int:
+    manifest = _read_json(Path(args.source_manifest))
+    model = _read_json(Path(args.project_model))
+    spec = _read_json(Path(args.seed_spec))
+    result = validate_bundle(manifest, model, spec)
+    report = {
+        "schema": "repokernel.cli.validate-bundle-result.v1",
+        "valid": result.valid,
+        "errors": result.errors,
+        "provenance": result.provenance,
+    }
+    print(report_as_json(report))
+    return 0 if result.valid else 1
+
+
 def _cmd_inspect(args: argparse.Namespace) -> int:
     root = Path(args.path).expanduser().resolve()
     report = inspect_repository(root)
@@ -114,13 +141,23 @@ def _cmd_inspect(args: argparse.Namespace) -> int:
 
 def _cmd_plan(args: argparse.Namespace) -> int:
     spec = _read_json(Path(args.seed_spec))
+    manifest = _read_json(Path(args.source_manifest))
+    model = _read_json(Path(args.project_model))
+    bundle = validate_bundle(manifest, model, spec)
+    if not bundle.valid:
+        raise ValueError("; ".join(bundle.errors))
     existing_paths = _read_existing_paths(Path(args.existing_paths_file)) if args.existing_paths_file else None
     target_snapshot = _read_json(Path(args.target_snapshot)) if args.target_snapshot else None
     if isinstance(target_snapshot, dict) and target_snapshot.get("schema") != "repokernel.target-snapshot.v1":
         nested = target_snapshot.get("target_snapshot")
         if isinstance(nested, dict):
             target_snapshot = nested
-    print(report_as_json(build_generation_plan(spec, existing_paths=existing_paths, target_snapshot=target_snapshot)))
+    print(report_as_json(build_generation_plan(
+        spec,
+        existing_paths=existing_paths,
+        target_snapshot=target_snapshot,
+        bundle_provenance=bundle.provenance,
+    )))
     return 0
 
 
@@ -133,7 +170,17 @@ def _cmd_stage(args: argparse.Namespace) -> int:
 def _cmd_guides(args: argparse.Namespace) -> int:
     spec = _read_json(Path(args.seed_spec))
     manifest = _read_json(Path(args.source_manifest))
-    print(report_as_json({"schema": "repokernel.cli.guides-result.v1", "guides": build_guides(spec, manifest)}))
+    errors = VALIDATORS["seed-spec"](spec) + [f"seed-spec schema: {error}" for error in schema_errors_as_text("seed-spec", spec)]
+    errors.extend(VALIDATORS["source-manifest"](manifest))
+    errors.extend(f"source-manifest schema: {error}" for error in schema_errors_as_text("source-manifest", manifest))
+    if errors:
+        raise ValueError("; ".join(errors))
+    print(report_as_json({
+        "schema": "repokernel.cli.guides-result.v1",
+        "package_version": package_version(),
+        "seed_spec_hash": canonical_hash(spec),
+        "guides": build_guides(spec, manifest),
+    }))
     return 0
 
 
@@ -147,30 +194,31 @@ def _cmd_audit(args: argparse.Namespace) -> int:
 def _cmd_verify_dist(args: argparse.Namespace) -> int:
     seed = _read_json(Path(args.seed_spec))
     dist_dir = Path(args.dist_dir).expanduser().resolve()
-    expected = seed.get("distribution", {}).get("files", [])
     errors: list[str] = []
-    if not isinstance(expected, list) or not expected:
-        errors.append("seed distribution.files must be a non-empty list")
-    for item in expected if isinstance(expected, list) else []:
-        if not isinstance(item, dict):
-            errors.append("distribution file entry must be an object")
-            continue
-        rel = item.get("path")
-        sha256 = item.get("sha256")
-        if not isinstance(rel, str) or not isinstance(sha256, str):
-            errors.append("distribution file entry requires path and sha256")
-            continue
-        path = dist_dir / rel
-        if not path.is_file():
-            errors.append(f"missing dist file: {rel}")
-            continue
-        import hashlib
-
-        actual = hashlib.sha256(path.read_bytes()).hexdigest()
-        if actual != sha256:
-            errors.append(f"hash mismatch for {rel}: {actual} != {sha256}")
+    try:
+        generated = render_seed_files(seed)
+    except ValueError as exc:
+        errors.append(str(exc))
+        generated = {}
+    expected_paths = set(generated)
+    actual_paths = {
+        path.relative_to(dist_dir).as_posix()
+        for path in dist_dir.rglob("*")
+        if path.is_file()
+    } if dist_dir.is_dir() else set()
+    for rel in sorted(expected_paths - actual_paths):
+        errors.append(f"missing dist file: {rel}")
+    for rel in sorted(actual_paths - expected_paths):
+        errors.append(f"extra dist file: {rel}")
+    for rel in sorted(expected_paths & actual_paths):
+        expected_hash = _content_hash(generated[rel])
+        actual_text = (dist_dir / rel).read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n")
+        actual_hash = _content_hash(actual_text)
+        if actual_hash != expected_hash:
+            errors.append(f"hash mismatch for {rel}: {actual_hash} != {expected_hash}")
     report = {
         "schema": "repokernel.cli.verify-dist-result.v1",
+        "package_version": package_version(),
         "seed_spec": args.seed_spec,
         "dist_dir": str(dist_dir),
         "valid": not errors,
@@ -189,6 +237,10 @@ def _read_json(path: Path) -> dict[str, Any]:
 
 def _read_existing_paths(path: Path) -> list[str]:
     return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def _content_hash(content: str) -> str:
+    return hashlib.sha256(content.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()
 
 
 if __name__ == "__main__":

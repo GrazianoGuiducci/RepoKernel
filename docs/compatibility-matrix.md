@@ -10,13 +10,13 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 | Package version | `0.3.0.dev0` | development only |
 | Python | `>=3.11` | declared; clean wheel/CLI proof passed on local Windows node |
 | SourceManifest | `repokernel.source-manifest.v1` | draft contract |
-| ProjectModel | `repokernel.project-model.v1` | draft contract |
+| ProjectModel | `repokernel.project-model.v1` | draft contract; evidence-bearing assertions required |
 | SeedSpec | `repokernel.seed-spec.v1` | draft contract; accepted review, source/model hashes and compiler compatibility required |
-| GenerationPlan | `repokernel.generation-plan.v1` | draft contract; target snapshot/hash fields and stage-only apply policy required |
-| TargetSnapshot | `repokernel.target-snapshot.v1` | draft contract; read-only inspect and content-aware planning proof passed |
+| GenerationPlan | `repokernel.generation-plan.v1` | draft contract; plan ID bound to compiler, seed, bundle, target, snapshot, policy and items |
+| TargetSnapshot | `repokernel.target-snapshot.v1` | draft contract; integrity, safe path, duplicate and exclusion checks added |
 | ActivationReport | `repokernel.activation-report.v1` | draft/minimal; active reports require all checks ok |
 | SkillRegistry | `repokernel.skill-registry.v1` and validator compatibility with v2 | draft/migration unresolved |
-| CLI | `validate-spec`, `inspect`, `plan`, `stage`, `guides`, `audit`, `verify-dist` | local checkout and installed wheel path proven |
+| CLI | `validate-spec`, `validate-bundle`, `inspect`, `plan`, `stage`, `guides`, `audit`, `verify-dist` | local checkout and installed wheel path proven |
 | Apply | absent | intentionally deferred |
 | Canonical target | `.repokernel/` plus optional root adapters | accepted architecture |
 | L0-L2 | first stable scope | Track A core conformance implemented locally; external readback pending |
@@ -27,13 +27,13 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 
 | Evidence | Baseline | Result | Limitation |
 | --- | --- | --- | --- |
-| Unit tests | Track A core conformance local checkout | 32 passed | hosted CI result pending |
-| Schema validator parity | Draft 2020-12 plus Python validators | passed | additional negative fixtures can be expanded |
-| Minimal validate/plan/stage/guides | local checkout | passed | hand-prepared minimal SeedSpec; public external fixture pending |
+| Unit tests | Track A correction local checkout | 45 passed | hosted CI result pending |
+| Schema validator parity | Draft 2020-12 plus Python validators | passed across all current contracts | JSON Schema uniqueness limits documented via Python duplicate-path tests |
+| Minimal validate-bundle/plan/stage/guides | local checkout | passed | public external fixture pending |
 | TargetSnapshot planning | local synthetic fixtures | passed | real pilot pending Track B |
 | Local A1 no-write proof | synthetic target | passed | not an external target; independent evaluation incomplete |
 | Installed package proof | local clean venv, outside source checkout | passed | Windows local proof only; hosted matrix pending |
-| Reference Seed reproducibility | `specs/reference/starter-l1.seed.json` | verify-dist passed | one starter distribution only |
+| Reference Seed reproducibility | `specs/reference/starter-l1.seed.json` | compiler-regenerated verify-dist passed | one starter distribution only |
 | External-style procedure | public-safe procedure | ready | procedure only, not a completed neutral pilot |
 | Distribution verdict | 2026-06-25 | private pilot first | collaborator/public use blocked |
 | Denis pilot | private neutral scaffold | available | Track B intentionally not executed before core readback |
@@ -67,7 +67,7 @@ review-cycle ledger and independent pilot evaluation.
 Track A status:
 
 ```text
-implemented locally and awaiting GPT Pro/operator readback;
+Track A correction implemented locally and awaiting GPT Pro/operator readback;
 hosted CI, private pilot execution and independent pilot evaluation remain
 required before 0.3.0a1.
 ```

@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-25
-status: Track A readback complete; substantial implementation accepted, critical corrections required before Track B
+status: Track A readback corrections implemented locally; final GPT Pro/operator readback pending
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: close the remaining Track A conformance gaps identified by GPT Pro readback
-current_next: operator accepts or revises TRACK_A_READBACK_CORRECTIONS_2026-06-25.md; Codex implements corrections only
+current_next: commit and push Track A correction evidence, then request final GPT Pro readback
 first_safe_action: keep Track B blocked and return one exact correction commit for final readback
 ```
 
@@ -83,7 +83,7 @@ Correction packet:
 
 ```text
 packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md
-status: waiting for operator acceptance
+status: accepted and implemented locally; final readback pending
 ```
 
 Pilot:
@@ -98,9 +98,9 @@ status: blocked until correction readback and operator version-lock decision
 
 ```text
 final compiler/SeedSpec architecture accepted;
-.repokernernel canonical control plane accepted;
+.repokernel canonical control plane accepted;
 Phase 1 package and console entry point exist;
-CLI commands exist: validate-spec, inspect, plan, stage, guides, audit, verify-dist;
+CLI commands exist: validate-spec, validate-bundle, inspect, plan, stage, guides, audit, verify-dist;
 staging remains separate from target apply;
 planner emits .repokernel-oriented proposals;
 public guide project fields and source labels are deny-by-default;
@@ -111,11 +111,6 @@ unknown namespaced extensions remain opaque to core planning;
 clean-environment local wheel/CLI proof reported by Codex;
 Track B was correctly not executed;
 static GPT Pro readback of pushed Track A files completed.
-```
-
-## Not Yet Verified Or Not Yet Conformant
-
-```text
 complete schema/Python parity across every contract;
 evidence-bearing ProjectModel with per-assertion source references;
 actual SourceManifest/ProjectModel hash linkage to SeedSpec;
@@ -125,7 +120,15 @@ canonical project-kernel audit without legacy root dependencies;
 source ready status dependent on real contract/planner conformance;
 Reference Seed compiler regeneration and extra-file detection;
 uniform CLI validation and provenance;
-independent re-execution of the 32 tests in GPT Pro environment;
+local 45-test correction suite passing;
+clean-environment local wheel/CLI correction proof passing;
+license SPDX string replacing deprecated TOML table;
+```
+
+## Not Yet Verified Or Not Yet Conformant
+
+```text
+independent re-execution of the 45-test correction suite in GPT Pro environment;
 hosted CI tied to a commit;
 version-locked private pilot execution;
 independent pilot evaluation;
@@ -169,11 +172,10 @@ Codex does not independently close Track A or authorize Track B.
 ## First Safe Action
 
 ```text
-1. Operator accepts or revises the Track A correction packet.
-2. Codex implements corrections in RepoKernel only.
-3. Codex returns exact commit, package version, tests and deviations.
-4. GPT Pro performs final Track A readback.
-5. Operator decides whether to lock that version for Track B.
+1. Codex commits and pushes Track A corrections in RepoKernel only.
+2. Codex returns exact commit, package version, tests and deviations.
+3. GPT Pro performs final Track A readback.
+4. Operator decides whether to lock that version for Track B.
 ```
 
 ## Residue Not To Follow

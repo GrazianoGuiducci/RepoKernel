@@ -6,9 +6,10 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from .canonical import canonical_hash
-from .models import validate_seed_spec
+from .models import validate_seed_spec, validate_target_snapshot
 from .paths import normalize_relative_path
-from .snapshot import snapshot_entries
+from .snapshot import snapshot_entries, snapshot_integrity_errors
+from .version import package_version
 
 
 LEVEL_ORDER = ("L0", "L1", "L2", "L3")
@@ -19,12 +20,17 @@ def build_generation_plan(
     *,
     existing_paths: Iterable[str] | None = None,
     target_snapshot: dict[str, Any] | None = None,
+    bundle_provenance: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Build a deterministic no-authority GenerationPlan from a reviewed SeedSpec."""
     errors = validate_seed_spec(seed_spec)
     if errors:
         raise ValueError("; ".join(errors))
     existing = {normalize_relative_path(path) for path in (existing_paths or [])}
+    if target_snapshot is not None:
+        snapshot_errors = validate_target_snapshot(target_snapshot) + snapshot_integrity_errors(target_snapshot)
+        if snapshot_errors:
+            raise ValueError("; ".join(f"target_snapshot: {error}" for error in snapshot_errors))
     snapshot_items = snapshot_entries(target_snapshot or {})
     existing.update(snapshot_items)
     project = seed_spec["project"]
@@ -32,8 +38,12 @@ def build_generation_plan(
     plan_files = _planned_files(project, level)
     target_mode = seed_spec["target"]["mode"]
     target_snapshot_hash = (target_snapshot or {}).get("tree_hash", "new-repository-no-snapshot")
+    target_identity = (target_snapshot or {}).get("target_identity", canonical_hash({"target": seed_spec["target"]}))
     stale_snapshot = target_mode == "existing_repository_retrofit" and not target_snapshot
     items = []
+    blocked_reasons: list[str] = []
+    if stale_snapshot:
+        blocked_reasons.append("existing repository retrofit requires a current valid TargetSnapshot")
     for path in sorted(plan_files):
         content = plan_files[path]
         action = "create"
@@ -64,22 +74,62 @@ def build_generation_plan(
             "content": content,
         })
     items_hash = canonical_hash(items)
+    compiler_version = package_version()
+    seed_hash = canonical_hash(seed_spec)
+    policy = {
+        "apply_policy": "stage_only",
+        "file_plan_policy": seed_spec.get("file_plan_policy"),
+        "target_mode": target_mode,
+    }
+    plan_identity = {
+        "compiler_version": compiler_version,
+        "seed_hash": seed_hash,
+        "bundle": bundle_provenance or {},
+        "target_identity": target_identity,
+        "target_snapshot_hash": target_snapshot_hash,
+        "policy": policy,
+        "items_hash": items_hash,
+    }
+    projected_after_state_hash = canonical_hash({
+        "kind": "projected_after_state.v1",
+        "before_hash": target_snapshot_hash,
+        "target_identity": target_identity,
+        "items": [
+            {"path": item["path"], "action": item["action"], "content_hash": item["content_hash"]}
+            for item in items
+        ],
+    })
+    blocked = stale_snapshot or any(item["action"] == "conflict" for item in items)
+    if any(item["action"] == "conflict" for item in items):
+        blocked_reasons.append("one or more planned files conflict with target authority")
     return {
         "schema": "repokernel.generation-plan.v1",
-        "plan_id": items_hash,
-        "compiler_version": seed_spec.get("compiler_compatibility", {}).get("package_version", "0.3.0.dev0"),
-        "seed_hash": canonical_hash(seed_spec),
+        "plan_id": canonical_hash(plan_identity),
+        "compiler_version": compiler_version,
+        "seed_hash": seed_hash,
+        "bundle_hash": canonical_hash(bundle_provenance or {}),
+        "bundle_provenance": bundle_provenance or {},
         "generated_on": seed_spec.get("reviewed_on", "undated"),
         "target": seed_spec["target"],
+        "target_identity": target_identity,
         "target_snapshot_hash": target_snapshot_hash,
         "before_hash": target_snapshot_hash,
-        "after_hash": canonical_hash({"before": target_snapshot_hash, "items": items_hash}),
+        "after_hash": projected_after_state_hash,
+        "after_hash_kind": "projected_after_state.v1",
         "apply_policy": "stage_only",
         "rollback_manifest": None,
         "items": items,
-        "blocked": stale_snapshot or any(item["action"] == "conflict" for item in items),
+        "blocked": blocked,
+        "blocked_reasons": blocked_reasons,
         "extensions": seed_spec.get("extensions", {}),
     }
+
+
+def render_seed_files(seed_spec: dict[str, Any]) -> dict[str, str]:
+    errors = validate_seed_spec(seed_spec)
+    if errors:
+        raise ValueError("; ".join(errors))
+    return _planned_files(seed_spec["project"], seed_spec["readiness_level"])
 
 
 def dry_run_apply_plan(plan: dict[str, Any], target: Path) -> dict[str, Any]:
