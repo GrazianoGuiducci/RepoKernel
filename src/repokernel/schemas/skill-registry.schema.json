@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.skill-registry.v1",
+  "title": "SkillRegistry",
+  "type": "object",
+  "required": ["schema", "skills"],
+  "properties": {
+    "schema": { "enum": ["repokernel.skill-registry.v1", "repokernel.skill-registry.v2"] },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "state", "path", "risk", "evidence"],
+        "properties": {
+          "id": { "type": "string" },
+          "version": { "type": "string" },
+          "state": { "type": "string" },
+          "path": { "type": "string" },
+          "risk": { "type": "string" },
+          "evidence": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "extensions": { "type": "object" }
+  }
+}

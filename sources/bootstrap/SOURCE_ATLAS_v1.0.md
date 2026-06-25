@@ -10,6 +10,7 @@
 | `docs/guides/evolution-versioning-and-review-loop.md` | governance | GPT Pro–Codex–operator review lifecycle and artifact provenance |
 | `docs/compatibility-matrix.md` | compatibility | Package, contract, source and evidence compatibility state |
 | `process/reviews/REVIEW_LEDGER.md` | review index | Review-cycle lineage, implementation and closure status |
+| `process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md` | implementation return | Track A Codex readback, command evidence and remaining blockers |
 | `process/reports/current-tree.json` | inventory report | Generated tracked-file inventory |
 | `process/reports/migration-classification.json` | inventory report | Generated migration classification and unclassified count |
 | `process/reports/link-check.json` | link report | Generated internal Markdown link check |
@@ -43,9 +44,17 @@
 | `skills/autopoietic-cycle-controller/SKILL.md` | meta-skill | Governed observe-align-distill-evaluate cycle contract |
 | `registry/skills.json` | registry | Skill state and evidence |
 | `src/repokernel/` | Phase 1 core | Canonical serialization, validation, planning, staging, audit and CLI |
+| `src/repokernel/schema_validation.py` | contract validation | Draft 2020-12 JSON Schema execution surface |
+| `src/repokernel/snapshot.py` | target snapshot | Read-only content-aware target snapshot generation |
 | `schemas/` | contract schemas | Current draft JSON Schema surfaces |
+| `schemas/target-snapshot.schema.json` | contract schema | TargetSnapshot contract |
 | `tests/unit/` | validation | Current repository-contained unit tests |
+| `tests/unit/test_schema_validator_parity.py` | validation | Python validator and JSON Schema parity tests |
+| `tests/unit/test_snapshot.py` | validation | TargetSnapshot behavior tests |
+| `tests/unit/test_verify_dist.py` | validation | Reference Seed distribution verification test |
 | `examples/minimal/` | fixture | Minimal validate/plan/stage/guides example |
+| `specs/reference/starter-l1.seed.json` | reference seed | Minimal L1 Reference Seed spec with distribution hashes |
+| `dist/reference/starter-l1/` | generated distribution | Starter L1 Reference Seed distribution |
 | `process/evidence/LOCAL_VALIDATION.md` | local evidence | Repository-contained local validation; not hosted CI evidence |
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Synthetic local A1 no-write proof |
 | `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Current private-pilot-first verdict |

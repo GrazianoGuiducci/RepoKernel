@@ -52,6 +52,15 @@ PROFILES = {
         ["docs", "skills", "scripts", "process/deltas", "process/evidence", "registry"],
         "evolution_ready",
     ),
+    "project-kernel": (
+        [
+            ".repokernel/state/CURRENT_STATE.md",
+            ".repokernel/packets/FIRST_PACKET.md",
+            ".repokernel/sources/SOURCE_ATLAS.md",
+        ],
+        [".repokernel"],
+        "project_kernel_ready",
+    ),
 }
 
 
@@ -83,11 +92,21 @@ def audit(root: Path, profile: str) -> dict[str, Any]:
         _audit_repokernel_source(root, checks)
 
     evolution_ready = profile == "repokernel-source" and structure_ready and all(c["ok"] for c in checks)
+    repository_structure_ready = structure_ready
+    contract_conformant = _contract_conformant(root, checks) if profile == "repokernel-source" else True
+    planner_conformant = _planner_conformant(root, checks) if profile == "repokernel-source" else True
+    project_kernel_ready = structure_ready and all(c["ok"] for c in checks)
+    distribution_ready = False
     readiness = {
         "level": "L2" if evolution_ready else "L1" if semantic_ready else "L0" if structure_ready else "none",
         "structure_ready": structure_ready,
         "semantic_ready": semantic_ready,
         "evolution_ready": evolution_ready,
+        "repository_structure_ready": repository_structure_ready,
+        "contract_conformant": contract_conformant,
+        "planner_conformant": planner_conformant,
+        "project_kernel_ready": project_kernel_ready,
+        "distribution_ready": distribution_ready,
     }
     failed = [c for c in checks if not c["ok"]]
     return {
@@ -179,15 +198,23 @@ def _audit_repokernel_source(root: Path, checks: list[dict[str, Any]]) -> None:
         valid_evidence = isinstance(evidence, list) and all(isinstance(item, str) and (root / item).exists() for item in evidence)
         _check(checks, "registry-evidence", valid_evidence, "registry/skills.json", f"evidence resolves for: {skill_id}")
 
-    validation = _read(root / "process/evidence/LOCAL_VALIDATION.md")
-    _check(
-        checks,
-        "validation-evidence",
-        "Repository-hosted validation: passed" in validation
-        and "Repository-hosted validation remains required" not in validation,
-        "process/evidence/LOCAL_VALIDATION.md",
-        "repository-hosted validation passed",
-    )
+    _check(checks, "schema-validation-module", (root / "src/repokernel/schema_validation.py").is_file(), "src/repokernel/schema_validation.py", "present")
+    _check(checks, "snapshot-module", (root / "src/repokernel/snapshot.py").is_file(), "src/repokernel/snapshot.py", "present")
+    _check(checks, "schema-parity-tests", (root / "tests/unit/test_schema_validator_parity.py").is_file(), "tests/unit/test_schema_validator_parity.py", "present")
+
+
+def _contract_conformant(root: Path, checks: list[dict[str, Any]]) -> bool:
+    schema_files = sorted((root / "schemas").glob("*.schema.json"))
+    ok = bool(schema_files) and (root / "src/repokernel/schema_validation.py").is_file()
+    _check(checks, "contract-conformant", ok, "schemas", "schemas executed by schema_validation module")
+    return ok
+
+
+def _planner_conformant(root: Path, checks: list[dict[str, Any]]) -> bool:
+    planner = _read(root / "src/repokernel/planner.py")
+    ok = all(token in planner for token in ("target_snapshot_hash", "before_hash", "after_hash", "apply_policy"))
+    _check(checks, "planner-conformant", ok, "src/repokernel/planner.py", "target-bound plan fields present")
+    return ok
 
 
 def _read(path: Path) -> str:

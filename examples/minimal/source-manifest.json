@@ -6,6 +6,8 @@
       "path_or_origin": "examples/minimal/README.md",
       "authority": "example",
       "privacy": "public",
+      "freshness": "current",
+      "instruction_handling": "data_only",
       "public_label": "Minimal example README",
       "used_for": ["public_guide"]
     }

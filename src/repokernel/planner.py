@@ -1,50 +1,83 @@
 """Deterministic GenerationPlan creation for RepoKernel Phase 1."""
 from __future__ import annotations
 
+import hashlib
 from pathlib import Path
 from typing import Any, Iterable
 
 from .canonical import canonical_hash
 from .models import validate_seed_spec
 from .paths import normalize_relative_path
+from .snapshot import snapshot_entries
 
 
 LEVEL_ORDER = ("L0", "L1", "L2", "L3")
 
 
-def build_generation_plan(seed_spec: dict[str, Any], *, existing_paths: Iterable[str] | None = None) -> dict[str, Any]:
+def build_generation_plan(
+    seed_spec: dict[str, Any],
+    *,
+    existing_paths: Iterable[str] | None = None,
+    target_snapshot: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     """Build a deterministic no-authority GenerationPlan from a reviewed SeedSpec."""
     errors = validate_seed_spec(seed_spec)
     if errors:
         raise ValueError("; ".join(errors))
     existing = {normalize_relative_path(path) for path in (existing_paths or [])}
+    snapshot_items = snapshot_entries(target_snapshot or {})
+    existing.update(snapshot_items)
     project = seed_spec["project"]
     level = seed_spec["readiness_level"]
     plan_files = _planned_files(project, level)
+    target_mode = seed_spec["target"]["mode"]
+    target_snapshot_hash = (target_snapshot or {}).get("tree_hash", "new-repository-no-snapshot")
+    stale_snapshot = target_mode == "existing_repository_retrofit" and not target_snapshot
     items = []
     for path in sorted(plan_files):
         content = plan_files[path]
         action = "create"
-        if path in existing:
-            action = "propose_update" if path in {"AGENTS.md", "CURRENT_STATE.md", "README.md"} else "conflict"
+        planned_hash = _content_hash(content)
+        existing_entry = snapshot_items.get(path)
+        existing_hash = existing_entry.get("content_hash") if existing_entry else None
+        if stale_snapshot:
+            action = "withhold"
+        elif path in existing:
+            if existing_hash == planned_hash:
+                action = "leave_unchanged"
+            elif path.startswith(".repokernel/"):
+                action = "propose_update"
+            elif path in {"AGENTS.md", "CURRENT_STATE.md", "README.md"}:
+                action = "propose_update"
+            else:
+                action = "conflict"
         items.append({
             "path": path,
             "action": action,
             "reason": _reason_for(path, action),
             "source_fields": ["project.name", "project.intent", "project.product", "readiness_level"],
-            "content_hash": canonical_hash(content),
+            "content_hash": planned_hash,
+            "patch_or_content_ref": f"inline:{planned_hash}",
             "risk": "safe" if action in {"create", "leave_unchanged"} else "review_required",
             "approval_needed": action in {"propose_update", "conflict"},
             "authority_effect": "none",
             "content": content,
         })
+    items_hash = canonical_hash(items)
     return {
         "schema": "repokernel.generation-plan.v1",
+        "plan_id": items_hash,
+        "compiler_version": seed_spec.get("compiler_compatibility", {}).get("package_version", "0.3.0.dev0"),
         "seed_hash": canonical_hash(seed_spec),
         "generated_on": seed_spec.get("reviewed_on", "undated"),
         "target": seed_spec["target"],
+        "target_snapshot_hash": target_snapshot_hash,
+        "before_hash": target_snapshot_hash,
+        "after_hash": canonical_hash({"before": target_snapshot_hash, "items": items_hash}),
+        "apply_policy": "stage_only",
+        "rollback_manifest": None,
         "items": items,
-        "blocked": any(item["action"] == "conflict" for item in items),
+        "blocked": stale_snapshot or any(item["action"] == "conflict" for item in items),
         "extensions": seed_spec.get("extensions", {}),
     }
 
@@ -97,8 +130,16 @@ def _reason_for(path: str, action: str) -> str:
         return f"{path} already exists; existing authority requires reviewable update"
     if action == "conflict":
         return f"{path} already exists and cannot be overwritten silently"
+    if action == "leave_unchanged":
+        return f"{path} already exists with matching content"
+    if action == "withhold":
+        return "existing repository retrofit requires a current TargetSnapshot"
     return "required by selected readiness level"
 
 
 def _slug(value: str) -> str:
     return "".join(ch.lower() if ch.isalnum() else "-" for ch in value).strip("-")
+
+
+def _content_hash(content: str) -> str:
+    return hashlib.sha256(content.encode("utf-8")).hexdigest()

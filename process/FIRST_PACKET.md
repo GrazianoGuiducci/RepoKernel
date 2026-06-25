@@ -1,7 +1,7 @@
 # Active Packet — Core And Pilot Completion
 
 date: 2026-06-25
-status: waiting_for_operator_acceptance
+status: accepted_for_codex_track_a_implemented_pending_readback
 review_cycle: RK-RVW-20260625-01
 
 ## Objective
@@ -76,7 +76,7 @@ blocked:
 ## First Safe Action
 
 ```text
-first_safe_action: operator reviews and accepts or revises the dual completion packet; Codex does not implement before acceptance
+first_safe_action: push Track A core conformance and return exact commit/test evidence; do not execute Track B before GPT Pro readback and operator decision
 ```
 
 ## Required Codex Return

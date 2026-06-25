@@ -1,6 +1,6 @@
 # Review Triage — RK-RVW-20260625-01
 
-Status: proposed for operator acceptance  
+Status: accepted for Codex Track A implementation
 Source review: `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md`
 
 | Finding | Disposition | Rationale | Target | Acceptance |
@@ -26,13 +26,30 @@ Source review: `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06
 
 ```text
 accepted_items:
+  - JSON Schema execution and validator parity
+  - Reviewed/version-bound SeedSpec
+  - TargetSnapshot and content-aware retrofit
+  - Disclosure profiles
+  - Canonical `.repokernel/` project audit
+  - Clean package/CLI proof
+  - Reference Seed reproducibility
 adapted_items:
+  - Opaque extension semantics
 deferred_items:
+  - Hosted CI before public experimental use
+  - Public tester request
 rejected_items:
+  - Runtime/L3 implementation for current cycle
+  - Apply command for current cycle
+  - Seed/THIA/Lab promotion for current cycle
+  - Pilot use of private relationship context
 needs_verification_decisions:
+  - jsonschema dependency accepted for Track A implementation
 authority_granted:
-accepted_at:
+  - Track A core conformance only
+  - no Track B execution before core conformance readback
+accepted_at: 2026-06-25 operator message passing GPT Pro instruction to Codex
 ```
 
-Codex must not begin implementation until this section or an equivalent operator
-decision explicitly accepts the active scope.
+Codex may implement Track A only. Track B remains blocked until Track A
+readback and operator decision.

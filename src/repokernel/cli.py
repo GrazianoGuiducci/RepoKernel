@@ -16,8 +16,11 @@ from .models import (
     validate_seed_spec,
     validate_skill_registry,
     validate_source_manifest,
+    validate_target_snapshot,
 )
 from .planner import build_generation_plan
+from .schema_validation import schema_errors_as_text
+from .snapshot import build_target_snapshot
 from .staging import stage_generation_plan
 
 
@@ -28,6 +31,7 @@ VALIDATORS: dict[str, Callable[[dict[str, Any]], list[str]]] = {
     "seed-spec": validate_seed_spec,
     "skill-registry": validate_skill_registry,
     "source-manifest": validate_source_manifest,
+    "target-snapshot": validate_target_snapshot,
 }
 
 
@@ -57,6 +61,7 @@ def build_parser() -> argparse.ArgumentParser:
     plan = sub.add_parser("plan", help="build a deterministic GenerationPlan without writing")
     plan.add_argument("--seed-spec", required=True)
     plan.add_argument("--existing-paths-file")
+    plan.add_argument("--target-snapshot")
     plan.set_defaults(handler=_cmd_plan)
 
     stage = sub.add_parser("stage", help="render plan content into an empty staging directory")
@@ -73,18 +78,27 @@ def build_parser() -> argparse.ArgumentParser:
     audit_cmd.add_argument("--path", required=True)
     audit_cmd.add_argument("--profile", choices=sorted(PROFILES), default="project")
     audit_cmd.set_defaults(handler=_cmd_audit)
+
+    verify_dist = sub.add_parser("verify-dist", help="verify a reference seed distribution")
+    verify_dist.add_argument("--seed-spec", required=True)
+    verify_dist.add_argument("--dist-dir", required=True)
+    verify_dist.set_defaults(handler=_cmd_verify_dist)
     return parser
 
 
 def _cmd_validate_spec(args: argparse.Namespace) -> int:
     data = _read_json(Path(args.input))
-    errors = VALIDATORS[args.kind](data)
+    python_errors = VALIDATORS[args.kind](data)
+    schema_errors = schema_errors_as_text(args.kind, data)
+    errors = python_errors + [f"schema: {error}" for error in schema_errors]
     report = {
         "schema": "repokernel.cli.validate-result.v1",
         "kind": args.kind,
         "input": args.input,
         "valid": not errors,
         "errors": errors,
+        "python_errors": python_errors,
+        "schema_errors": schema_errors,
     }
     print(report_as_json(report))
     return 0 if not errors else 1
@@ -92,14 +106,21 @@ def _cmd_validate_spec(args: argparse.Namespace) -> int:
 
 def _cmd_inspect(args: argparse.Namespace) -> int:
     root = Path(args.path).expanduser().resolve()
-    print(report_as_json(inspect_repository(root)))
+    report = inspect_repository(root)
+    report["target_snapshot"] = build_target_snapshot(root)
+    print(report_as_json(report))
     return 0 if root.is_dir() else 1
 
 
 def _cmd_plan(args: argparse.Namespace) -> int:
     spec = _read_json(Path(args.seed_spec))
     existing_paths = _read_existing_paths(Path(args.existing_paths_file)) if args.existing_paths_file else None
-    print(report_as_json(build_generation_plan(spec, existing_paths=existing_paths)))
+    target_snapshot = _read_json(Path(args.target_snapshot)) if args.target_snapshot else None
+    if isinstance(target_snapshot, dict) and target_snapshot.get("schema") != "repokernel.target-snapshot.v1":
+        nested = target_snapshot.get("target_snapshot")
+        if isinstance(nested, dict):
+            target_snapshot = nested
+    print(report_as_json(build_generation_plan(spec, existing_paths=existing_paths, target_snapshot=target_snapshot)))
     return 0
 
 
@@ -121,6 +142,42 @@ def _cmd_audit(args: argparse.Namespace) -> int:
     result = audit(root, args.profile)
     print(report_as_json(result))
     return 0 if result["ready"] else 1
+
+
+def _cmd_verify_dist(args: argparse.Namespace) -> int:
+    seed = _read_json(Path(args.seed_spec))
+    dist_dir = Path(args.dist_dir).expanduser().resolve()
+    expected = seed.get("distribution", {}).get("files", [])
+    errors: list[str] = []
+    if not isinstance(expected, list) or not expected:
+        errors.append("seed distribution.files must be a non-empty list")
+    for item in expected if isinstance(expected, list) else []:
+        if not isinstance(item, dict):
+            errors.append("distribution file entry must be an object")
+            continue
+        rel = item.get("path")
+        sha256 = item.get("sha256")
+        if not isinstance(rel, str) or not isinstance(sha256, str):
+            errors.append("distribution file entry requires path and sha256")
+            continue
+        path = dist_dir / rel
+        if not path.is_file():
+            errors.append(f"missing dist file: {rel}")
+            continue
+        import hashlib
+
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != sha256:
+            errors.append(f"hash mismatch for {rel}: {actual} != {sha256}")
+    report = {
+        "schema": "repokernel.cli.verify-dist-result.v1",
+        "seed_spec": args.seed_spec,
+        "dist_dir": str(dist_dir),
+        "valid": not errors,
+        "errors": errors,
+    }
+    print(report_as_json(report))
+    return 0 if not errors else 1
 
 
 def _read_json(path: Path) -> dict[str, Any]:

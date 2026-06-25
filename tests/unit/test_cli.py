@@ -14,11 +14,25 @@ from repokernel.cli import main
 def seed_spec():
     return {
         "schema": "repokernel.seed-spec.v1",
+        "version": "repokernel.seed-spec.v1",
         "seed_id": "demo-seed",
+        "source_manifest_hash": "0" * 64,
+        "project_model_hash": "0" * 64,
+        "canonical_namespace": ".repokernel",
         "project": {"name": "Demo", "intent": "Test continuity", "product": "Kernel"},
         "target": {"mode": "new_repository", "path": "demo"},
         "readiness_level": "L2",
         "authority_mode": "propose",
+        "review": {
+            "status": "accepted",
+            "accepted_by_role": "operator",
+            "accepted_at": "2026-06-25",
+            "review_cycle": "RK-RVW-20260625-01",
+        },
+        "compiler_compatibility": {"package_version": "0.3.0.dev0"},
+        "file_plan_policy": "stage_only",
+        "validation_plan": ["validate-spec", "plan", "stage"],
+        "disclosure": {"public": {"name": True, "intent": True, "product": False}},
     }
 
 
@@ -122,6 +136,7 @@ class CliTests(unittest.TestCase):
             code, data = self._run_json(["inspect", "--path", str(root)])
             self.assertEqual(code, 0)
             self.assertEqual(data["boundary"], "read_only")
+            self.assertIn("target_snapshot", data)
             self.assertFalse(any(root.iterdir()))
 
     def _run_json(self, argv):

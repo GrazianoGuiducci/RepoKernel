@@ -23,6 +23,7 @@ plan
 stage
 guides
 audit
+verify-dist
 ```
 
 There is no `apply` command in Phase 1 P0.
@@ -44,6 +45,7 @@ project-model
 seed-spec
 skill-registry
 source-manifest
+target-snapshot
 ```
 
 ## inspect
@@ -55,7 +57,9 @@ PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project
 ```
 
 This reports whether the path has root adapters, legacy project-kernel files or
-the canonical `.repokernel/` control plane.
+the canonical `.repokernel/` control plane. It also emits a read-only
+TargetSnapshot with path kinds, content hashes for eligible text files and
+warnings for symlinks or path collisions.
 
 ## plan
 
@@ -69,6 +73,13 @@ Optional existing paths can be supplied as one relative path per line:
 
 ```bash
 PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt > plan.json
+```
+
+For existing repository retrofit, provide a fresh TargetSnapshot:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project > inspect.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --target-snapshot target-snapshot.json > plan.json
 ```
 
 The command emits JSON to stdout. It does not write generated files.
@@ -107,6 +118,14 @@ The compatibility script calls the same package audit:
 
 ```bash
 python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
+```
+
+## verify-dist
+
+Verify a Reference Seed distribution against recorded file hashes:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli verify-dist --seed-spec specs/reference/starter-l1.seed.json --dist-dir dist/reference/starter-l1
 ```
 
 ## Boundary

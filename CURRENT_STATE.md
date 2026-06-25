@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-25
-status: dual core-and-pilot completion gate prepared; implementation pending operator acceptance
+status: Track A core conformance implemented locally; GPT Pro/operator readback pending
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -11,7 +11,8 @@ branch: main
 
 ```text
 active_surface: complete Phase 1 core conformance and qualify one version-locked private no-write pilot
-current_next: operator accepts RK-RVW-20260625-01, then Codex executes REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md
+current_next: commit and push Track A core conformance evidence, then request GPT Pro/operator readback before Track B
+first_safe_action: push Track A implementation and CODEX_RETURN for RK-RVW-20260625-01 without running the private pilot
 ```
 
 ## Accepted Architecture
@@ -95,14 +96,22 @@ mode: existing_repository_retrofit / A1 observe-and-propose
 
 ```text
 final compiler/SeedSpec architecture accepted;
-.repokernernel canonical control plane accepted;
+.repokernel canonical control plane accepted;
 Phase 1 package and console entry point exist;
 CLI commands exist: validate-spec, inspect, plan, stage, guides, audit;
 staging is separate from target apply;
 planner emits .repokernel-oriented proposal files;
 public source labels use deny-by-default filtering;
-18 repository-contained local unit tests reported passing;
-minimal validate -> plan -> stage -> guides flow reported passing;
+32 repository-contained local unit tests pass after Track A core patch;
+minimal validate -> inspect -> plan -> stage -> guides -> verify-dist -> audit smoke path executed;
+clean-environment wheel/sdist and installed CLI proof passed on local Windows node;
+Draft 2020-12 schema execution and Python-validator parity added;
+review.status and source/model hashes required by SeedSpec;
+content-hashed TargetSnapshot and stale-plan protection added;
+content-aware leave_unchanged/propose_update/conflict planning added;
+canonical .repokernel project audit profile added;
+audit evidence no longer depends on self-attested Markdown phrases;
+Reference Seed starter-l1 verify-dist proof added;
 local synthetic A1 no-write proof exists;
 private pilot repository exists with proposal-first policy;
 full-surface review and dual completion packet committed;
@@ -113,15 +122,7 @@ pilot protocol and version-lock template committed.
 ## Not Yet Verified
 
 ```text
-Draft 2020-12 schema execution and Python-validator parity;
-review.status and source/model hashes required by SeedSpec;
-content-hashed TargetSnapshot and stale-plan protection;
-content-aware leave_unchanged/propose_update/conflict planning;
-canonical .repokernel project audit profile;
-audit evidence independent of self-attested Markdown phrases;
-clean-environment wheel/sdist and installed CLI proof;
 hosted CI tied to a commit;
-Reference Seed byte-for-byte reproducibility;
 version-locked private pilot execution;
 independent pilot evaluation;
 trusted collaborator or public experimental readiness;
@@ -166,12 +167,13 @@ promote its own result.
 ## First Safe Action
 
 ```text
-1. Operator accepts the dual completion packet.
-2. Codex runs Track A core conformance.
-3. GPT Pro performs readback on the exact Codex commit.
-4. Operator accepts the execution version.
-5. Codex runs Track B against the private pilot with zero target writes.
-6. Independent evaluation and operator decision close the cycle.
+first_safe_action: push Track A package/CLI proof and CODEX_RETURN, then stop before Track B until GPT Pro readback/operator decision.
+
+1. Codex completes Track A core conformance.
+2. GPT Pro performs readback on the exact Codex commit.
+3. Operator accepts the execution version or requests correction.
+4. Only then Codex runs Track B against the private pilot with zero target writes.
+5. Independent evaluation and operator decision close the cycle.
 ```
 
 ## Residue Not To Follow

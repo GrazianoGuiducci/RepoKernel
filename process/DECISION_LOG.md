@@ -61,3 +61,18 @@ private messages, email addresses, calendar details or contact judgments.
 Boundary: external-style pilots may use public repository metadata and
 sanitized setup capsules. They must not expose private contact context, write to
 external repositories or imply a completed installer/apply capability.
+
+## 2026-06-25 - RK-RVW-20260625-01 Track A Accepted
+
+Decision: accept the GPT Pro dual completion cycle for Track A core conformance
+only. Track B private pilot execution remains blocked until Track A returns an
+exact commit, real test/package evidence and GPT Pro/operator readback.
+
+Reason: GPT Pro identified concrete core blockers: schema execution/parity,
+reviewed SeedSpec, target snapshot, opaque extensions, disclosure profiles,
+canonical audit, package proof and Reference Seed reproducibility. These are
+neutral RepoKernel requirements and do not depend on any private pilot.
+
+Boundary: no apply command, runtime/L3, Seed/THIA/Lab promotion, public tester
+request, external repository write, credential access or private pilot
+execution is authorized by this decision.

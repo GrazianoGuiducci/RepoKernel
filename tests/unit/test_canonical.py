@@ -18,11 +18,13 @@ class CanonicalTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             canonical_dumps({"bad": float("nan")})
 
-    def test_extensions_round_trip_and_cannot_raise_authority(self):
+    def test_extensions_are_opaque_and_namespaced(self):
         good = {"dnd.note": {"value": "preserve me"}}
         self.assertEqual(validate_namespaced_extensions(good), [])
         bad = {"bad": {"authority_mode": "project_write"}}
         self.assertTrue(validate_namespaced_extensions(bad))
+        opaque = {"dnd.note": {"authority_mode": "project_write", "action": "deploy"}}
+        self.assertEqual(validate_namespaced_extensions(opaque), [])
 
 
 if __name__ == "__main__":

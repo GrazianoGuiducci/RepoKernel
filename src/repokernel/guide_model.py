@@ -29,13 +29,21 @@ def public_source_titles(source_manifest: dict[str, Any]) -> list[str]:
     return titles
 
 
+def disclosure_value(seed_spec: dict[str, Any], key: str) -> str:
+    disclosure = seed_spec.get("disclosure", {})
+    public = disclosure.get("public", {}) if isinstance(disclosure, dict) else {}
+    if not isinstance(public, dict) or public.get(key) is not True:
+        return "[withheld]"
+    project = seed_spec.get("project", {})
+    return str(project.get(key, "[withheld]"))
+
+
 def build_guides(seed_spec: dict[str, Any], source_manifest: dict[str, Any]) -> dict[str, str]:
     """Build concise guide surfaces from canonical fields."""
-    project = seed_spec["project"]
     public_sources = public_source_titles(source_manifest)
-    name = project["name"]
-    intent = project["intent"]
-    product = project["product"]
+    name = disclosure_value(seed_spec, "name")
+    intent = disclosure_value(seed_spec, "intent")
+    product = disclosure_value(seed_spec, "product")
     common_boundary = (
         "Guides explain RepoKernel contracts. They do not redefine authority, "
         "grant writes, install Seed or enable runtime operation."

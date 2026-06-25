@@ -120,3 +120,64 @@ README.md action: propose_update
 private_label_leaked: false
 no_extra_target_files: true
 ```
+
+## Track A Core Conformance Proof
+
+Review cycle:
+
+```text
+RK-RVW-20260625-01
+```
+
+Commands:
+
+```powershell
+python -m unittest discover -s tests/unit -v
+$env:PYTHONPATH='src'
+python -m repokernel.cli audit --path . --profile repokernel-source
+python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
+python -m repokernel.cli verify-dist --seed-spec specs/reference/starter-l1.seed.json --dist-dir dist/reference/starter-l1
+python -m build --sdist --wheel
+```
+
+Installed package proof:
+
+```powershell
+python -m venv <temp-venv>
+<temp-venv>\Scripts\python.exe -m pip install dist\repokernel-0.3.0.dev0-py3-none-any.whl
+Push-Location <outside-repo-dir>
+<temp-venv>\Scripts\repokernel.exe --help
+<temp-venv>\Scripts\repokernel.exe validate-spec --kind seed-spec --input C:\PVSC\ANTI_G\RepoKernel\examples\minimal\seed-spec.json
+<temp-venv>\Scripts\python.exe -c "import repokernel, jsonschema; print('imports ok')"
+Pop-Location
+```
+
+Result:
+
+```text
+unit tests: Ran 32 tests, OK
+audit: ready true, readiness.level L2, failed []
+minimal SeedSpec: valid true, python_errors [], schema_errors []
+reference seed distribution: valid true
+installed CLI outside repo: package-proof ok
+```
+
+Covered Track A behavior:
+
+1. Draft 2020-12 JSON Schema execution and Python-validator parity.
+2. Reviewed/version-bound SeedSpec with source/model hashes and accepted review status.
+3. TargetSnapshot contract and read-only target inspection.
+4. Existing repository retrofit blocked without snapshot evidence.
+5. Content-aware planning: identical content leaves files unchanged; conflicting root files are review proposals or conflicts.
+6. Unknown namespaced extensions are opaque and cannot affect the plan.
+7. Public guide disclosure is deny-by-default for project fields and private sources.
+8. Canonical project-kernel audit evidence no longer depends on self-attested Markdown phrases.
+9. Reference Seed `starter-l1` verifies against generated distribution hashes.
+10. Wheel includes runtime schema resources and console entry point works outside the source checkout.
+
+Non-blocking warning:
+
+```text
+setuptools warns that pyproject project.license table form is deprecated and
+should become a simple SPDX string before 2027-02-18.
+```

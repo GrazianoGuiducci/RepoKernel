@@ -1,0 +1,17 @@
+{
+  "schema": "repokernel.reference-seed.v1",
+  "seed_id": "starter-l1",
+  "version": "1.0.0",
+  "distribution": {
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "b764aaeb7dd0b861d0da2aa2cf303d24431cbc403cd7227928a69a8cfc380366"
+      },
+      {
+        "path": ".repokernel/state/CURRENT_STATE.md",
+        "sha256": "f48d4008588c5372b1084ccd939cd7d9e0898493d706a43dfd915abfdb5692d8"
+      }
+    ]
+  }
+}

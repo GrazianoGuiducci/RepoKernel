@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "repokernel.target-snapshot.v1",
+  "title": "TargetSnapshot",
+  "type": "object",
+  "required": ["schema", "target_snapshot_id", "tree_hash", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "repokernel.target-snapshot.v1" },
+    "target_snapshot_id": { "type": "string", "minLength": 1 },
+    "root": { "type": "string" },
+    "tree_hash": { "type": "string", "minLength": 1 },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "kind"],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(?!/)(?!//)(?!.*:)(?!.*(^|/)\\.\\.?($|/)).+"
+          },
+          "kind": { "enum": ["file", "directory", "symlink", "other"] },
+          "content_hash": { "type": ["string", "null"] },
+          "authority_role": { "type": "string" }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "extensions": { "type": "object", "propertyNames": { "pattern": "^[a-z0-9][a-z0-9_-]*(\\.[a-z0-9][a-z0-9_-]*)+$" } }
+  }
+}
