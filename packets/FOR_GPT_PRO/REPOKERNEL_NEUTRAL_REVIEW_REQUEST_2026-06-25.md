@@ -1,8 +1,10 @@
 # RepoKernel Neutral GPT Pro Review Request
 
 date: 2026-06-25
-status: draft_ready_for_operator_review
+status: ready_on_github_for_gpt_pro
 target: RepoKernel neutral architecture / product readiness
+repo_url: https://github.com/GrazianoGuiducci/RepoKernel
+packet_url: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md
 review_reference: latest pushed `main` commit containing this packet
 prepared_from_local_head: 7ac6937 docs: add neutral GPT Pro review request
 important_note: if the public GitHub repository does not show this packet or
