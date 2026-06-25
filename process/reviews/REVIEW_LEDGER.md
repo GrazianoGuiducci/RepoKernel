@@ -6,7 +6,7 @@ independent verification. It is an index, not a replacement for source reports.
 | Cycle | Source revision | Scope | GPT Pro result | Codex implementation | Verification | Operator decision | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `RK-RVW-20260624-01` | `8942874` | Phase 1 core skeleton | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | Phase 1 P0 commits through `b5f7958` | local 18-test and smoke evidence; independent readback continued in next cycle | architecture retained; P0 hardening authorized | superseded by current cycle |
-| `RK-RVW-20260625-01` | `b5f7958c877314adba75e5c104342dd6c7024c45` | neutral full surface, product path and private pilot qualification | `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md` | Track A implemented in the commit containing `process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md`; Track B blocked | local 32-test, audit, verify-dist and clean wheel/CLI evidence | operator accepted Track A only; GPT Pro/operator readback required before Track B | accepted_for_codex |
+| `RK-RVW-20260625-01` | `b5f7958c877314adba75e5c104342dd6c7024c45` | neutral full surface, product path and private pilot qualification | `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md` | Track A implemented in `db6a761`; Track B blocked | local 32-test, audit, verify-dist and clean wheel/CLI evidence | operator accepted Track A only; GPT Pro/operator readback required before Track B | accepted_for_codex |
 
 ## Allowed Statuses
 

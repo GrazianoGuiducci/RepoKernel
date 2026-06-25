@@ -3,8 +3,8 @@
 date: 2026-06-25
 status: track_a_implemented_pending_gpt_pro_readback
 scope: RepoKernel core conformance only
-implementation_commit: commit containing this file
-readback_pointer_commit: pending exact pushed pointer
+implementation_commit: db6a761 feat: complete Track A core conformance
+readback_pointer_commit: commit containing this exact pointer
 pilot_track_b_status: blocked until GPT Pro/operator readback
 
 ## Operator Authority Used
