@@ -248,6 +248,7 @@ External review request prepared:
 
 ```text
 packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md
+packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md
 ```
 
 External review received:
