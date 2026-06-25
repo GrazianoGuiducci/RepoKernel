@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-25
-status: Track A core conformance implemented locally; GPT Pro/operator readback pending
+status: Track A readback complete; substantial implementation accepted, critical corrections required before Track B
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,26 +10,27 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: complete Phase 1 core conformance and qualify one version-locked private no-write pilot
-current_next: commit and push Track A core conformance evidence, then request GPT Pro/operator readback before Track B
-first_safe_action: push Track A implementation and CODEX_RETURN for RK-RVW-20260625-01 without running the private pilot
+active_surface: close the remaining Track A conformance gaps identified by GPT Pro readback
+current_next: operator accepts or revises TRACK_A_READBACK_CORRECTIONS_2026-06-25.md; Codex implements corrections only
+first_safe_action: keep Track B blocked and return one exact correction commit for final readback
 ```
 
 ## Accepted Architecture
 
 ```text
 RepoKernel Source / Compiler
-  -> authorized sources and ProjectModel
-  -> reviewed SeedSpec
-  -> deterministic, target-bound GenerationPlan
-  -> staging/review
+  -> authorized SourceManifest and evidence-bearing ProjectModel
+  -> reviewed and input-bound SeedSpec
+  -> validated TargetSnapshot
+  -> deterministic target-bound GenerationPlan
+  -> external staging and review
   -> later separately authorized apply gate
   -> validated Project Kernel under .repokernel/
 ```
 
 ```text
-Reference Seed = precompiled reproducible SeedSpec
-Synthesized ProjectSeed = custom reviewed SeedSpec
+Reference Seed = compiler-regenerated distribution
+Synthesized ProjectSeed = custom reviewed and input-bound SeedSpec
 Retrofit Overlay = existing-target application mode
 Root/host files = adapters or existing authority
 L0-L2 = first stable scope
@@ -64,24 +65,25 @@ Review cycle:
 RK-RVW-20260625-01
 ```
 
-Authoritative packet:
+Track A implementation:
 
 ```text
-packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md
+db6a761216d914530a8ee6c53956a5106434c535
+pointer: e42064fc3a98d05a18a0703ba5c18792a7673432
 ```
 
-Independent review:
+GPT Pro readback:
 
 ```text
-process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md
+process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md
+result: pass_with_required_corrections
 ```
 
-Versioning/review protocol:
+Correction packet:
 
 ```text
-docs/guides/evolution-versioning-and-review-loop.md
-docs/compatibility-matrix.md
-process/reviews/REVIEW_LEDGER.md
+packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md
+status: waiting for operator acceptance
 ```
 
 Pilot:
@@ -89,39 +91,41 @@ Pilot:
 ```text
 GrazianoGuiducci/denis-repokernel-pilot
 run: RK-PILOT-20260625-01
-mode: existing_repository_retrofit / A1 observe-and-propose
+status: blocked until correction readback and operator version-lock decision
 ```
 
 ## Verified
 
 ```text
 final compiler/SeedSpec architecture accepted;
-.repokernel canonical control plane accepted;
+.repokernernel canonical control plane accepted;
 Phase 1 package and console entry point exist;
-CLI commands exist: validate-spec, inspect, plan, stage, guides, audit;
-staging is separate from target apply;
-planner emits .repokernel-oriented proposal files;
-public source labels use deny-by-default filtering;
-32 repository-contained local unit tests pass after Track A core patch;
-minimal validate -> inspect -> plan -> stage -> guides -> verify-dist -> audit smoke path executed;
-clean-environment wheel/sdist and installed CLI proof passed on local Windows node;
-Draft 2020-12 schema execution and Python-validator parity added;
-review.status and source/model hashes required by SeedSpec;
-content-hashed TargetSnapshot and stale-plan protection added;
-content-aware leave_unchanged/propose_update/conflict planning added;
-canonical .repokernel project audit profile added;
-audit evidence no longer depends on self-attested Markdown phrases;
-Reference Seed starter-l1 verify-dist proof added;
-local synthetic A1 no-write proof exists;
-private pilot repository exists with proposal-first policy;
-full-surface review and dual completion packet committed;
-versioning protocol, compatibility matrix and review ledger committed;
-pilot protocol and version-lock template committed.
+CLI commands exist: validate-spec, inspect, plan, stage, guides, audit, verify-dist;
+staging remains separate from target apply;
+planner emits .repokernel-oriented proposals;
+public guide project fields and source labels are deny-by-default;
+SeedSpec requires accepted review metadata and source/model hash fields;
+basic TargetSnapshot and content-aware leave_unchanged behavior exist;
+unknown namespaced extensions remain opaque to core planning;
+32 repository-contained local unit tests reported passing by Codex;
+clean-environment local wheel/CLI proof reported by Codex;
+Track B was correctly not executed;
+static GPT Pro readback of pushed Track A files completed.
 ```
 
-## Not Yet Verified
+## Not Yet Verified Or Not Yet Conformant
 
 ```text
+complete schema/Python parity across every contract;
+evidence-bearing ProjectModel with per-assertion source references;
+actual SourceManifest/ProjectModel hash linkage to SeedSpec;
+TargetSnapshot validation, integrity recomputation and safe exclusion policy;
+plan ID fully bound to compiler, SeedSpec, target and snapshot;
+canonical project-kernel audit without legacy root dependencies;
+source ready status dependent on real contract/planner conformance;
+Reference Seed compiler regeneration and extra-file detection;
+uniform CLI validation and provenance;
+independent re-execution of the 32 tests in GPT Pro environment;
 hosted CI tied to a commit;
 version-locked private pilot execution;
 independent pilot evaluation;
@@ -132,21 +136,20 @@ apply transaction, runtime, Seed promotion and external automation.
 ## Boundary
 
 ```text
-can_change:
-  - RepoKernel schemas, validators, planner, inspect/snapshot, audit, CLI, tests,
-    package resources, guides, governance and versioning records;
-  - private pilot technical protocol and sanitized test evidence.
+can_change after operator acceptance:
+  - RepoKernel contracts, validators, bundle validation, snapshot, planner,
+    Reference Seed generation, audit, CLI, tests, packaging and governance.
 
 needs_confirmation:
-  - execute RK-RVW-20260625-01 implementation;
-  - run the private pilot after core conformance;
+  - execute the correction packet;
+  - run Track B after final readback;
   - any external repository observation or write;
   - public tester request;
   - apply command, runtime/L3, Seed promotion or downstream mutation.
 
 must_not_touch:
-  - credentials and .env;
-  - private relationship/contact material;
+  - denis-repokernel-pilot during the correction pass;
+  - credentials, environment files and private relationship/contact material;
   - Denis-owned external repositories;
   - unrelated repositories;
   - target project files before a later reviewed apply gate.
@@ -155,36 +158,33 @@ must_not_touch:
 ## Separation Of Duties
 
 ```text
-operator: intent, sources, authority and final acceptance
+operator: intent, scope, dependency decision and final acceptance
 GPT Pro: independent review and readback
 Codex: accepted implementation and evidence
-independent evaluator: pilot/result evaluation
+independent evaluator: later pilot/result evaluation
 ```
 
-The same unreviewed process may not define intent, implement, evaluate and
-promote its own result.
+Codex does not independently close Track A or authorize Track B.
 
 ## First Safe Action
 
 ```text
-first_safe_action: push Track A package/CLI proof and CODEX_RETURN, then stop before Track B until GPT Pro readback/operator decision.
-
-1. Codex completes Track A core conformance.
-2. GPT Pro performs readback on the exact Codex commit.
-3. Operator accepts the execution version or requests correction.
-4. Only then Codex runs Track B against the private pilot with zero target writes.
-5. Independent evaluation and operator decision close the cycle.
+1. Operator accepts or revises the Track A correction packet.
+2. Codex implements corrections in RepoKernel only.
+3. Codex returns exact commit, package version, tests and deviations.
+4. GPT Pro performs final Track A readback.
+5. Operator decides whether to lock that version for Track B.
 ```
 
 ## Residue Not To Follow
 
 ```text
-legacy scaffold scripts as the primary product path;
+calling manifest hash checking Reference Seed reproducibility;
+using a supplied snapshot without integrity verification;
+root legacy paths inside canonical project-kernel audit;
 self-attested L2 readiness;
-hand-edited generated distributions;
-branch names used as version locks;
-pilot evidence without source revision and target hash;
-person-specific logic entering neutral core;
+branch names used as evidence version locks;
+pilot execution against an unaccepted correction state;
 automatic apply, runtime, network or Seed promotion;
-public readiness claims before dual conformance passes.
+public readiness claims before core and pilot conformance pass.
 ```
