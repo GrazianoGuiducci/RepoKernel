@@ -12,8 +12,6 @@
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Local A1 observe-and-propose proof with no target writes |
 | `process/reports/editoriali-incubation-transfer-2026-06-24.md` | transfer report | Editoriali incubation evidence normalized for RepoKernel |
 | `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Current tester distribution verdict and remaining blockers |
-| `process/reports/private-pilot-denis-sandbox-2026-06-25.md` | pilot report | Controlled private sandbox pilot with no target writes |
-| `process/reports/denis-call-readback-2026-06-25.md` | call readback | Post-call operator readback: obsolete Denis repos, material shared, feedback pending |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md` | external review request | Complete request for independent GPT Pro review of Phase 1 core, guides and installer path |

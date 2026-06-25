@@ -92,13 +92,12 @@ let one process observe, propose, implement, evaluate and promote itself.
 
 ## First Safe Use
 
-Use Denis Craciun's public repositories only as a consensual pilot candidate:
+Use public repositories only when the owner explicitly selects a current
+repo/use case as a consensual pilot candidate:
 
 ```text
-ask him to choose one repo/use case;
 observe direct repo evidence;
 produce a setup capsule;
 propose the smallest useful L0/L1/L2 overlay;
 stop before writes, PRs, Seed install or product claims.
 ```
-

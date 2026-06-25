@@ -66,44 +66,6 @@ readiness.level: L2
 failed: []
 ```
 
-## Post-Call RepoKernel Validation - 2026-06-25
-
-Context:
-
-```text
-Denis call concluded.
-Previous/visible Denis repositories are obsolete.
-Material was shared by the operator for testing.
-RepoKernel focus returned to local product hardening.
-```
-
-Commands:
-
-```powershell
-python -m pytest -q
-$env:PYTHONPATH='src'; python -m repokernel.cli audit --path . --profile repokernel-source
-git diff --check
-```
-
-Result:
-
-```text
-pytest: 18 passed
-audit.ready: true
-audit.readiness.level: L2
-audit.failed: []
-git diff --check: no errors; CRLF warnings only
-```
-
-Boundary confirmed:
-
-```text
-obsolete Denis repositories are not proof targets;
-no external repository write;
-no public tester request;
-feedback on shared material remains pending.
-```
-
 ## Minimal Product Path Proof
 
 Fixture:

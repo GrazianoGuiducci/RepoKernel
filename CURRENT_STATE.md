@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: Phase 1 P0 productization after independent review
-current_next: integrate Denis post-call readback, wait for feedback on material already shared, and continue local RepoKernel product hardening; do not use obsolete Denis repos as proof targets; keep validate -> inspect -> plan -> stage -> guides -> audit as the tester-safe path
+current_next: continue local RepoKernel product hardening around the tester-safe validate -> inspect -> plan -> stage -> guides -> audit path; use only current, explicitly approved repositories or synthetic examples as proof targets
 ```
 
 ## Final Architecture
@@ -182,19 +182,14 @@ verified:
   - distribution readiness gate drafted for LinkedIn tester request review
   - distribution readiness verdict set to private_pilot_first
   - private pilot instruction guide created for controlled technical review
-  - controlled private pilot on denis-repokernel-pilot passed with no target writes
-  - private review brief and Denis handoff packet prepared but not sent
-  - post-call Denis readback preserved: visible/previous repos are obsolete,
-    material was shared by the operator for testing and feedback is pending
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
   - real external tester path from SeedSpec to staged review bundle
-  - Denis feedback on the material already shared
   - human reviewer feedback on private review brief and private pilot instructions
   - real external-style A1 observe-and-propose proof on an approved selected
-    non-obsolete target, if still needed
+    current target, if still needed
   - d-nd-seed, THIA Seed or Lab Seed promotion
   - synthesis and retrofit implementation
   - recursive distillation trigger fidelity and measured latency effect
@@ -205,8 +200,8 @@ not_yet_verified:
 ## First Safe Action
 
 ```text
-first_safe_action: continue local RepoKernel product hardening or wait for Denis feedback on shared material; do not inspect or rely on obsolete Denis repos
-validation_needed: Denis feedback, public claim review, staged review-bundle proof and explicit tester-scope boundary
+first_safe_action: continue local RepoKernel product hardening through synthetic examples or an explicitly approved current target
+validation_needed: public claim review, staged review-bundle proof and explicit tester-scope boundary
 ```
 
 Operational procedure:
@@ -274,7 +269,6 @@ packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
 packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md
 packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md
 docs/guides/private-review-brief.md
-process/reports/private-review-handoff-denis-2026-06-25.md
 ```
 
 Latest A1 proof report:
@@ -282,7 +276,6 @@ Latest A1 proof report:
 ```text
 process/reports/a1-local-no-write-proof-2026-06-24.md
 process/reports/a1-external-style-pilot-2026-06-24.md
-process/reports/denis-call-readback-2026-06-25.md
 ```
 
 After explicit Phase 0 acceptance:

@@ -91,7 +91,6 @@ commit/push without explicit operator gate.
 
 ```text
 Business Manager target-list route;
-Denis call prep before afternoon trigger;
 public product claims before readiness gate;
 full D-ND theory as public explanation;
 Seed/THIA/Lab integration as if already selected.
@@ -107,4 +106,3 @@ Finish the current RepoKernel productization loop in this order:
 3. produce publish | hold | private_pilot_first readiness verdict;
 4. only then decide whether to refine the LinkedIn tester draft.
 ```
-

@@ -12,16 +12,6 @@ private_pilot_first
 RepoKernel has enough Phase 1 P0 product surface for a controlled technical
 review, but not enough proof for a broad LinkedIn tester request yet.
 
-Post-call update:
-
-```text
-Denis call concluded.
-Previous/visible repos are obsolete.
-Operator shared material for testing.
-Feedback is pending.
-Do not use obsolete Denis repos as distribution proof.
-```
-
 ## Verified
 
 ```text
@@ -59,9 +49,8 @@ examples/minimal/source-manifest.json
 ## Still Missing Before Public Tester Post
 
 ```text
-one external-style public/non-sensitive repository proof, if selected and not
-based on obsolete Denis repositories;
-Denis feedback on the material already shared;
+one external-style public/non-sensitive repository proof, if selected and based
+on a current approved target;
 human reviewer feedback on the private pilot instructions;
 clear decision on whether to include the GitHub link in the LinkedIn post;
 confirmation that no public text implies installer, apply, runtime or
@@ -75,13 +64,6 @@ docs/guides/private-review-brief.md
 docs/guides/private-pilot-instructions.md
 ```
 
-Private pilot result:
-
-```text
-process/reports/private-pilot-denis-sandbox-2026-06-25.md
-status: passed_no_write_private_sandbox
-```
-
 ## Boundary
 
 No LinkedIn post, public tester request, external repo write, Seed promotion,
@@ -93,6 +75,5 @@ Use one controlled private pilot first. If it confirms that the minimal smoke
 path and feedback route are understandable, then refine the LinkedIn tester
 post with accurate scope and operator approval.
 
-After the Denis call, the immediate route is feedback on the shared material or
-local product hardening. A new repository-observation proof requires a separate
-approved non-obsolete target.
+The immediate route is local product hardening. A new repository-observation
+proof requires a separate approved current target.

@@ -296,7 +296,7 @@ Editoriali:
   can later consume RepoKernel as an applied project kernel, not as source repo
   duplication.
 
-Denis / external contacts:
+External contacts:
   use A1 observe-and-propose only, no writes.
 
 Lab:

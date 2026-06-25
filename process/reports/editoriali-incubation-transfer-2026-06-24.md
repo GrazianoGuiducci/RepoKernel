@@ -132,7 +132,7 @@ installation form
 rollback/non-write policy
 ```
 
-The first live business/collaboration use, such as Denis, should remain A1
+The first live business/collaboration use should remain A1
 observe-and-propose and should use Business Manager only for relationship,
 call, offer and follow-up routing. RepoKernel remains the technical/procedural
 owner of the repository-kernel proposal.
