@@ -1,6 +1,6 @@
 # Local Validation
 
-Date: 2026-06-24
+Date: 2026-06-25
 
 Repository-hosted validation: passed
 
@@ -16,7 +16,7 @@ python -m unittest discover -s tests/unit -v
 Result:
 
 ```text
-Ran 16 tests
+Ran 18 tests
 OK
 ```
 
@@ -38,6 +38,8 @@ Covered behavior:
 14. CLI `plan` emits a GenerationPlan without writing target files.
 15. CLI `guides` withholds private source labels.
 16. CLI `inspect` is read-only.
+17. CLI `stage` writes proposed files only to an explicit staging directory.
+18. CLI `stage` rejects non-empty staging directories.
 
 ## Historical Note
 
@@ -52,6 +54,7 @@ Commands:
 ```powershell
 $env:PYTHONPATH='src'
 python -m repokernel.cli audit --path . --profile repokernel-source
+python -m repokernel.cli stage --plan <plan.json> --output-dir <empty-staging-dir>
 python scripts/audit_repokernel_project.py --path . --profile repokernel-source --json
 ```
 
@@ -61,6 +64,80 @@ Result:
 ready: true
 readiness.level: L2
 failed: []
+```
+
+## Post-Call RepoKernel Validation - 2026-06-25
+
+Context:
+
+```text
+Denis call concluded.
+Previous/visible Denis repositories are obsolete.
+Material was shared by the operator for testing.
+RepoKernel focus returned to local product hardening.
+```
+
+Commands:
+
+```powershell
+python -m pytest -q
+$env:PYTHONPATH='src'; python -m repokernel.cli audit --path . --profile repokernel-source
+git diff --check
+```
+
+Result:
+
+```text
+pytest: 18 passed
+audit.ready: true
+audit.readiness.level: L2
+audit.failed: []
+git diff --check: no errors; CRLF warnings only
+```
+
+Boundary confirmed:
+
+```text
+obsolete Denis repositories are not proof targets;
+no external repository write;
+no public tester request;
+feedback on shared material remains pending.
+```
+
+## Minimal Product Path Proof
+
+Fixture:
+
+```text
+examples/minimal/seed-spec.json
+examples/minimal/source-manifest.json
+```
+
+Commands:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
+python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+python -m repokernel.cli stage --plan plan.json --output-dir <empty-staging-dir>
+python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
+python -m repokernel.cli audit --path . --profile repokernel-source
+```
+
+Result:
+
+```text
+SeedSpec valid: true
+staged files:
+  AGENTS.md
+  README.md
+  .repokernel/packets/FIRST_PACKET.md
+  .repokernel/skills/minimal-project-semantic-kernel/SKILL.md
+  .repokernel/sources/SOURCE_ATLAS.md
+  .repokernel/state/CURRENT_STATE.md
+target_writes_performed: []
+guides include: Minimal example README
+audit ready: true
 ```
 
 ## A1 Local No-Write Proof

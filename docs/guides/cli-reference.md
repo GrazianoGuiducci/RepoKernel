@@ -20,6 +20,7 @@ repokernel <command>
 validate-spec
 inspect
 plan
+stage
 guides
 audit
 ```
@@ -61,16 +62,27 @@ the canonical `.repokernel/` control plane.
 Build a deterministic `GenerationPlan` from a reviewed `SeedSpec`:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json > plan.json
 ```
 
 Optional existing paths can be supplied as one relative path per line:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt > plan.json
 ```
 
 The command emits JSON to stdout. It does not write generated files.
+
+## stage
+
+Render a `GenerationPlan` into an explicit empty staging directory:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
+```
+
+This is for review only. It writes proposed files under the staging directory
+and never writes to the target repository named by the plan.
 
 ## guides
 

@@ -33,6 +33,8 @@ fix canonical serialization and path safety
 make planning deterministic and aligned to .repokernel/ layout
 make guide projection privacy-safe and deny-by-default
 correct audit readiness claims so prototype presence is not treated as L2 readiness
+add a tester-safe staging surface that renders proposed files into a separate
+  review directory without applying them to the target repository
 ```
 
 ## Boundary
@@ -47,7 +49,7 @@ out_of_scope: applying generated files to third-party repositories, changing d-n
 
 ```text
 first_safe_action: preserve the independent review inside RepoKernel, record Phase 1 acceptance and create this P0 hardening gate
-validation: unit tests, inventory/link check, audit, git diff --check and explicit remaining blockers
+validation: unit tests, inventory/link check, audit, git diff --check, CLI smoke tests, staged review-bundle proof and explicit remaining blockers
 ```
 
 ## Required Codex Return
@@ -62,6 +64,6 @@ commit identifier
 ## Memory Delta
 
 ```text
-preserve: GPT Pro review findings, accepted P0 decisions, validation results and blockers before external testing
+preserve: GPT Pro review findings, accepted P0 decisions, validation results, staged review-bundle behavior and blockers before external testing
 do_not_preserve: speculative Phase 2 work, unreviewed runtime claims and external-repository assumptions
 ```

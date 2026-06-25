@@ -18,6 +18,7 @@ from .models import (
     validate_source_manifest,
 )
 from .planner import build_generation_plan
+from .staging import stage_generation_plan
 
 
 VALIDATORS: dict[str, Callable[[dict[str, Any]], list[str]]] = {
@@ -58,6 +59,11 @@ def build_parser() -> argparse.ArgumentParser:
     plan.add_argument("--existing-paths-file")
     plan.set_defaults(handler=_cmd_plan)
 
+    stage = sub.add_parser("stage", help="render plan content into an empty staging directory")
+    stage.add_argument("--plan", required=True)
+    stage.add_argument("--output-dir", required=True)
+    stage.set_defaults(handler=_cmd_stage)
+
     guides = sub.add_parser("guides", help="project guide text to stdout as JSON")
     guides.add_argument("--seed-spec", required=True)
     guides.add_argument("--source-manifest", required=True)
@@ -94,6 +100,12 @@ def _cmd_plan(args: argparse.Namespace) -> int:
     spec = _read_json(Path(args.seed_spec))
     existing_paths = _read_existing_paths(Path(args.existing_paths_file)) if args.existing_paths_file else None
     print(report_as_json(build_generation_plan(spec, existing_paths=existing_paths)))
+    return 0
+
+
+def _cmd_stage(args: argparse.Namespace) -> int:
+    plan = _read_json(Path(args.plan))
+    print(report_as_json(stage_generation_plan(plan, Path(args.output_dir))))
     return 0
 
 

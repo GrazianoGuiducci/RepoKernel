@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
-updated: 2026-06-24
-status: Phase 1 prototype accepted for P0 hardening only; external use blocked until hardening passes
+updated: 2026-06-25
+status: Phase 1 productization under P0 hardening; external use blocked until readiness gate passes
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,8 +10,8 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: Phase 1 P0 hardening after independent review
-current_next: run the distribution readiness gate before any LinkedIn tester request or public distribution push
+active_surface: Phase 1 P0 productization after independent review
+current_next: integrate Denis post-call readback, wait for feedback on material already shared, and continue local RepoKernel product hardening; do not use obsolete Denis repos as proof targets; keep validate -> inspect -> plan -> stage -> guides -> audit as the tester-safe path
 ```
 
 ## Final Architecture
@@ -170,7 +170,9 @@ verified:
   - GPT Pro independent review preserved inside RepoKernel
   - Phase 1 is accepted only as a prototype surface for P0 hardening
   - governance, docs, validators, canonical serialization, path safety, planner determinism, guide disclosure and audit claims hardened
-  - minimal read-only CLI added: validate-spec, inspect, plan, guides and audit
+  - minimal read-only CLI added: validate-spec, inspect, plan, stage, guides and audit
+  - staging command added to render proposed files into an explicit empty review directory without touching target repositories
+  - minimal example SeedSpec and SourceManifest fixtures added and validated through validate-spec -> plan -> stage -> guides -> audit
   - A1 observe-and-propose gate created for local no-write proofs before external repository tests
   - local synthetic A1 observe-and-propose proof passed with no target writes
   - operational procedure documented for new, existing and external repositories
@@ -178,11 +180,21 @@ verified:
   - Seed/Lab promotion brief created without patching Seed, THIA or Lab
   - public-safe external-style A1 pilot packet created with private contact boundary
   - distribution readiness gate drafted for LinkedIn tester request review
+  - distribution readiness verdict set to private_pilot_first
+  - private pilot instruction guide created for controlled technical review
+  - controlled private pilot on denis-repokernel-pilot passed with no target writes
+  - private review brief and Denis handoff packet prepared but not sent
+  - post-call Denis readback preserved: visible/previous repos are obsolete,
+    material was shared by the operator for testing and feedback is pending
 not_yet_verified:
   - recursive current-tree migration classification
   - registry and evidence consistency after cleanup
   - Reference Seed reproducibility
-  - real external-style A1 observe-and-propose proof on an approved selected target
+  - real external tester path from SeedSpec to staged review bundle
+  - Denis feedback on the material already shared
+  - human reviewer feedback on private review brief and private pilot instructions
+  - real external-style A1 observe-and-propose proof on an approved selected
+    non-obsolete target, if still needed
   - d-nd-seed, THIA Seed or Lab Seed promotion
   - synthesis and retrofit implementation
   - recursive distillation trigger fidelity and measured latency effect
@@ -193,8 +205,8 @@ not_yet_verified:
 ## First Safe Action
 
 ```text
-first_safe_action: use the external-style A1 pilot packet as an internal method checklist; before observing a real third-party repository, confirm target, identity, allowed sources and no-write boundary
-validation_needed: unit tests, CLI smoke tests, inventory/link check, audit, git diff --check, public claim review and explicit tester-scope boundary
+first_safe_action: continue local RepoKernel product hardening or wait for Denis feedback on shared material; do not inspect or rely on obsolete Denis repos
+validation_needed: Denis feedback, public claim review, staged review-bundle proof and explicit tester-scope boundary
 ```
 
 Operational procedure:
@@ -261,6 +273,8 @@ Next A1 proof gate:
 packets/FOR_CODEX/PHASE1_A1_OBSERVE_AND_PROPOSE_GATE_2026-06-24.md
 packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md
 packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md
+docs/guides/private-review-brief.md
+process/reports/private-review-handoff-denis-2026-06-25.md
 ```
 
 Latest A1 proof report:
@@ -268,6 +282,7 @@ Latest A1 proof report:
 ```text
 process/reports/a1-local-no-write-proof-2026-06-24.md
 process/reports/a1-external-style-pilot-2026-06-24.md
+process/reports/denis-call-readback-2026-06-25.md
 ```
 
 After explicit Phase 0 acceptance:

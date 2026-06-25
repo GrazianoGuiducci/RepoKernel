@@ -1,0 +1,13 @@
+{
+  "schema": "repokernel.source-manifest.v1",
+  "sources": [
+    {
+      "source_id": "minimal-readme",
+      "path_or_origin": "examples/minimal/README.md",
+      "authority": "example",
+      "privacy": "public",
+      "public_label": "Minimal example README",
+      "used_for": ["public_guide"]
+    }
+  ]
+}

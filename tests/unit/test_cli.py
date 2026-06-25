@@ -63,6 +63,47 @@ class CliTests(unittest.TestCase):
             self.assertEqual(data["schema"], "repokernel.generation-plan.v1")
             self.assertFalse(any(child.name != "seed.json" for child in root.iterdir()))
 
+    def test_stage_writes_only_to_explicit_staging_dir(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            seed_path = root / "seed.json"
+            plan_path = root / "plan.json"
+            stage_dir = root / "staged"
+            target_dir = root / "target"
+            target_dir.mkdir()
+            seed_path.write_text(json.dumps(seed_spec()), encoding="utf-8")
+            code, plan = self._run_json(["plan", "--seed-spec", str(seed_path)])
+            self.assertEqual(code, 0)
+            plan_path.write_text(json.dumps(plan), encoding="utf-8")
+
+            code, report = self._run_json(["stage", "--plan", str(plan_path), "--output-dir", str(stage_dir)])
+
+            self.assertEqual(code, 0)
+            self.assertEqual(report["boundary"], "staging_only_not_apply")
+            self.assertEqual(report["target_writes_performed"], [])
+            self.assertTrue((stage_dir / ".repokernel" / "state" / "CURRENT_STATE.md").is_file())
+            self.assertFalse(any(target_dir.iterdir()))
+
+    def test_stage_rejects_non_empty_output_dir(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            seed_path = root / "seed.json"
+            plan_path = root / "plan.json"
+            stage_dir = root / "staged"
+            stage_dir.mkdir()
+            (stage_dir / "existing.txt").write_text("keep", encoding="utf-8")
+            seed_path.write_text(json.dumps(seed_spec()), encoding="utf-8")
+            code, plan = self._run_json(["plan", "--seed-spec", str(seed_path)])
+            self.assertEqual(code, 0)
+            plan_path.write_text(json.dumps(plan), encoding="utf-8")
+
+            stderr = io.StringIO()
+            with contextlib.redirect_stderr(stderr):
+                code = main(["stage", "--plan", str(plan_path), "--output-dir", str(stage_dir)])
+
+            self.assertEqual(code, 2)
+            self.assertIn("output directory must be empty", stderr.getvalue())
+
     def test_guides_withhold_private_sources(self):
         with tempfile.TemporaryDirectory() as tmp:
             seed_path = Path(tmp) / "seed.json"

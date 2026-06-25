@@ -18,6 +18,7 @@ guide_model.py
 models.py
 paths.py
 planner.py
+staging.py
 ```
 
 Rules:
@@ -46,6 +47,7 @@ CLI contract:
 validate-spec: validate one canonical JSON contract
 inspect: inspect a repository without writing
 plan: emit GenerationPlan JSON without writing
+stage: render plan content into an explicit empty staging directory
 guides: emit guide JSON without writing target files
 audit: run read-only RepoKernel audit
 apply: intentionally absent in Phase 1 P0

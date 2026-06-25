@@ -53,6 +53,7 @@ prepare SeedSpec
 validate contracts
 create GenerationPlan
 review proposed files and operations
+optionally stage proposed files into a separate review directory
 apply only after a later explicit apply gate exists
 ```
 
@@ -66,13 +67,27 @@ Run from the RepoKernel checkout:
 ```bash
 PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input seed.json
 PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json > plan.json
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
 PYTHONPATH=src python -m repokernel.cli guides --seed-spec seed.json --source-manifest sources.json
 PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-source
 ```
 
 The CLI is read-only with respect to target repositories. It can emit JSON
-plans and guide content, but it does not apply generated files.
+plans, stage proposed files in a separate review directory and emit guide
+content, but it does not apply generated files to the target repository.
+
+For a first local smoke test, use the included minimal fixtures:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
+PYTHONPATH=src python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
+```
+
+This smoke test writes only `plan.json` and the explicit staging directory in
+your checkout. It does not write to the target path named by the SeedSpec.
 
 See `docs/guides/cli-reference.md` for command details and
 `docs/guides/operational-procedure.md` for the full repo-intake procedure.

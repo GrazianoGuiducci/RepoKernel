@@ -1,0 +1,15 @@
+{
+  "schema": "repokernel.seed-spec.v1",
+  "seed_id": "minimal-project-seed",
+  "project": {
+    "name": "Minimal Project",
+    "intent": "Preserve AI-assisted project continuity",
+    "product": "A minimal project kernel"
+  },
+  "target": {
+    "mode": "new_repository",
+    "path": "MinimalProject"
+  },
+  "readiness_level": "L1",
+  "authority_mode": "propose"
+}

@@ -9,6 +9,10 @@ Direct Start creates a new kernel. Synthesis compiles from intent and sources.
 Retrofit observes an existing repository and proposes compatible additions.
 A1 observe-and-propose inspects without writes.
 
+Phase 1 can also stage a reviewed `GenerationPlan` into a separate empty
+directory so you can inspect proposed files without touching the target
+repository.
+
 ## What You Get
 
 ```text

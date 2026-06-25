@@ -1,34 +1,54 @@
 # Minimal Project Example
 
-SeedSpec:
+SeedSpec fixture:
+
+```text
+examples/minimal/seed-spec.json
+```
+
+Equivalent JSON:
 
 ```json
 {
   "schema": "repokernel.seed-spec.v1",
-  "seed_id": "writing-tool-seed",
+  "seed_id": "minimal-project-seed",
   "project": {
-    "name": "Writing Tool",
-    "intent": "Preserve AI-assisted writing continuity",
-    "product": "A writing project kernel"
+    "name": "Minimal Project",
+    "intent": "Preserve AI-assisted project continuity",
+    "product": "A minimal project kernel"
   },
   "target": {
     "mode": "new_repository",
-    "path": "WritingTool"
+    "path": "MinimalProject"
   },
   "readiness_level": "L1",
   "authority_mode": "propose"
 }
 ```
 
-GenerationPlan dry run:
+Run:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json > plan.json
+PYTHONPATH=src python -m repokernel.cli guides --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json
+```
+
+GenerationPlan proposal:
 
 ```text
 AGENTS.md -> create
-CURRENT_STATE.md -> create
-process/FIRST_PACKET.md -> create
+.repokernel/state/CURRENT_STATE.md -> create
+.repokernel/packets/FIRST_PACKET.md -> create
 README.md -> create
-sources/bootstrap/SOURCE_ATLAS_v1.0.md -> create
-skills/writing-tool-semantic-kernel/SKILL.md -> create
+.repokernel/sources/SOURCE_ATLAS.md -> create
+.repokernel/skills/minimal-project-semantic-kernel/SKILL.md -> create
+```
+
+Optional review staging:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
 ```
 
 Activation remains blocked until generated files exist and audit passes.

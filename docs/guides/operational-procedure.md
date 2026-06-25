@@ -153,13 +153,13 @@ contract itself is demonstrably wrong.
 For a new repository:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json > plan.json
 ```
 
 For an existing repository, provide known existing paths:
 
 ```bash
-PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec seed.json --existing-paths-file paths.txt > plan.json
 ```
 
 Review item actions:
@@ -174,7 +174,27 @@ leave_unchanged: no operation
 
 Existing root authority must never be overwritten silently.
 
-### 7. Generate Guides
+### 7. Stage For Review
+
+Render proposed files into a separate empty review directory:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging
+```
+
+Check:
+
+```text
+the staging directory was empty before the command;
+the staged files match the GenerationPlan;
+target_writes_performed is [];
+no target repository files changed.
+```
+
+This step is optional for pure JSON review, but required before asking external
+testers to inspect generated files.
+
+### 8. Generate Guides
 
 Run:
 
@@ -191,7 +211,7 @@ guide text does not grant authority
 guide text points to review and boundaries
 ```
 
-### 8. Audit
+### 9. Audit
 
 For RepoKernel itself:
 
@@ -207,7 +227,7 @@ PYTHONPATH=src python -m repokernel.cli audit --path /path/to/project --profile 
 
 Audit is evidence, not automatic promotion.
 
-### 9. Produce Review Packet
+### 10. Produce Review Packet
 
 Before any write-capable step, produce a review packet with:
 
@@ -223,7 +243,7 @@ no-write evidence
 operator decision needed
 ```
 
-### 10. Stop Before Apply
+### 11. Stop Before Apply
 
 Phase 1 has no `apply` command.
 

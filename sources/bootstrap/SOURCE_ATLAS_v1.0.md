@@ -11,6 +11,9 @@
 | `process/reports/phase0-validation-summary.md` | Phase 0 report | Human-readable Phase 0 validation result and Phase 1 blockers |
 | `process/reports/a1-local-no-write-proof-2026-06-24.md` | proof report | Local A1 observe-and-propose proof with no target writes |
 | `process/reports/editoriali-incubation-transfer-2026-06-24.md` | transfer report | Editoriali incubation evidence normalized for RepoKernel |
+| `process/reports/distribution-readiness-2026-06-25.md` | readiness report | Current tester distribution verdict and remaining blockers |
+| `process/reports/private-pilot-denis-sandbox-2026-06-25.md` | pilot report | Controlled private sandbox pilot with no target writes |
+| `process/reports/denis-call-readback-2026-06-25.md` | call readback | Post-call operator readback: obsolete Denis repos, material shared, feedback pending |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | implementation index | Authoritative Codex entry point and gate sequence |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md` | external review request | Complete request for independent GPT Pro review of Phase 1 core, guides and installer path |
@@ -54,17 +57,22 @@
 | `scripts/phase0_inventory.py` | Phase 0 tool | Generates inventory, migration classification and link-check reports |
 | `pyproject.toml` | package config | Phase 1 Python package metadata |
 | `src/repokernel/` | Phase 1 core | Canonical serialization, contract validation, planner and guide model |
-| `src/repokernel/cli.py` | Phase 1 CLI | Read-only validate, inspect, plan, guides and audit commands |
+| `src/repokernel/cli.py` | Phase 1 CLI | Read-only validate, inspect, plan, stage, guides and audit commands |
 | `src/repokernel/audit.py` | Phase 1 audit | Package-level read-only audit implementation used by CLI and compatibility script |
+| `src/repokernel/staging.py` | Phase 1 staging | Renders GenerationPlan content into an explicit empty review directory without target writes |
 | `schemas/` | Phase 1 schemas | Canonical JSON schema surfaces for core contracts |
 | `docs/guides/` | guides | User, coder, architecture, use-case and example guides |
-| `docs/guides/cli-reference.md` | guide | Read-only Phase 1 CLI commands and boundaries |
+| `docs/guides/cli-reference.md` | guide | Read-only Phase 1 CLI commands, staging and boundaries |
 | `docs/guides/operational-procedure.md` | guide | Canonical procedure for using RepoKernel on new, existing and external repositories |
+| `docs/guides/private-pilot-instructions.md` | guide | Controlled private reviewer instructions before public tester request |
 | `tests/unit/` | validation | Phase 1 core unit tests |
 | `process/deltas/2026-06-23-autopoietic-gap-review.md` | durable delta | Accepted gap review and reconfiguration summary |
 | `process/deltas/2026-06-23-departmental-spectral-analysis.md` | durable delta | Departmental topology and entropy-control resultant |
 | `process/evidence/LOCAL_VALIDATION.md` | provisional evidence | Local validation to supersede with repository-hosted evidence |
 | `templates/` | reusable assets | Current templates pending migration |
-| `examples/minimal/` | example | Synthetic example pending compiler regeneration |
+| `examples/minimal/` | example | Synthetic example with minimal continuity files and Phase 1 SeedSpec/SourceManifest fixtures |
+| `examples/minimal/seed-spec.json` | example fixture | Minimal valid SeedSpec for CLI validate/plan/stage proof |
+| `examples/minimal/source-manifest.json` | example fixture | Minimal public SourceManifest for CLI guide projection proof |
+| `docs/guides/examples/minimal-project.md` | guide example | Minimal project guide aligned with `.repokernel/` planning and staging |
 | `packets/FOR_CODEX/V03_INTEGRATION.md` | superseded packet | Historical v0.3 plan; archive during Phase 0 |
 | `packets/FOR_CODEX/V04_PROJECT_SEED_SYNTHESIS.md` | superseded packet | Historical v0.4 plan; archive during Phase 0 |
