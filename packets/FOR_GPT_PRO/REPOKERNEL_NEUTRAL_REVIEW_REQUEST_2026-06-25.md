@@ -3,9 +3,10 @@
 date: 2026-06-25
 status: draft_ready_for_operator_review
 target: RepoKernel neutral architecture / product readiness
-local_commit: 618e451 docs: remove contact-specific RepoKernel materials
-important_note: current local repo is ahead of origin; do not rely only on the
-public GitHub URL unless the operator pushes first.
+review_reference: latest pushed `main` commit containing this packet
+prepared_from_local_head: 7ac6937 docs: add neutral GPT Pro review request
+important_note: if the public GitHub repository does not show this packet or
+the latest neutral commits, ask for the pasted source bundle instead.
 
 ## Purpose
 
@@ -29,8 +30,8 @@ C. Hybrid: give public URL plus paste the changed/current files that are ahead
 Recommended for now:
 
 ```text
-C if quick review is needed.
-A if we want a clean external repository review.
+A after the current documentation is pushed.
+C only if the public repository is not yet updated.
 ```
 
 ## Copy/Paste Request
@@ -55,10 +56,14 @@ authorized sources + project intent
 -> human/operator gate before any future write-capable step
 ```
 
-Current local commit to review:
+Current reference to review:
 
 ```text
-618e451 docs: remove contact-specific RepoKernel materials
+Use the latest pushed `main` commit that contains:
+- this packet;
+- docs: add neutral GPT Pro review request;
+- docs: remove contact-specific RepoKernel materials;
+- feat: add staging review path.
 ```
 
 If you inspect the GitHub repository and this commit is not visible, ask me for
