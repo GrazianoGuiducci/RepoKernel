@@ -4,7 +4,8 @@ date: 2026-06-25
 status: track_a_corrections_implemented_pending_final_readback
 scope: RepoKernel Track A corrections only
 package_version: 0.3.0.dev0
-correction_commit: commit containing this file
+correction_commit: 4390230 fix: close Track A readback corrections
+readback_pointer_commit: commit containing this exact pointer
 track_b_status: blocked
 pilot_status: not executed and not modified
 
