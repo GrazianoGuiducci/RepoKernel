@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-26
-status: Track A accepted for controlled neutral no-write diagnostic pilot; AIMAIL A2 semantic retrofit patch implemented locally; alpha/public blocked
+status: pre-public hardening active; AIMAIL A2 semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: AIMAIL A2 semantic retrofit quality patch
-current_next: validate and review ProjectModel-driven planner output, compact inspect evidence and no-write replay
-first_safe_action: keep Track B/apply/runtime/public blocked; use AIMAIL A2 only as diagnostic evidence
+active_surface: pre-public hardening after AIMAIL A2 semantic retrofit patch
+current_next: activate hosted CI from docs/ci template, review quickstart/readiness, and prepare bounded public explanation assets
+first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only experimental diagnostic wording after CI evidence
 ```
 
 ## Accepted Architecture
@@ -142,6 +142,8 @@ content;
 review-only root adapter deltas for AGENTS.md and README.md;
 compact excluded-tree summaries in TargetSnapshot extensions;
 AIMAIL A2 replay no-write proof after semantic retrofit patch;
+GitHub Actions CI workflow template added for tests, verify-dist, minimal smoke
+path and source audit;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -160,6 +162,8 @@ snapshot JSON Schema validation inside plan, source revision provenance in
 artifacts.
 semantic retrofit still requires independent review and controlled pilot
 evaluation before any apply gate or public readiness claim;
+hosted CI run result after workflow activation;
+one-page HTML overview not created yet;
 ```
 
 ## Boundary

@@ -6,7 +6,8 @@ It is being built to turn authorized project intent and sources into a validated
 `SeedSpec`, a deterministic `GenerationPlan` and a project-local control plane
 under `.repokernel/` without silently overwriting target repositories.
 
-Current status: `0.3.0.dev0`, private-pilot-first, no apply command.
+Current status: `0.3.0.dev0`, experimental diagnostic compiler, no apply
+command.
 
 ## One Compiler, Two Distribution Forms
 
@@ -49,7 +50,17 @@ authorized sources + project intent
 ```
 
 The current Phase 1 line implements the no-apply validation/planning path.
-Apply, runtime and public distribution remain deferred.
+Apply and runtime remain deferred.
+
+Public interpretation:
+
+```text
+safe to inspect as an experimental/research repository;
+safe to run locally on non-sensitive targets for no-write diagnostics;
+not production-ready;
+not an installer;
+not an autonomous repo modifier.
+```
 
 ## Readiness Levels
 
@@ -113,30 +124,44 @@ Remove disposable local artifacts after review.
 - [Operational procedure](docs/guides/operational-procedure.md)
 - [Evolution, versioning and review loop](docs/guides/evolution-versioning-and-review-loop.md)
 - [Compatibility matrix](docs/compatibility-matrix.md)
+- [Pre-public checklist](docs/pre-public-checklist.md)
+
+CI template:
+
+```text
+docs/ci/github-actions-ci.yml
+```
+
+Activating it under `.github/workflows/` requires a GitHub token or user action
+with workflow scope.
 
 ## Current Completion Gate
 
-RepoKernel is closing two linked tracks:
+RepoKernel has completed the first controlled no-write diagnostic loop with
+AIMAIL as a local product pressure target. The result:
 
 ```text
-Track A — core conformance
-Track B — version-locked private no-write pilot
+mechanical no-write safety: passed
+semantic retrofit usefulness: improved after A2 patch
+apply/runtime/public production readiness: blocked
 ```
 
 Current review and implementation sources:
 
 - [Full surface and pilot review](process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md)
 - [Core and pilot completion packet](packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md)
+- [AIMAIL A2 semantic retrofit patch](process/reports/aimail-a2-semantic-retrofit-patch-2026-06-26.md)
 - [Review ledger](process/reviews/REVIEW_LEDGER.md)
 
-The private pilot is a user-owned test fixture. It is not proof of installation
-in a third-party repository.
+The AIMAIL diagnostic is local operator-controlled evidence. It is not proof of
+production installation in a third-party repository.
 
 ## Evidence Rule
 
 ```text
 files present != semantics valid
 local tests passed != hosted CI
+CI configured != CI has passed on your fork
 structure ready != contract conformant
 runtime present != authority granted
 pilot procedure ready != pilot passed

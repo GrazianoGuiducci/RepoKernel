@@ -1,0 +1,66 @@
+# Pre-Public Checklist
+
+status: active
+updated: 2026-06-26
+
+Use this checklist before describing RepoKernel publicly beyond a controlled
+experimental/research repository.
+
+## Allowed Public Claim
+
+```text
+RepoKernel is an experimental no-apply Project Kernel compiler. It validates
+authorized sources, builds target-bound generation plans, stages proposed files
+outside the target repository and preserves review gates before any future
+write-capable step.
+```
+
+## Do Not Claim Yet
+
+```text
+production-ready;
+installer-ready;
+safe for arbitrary repositories;
+autonomous repo modification;
+apply support;
+runtime/daemon support;
+public alpha for non-technical users;
+trusted security boundary for secrets or private repos.
+```
+
+## Required Before A Public Tester Request
+
+```text
+hosted CI passing on GitHub;
+README and quickstart aligned to current contracts;
+verify-dist passing;
+one current no-write diagnostic replay on a non-sensitive target;
+review packet showing before_hash == after_hash;
+clear feedback path;
+operator-approved public wording.
+```
+
+## Current Evidence
+
+```text
+local unit suite: 47 passed on 2026-06-26
+verify-dist: valid locally on 2026-06-26
+AIMAIL A2 replay: before_hash == after_hash; target_writes_performed == []
+CI workflow template: docs/ci/github-actions-ci.yml
+hosted CI activation: pending a token/user action with GitHub workflow scope
+```
+
+## Next Publication Asset
+
+A future single-page HTML overview may be built after the repository evidence
+is stable. It should explain:
+
+```text
+what RepoKernel is;
+what it does;
+why no-write staging matters;
+how SourceManifest, ProjectModel, SeedSpec and GenerationPlan connect;
+what changed over time;
+what is blocked;
+how to try the minimal smoke path.
+```

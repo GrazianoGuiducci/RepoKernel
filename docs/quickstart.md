@@ -11,14 +11,35 @@ A1 observe-and-propose
 Use A1 when you are looking at another person's repository or a project where
 you do not yet have write authority.
 
-## Prepare A SeedSpec
+## Prepare Contracts
 
-Minimal example:
+RepoKernel uses three linked inputs:
+
+```text
+SourceManifest -> ProjectModel -> SeedSpec
+```
+
+For a first run, use the included minimal fixtures instead of hand-writing a
+partial SeedSpec:
+
+```text
+examples/minimal/source-manifest.json
+examples/minimal/project-model.json
+examples/minimal/seed-spec.json
+```
+
+A valid SeedSpec now includes source/model hashes, review metadata, compiler
+compatibility and a file plan policy. A partial object like the older examples
+below is not enough:
 
 ```json
 {
   "schema": "repokernel.seed-spec.v1",
+  "version": "repokernel.seed-spec.v1",
   "seed_id": "demo-seed",
+  "source_manifest_hash": "<sha256 of canonical SourceManifest>",
+  "project_model_hash": "<sha256 of canonical ProjectModel>",
+  "canonical_namespace": ".repokernel",
   "project": {
     "name": "Demo Project",
     "intent": "Preserve continuity",
@@ -29,7 +50,18 @@ Minimal example:
     "path": "DemoProject"
   },
   "readiness_level": "L1",
-  "authority_mode": "propose"
+  "authority_mode": "propose",
+  "review": {
+    "status": "accepted",
+    "accepted_by_role": "operator",
+    "accepted_at": "2026-06-26",
+    "review_cycle": "local-review"
+  },
+  "compiler_compatibility": {
+    "package_version": "0.3.0.dev0"
+  },
+  "file_plan_policy": "stage_only",
+  "validation_plan": ["validate-spec", "validate-bundle", "plan", "stage"]
 }
 ```
 
@@ -37,6 +69,18 @@ Minimal example:
 
 Phase 1 core creates a deterministic `GenerationPlan`. Existing repository
 files are not overwritten silently.
+
+For existing repositories, run `inspect` first and pass the same-run snapshot
+to `plan`:
+
+```bash
+PYTHONPATH=src python -m repokernel.cli inspect --path /path/to/project > inspect.json
+PYTHONPATH=src python -m repokernel.cli plan \
+  --seed-spec seed.json \
+  --source-manifest sources.json \
+  --project-model project-model.json \
+  --target-snapshot inspect.json > plan.json
+```
 
 ## Audit An Existing Repository
 
@@ -57,8 +101,8 @@ optionally stage proposed files into a separate review directory
 apply only after a later explicit apply gate exists
 ```
 
-Phase 1 is currently P0-hardening. Treat generated plans as proposals, not as
-installer output.
+Phase 1 is currently an experimental no-apply diagnostic path. Treat generated
+plans as proposals, not as installer output.
 
 ## CLI
 
@@ -90,6 +134,13 @@ PYTHONPATH=src python -m repokernel.cli guides --seed-spec examples/minimal/seed
 
 This smoke test writes only `plan.json` and the explicit staging directory in
 your checkout. It does not write to the target path named by the SeedSpec.
+
+After staging, inspect `stage-report.json` or command output and confirm:
+
+```text
+target_writes_performed: []
+boundary: staging_only_not_apply
+```
 
 See `docs/guides/cli-reference.md` for command details and
 `docs/guides/operational-procedure.md` for the full repo-intake procedure.
