@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepoKernel Overview</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17232f;
+      --muted: #5f6d7b;
+      --line: #dce5ec;
+      --panel: #f7fafc;
+      --panel-strong: #edf5f3;
+      --accent: #0c7c86;
+      --accent-2: #7a5af8;
+      --warn: #a35f00;
+      --danger: #a63a35;
+      --ok: #16744a;
+      --bg: #ffffff;
+      --shadow: 0 14px 40px rgba(18, 39, 54, 0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.18em;
+    }
+
+    .shell {
+      min-height: 100vh;
+    }
+
+    .hero {
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(90deg, rgba(12, 124, 134, 0.08), rgba(122, 90, 248, 0.05)),
+        linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+    }
+
+    .hero-inner,
+    .section-inner {
+      width: min(1180px, calc(100vw - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 40px;
+      align-items: center;
+      min-height: 68vh;
+      padding: 56px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(44px, 8vw, 88px);
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: #354655;
+      font-size: clamp(18px, 2.1vw, 24px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .status-panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .status-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 18px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .status-row:last-child {
+      border-bottom: 0;
+    }
+
+    .status-row span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .status-row strong {
+      display: block;
+      font-size: 17px;
+    }
+
+    .band {
+      border-bottom: 1px solid var(--line);
+      padding: 54px 0;
+    }
+
+    .band.tint {
+      background: var(--panel);
+    }
+
+    .section-title {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .section-title p {
+      margin: 4px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 22px;
+      min-width: 0;
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .panel p,
+    .panel ul {
+      margin: 0;
+      color: #344554;
+    }
+
+    .panel ul {
+      padding-left: 19px;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+
+    .node {
+      position: relative;
+      min-height: 132px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 16px;
+    }
+
+    .node::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      width: 10px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .node:last-child::after {
+      display: none;
+    }
+
+    .node span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      margin-bottom: 12px;
+      border-radius: 999px;
+      background: var(--panel-strong);
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .node p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .code {
+      overflow-x: auto;
+      border: 1px solid #1f2d3a;
+      border-radius: 8px;
+      background: #111923;
+      color: #e9f2f8;
+      padding: 18px;
+      font: 14px/1.5 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .badge.ok {
+      border-color: rgba(22, 116, 74, 0.25);
+      color: var(--ok);
+      background: rgba(22, 116, 74, 0.08);
+    }
+
+    .badge.warn {
+      border-color: rgba(163, 95, 0, 0.25);
+      color: var(--warn);
+      background: rgba(163, 95, 0, 0.08);
+    }
+
+    .badge.blocked {
+      border-color: rgba(166, 58, 53, 0.25);
+      color: var(--danger);
+      background: rgba(166, 58, 53, 0.08);
+    }
+
+    .timeline {
+      border-left: 2px solid var(--line);
+      padding-left: 20px;
+    }
+
+    .timeline article {
+      position: relative;
+      padding: 0 0 22px;
+    }
+
+    .timeline article::before {
+      content: "";
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #ffffff;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .timeline time {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .timeline h3 {
+      margin: 6px 0 8px;
+      font-size: 20px;
+    }
+
+    .timeline p {
+      margin: 0;
+      color: #344554;
+    }
+
+    .footer {
+      padding: 34px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 920px) {
+      .hero-inner,
+      .section-title,
+      .grid.three,
+      .grid.two {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+        padding-top: 40px;
+      }
+
+      .status-row {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-inner,
+      .section-inner {
+        width: min(100vw - 24px, 1180px);
+      }
+
+      .band {
+        padding: 38px 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">RepoKernel</p>
+          <h1>Reviewable project kernels without silent target writes.</h1>
+          <p class="lead">
+            RepoKernel is an experimental diagnostic compiler that turns
+            authorized project sources into validated plans, staged proposals
+            and reviewable project-control files.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="../README.md">Read the README</a>
+            <a class="button secondary" href="quickstart.md">Open the quickstart</a>
+          </div>
+        </div>
+
+        <aside class="status-panel" aria-label="Current RepoKernel status">
+          <div class="status-row">
+            <span>Status</span>
+            <strong>Experimental diagnostic compiler</strong>
+          </div>
+          <div class="status-row">
+            <span>Version</span>
+            <strong>0.3.0.dev0</strong>
+          </div>
+          <div class="status-row">
+            <span>Authority</span>
+            <strong>No apply command; staging only</strong>
+          </div>
+          <div class="status-row">
+            <span>Evidence</span>
+            <strong>47 local tests, verify-dist, hosted CI success, AIMAIL A2 no-write replay</strong>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="band">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>What It Is</h2>
+            <p>
+              RepoKernel is a source-to-kernel compiler for AI-assisted project
+              continuity. It is built around explicit contracts, evidence and
+              review gates instead of background automation.
+            </p>
+          </div>
+
+          <div class="grid three">
+            <article class="panel">
+              <h3>Contract First</h3>
+              <p>
+                It links a SourceManifest, ProjectModel and SeedSpec before a
+                plan can be generated. The inputs must be authorized and
+                validated.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>Target Bound</h3>
+              <p>
+                Plans are tied to a target snapshot and can stage proposed files
+                outside the target repository for human review.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>No Silent Apply</h3>
+              <p>
+                The current line intentionally has no apply command, no runtime,
+                no daemon and no credential handling.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band tint">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>The Flow</h2>
+            <p>
+              RepoKernel is meant to make the movement from intent to proposed
+              project kernel inspectable at each step.
+            </p>
+          </div>
+
+          <div class="pipeline" aria-label="RepoKernel diagnostic flow">
+            <div class="node">
+              <span>1</span>
+              <strong>Authorized Sources</strong>
+              <p>Operator-approved materials, not scraped private context.</p>
+            </div>
+            <div class="node">
+              <span>2</span>
+              <strong>ProjectModel</strong>
+              <p>Mission, assertions, boundaries and unknowns.</p>
+            </div>
+            <div class="node">
+              <span>3</span>
+              <strong>SeedSpec</strong>
+              <p>Reviewed specification with hashes and compatibility.</p>
+            </div>
+            <div class="node">
+              <span>4</span>
+              <strong>GenerationPlan</strong>
+              <p>Deterministic proposed operations bound to inputs.</p>
+            </div>
+            <div class="node">
+              <span>5</span>
+              <strong>Stage</strong>
+              <p>Files rendered into a separate review directory.</p>
+            </div>
+            <div class="node">
+              <span>6</span>
+              <strong>Review Gate</strong>
+              <p>Human/operator decision before any future write-capable layer.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Try The Safe Path</h2>
+            <p>
+              The smoke path uses included minimal fixtures and writes only
+              local output files plus an explicit staging directory.
+            </p>
+          </div>
+
+          <pre class="code">PYTHONPATH=src python -m repokernel.cli validate-spec --kind seed-spec --input examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli validate-bundle --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json --seed-spec examples/minimal/seed-spec.json
+PYTHONPATH=src python -m repokernel.cli plan --seed-spec examples/minimal/seed-spec.json --source-manifest examples/minimal/source-manifest.json --project-model examples/minimal/project-model.json &gt; plan.json
+PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./repokernel-staging</pre>
+
+          <div class="badge-row" aria-label="Safe path checks">
+            <span class="badge ok">target_writes_performed: []</span>
+            <span class="badge ok">boundary: staging_only_not_apply</span>
+            <span class="badge warn">non-sensitive targets only</span>
+            <span class="badge blocked">no production claim</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="band tint">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Evidence And Limits</h2>
+            <p>
+              RepoKernel can be inspected publicly as a research/experimental
+              repository. It should not be presented as an installer or
+              autonomous modifier.
+            </p>
+          </div>
+
+          <div class="grid two">
+            <article class="panel">
+              <h3>Current Evidence</h3>
+              <ul>
+                <li>Local unit suite: 47 passed on 2026-06-26.</li>
+                <li>Distribution verification: valid locally on 2026-06-26.</li>
+                <li>Hosted GitHub Actions CI: success on commit 5020028.</li>
+                <li>AIMAIL A2 replay: before_hash equals after_hash.</li>
+              </ul>
+            </article>
+            <article class="panel">
+              <h3>Blocked Claims</h3>
+              <ul>
+                <li>No production readiness.</li>
+                <li>No arbitrary-repository safety guarantee.</li>
+                <li>No apply, daemon, runtime or credential handling.</li>
+                <li>No PR, issue, network or external action automation.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Change Log</h2>
+            <p>
+              This page records the public-facing story in plain language. The
+              source reports remain the authoritative technical evidence.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article>
+              <time>2026-06-26</time>
+              <h3>Hosted CI activated and passed.</h3>
+              <p>
+                GitHub Actions now runs the unit checks for the public
+                repository and succeeded on commit 5020028.
+              </p>
+            </article>
+            <article>
+              <time>2026-06-26</time>
+              <h3>Semantic retrofit planning improved.</h3>
+              <p>
+                AIMAIL A2 exposed that no-write safety was not enough. The
+                planner now carries ProjectModel mission, assertions,
+                boundaries and source lineage into staged proposals.
+              </p>
+            </article>
+            <article>
+              <time>2026-06-25</time>
+              <h3>Track A accepted for controlled no-write diagnostics.</h3>
+              <p>
+                GPT Pro readback accepted the core line only for private,
+                neutral, no-write diagnostic use. Public alpha and production
+                use remain blocked.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band tint">
+        <div class="section-inner">
+          <div class="section-title">
+            <h2>Next Sensible Gates</h2>
+            <p>
+              RepoKernel should advance by evidence, not by ambition. Each next
+              layer needs a separate review and acceptance step.
+            </p>
+          </div>
+
+          <div class="grid three">
+            <article class="panel">
+              <h3>Public Explanation</h3>
+              <p>
+                Keep README, quickstart, overview and checklist aligned with the
+                no-apply diagnostic claim.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>More No-Write Replays</h3>
+              <p>
+                Test on neutral, non-sensitive targets and preserve
+                before/after hash evidence.
+              </p>
+            </article>
+            <article class="panel">
+              <h3>Future Apply Gate</h3>
+              <p>
+                Design only after staged proposals, conflicts and review
+                semantics are strong enough to justify write-capable work.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="section-inner">
+        <p>
+          RepoKernel is MIT licensed. Do not share credentials, private source
+          documents, client material or full private repository dumps when
+          providing feedback.
+        </p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

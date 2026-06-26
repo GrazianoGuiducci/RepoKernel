@@ -48,13 +48,13 @@ verify-dist: valid locally on 2026-06-26
 AIMAIL A2 replay: before_hash == after_hash; target_writes_performed == []
 CI workflow active path: .github/workflows/ci.yml
 CI workflow template: docs/ci/github-actions-ci.yml
-hosted CI result: pending after workflow activation push
+hosted CI result: success on commit 5020028048a6af0267a12346bc4fd8fa98982123
+hosted CI run: https://github.com/GrazianoGuiducci/RepoKernel/actions/runs/28248082896
 ```
 
-## Next Publication Asset
+## Publication Asset
 
-A future single-page HTML overview may be built after the repository evidence
-is stable. It should explain:
+A single-page HTML overview now exists at `docs/overview.html`. It explains:
 
 ```text
 what RepoKernel is;

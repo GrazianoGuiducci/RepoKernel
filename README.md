@@ -117,6 +117,7 @@ Remove disposable local artifacts after review.
 
 ## Guides
 
+- [Single-page overview](docs/overview.html)
 - [User guide](docs/guides/user-guide.md)
 - [Coder guide](docs/guides/coder-guide.md)
 - [Architecture guide](docs/guides/architecture.md)
