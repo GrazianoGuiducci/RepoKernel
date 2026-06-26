@@ -35,7 +35,7 @@ repository: https://github.com/GrazianoGuiducci/RepoKernel
 overview: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/overview.html
 quickstart: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/quickstart.md
 pre-public checklist: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/pre-public-checklist.md
-latest CI evidence: https://github.com/GrazianoGuiducci/RepoKernel/actions/runs/28249042426
+CI workflow evidence: https://github.com/GrazianoGuiducci/RepoKernel/actions/workflows/ci.yml
 portfolio card draft: docs/public/repokernel-portfolio-card.md
 project page draft: docs/public/repokernel-project-page.md
 ```
