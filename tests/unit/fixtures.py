@@ -43,6 +43,44 @@ def project_model() -> dict:
     }
 
 
+def aimail_like_project_model() -> dict:
+    return {
+        "schema": "repokernel.project-model.v1",
+        "identity": {"name": "aimail"},
+        "mission": "Route incoming communication into safe procedures before external action.",
+        "product_or_result": "AIMAIL P1 with Scenario Lab, policy-first routing and seed-native UI direction.",
+        "source_refs": [
+            "aimail-current-state",
+            "aimail-scenario-lab",
+            "aimail-policy-autonomy",
+            "aimail-agentic-ui-qa",
+        ],
+        "assertions": [
+            {
+                "id": "policy-before-model",
+                "status": "verified",
+                "text": "AIMAIL applies policy before model output or external action.",
+                "source_refs": ["aimail-policy-autonomy"],
+            },
+            {
+                "id": "mobile-limitation",
+                "status": "verified",
+                "text": "Mobile/narrow UI is a known limitation, not product-quality evidence.",
+                "source_refs": ["aimail-agentic-ui-qa"],
+            },
+        ],
+        "boundaries": {
+            "authority": "proposal_only",
+            "writes": "staging_outside_target_only",
+            "blocked": ["live_provider", "credentials", "live_send", "backend", "deploy"],
+        },
+        "unknowns": [
+            "whether semantic retrofit output is good enough to adopt",
+            "provider setup friction remains unverified",
+        ],
+    }
+
+
 def seed_spec() -> dict:
     manifest = source_manifest()
     model = project_model()

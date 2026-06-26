@@ -64,7 +64,10 @@ warnings for symlinks or path collisions.
 
 Snapshotting applies the default exclusion policy for repository metadata,
 credential/environment files, private keys, virtualenvs, vendor trees and build
-artifacts. Sensitive excluded paths are redacted in the report.
+artifacts. Sensitive excluded paths are redacted in the report. Excluded
+directory trees are summarized compactly under
+`extensions.repokernel.excluded_summary` so local vendor folders do not dominate
+review artifacts.
 
 ## plan
 

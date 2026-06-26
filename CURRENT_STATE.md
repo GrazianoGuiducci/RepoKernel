@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-26
-status: Track A accepted for controlled neutral no-write diagnostic pilot; alpha/public blocked; former private pilot fixture frozen and de-identified from active context
+status: Track A accepted for controlled neutral no-write diagnostic pilot; AIMAIL A2 semantic retrofit patch implemented locally; alpha/public blocked
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: integrate final GPT Pro correction readback and preserve the neutral diagnostic gate
-current_next: Track A is accepted only for a controlled neutral no-write diagnostic pilot; no pilot starts until the operator selects a neutral target and version lock
-first_safe_action: record the final readback, keep Track B/apply/runtime/public blocked and keep the former private pilot fixture out of active context
+active_surface: AIMAIL A2 semantic retrofit quality patch
+current_next: validate and review ProjectModel-driven planner output, compact inspect evidence and no-write replay
+first_safe_action: keep Track B/apply/runtime/public blocked; use AIMAIL A2 only as diagnostic evidence
 ```
 
 ## Accepted Architecture
@@ -137,6 +137,11 @@ uniform CLI validation and provenance;
 local 45-test correction suite passing;
 clean-environment local wheel/CLI correction proof passing;
 license SPDX string replacing deprecated TOML table;
+ProjectModel-aware planner output for staged state, source atlas and skill
+content;
+review-only root adapter deltas for AGENTS.md and README.md;
+compact excluded-tree summaries in TargetSnapshot extensions;
+AIMAIL A2 replay no-write proof after semantic retrofit patch;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -153,6 +158,8 @@ residual alpha blockers: live SkillRegistry contract mismatch, generated
 Starter L1 audit invariant, TargetSnapshot path/hash/identity limits, uniform
 snapshot JSON Schema validation inside plan, source revision provenance in
 artifacts.
+semantic retrofit still requires independent review and controlled pilot
+evaluation before any apply gate or public readiness claim;
 ```
 
 ## Boundary
@@ -192,11 +199,10 @@ Codex does not independently close Track A or authorize Track B.
 
 ```text
 1. Preserve the final GPT Pro correction readback in the review cycle.
-2. Operator decides whether and when to run a controlled neutral diagnostic pilot.
-3. If a pilot is selected, use the version lock in the readback and a neutral,
-   non-sensitive target.
-4. Codex keeps the former private pilot fixture frozen unless separately
-   reauthorized.
+2. Review the AIMAIL A2 semantic retrofit patch evidence.
+3. If another diagnostic pilot is selected, use a neutral, non-sensitive
+   target and keep staging outside the target.
+4. Keep apply, runtime, external automation and public readiness blocked.
 ```
 
 ## Residue Not To Follow

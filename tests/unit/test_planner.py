@@ -9,7 +9,7 @@ from repokernel.bundle import validate_bundle
 from repokernel.canonical import canonical_hash
 from repokernel.planner import build_generation_plan, dry_run_apply_plan
 from repokernel.snapshot import build_target_snapshot
-from fixtures import project_model, seed_spec, source_manifest
+from fixtures import aimail_like_project_model, project_model, seed_spec, source_manifest
 
 
 def seed():
@@ -111,6 +111,36 @@ class PlannerTests(unittest.TestCase):
             plan_a = build_generation_plan(spec, target_snapshot=snap_a, bundle_provenance=bundle_for(spec))
             plan_b = build_generation_plan(spec, target_snapshot=snap_b, bundle_provenance=bundle_for(spec))
             self.assertNotEqual(plan_a["plan_id"], plan_b["plan_id"])
+
+    def test_project_model_shapes_semantic_retrofit_content(self):
+        spec = seed()
+        model = aimail_like_project_model()
+        spec["project"] = {
+            "name": "aimail",
+            "intent": "Route communication safely.",
+            "product": "AIMAIL P1.",
+        }
+        plan = build_generation_plan(spec, project_model=model, bundle_provenance=bundle_for(seed()))
+        by_path = {item["path"]: item for item in plan["items"]}
+
+        current_state = by_path[".repokernel/state/CURRENT_STATE.md"]["content"]
+        self.assertIn("Route incoming communication into safe procedures", current_state)
+        self.assertIn("AIMAIL applies policy before model output", current_state)
+        self.assertIn("Mobile/narrow UI is a known limitation", current_state)
+        self.assertIn("live_provider, credentials, live_send, backend, deploy", current_state)
+
+        atlas = by_path[".repokernel/sources/SOURCE_ATLAS.md"]["content"]
+        self.assertIn("aimail-scenario-lab", atlas)
+        self.assertIn("policy-before-model", atlas)
+
+        agents = by_path["AGENTS.md"]["content"]
+        readme = by_path["README.md"]["content"]
+        self.assertIn("review_only", agents)
+        self.assertIn("Do not replace existing project authority", agents)
+        self.assertIn("review_only", readme)
+        self.assertIn("proposal and staging only", readme)
+
+        self.assertTrue(all(item["authority_effect"] == "none" for item in plan["items"]))
 
 
 if __name__ == "__main__":

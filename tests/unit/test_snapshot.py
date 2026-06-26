@@ -55,6 +55,20 @@ class SnapshotTests(unittest.TestCase):
 
             self.assertTrue(snapshot_integrity_errors(snapshot))
 
+    def test_snapshot_compacts_vendor_tree_exclusions(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            vendor = root / "node_modules" / "pkg" / "nested"
+            vendor.mkdir(parents=True)
+            for index in range(5):
+                (vendor / f"file{index}.js").write_text("console.log('x')", encoding="utf-8")
+
+            snapshot = build_target_snapshot(root)
+
+            self.assertEqual(snapshot["excluded"], [{"path": "node_modules", "reason": "vendor_tree"}])
+            self.assertGreater(snapshot["extensions"]["repokernel.excluded_summary"]["vendor_tree"], 1)
+            self.assertFalse(any(entry["path"].startswith("node_modules/") for entry in snapshot["entries"]))
+
 
 if __name__ == "__main__":
     unittest.main()

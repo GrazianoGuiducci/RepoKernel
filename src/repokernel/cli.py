@@ -154,6 +154,7 @@ def _cmd_plan(args: argparse.Namespace) -> int:
             target_snapshot = nested
     print(report_as_json(build_generation_plan(
         spec,
+        project_model=model,
         existing_paths=existing_paths,
         target_snapshot=target_snapshot,
         bundle_provenance=bundle.provenance,

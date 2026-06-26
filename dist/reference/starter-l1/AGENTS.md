@@ -1,3 +1,12 @@
-# Starter L1 Agent Gate
+# Starter L1 RepoKernel Adapter Delta
 
-This root file is an adapter. Read `.repokernel/state/CURRENT_STATE.md` before editing.
+status: review_only
+
+Do not replace existing project authority with this file blindly. If accepted,
+merge only the adapter rule below into the target root `AGENTS.md`:
+
+```text
+Before RepoKernel-related edits, read `.repokernel/state/CURRENT_STATE.md`
+and preserve existing root project instructions unless an explicit reviewed
+apply gate says otherwise.
+```

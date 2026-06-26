@@ -46,6 +46,8 @@ def build_target_snapshot(root: Path) -> dict[str, Any]:
     root = root.expanduser().resolve()
     entries: list[dict[str, Any]] = []
     excluded: list[dict[str, str]] = []
+    excluded_counts: dict[str, int] = {}
+    excluded_roots: list[tuple[str, str]] = []
     warnings: list[dict[str, str]] = []
     if not root.is_dir():
         return {
@@ -62,9 +64,16 @@ def build_target_snapshot(root: Path) -> dict[str, Any]:
     seen_lower: dict[str, str] = {}
     for path in sorted(root.rglob("*")):
         rel = path.relative_to(root).as_posix()
+        parent_reason = _contained_exclusion_reason(rel, excluded_roots)
+        if parent_reason:
+            excluded_counts[parent_reason] = excluded_counts.get(parent_reason, 0) + 1
+            continue
         reason = exclusion_reason(rel)
         if reason:
             excluded.append({"path": _redacted_path(rel), "reason": reason})
+            excluded_counts[reason] = excluded_counts.get(reason, 0) + 1
+            if path.is_dir():
+                excluded_roots.append((rel, reason))
             continue
         try:
             safe_rel = normalize_relative_path(rel)
@@ -104,7 +113,7 @@ def build_target_snapshot(root: Path) -> dict[str, Any]:
         })
     tree_hash = compute_tree_hash(entries)
     target_identity = canonical_hash({"root": str(root)})
-    return {
+    snapshot = {
         "schema": "repokernel.target-snapshot.v1",
         "target_snapshot_id": tree_hash,
         "target_identity": target_identity,
@@ -114,6 +123,14 @@ def build_target_snapshot(root: Path) -> dict[str, Any]:
         "excluded": excluded,
         "warnings": warnings,
     }
+    if excluded_counts:
+        snapshot["extensions"] = {
+            "repokernel.excluded_summary": {
+                reason: excluded_counts[reason]
+                for reason in sorted(excluded_counts)
+            }
+        }
+    return snapshot
 
 
 def snapshot_entries(snapshot: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -148,6 +165,13 @@ def exclusion_reason(rel: str) -> str | None:
     name = parts[-1]
     for pattern, reason in DEFAULT_EXCLUSIONS.items():
         if "*" in pattern and fnmatch.fnmatch(name, pattern):
+            return reason
+    return None
+
+
+def _contained_exclusion_reason(rel: str, excluded_roots: list[tuple[str, str]]) -> str | None:
+    for root, reason in excluded_roots:
+        if rel.startswith(f"{root}/"):
             return reason
     return None
 

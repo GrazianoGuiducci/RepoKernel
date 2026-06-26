@@ -1,6 +1,9 @@
 # Source Atlas
 
-| Path | Role |
+| Source | Role |
 | --- | --- |
 | `README.md` | project definition |
-| `.repokernel/state/CURRENT_STATE.md` | active state |
+
+## Assertion Lineage
+
+- No ProjectModel assertions supplied.
