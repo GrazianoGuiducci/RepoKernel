@@ -144,6 +144,8 @@ compact excluded-tree summaries in TargetSnapshot extensions;
 AIMAIL A2 replay no-write proof after semantic retrofit patch;
 GitHub Actions CI workflow template added for tests, verify-dist, minimal smoke
 path and source audit;
+interrupted-session recovery rule documented across recovery, context surface
+and operating guide, with sensitive-stream redaction boundary;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant

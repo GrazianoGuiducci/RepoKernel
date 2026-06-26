@@ -35,6 +35,37 @@ missing or conflicting sources
 
 Do not act before these fields are recoverable.
 
+## Interrupted Session Reentry
+
+If the previous AI session crashed, the chat closed, compaction failed, or the
+operator provides a prior-instance transcript, treat that material as recovery
+evidence, not current authority.
+
+Read in order:
+
+```text
+1. the operator-provided previous-instance file, if present
+2. CURRENT_STATE.md
+3. process/FIRST_PACKET.md
+4. sources/bootstrap/SOURCE_ATLAS_v1.0.md
+5. the latest active packet, review response or evidence file named by state
+6. current git status, branch and head commit
+```
+
+Then reconcile:
+
+```text
+previous-session claim
+current repository fact
+accepted state or packet
+remaining side effect
+first action that is both current and allowed
+```
+
+Do not continue a partially described action until the current repository state
+shows whether it already happened. If the prior session mentioned external
+side effects, verify the real target surface before repeating them.
+
 ## Source Classes
 
 Keep separate:
@@ -121,6 +152,8 @@ forbidden_changes:
 missing_sources:
 conflicts:
 stale_surfaces:
+prior_instance_file:
+unreconciled_side_effects:
 first_safe_action:
 confidence:
 ```

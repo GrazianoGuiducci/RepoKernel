@@ -22,6 +22,25 @@ For the current source repository, the root files remain compatibility
 adapters until the self-hosted `.repokernel/` plane is introduced in a later
 accepted phase.
 
+## Reentry Inputs
+
+Crash transcripts, compaction snapshots, previous-instance files and operator
+handoff notes can help reconstruct position. They are reentry inputs, not
+standalone authority.
+
+Before acting from a reentry input, compare it with:
+
+```text
+current state
+source atlas or manifest
+active packet
+git branch and head
+dirty or untracked work
+relevant external surface, if any side effect is claimed
+```
+
+If these disagree, the next action is a recovery report, not implementation.
+
 ## New Repository
 
 A new project kernel may receive root-level adapters such as `AGENTS.md` and
