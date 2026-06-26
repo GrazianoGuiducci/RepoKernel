@@ -115,6 +115,22 @@ repokernel guides --seed-spec examples/minimal/seed-spec.json \
 
 Remove disposable local artifacts after review.
 
+## How This Relates To Your Workflow
+
+To try RepoKernel in your own workflow, start with the included minimal
+fixtures, then replace them with your own authorized project inputs:
+
+```text
+your SourceManifest
+your ProjectModel
+your reviewed SeedSpec
+your target snapshot
+```
+
+RepoKernel does not require AIMAIL or any D-ND project. AIMAIL is only one
+internal case study used to test whether RepoKernel can observe a real project
+without writing to it.
+
 ## Guides
 
 - [Single-page overview](docs/overview.html)
@@ -136,10 +152,10 @@ docs/ci/github-actions-ci.yml
 Activating it under `.github/workflows/` requires a GitHub token or user action
 with workflow scope.
 
-## Current Completion Gate
+## Current Status
 
-RepoKernel has completed the first controlled no-write diagnostic loop with
-AIMAIL as a local product pressure target. The result:
+RepoKernel has completed its first controlled no-write diagnostic loops. The
+current result:
 
 ```text
 mechanical no-write safety: passed
@@ -154,8 +170,9 @@ Current review and implementation sources:
 - [AIMAIL A2 semantic retrofit patch](process/reports/aimail-a2-semantic-retrofit-patch-2026-06-26.md)
 - [Review ledger](process/reviews/REVIEW_LEDGER.md)
 
-The AIMAIL diagnostic is local operator-controlled evidence. It is not proof of
-production installation in a third-party repository.
+The AIMAIL diagnostic is case-study evidence only. It is not part of the
+general user workflow and is not proof of production installation in a
+third-party repository.
 
 ## Evidence Rule
 

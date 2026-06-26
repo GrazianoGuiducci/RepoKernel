@@ -441,7 +441,7 @@
           </div>
           <div class="status-row">
             <span>Evidence</span>
-            <strong>47 local tests, verify-dist, hosted CI success, AIMAIL A2 no-write replay</strong>
+            <strong>47 local tests, verify-dist, hosted CI success, no-write case study replay</strong>
           </div>
         </aside>
       </div>
@@ -572,8 +572,8 @@ PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./re
               <ul>
                 <li>Local unit suite: 47 passed on 2026-06-26.</li>
                 <li>Distribution verification: valid locally on 2026-06-26.</li>
-                <li>Hosted GitHub Actions CI: success on commit 5020028.</li>
-                <li>AIMAIL A2 replay: before_hash equals after_hash.</li>
+                <li>Hosted GitHub Actions CI: passing on main.</li>
+                <li>No-write case study replay: before_hash equals after_hash.</li>
               </ul>
             </article>
             <article class="panel">
@@ -612,9 +612,9 @@ PYTHONPATH=src python -m repokernel.cli stage --plan plan.json --output-dir ./re
               <time>2026-06-26</time>
               <h3>Semantic retrofit planning improved.</h3>
               <p>
-                AIMAIL A2 exposed that no-write safety was not enough. The
-                planner now carries ProjectModel mission, assertions,
-                boundaries and source lineage into staged proposals.
+                A real product-pressure replay exposed that no-write safety was
+                not enough. The planner now carries ProjectModel mission,
+                assertions, boundaries and source lineage into staged proposals.
               </p>
             </article>
             <article>
