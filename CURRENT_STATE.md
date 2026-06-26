@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: pre-public hardening after AIMAIL A2 semantic retrofit patch
-current_next: activate hosted CI from docs/ci template, review quickstart/readiness, and prepare bounded public explanation assets
+current_next: activate hosted CI from docs/ci template, verify hosted result, then prepare bounded public explanation assets
 first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only experimental diagnostic wording after CI evidence
 ```
 

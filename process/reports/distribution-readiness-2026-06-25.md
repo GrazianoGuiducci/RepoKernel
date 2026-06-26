@@ -84,7 +84,8 @@ verdict.
 
 ## Next Action
 
-Activate the CI workflow from `docs/ci/github-actions-ci.yml` using a GitHub
-token or user action with workflow scope, wait for hosted result, then prepare a
-controlled public-safe overview and optional one-page HTML explanation. A new
-repository-observation proof requires a separate approved current target.
+The CI workflow has been prepared from `docs/ci/github-actions-ci.yml` and is
+being activated under `.github/workflows/ci.yml`. After the hosted CI run is
+visible and passing, prepare a controlled public-safe overview and optional
+one-page HTML explanation. A new repository-observation proof requires a
+separate approved current target.

@@ -46,8 +46,9 @@ operator-approved public wording.
 local unit suite: 47 passed on 2026-06-26
 verify-dist: valid locally on 2026-06-26
 AIMAIL A2 replay: before_hash == after_hash; target_writes_performed == []
+CI workflow active path: .github/workflows/ci.yml
 CI workflow template: docs/ci/github-actions-ci.yml
-hosted CI activation: pending a token/user action with GitHub workflow scope
+hosted CI result: pending after workflow activation push
 ```
 
 ## Next Publication Asset
