@@ -45,11 +45,10 @@ operator-approved public wording.
 ```text
 local unit suite: 47 passed on 2026-06-26
 verify-dist: valid locally on 2026-06-26
-AIMAIL A2 replay: before_hash == after_hash; target_writes_performed == []
+non-sensitive no-write replay: before_hash == after_hash; target_writes_performed == []
 CI workflow active path: .github/workflows/ci.yml
 CI workflow template: docs/ci/github-actions-ci.yml
-hosted CI result: success on commit 5020028048a6af0267a12346bc4fd8fa98982123
-hosted CI run: https://github.com/GrazianoGuiducci/RepoKernel/actions/runs/28248082896
+hosted CI result: success on current main after documentation hardening
 ```
 
 ## Publication Asset

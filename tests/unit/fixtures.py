@@ -43,30 +43,30 @@ def project_model() -> dict:
     }
 
 
-def aimail_like_project_model() -> dict:
+def communication_project_model() -> dict:
     return {
         "schema": "repokernel.project-model.v1",
-        "identity": {"name": "aimail"},
+        "identity": {"name": "Communication Workflow"},
         "mission": "Route incoming communication into safe procedures before external action.",
-        "product_or_result": "AIMAIL P1 with Scenario Lab, policy-first routing and seed-native UI direction.",
+        "product_or_result": "A communication workflow with scenario testing, policy-first routing and responsive UI direction.",
         "source_refs": [
-            "aimail-current-state",
-            "aimail-scenario-lab",
-            "aimail-policy-autonomy",
-            "aimail-agentic-ui-qa",
+            "communication-current-state",
+            "communication-scenario-lab",
+            "communication-policy-autonomy",
+            "communication-ui-qa",
         ],
         "assertions": [
             {
                 "id": "policy-before-model",
                 "status": "verified",
-                "text": "AIMAIL applies policy before model output or external action.",
-                "source_refs": ["aimail-policy-autonomy"],
+                "text": "The workflow applies policy before model output or external action.",
+                "source_refs": ["communication-policy-autonomy"],
             },
             {
                 "id": "mobile-limitation",
                 "status": "verified",
                 "text": "Mobile/narrow UI is a known limitation, not product-quality evidence.",
-                "source_refs": ["aimail-agentic-ui-qa"],
+                "source_refs": ["communication-ui-qa"],
             },
         ],
         "boundaries": {

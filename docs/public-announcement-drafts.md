@@ -62,10 +62,6 @@ E' una base diagnostica no-write: utile per osservare, pianificare e rendere
 revisionabile il modo in cui un progetto puo' acquisire un proprio kernel
 operativo.
 
-Lo sto testando anche su AIMAIL, un progetto nato da una necessita' concreta:
-governare email e comunicazioni business con policy, memoria ispezionabile e
-controllo vocale/mobile, senza bruciare sicurezza e conferma umana.
-
 Per ora il valore non e' "l'AI scrive codice o email da sola".
 Il valore e':
 
@@ -148,25 +144,6 @@ repository today. It proposes and stages files for review. Any future
 write-capable apply gate must be separately designed, reviewed and authorized.
 ```
 
-## AIMAIL Mention Boundary
-
-Allowed:
-
-```text
-AIMAIL is a local product pressure target used to test whether RepoKernel can
-preserve useful project context without writing to the target repository.
-```
-
-Avoid:
-
-```text
-AIMAIL is released;
-AIMAIL is production-ready;
-AIMAIL sends email;
-AIMAIL connects real providers;
-AIMAIL proves RepoKernel is safe for arbitrary repositories.
-```
-
 ## Before Posting
 
 ```text
@@ -174,7 +151,6 @@ AIMAIL proves RepoKernel is safe for arbitrary repositories.
 2. Verify latest hosted CI run is success.
 3. Verify README, quickstart, overview and checklist remain aligned.
 4. Do not include private paths, tokens, client material or local-only reports.
-5. Decide whether the post links only RepoKernel or also mentions AIMAIL.
+5. Link only RepoKernel public-safe surfaces.
 6. Operator approves exact text before publishing.
 ```
-

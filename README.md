@@ -127,9 +127,9 @@ your reviewed SeedSpec
 your target snapshot
 ```
 
-RepoKernel does not require AIMAIL or any D-ND project. AIMAIL is only one
-internal case study used to test whether RepoKernel can observe a real project
-without writing to it.
+RepoKernel does not require any D-ND project, private fixture or specific
+application. Use your own authorized inputs and keep staging outside the target
+repository.
 
 ## Guides
 
@@ -167,11 +167,9 @@ Current review and implementation sources:
 
 - [Full surface and pilot review](process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md)
 - [Core and pilot completion packet](packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md)
-- [AIMAIL A2 semantic retrofit patch](process/reports/aimail-a2-semantic-retrofit-patch-2026-06-26.md)
 - [Review ledger](process/reviews/REVIEW_LEDGER.md)
 
-The AIMAIL diagnostic is case-study evidence only. It is not part of the
-general user workflow and is not proof of production installation in a
+The diagnostic evidence is not proof of production installation in a
 third-party repository.
 
 ## Evidence Rule

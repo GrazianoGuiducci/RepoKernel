@@ -15,7 +15,7 @@ the latest neutral commits, ask for the pasted source bundle instead.
 Use GPT Pro as an independent high-capacity reviewer for RepoKernel while
 keeping RepoKernel neutral, general and usable by anyone.
 
-RepoKernel must not become specific to AIMAIL, D-ND internal operations, one
+RepoKernel must not become specific to any product, D-ND internal operations, one
 contact, one client, one repository, or one local workflow.
 
 ## Source Mode
@@ -76,7 +76,7 @@ the current local files or review the pasted source bundle instead.
 Do not recommend making RepoKernel:
 
 ```text
-specific to AIMAIL or any single product;
+specific to any single product;
 specific to one contact/client/repository;
 a runtime agent loop;
 a network service;
@@ -142,7 +142,7 @@ packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md
 ### 1. Neutrality And Generality
 
 Evaluate whether RepoKernel is general enough for many projects and users.
-Identify any remaining coupling to D-ND internals, AIMAIL, local TM9 workflow,
+Identify any remaining coupling to D-ND internals, product-specific workflows, local TM9 workflow,
 or private assumptions.
 
 ### 2. Architecture

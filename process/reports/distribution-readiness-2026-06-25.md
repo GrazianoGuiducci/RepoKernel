@@ -38,7 +38,7 @@ PYTHONPATH=src python -m repokernel.cli audit --path . --profile repokernel-sour
 git diff --check
   no errors
 
-AIMAIL A2 semantic retrofit replay
+non-sensitive semantic retrofit replay
   before_hash == after_hash
   target_writes_performed: []
   semantic staged state/source content improved from ProjectModel

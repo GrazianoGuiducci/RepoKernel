@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-26
-status: pre-public hardening active; AIMAIL A2 semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
+status: pre-public hardening active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,7 +10,7 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: pre-public hardening after AIMAIL A2 semantic retrofit patch
+active_surface: pre-public hardening after semantic retrofit patch
 current_next: activate hosted CI from docs/ci template, verify hosted result, then prepare bounded public explanation assets
 first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only experimental diagnostic wording after CI evidence
 ```
@@ -141,7 +141,7 @@ ProjectModel-aware planner output for staged state, source atlas and skill
 content;
 review-only root adapter deltas for AGENTS.md and README.md;
 compact excluded-tree summaries in TargetSnapshot extensions;
-AIMAIL A2 replay no-write proof after semantic retrofit patch;
+non-sensitive no-write replay proof after semantic retrofit patch;
 GitHub Actions CI workflow template added for tests, verify-dist, minimal smoke
 path and source audit;
 interrupted-session recovery rule documented across recovery, context surface
@@ -205,7 +205,7 @@ Codex does not independently close Track A or authorize Track B.
 
 ```text
 1. Preserve the final GPT Pro correction readback in the review cycle.
-2. Review the AIMAIL A2 semantic retrofit patch evidence.
+2. Review the no-write semantic retrofit evidence.
 3. If another diagnostic pilot is selected, use a neutral, non-sensitive
    target and keep staging outside the target.
 4. Keep apply, runtime, external automation and public readiness blocked.
