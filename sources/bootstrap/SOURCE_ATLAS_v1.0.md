@@ -39,6 +39,9 @@
 | `docs/possibility-horizon.md` | strategic horizon | Bidirectional and multi-target possibilities without current authority |
 | `docs/pi-reference.md` | external reference | Transferable Pi patterns without dependency |
 | `docs/claim-boundaries.md` | boundary | Public claim limits |
+| `docs/public/repokernel-portfolio-card.md` | public draft | Operator-gated portfolio card copy |
+| `docs/public/repokernel-project-page.md` | public draft | Operator-gated project page copy |
+| `packets/FOR_CODEX/PUBLIC_DISTRIBUTION_COPY_REVIEW_PACKET_2026-06-26.md` | packet | Neutral copy alignment scope and blocked claims |
 | `docs/feedback.md` | feedback | Privacy-safe feedback request |
 | `docs/guides/operational-procedure.md` | procedure | Current no-write product path |
 | `docs/guides/cli-reference.md` | guide | Current CLI surface |

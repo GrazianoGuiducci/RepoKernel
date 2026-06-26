@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-26
-status: pre-public hardening active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
+status: pre-public copy alignment active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -11,8 +11,8 @@ branch: main
 
 ```text
 active_surface: pre-public hardening after semantic retrofit patch
-current_next: activate hosted CI from docs/ci template, verify hosted result, then prepare bounded public explanation assets
-first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only experimental diagnostic wording after CI evidence
+current_next: review neutral portfolio card and project page drafts; keep public tester request, subdomain and production claims blocked
+first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only operator-approved experimental diagnostic wording
 ```
 
 ## Accepted Architecture
@@ -165,7 +165,7 @@ artifacts.
 semantic retrofit still requires independent review and controlled pilot
 evaluation before any apply gate or public readiness claim;
 hosted CI run result after workflow activation;
-one-page HTML overview not created yet;
+independent external review of the neutral public copy drafts;
 ```
 
 ## Boundary
@@ -205,10 +205,11 @@ Codex does not independently close Track A or authorize Track B.
 
 ```text
 1. Preserve the final GPT Pro correction readback in the review cycle.
-2. Review the no-write semantic retrofit evidence.
-3. If another diagnostic pilot is selected, use a neutral, non-sensitive
+2. Review neutral portfolio card and project page drafts.
+3. Review the no-write semantic retrofit evidence.
+4. If another diagnostic pilot is selected, use a neutral, non-sensitive
    target and keep staging outside the target.
-4. Keep apply, runtime, external automation and public readiness blocked.
+5. Keep apply, runtime, external automation and public readiness blocked.
 ```
 
 ## Residue Not To Follow

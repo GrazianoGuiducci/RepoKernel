@@ -36,6 +36,18 @@ overview: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/overview
 quickstart: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/quickstart.md
 pre-public checklist: https://github.com/GrazianoGuiducci/RepoKernel/blob/main/docs/pre-public-checklist.md
 latest CI evidence: https://github.com/GrazianoGuiducci/RepoKernel/actions/runs/28249042426
+portfolio card draft: docs/public/repokernel-portfolio-card.md
+project page draft: docs/public/repokernel-project-page.md
+```
+
+## Publication Sequence
+
+```text
+1. Prepare neutral copy assets inside the repository.
+2. Approve a small portfolio card.
+3. Prepare a project page draft for d-nd.com.
+4. Defer LinkedIn until the card or page is approved.
+5. Do not request public testers or create a subdomain yet.
 ```
 
 ## LinkedIn Draft - Italian

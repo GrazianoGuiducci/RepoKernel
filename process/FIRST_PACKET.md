@@ -1,20 +1,27 @@
-# Active Packet — Track A Readback Corrections
+# Active Packet — Public Distribution Copy Review
 
 date: 2026-06-26
-status: final_readback_accepted_for_controlled_neutral_no_write_diagnostic_pilot
-review_cycle: RK-RVW-20260625-01
+status: neutral_copy_alignment_ready_for_operator_review
+review_cycle: RK-RVW-20260625-01; public_copy_alignment_2026-06-26
 track_b_status: blocked; former private pilot fixture frozen and de-identified from active context
 
 ## Objective
 
 ```text
-objective: preserve Track A acceptance for a controlled neutral no-write diagnostic pilot; keep alpha, public readiness, apply, runtime and the former private pilot fixture blocked unless explicitly reauthorized
+objective: prepare neutral public-safe RepoKernel copy assets while keeping
+publication, public tester request, subdomain, apply, runtime and production
+claims blocked unless explicitly authorized later
 ```
 
 ## Authoritative Sources
 
 ```text
 CURRENT_STATE.md
+docs/public/repokernel-portfolio-card.md
+docs/public/repokernel-project-page.md
+docs/public-announcement-drafts.md
+docs/pre-public-checklist.md
+packets/FOR_CODEX/PUBLIC_DISTRIBUTION_COPY_REVIEW_PACKET_2026-06-26.md
 process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md
 process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md
 process/reviews/RK-RVW-20260625-01/GPT_PRO_CORRECTION_READBACK.md
@@ -25,18 +32,16 @@ process/reviews/REVIEW_LEDGER.md
 sources/bootstrap/SOURCE_ATLAS_v1.0.md
 ```
 
-## Correction Scope
+## Current Copy Scope
 
 ```text
-complete schema/Python parity;
-evidence-bearing ProjectModel;
-SourceManifest/ProjectModel/SeedSpec bundle verification;
-TargetSnapshot integrity and exclusion policy;
-fully target-bound GenerationPlan;
-compiler-regenerated Reference Seed;
-canonical .repokernel project audit;
-uniform CLI validation and provenance;
-package/evidence cleanup.
+portfolio card draft;
+d-nd.com project page draft;
+neutral public claim boundary;
+blocked claim list;
+CTA hierarchy;
+operator review questions;
+no publication action.
 ```
 
 ## Boundary
@@ -52,6 +57,8 @@ blocked:
   target apply or writes;
   network and credential use;
   runtime/L3;
+  publication or deploy;
+  subdomain;
   public tester request;
   Seed/THIA/Lab promotion;
   unrelated repository changes.
@@ -60,7 +67,7 @@ blocked:
 ## First Safe Action
 
 ```text
-first_safe_action: record the final GPT Pro correction readback; Codex does not run or inspect the frozen pilot fixture
+first_safe_action: operator reviews the neutral portfolio card and project page drafts before any external publication
 ```
 
 ## Final Readback Result
@@ -70,15 +77,16 @@ Track A: accepted for controlled neutral no-write diagnostic pilot.
 Alpha/public/production: blocked.
 Apply/runtime/network/Seed promotion: blocked.
 Pilot target: not selected.
+Public copy assets: draft only; not published.
 ```
 
 ## Acceptance Gate
 
 ```text
-GPT Pro correction readback: accepted_for_controlled_neutral_diagnostic_pilot
-operator decision on whether any neutral pilot is still needed;
-explicit neutral target and version-lock decision if needed;
-independent evaluator required before pilot conclusion.
+operator approves exact copy for portfolio and/or site;
+hosted CI and README/checklist alignment remain true;
+no product-specific case-study names in RepoKernel public copy;
+public tester request and subdomain remain separately blocked.
 ```
 
 Only after all required gates may any Track B-like fixture run start. No former
@@ -93,6 +101,7 @@ preserve:
   versioned evidence;
   clarified contract and audit semantics;
   final Track A compatibility state.
+  neutral public copy boundary and blocked claims.
 
 do_not_preserve:
   raw reasoning;

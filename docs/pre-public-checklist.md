@@ -64,3 +64,13 @@ what changed over time;
 what is blocked;
 how to try the minimal smoke path.
 ```
+
+Draft public copy assets now exist for operator review:
+
+```text
+docs/public/repokernel-portfolio-card.md
+docs/public/repokernel-project-page.md
+```
+
+These assets are not publication approval. Portfolio, site, LinkedIn, tester
+requests and subdomain decisions remain separate operator gates.
