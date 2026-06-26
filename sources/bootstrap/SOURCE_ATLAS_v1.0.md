@@ -8,6 +8,7 @@
 | `process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md` | implementation return | Track A implementation, local evidence and deviations |
 | `process/reviews/RK-RVW-20260625-01/CODEX_RETURN_CORRECTION.md` | correction return | Track A correction implementation, tests and remaining blockers |
 | `process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md` | independent readback | Static review result: pass with required corrections; Track B blocked |
+| `process/reviews/RK-RVW-20260625-01/GPT_PRO_CORRECTION_READBACK.md` | independent readback | Final correction result: Track A accepted for controlled neutral no-write diagnostic pilot |
 | `packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md` | active implementation packet | Bounded Track A corrections before any future fixture decision |
 | `process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md` | prior independent review | Full core/pilot findings and dual conformance resultant |
 | `packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md` | prior implementation packet | Original Track A and Track B completion scope |
@@ -69,8 +70,7 @@
 ## Frozen Former Pilot Fixture
 
 ```text
-repository: GrazianoGuiducci/denis-repokernel-pilot
-run: RK-PILOT-20260625-01
+identifier: withheld from active context
 status: frozen; not an active context; not a person/contact context
 boundary: do not read, pull, execute, mutate, stage against or cite as active
 unless the operator explicitly reauthorizes a neutral technical fixture later.

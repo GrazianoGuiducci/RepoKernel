@@ -3,7 +3,7 @@
 Date: 2026-06-25  
 Reviewer role: GPT Pro independent architecture/product review  
 RepoKernel reference: `b5f7958c877314adba75e5c104342dd6c7024c45`  
-Pilot repository: `GrazianoGuiducci/denis-repokernel-pilot`  
+Pilot repository: former private pilot fixture
 Verdict: architecture coherent; product path partially proven; dual completion gate required
 
 ## Executive Verdict

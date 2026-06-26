@@ -30,7 +30,7 @@ packets/FOR_CODEX/PHASE1_P0_HARDENING_PACKET_2026-06-24.md
 src/repokernel/
 schemas/
 tests/unit/
-GrazianoGuiducci/denis-repokernel-pilot:
+Former private pilot fixture:
   README.md
   AGENTS.md
   .repokernel/state/CURRENT_STATE.md
@@ -314,11 +314,11 @@ Do not hand-edit `dist/`.
 Repository:
 
 ```text
-GrazianoGuiducci/denis-repokernel-pilot
+former private pilot fixture
 ```
 
 The pilot is a private test workspace. It is not evidence that RepoKernel is
-installed in a Denis-owned external project.
+installed in a formerly selected external project.
 
 ### B0. Portability And Version Lock
 

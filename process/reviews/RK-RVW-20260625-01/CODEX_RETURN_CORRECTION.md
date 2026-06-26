@@ -28,7 +28,7 @@ and governance records.
 Not executed:
 
 ```text
-denis-repokernel-pilot;
+former private pilot fixture;
 Track B;
 target apply or writes;
 runtime/L3;

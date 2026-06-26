@@ -1,14 +1,14 @@
 # Active Packet — Track A Readback Corrections
 
-date: 2026-06-25
-status: correction_implemented_pending_final_readback
+date: 2026-06-26
+status: final_readback_accepted_for_controlled_neutral_no_write_diagnostic_pilot
 review_cycle: RK-RVW-20260625-01
-track_b_status: blocked; former denis-repokernel-pilot fixture frozen
+track_b_status: blocked; former private pilot fixture frozen and de-identified from active context
 
 ## Objective
 
 ```text
-objective: close Track A and await final readback; keep the former private pilot fixture frozen unless a neutral fixture is explicitly reauthorized
+objective: preserve Track A acceptance for a controlled neutral no-write diagnostic pilot; keep alpha, public readiness, apply, runtime and the former private pilot fixture blocked unless explicitly reauthorized
 ```
 
 ## Authoritative Sources
@@ -17,6 +17,7 @@ objective: close Track A and await final readback; keep the former private pilot
 CURRENT_STATE.md
 process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md
 process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md
+process/reviews/RK-RVW-20260625-01/GPT_PRO_CORRECTION_READBACK.md
 packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md
 docs/guides/evolution-versioning-and-review-loop.md
 docs/compatibility-matrix.md
@@ -46,7 +47,7 @@ allowed after operator acceptance:
   audit, CLI, tests, packaging, docs and review records.
 
 blocked:
-  denis-repokernel-pilot as active context, default Track B target, or Denis/person context;
+  former private pilot fixture as active context, default Track B target, or person/contact context;
   Track B;
   target apply or writes;
   network and credential use;
@@ -59,35 +60,29 @@ blocked:
 ## First Safe Action
 
 ```text
-first_safe_action: wait for final GPT Pro Track A readback; Codex does not run or inspect the frozen pilot fixture
+first_safe_action: record the final GPT Pro correction readback; Codex does not run or inspect the frozen pilot fixture
 ```
 
-## Required Codex Return
+## Final Readback Result
 
 ```text
-process/reviews/RK-RVW-20260625-01/CODEX_RETURN_CORRECTION.md
-
-exact correction commit;
-package version;
-files changed;
-contract fixture/parity summary;
-commands and actual outputs;
-clean-install evidence;
-remaining blockers and deviations;
-confirmation that Track B and the pilot were not executed;
-request for final GPT Pro Track A readback.
+Track A: accepted for controlled neutral no-write diagnostic pilot.
+Alpha/public/production: blocked.
+Apply/runtime/network/Seed promotion: blocked.
+Pilot target: not selected.
 ```
 
 ## Acceptance Gate
 
 ```text
-GPT Pro correction readback: accepted_for_track_a or correction requested
-operator decision on whether any neutral pilot is still needed
-explicit future fixture/version-lock decision if needed
+GPT Pro correction readback: accepted_for_controlled_neutral_diagnostic_pilot
+operator decision on whether any neutral pilot is still needed;
+explicit neutral target and version-lock decision if needed;
+independent evaluator required before pilot conclusion.
 ```
 
-Only after all three may any Track B-like fixture run start. The old
-denis-repokernel-pilot is not the default target.
+Only after all required gates may any Track B-like fixture run start. No former
+fixture is a default target.
 
 ## Memory Delta
 
@@ -104,5 +99,5 @@ do_not_preserve:
   unverified local claims;
   staged proposal trees;
   pilot-specific or private relationship material;
-  denis-repokernel-pilot as living context.
+  former private pilot fixture as living context or identity-bearing context.
 ```

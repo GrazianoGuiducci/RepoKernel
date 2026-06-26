@@ -77,17 +77,16 @@ Boundary: no apply command, runtime/L3, Seed/THIA/Lab promotion, public tester
 request, external repository write, credential access or private pilot
 execution is authorized by this decision.
 
-## 2026-06-25 - Former Denis Pilot Frozen Out Of Context
+## 2026-06-25 - Former Private Pilot Fixture Frozen Out Of Context
 
-Decision: freeze `GrazianoGuiducci/denis-repokernel-pilot` as a former private
-technical fixture and remove it from active RepoKernel context. It must not be
-treated as a Denis/person context, a default Track B target or a required next
-step.
+Decision: freeze the former private technical fixture and remove it from active
+RepoKernel context. It must not be treated as a person/contact context, a
+default Track B target or a required next step.
 
 Reason: RepoKernel must remain neutral and current work is Track A readback,
 not a person-specific pilot. Historical reports may keep their lineage, but
 reentry and next-action logic must not reactivate the pilot implicitly.
 
-Boundary: do not read, pull, execute, mutate, stage against or cite
-`denis-repokernel-pilot` as active unless the operator explicitly reauthorizes a
-neutral technical fixture later.
+Boundary: do not read, pull, execute, mutate, stage against or cite the former
+private fixture as active unless the operator explicitly reauthorizes a neutral
+technical fixture later.

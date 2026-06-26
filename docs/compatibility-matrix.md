@@ -21,7 +21,7 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 | Canonical target | `.repokernel/` plus optional root adapters | accepted architecture |
 | L0-L2 | first stable scope | Track A core conformance implemented locally; external readback pending |
 | L3 | contract only | executable runtime deferred |
-| Public distribution | blocked | final Track A readback first; any pilot fixture must be reselected |
+| Public distribution | blocked | controlled neutral no-write diagnostic pilot may precede alpha; public use remains blocked |
 
 ## Evidence Matrix
 
@@ -35,8 +35,8 @@ Last architectural review baseline: `b5f7958c877314adba75e5c104342dd6c7024c45`
 | Installed package proof | local clean venv, outside source checkout | passed | Windows local proof only; hosted matrix pending |
 | Reference Seed reproducibility | `specs/reference/starter-l1.seed.json` | compiler-regenerated verify-dist passed | one starter distribution only |
 | External-style procedure | public-safe procedure | ready | procedure only, not a completed neutral pilot |
-| Distribution verdict | 2026-06-25 | final Track A readback first | collaborator/public use blocked |
-| Former private pilot fixture | `denis-repokernel-pilot` | frozen | not active context; not a person/contact context |
+| Distribution verdict | 2026-06-25 | Track A accepted only for controlled neutral diagnostic pilot | collaborator/public use blocked |
+| Former private pilot fixture | de-identified in active docs | frozen | not active context; not a person/contact context |
 
 ## Compatibility Rules
 
@@ -60,14 +60,14 @@ reviewed SeedSpec contract;
 target snapshot and content-aware planning;
 canonical .repokernel audit profile;
 clean-environment wheel/CLI proof;
-neutral version-locked pilot or fixture only if explicitly reselected;
+neutral version-locked diagnostic pilot or fixture only if explicitly selected;
 review-cycle ledger and independent pilot evaluation.
 ```
 
 Track A status:
 
 ```text
-Track A correction implemented locally and awaiting GPT Pro/operator readback;
-hosted CI, any future pilot execution and independent pilot evaluation remain
-required before 0.3.0a1.
+Track A correction accepted for a controlled neutral no-write diagnostic pilot.
+Hosted CI, residual debt cleanup, any future pilot execution and independent
+pilot evaluation remain required before 0.3.0a1.
 ```

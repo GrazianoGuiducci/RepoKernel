@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
-updated: 2026-06-25
-status: Track A readback corrections pushed; final GPT Pro/operator readback pending; former private pilot fixture frozen
+updated: 2026-06-26
+status: Track A accepted for controlled neutral no-write diagnostic pilot; alpha/public blocked; former private pilot fixture frozen and de-identified from active context
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: close the remaining Track A conformance gaps identified by GPT Pro readback
-current_next: wait for final GPT Pro Track A readback on pushed correction commit; do not reactivate the former private pilot fixture
-first_safe_action: keep Track B blocked and keep denis-repokernel-pilot out of active context
+active_surface: integrate final GPT Pro correction readback and preserve the neutral diagnostic gate
+current_next: Track A is accepted only for a controlled neutral no-write diagnostic pilot; no pilot starts until the operator selects a neutral target and version lock
+first_safe_action: record the final readback, keep Track B/apply/runtime/public blocked and keep the former private pilot fixture out of active context
 ```
 
 ## Accepted Architecture
@@ -68,8 +68,11 @@ RK-RVW-20260625-01
 Track A implementation:
 
 ```text
-db6a761216d914530a8ee6c53956a5106434c535
-pointer: e42064fc3a98d05a18a0703ba5c18792a7673432
+implementation: db6a761216d914530a8ee6c53956a5106434c535
+correction_source_revision: 43902309fb41a9574bddf1ffa13b07238fd6488a
+correction_pointer: f26471fbb2f8e346db69cd5a5c02335a753697bd
+current_docs_pointer: 553c73718a6b5c939d88e7d889b150f11475e91c
+package: 0.3.0.dev0
 ```
 
 GPT Pro readback:
@@ -83,15 +86,22 @@ Correction packet:
 
 ```text
 packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md
-status: accepted and implemented locally; final readback pending
+status: accepted and implemented locally
+```
+
+Final GPT Pro correction readback:
+
+```text
+process/reviews/RK-RVW-20260625-01/GPT_PRO_CORRECTION_READBACK.md
+result: Track A accepted for controlled neutral no-write diagnostic pilot
+alpha_public_production: blocked
 ```
 
 Former Private Pilot Fixture:
 
 ```text
-GrazianoGuiducci/denis-repokernel-pilot
-run: RK-PILOT-20260625-01
-status: frozen; not an active context; not a Denis/person context
+identifier: withheld from active context
+status: frozen; not an active context; not a person/contact context
 boundary: do not read, pull, execute, mutate, stage against, or cite as active
 unless the operator explicitly reauthorizes a neutral technical fixture later.
 ```
@@ -113,6 +123,8 @@ unknown namespaced extensions remain opaque to core planning;
 clean-environment local wheel/CLI proof reported by Codex;
 Track B was correctly not executed;
 static GPT Pro readback of pushed Track A files completed.
+final GPT Pro correction readback accepted Track A for controlled neutral
+no-write diagnostic pilot only;
 complete schema/Python parity across every contract;
 evidence-bearing ProjectModel with per-assertion source references;
 actual SourceManifest/ProjectModel hash linkage to SeedSpec;
@@ -132,11 +144,15 @@ license SPDX string replacing deprecated TOML table;
 ```text
 independent re-execution of the 45-test correction suite in GPT Pro environment;
 hosted CI tied to a commit;
-replacement neutral pilot or fixture decision;
-version-locked pilot execution if explicitly reauthorized later;
+neutral diagnostic target/fixture decision;
+version-locked diagnostic pilot execution if explicitly authorized later;
 independent pilot evaluation;
 trusted collaborator or public experimental readiness;
 apply transaction, runtime, Seed promotion and external automation.
+residual alpha blockers: live SkillRegistry contract mismatch, generated
+Starter L1 audit invariant, TargetSnapshot path/hash/identity limits, uniform
+snapshot JSON Schema validation inside plan, source revision provenance in
+artifacts.
 ```
 
 ## Boundary
@@ -154,7 +170,7 @@ needs_confirmation:
   - apply command, runtime/L3, Seed promotion or downstream mutation.
 
 must_not_touch:
-  - denis-repokernel-pilot as active context or default Track B target;
+  - former private pilot fixture as active context or default Track B target;
   - credentials, environment files and private relationship/contact material;
   - person/contact-specific repositories or context;
   - unrelated repositories;
@@ -175,10 +191,12 @@ Codex does not independently close Track A or authorize Track B.
 ## First Safe Action
 
 ```text
-1. GPT Pro performs final Track A readback on the pushed correction commit.
-2. Operator decides whether Track A is accepted.
-3. If a pilot is still useful, operator selects a neutral fixture explicitly.
-4. Codex keeps denis-repokernel-pilot frozen unless separately reauthorized.
+1. Preserve the final GPT Pro correction readback in the review cycle.
+2. Operator decides whether and when to run a controlled neutral diagnostic pilot.
+3. If a pilot is selected, use the version lock in the readback and a neutral,
+   non-sensitive target.
+4. Codex keeps the former private pilot fixture frozen unless separately
+   reauthorized.
 ```
 
 ## Residue Not To Follow
@@ -189,7 +207,7 @@ using a supplied snapshot without integrity verification;
 root legacy paths inside canonical project-kernel audit;
 self-attested L2 readiness;
 branch names used as evidence version locks;
-using denis-repokernel-pilot as active context or as a Denis/person context;
+using the former private pilot fixture as active context or as a person/contact context;
 pilot execution against an unaccepted correction state;
 automatic apply, runtime, network or Seed promotion;
 public readiness claims before core and pilot conformance pass.
