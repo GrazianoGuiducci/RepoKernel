@@ -17,6 +17,8 @@ This changelog is evidence for review. It is not automatic update authority.
   - `docs/metaskill-propagation-contract.md`
 - Generated Project Kernels now carry a project-local metaskill propagation
   protocol in staged semantic skills.
+- Room-start update awareness rule for coders and agentic systems that enter
+  projects using RepoKernel, Project Kernels or related D-ND skill packages.
 
 ### Boundary
 

@@ -30,6 +30,14 @@ README.md
 -> selected capability doc
 ```
 
+When a coder or agentic system starts a new room/session in a project that
+uses RepoKernel, a generated Project Kernel or one of the related D-ND
+skills/repositories, it should first check whether the source has newer
+capabilities relevant to the current project. This check may be triggered by a
+manual boot habit, a local skill rule, a project boot file or a hook in systems
+that support hooks. It is still only an awareness step until the owner approves
+an adoption.
+
 Then produce one of:
 
 ```text

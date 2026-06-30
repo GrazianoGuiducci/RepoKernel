@@ -31,6 +31,28 @@ docs/compatibility-matrix.md
 selected capability documentation
 ```
 
+## Room-Start Update Awareness
+
+When a coder, coding assistant or agentic system starts a new room/session
+inside a project that uses RepoKernel, a generated Project Kernel or a D-ND
+skill/repository, it should perform a short update-awareness check before
+planning work.
+
+This is a memory and orientation step, not an automatic update mechanism:
+
+```text
+new room/session starts
+-> identify installed RepoKernel/skill source and local revision if available
+-> read CHANGELOG.md, CAPABILITIES.md or the skill source-authority section
+-> decide whether new upstream capability matters for the current project
+-> choose ignore, explain, propose, stage or adopt
+-> ask for owner gate before mutation
+```
+
+If the local system supports hooks, boot scripts or skill-load callbacks, it
+may use them to remind the coder to perform this check. RepoKernel does not
+assume those mechanisms exist and does not require a universal hook runtime.
+
 For generated Project Kernels, also read:
 
 ```text
