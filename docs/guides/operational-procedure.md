@@ -28,6 +28,11 @@ only in RepoKernel documentation. The staged current state, semantic skill and
 delta area should teach the target project how to turn useful interactions into
 reviewed memory deltas, rules or skill candidates.
 
+When the procedure is being used to update an existing RepoKernel installation
+or Project Kernel, read `CHANGELOG.md`, `CAPABILITIES.md` and
+`docs/update-and-adoption.md` before planning. New capabilities are adoption
+candidates, not automatic patches.
+
 ## Roles
 
 ```text
@@ -359,6 +364,21 @@ expected fitness gain;
 boundary;
 validation;
 next gate.
+```
+
+For capability updates, leave an UpdateCandidate with:
+
+```text
+capability_id;
+source_revision;
+local_revision;
+why_relevant;
+minimum_artifact;
+owner;
+gate;
+validation;
+receipt;
+do_not_do.
 ```
 
 ## Current Boundary

@@ -18,6 +18,15 @@ When work on this project produces a useful correction, ask whether it:
  project-local skill candidate with evidence and review status. If not,
  leave it as non-durable chat.
 
+## Metaskill Propagation Protocol
+
+When a reusable invariant appears in this project, distinguish the
+ invariant from its local incarnation. Do not copy the rule everywhere.
+ Propose adoption only when the invariant improves this project and the
+ owner, source, gate, validation and receipt are clear. Record why the
+ local incarnation is useful here, and keep runtime authority, hooks,
+ publication and target writes blocked until separately approved.
+
 ## Clarity Cleanup Protocol
 
 When the worktree or project memory contains dirty, unclear or unowned files,

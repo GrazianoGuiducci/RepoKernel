@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-30
-status: first-contact preview and hook clarity active; integration surfaces and agentic feedback channel active; semantic retrofit patch implemented
+status: coder-readable update/adoption path active; metaskill propagation contract staged into generated Project Kernels
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: integration surfaces and agentic feedback channel
-current_next: validate first-contact preview, hook clarity and anti-collapse coder boot
-first_safe_action: run phase0 inventory, source audit, unit tests and verify-dist before committing the preview/hook clarification
+active_surface: capability update and metaskill propagation contract
+current_next: validate coder-readable update signals and generated Project Kernel metaskill protocol
+first_safe_action: run phase0 inventory, source audit, unit tests and verify-dist before committing the update/adoption contract
 ```
 
 ## Accepted Architecture
@@ -201,6 +201,15 @@ repository instructions, project-local skills, CLI diagnostics, staged preview,
 future hooks, non-development workflows and custom agentic systems;
 agentic feedback channel added with public-safe guide, GitHub issue template
 and TM9 Codex feedback receipt;
+coder-readable update channel added through CHANGELOG.md, CAPABILITIES.md and
+docs/update-and-adoption.md so external coders can detect new capabilities
+without automatic updater assumptions;
+metaskill propagation contract added to distinguish reusable invariant from
+local incarnation and require owner/source/gate/validation/receipt before
+project-local adoption;
+planner now projects a Metaskill Propagation Protocol into generated semantic
+kernel skills so the target Project Kernel receives the rule instead of leaving
+it only in RepoKernel docs;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -290,6 +299,12 @@ Codex does not independently close Track A or authorize Track B.
 15. Treat hooks as external-host activation surfaces: RepoKernel does not
     activate them by default, but a host may use them if it owns lifecycle,
     authority, gate and rollback.
+16. For external update checks, start from CHANGELOG.md, CAPABILITIES.md and
+    docs/update-and-adoption.md; produce an UpdateCandidate rather than
+    patching an installed Project Kernel automatically.
+17. For metaskills or transferable invariants, use
+    docs/metaskill-propagation-contract.md and adopt locally only with owner,
+    source, gate, validation and receipt.
 ```
 
 ## Residue Not To Follow

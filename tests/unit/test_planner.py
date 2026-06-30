@@ -178,6 +178,20 @@ class PlannerTests(unittest.TestCase):
         self.assertIn("proposed_action", clarity)
         self.assertIn("delete_candidate", clarity)
 
+    def test_generated_kernel_carries_metaskill_propagation_protocol(self):
+        spec = seed()
+        plan = build_generation_plan(spec, bundle_provenance=bundle_for(spec))
+        by_path = {item["path"]: item for item in plan["items"]}
+
+        skill_path = ".repokernel/skills/minimal-project-semantic-kernel/SKILL.md"
+        skill = by_path[skill_path]["content"]
+
+        self.assertIn("Metaskill Propagation Protocol", skill)
+        self.assertIn("distinguish the", skill)
+        self.assertIn("owner, source, gate, validation and receipt", skill)
+        self.assertIn("Do not copy the rule everywhere", skill)
+        self.assertIn("runtime authority, hooks", skill)
+
     def test_generated_kernel_passes_project_kernel_audit_invariants(self):
         spec = seed()
         plan = build_generation_plan(spec, bundle_provenance=bundle_for(spec))

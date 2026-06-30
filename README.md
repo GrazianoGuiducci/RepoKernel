@@ -54,7 +54,10 @@ First safe read order:
 
 ```text
 README.md
+CHANGELOG.md
+CAPABILITIES.md
 docs/guides/coder-first-evaluation-flow.md
+docs/update-and-adoption.md
 docs/guides/external-assistant-playbook.md
 docs/guides/user-guide.md
 docs/claim-boundaries.md
@@ -212,7 +215,10 @@ normalization actions are considered.
 
 ## Guides
 
+- [Changelog](CHANGELOG.md)
+- [Capabilities](CAPABILITIES.md)
 - [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
+- [Update and adoption guide](docs/update-and-adoption.md)
 - [First contact preview](docs/first-contact-preview.md)
 - [Integration surfaces](docs/integration-surfaces.md)
 - [Contribution lanes](docs/contribution-lanes.md)
@@ -226,6 +232,7 @@ normalization actions are considered.
 - [CLI reference](docs/guides/cli-reference.md)
 - [Operational procedure](docs/guides/operational-procedure.md)
 - [Clarity cleanup cycle](docs/clarity-cleanup-cycle.md)
+- [Metaskill propagation contract](docs/metaskill-propagation-contract.md)
 - [Meta-skill integration map](docs/meta-skill-integration-map.md)
 - [Public capability source pass](docs/public-capability-source-pass.md)
 - [Evolution, versioning and review loop](docs/guides/evolution-versioning-and-review-loop.md)

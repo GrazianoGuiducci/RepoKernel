@@ -45,6 +45,8 @@ def action_for(path: str) -> tuple[str, str, str]:
         return ("keep_feedback_template", "feedback_template", "Public-safe GitHub issue template.")
     if path == "MANIFEST.in":
         return ("keep_phase1_package_metadata", "phase1_package", "Package manifest for source distribution contents.")
+    if path in {"CHANGELOG.md", "CAPABILITIES.md"}:
+        return ("keep_update_signal", "update_signal", "Coder-readable update and capability adoption signal.")
     if path in {"README.md", "AGENTS.md", "CURRENT_STATE.md", "repokernel.json"}:
         return ("migrate_later", "compatibility_adapter", "Root file remains active until .repokernel/ self-host migration.")
     if path == "pyproject.toml":

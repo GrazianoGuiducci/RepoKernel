@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 214,
+  "tracked_file_count": 218,
   "groups": [
     ".github",
     "dist",
@@ -41,6 +41,18 @@
     },
     {
       "path": "AGENTS.md",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "CAPABILITIES.md",
+      "group": "root",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "CHANGELOG.md",
       "group": "root",
       "kind": "file",
       "suffix": ".md"
@@ -292,6 +304,12 @@
       "suffix": ".md"
     },
     {
+      "path": "docs/metaskill-propagation-contract.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "docs/minimum-action-improvement-contract.md",
       "group": "docs",
       "kind": "file",
@@ -407,6 +425,12 @@
     },
     {
       "path": "docs/staged-output-review.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/update-and-adoption.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"

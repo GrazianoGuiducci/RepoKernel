@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.link-check.v1",
   "generated_on": "2026-06-30",
-  "checked_links": 32,
+  "checked_links": 36,
   "broken_count": 0,
   "broken": [],
   "links": [
@@ -12,7 +12,22 @@
     },
     {
       "source": "README.md",
+      "target": "CHANGELOG.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "CAPABILITIES.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
       "target": "docs/guides/coder-first-evaluation-flow.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/update-and-adoption.md",
       "ok": true
     },
     {
@@ -78,6 +93,11 @@
     {
       "source": "README.md",
       "target": "docs/clarity-cleanup-cycle.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/metaskill-propagation-contract.md",
       "ok": true
     },
     {
