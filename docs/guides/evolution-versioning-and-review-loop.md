@@ -285,6 +285,12 @@ as the gate. If the signal does not change the next action, prevent a repeated
 error or clarify a boundary, record `no_cycle` rather than adding a new
 document, feature or review branch.
 
+When the signal affects how generated projects should learn, the accepted
+change must be projected into the generated Project Kernel surface: current
+state, semantic skill, delta instructions, tests or reference distribution as
+appropriate. A RepoKernel-only documentation note is insufficient for product
+behavior.
+
 ## Release Gates
 
 ### Development

@@ -167,8 +167,8 @@ def _planned_files(project: dict[str, Any], level: str, *, project_model: dict[s
         files.update({
             ".repokernel/manifest.json": "{\n  \"schema\": \"repokernel.manifest.v1\",\n  \"readiness_target\": \"L2\"\n}\n",
             ".repokernel/registry/skills.json": "{\n  \"schema\": \"repokernel.skill-registry.v1\",\n  \"skills\": []\n}\n",
-            ".repokernel/evidence/README.md": "# Evidence\n\nValidation records for this project kernel.\n",
-            ".repokernel/deltas/README.md": "# Deltas\n\nDurable accepted changes only.\n",
+            ".repokernel/evidence/README.md": _evidence_readme_content(),
+            ".repokernel/deltas/README.md": _deltas_readme_content(name),
         })
     return files
 
@@ -183,6 +183,10 @@ def _root_agents_delta(name: str) -> str:
         "Before RepoKernel-related edits, read `.repokernel/state/CURRENT_STATE.md`\n"
         "and preserve existing root project instructions unless an explicit reviewed\n"
         "apply gate says otherwise.\n"
+        "\n"
+        "When a useful interaction reveals a reusable correction, propose a memory\n"
+        "delta only if it changes the next action, prevents a repeated error or\n"
+        "clarifies a boundary. Do not turn ordinary chat into project memory.\n"
         "```\n"
     )
 
@@ -218,7 +222,13 @@ def _current_state_content(name: str, intent: str, product: str, model: dict[str
         "## Boundaries\n\n"
         f"{_boundary_lines(model.get('boundaries', {}))}\n\n"
         "## Unknowns\n\n"
-        f"{_bullet_text(model.get('unknowns', []), empty='- No unknowns supplied.')}\n"
+        f"{_bullet_text(model.get('unknowns', []), empty='- No unknowns supplied.')}\n\n"
+        "## Project Learning Rule\n\n"
+        "Useful interactions may become project memory only when they improve a\n"
+        "future action. Preserve accepted corrections, reusable rules, source\n"
+        "promotions, boundary clarifications and next-action changes. Leave\n"
+        "ordinary chat, duplicate summaries and unresolved speculation out of the\n"
+        "durable kernel until reviewed.\n"
     )
 
 
@@ -232,7 +242,11 @@ def _first_packet_content(name: str, intent: str, model: dict[str, Any]) -> str:
         f"{_bullet_text(model.get('source_refs', []), empty='- No ProjectModel source references supplied.')}\n\n"
         "## First Safe Action\n\n"
         "Review this staged packet and compare it with existing project state before\n"
-        "any apply gate is considered.\n"
+        "any apply gate is considered.\n\n"
+        "## Learning Intake\n\n"
+        "If review discovers a reusable correction, record it as a proposed memory\n"
+        "delta with source, boundary, expected next-action improvement and validation\n"
+        "needed. Do not promote it into project rules or skills without review.\n"
     )
 
 
@@ -261,7 +275,46 @@ def _skill_content(slug: str, name: str, intent: str, model: dict[str, Any]) -> 
         f"# {name} Semantic Kernel\n\n"
         f"Mission: {mission}\n\n"
         "Use this skill only inside reviewed RepoKernel proposal/staging flows. It\n"
-        "does not grant target write authority.\n"
+        "does not grant target write authority.\n\n"
+        "## Project Learning Protocol\n\n"
+        "When work on this project produces a useful correction, ask whether it:\n"
+        " changes the next action, prevents a repeated error, clarifies a boundary\n"
+        " or identifies a reusable method. If yes, propose a memory delta or\n"
+        " project-local skill candidate with evidence and review status. If not,\n"
+        " leave it as non-durable chat.\n"
+    )
+
+
+def _evidence_readme_content() -> str:
+    return (
+        "# Evidence\n\n"
+        "Validation records for this project kernel.\n\n"
+        "Evidence supports memory deltas, rules and skill candidates. It does not\n"
+        "grant write authority by itself.\n"
+    )
+
+
+def _deltas_readme_content(name: str) -> str:
+    return (
+        "# Deltas\n\n"
+        f"Durable accepted changes for {name} only.\n\n"
+        "## Minimum-Action Rule\n\n"
+        "Preserve a delta only when it changes the next action, prevents a repeated\n"
+        "error, clarifies a boundary, promotes or deprecates a source, or records a\n"
+        "reusable project method.\n\n"
+        "## Delta Receipt\n\n"
+        "```text\n"
+        "trigger:\n"
+        "source:\n"
+        "accepted_correction:\n"
+        "boundary:\n"
+        "expected_next_action_change:\n"
+        "validation:\n"
+        "status: proposed | accepted | superseded\n"
+        "```\n\n"
+        "Do not preserve ordinary chat, duplicate summaries, secrets, credentials,\n"
+        "private material for public surfaces or speculation that has not changed a\n"
+        "reviewed action.\n"
     )
 
 

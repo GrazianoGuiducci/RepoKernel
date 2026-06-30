@@ -23,6 +23,11 @@ file, feature, hook or public claim. A durable change is justified only when it
 reduces more ambiguity, rework or unsafe authority drift than it adds. Otherwise
 the correct output is `no_cycle`.
 
+For generated Project Kernels, this rule must appear in the staged object, not
+only in RepoKernel documentation. The staged current state, semantic skill and
+delta area should teach the target project how to turn useful interactions into
+reviewed memory deltas, rules or skill candidates.
+
 ## Roles
 
 ```text

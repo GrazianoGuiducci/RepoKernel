@@ -9,6 +9,11 @@ packets, rules, skills, evidence, memory deltas and reentry points, so useful
 interactions can sediment into continuity instead of remaining scattered in chat
 history.
 
+The important transfer is into the generated project object. RepoKernel does
+not merely describe good practice from outside; it stages the local instructions
+that tell the target project how to preserve corrections, rules and skill
+candidates after review.
+
 The central loop is:
 
 ```text

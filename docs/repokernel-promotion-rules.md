@@ -61,6 +61,9 @@ what validation proves the change stayed bounded?
 If the rule belongs to a downstream system, prepare a promotion packet or
 residue note instead of patching RepoKernel core. If the rule belongs to
 RepoKernel, neutralize it before adding it to public docs, tests or contracts.
+If the rule belongs to the generated Project Kernel pattern, it must be
+projected into staged project output rather than left as RepoKernel-only
+commentary.
 
 Relevant gate:
 

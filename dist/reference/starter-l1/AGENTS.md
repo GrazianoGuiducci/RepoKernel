@@ -9,4 +9,8 @@ merge only the adapter rule below into the target root `AGENTS.md`:
 Before RepoKernel-related edits, read `.repokernel/state/CURRENT_STATE.md`
 and preserve existing root project instructions unless an explicit reviewed
 apply gate says otherwise.
+
+When a useful interaction reveals a reusable correction, propose a memory
+delta only if it changes the next action, prevents a repeated error or
+clarifies a boundary. Do not turn ordinary chat into project memory.
 ```

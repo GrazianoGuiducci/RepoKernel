@@ -56,6 +56,11 @@ experience -> source/surface classification -> tension -> expected gain
 If a signal does not change the next action, prevent a repeated error or
 clarify a boundary, the correct outcome is `no_cycle`.
 
+For RepoKernel product behavior, this gate must be projected into generated
+Project Kernels. The staged object must teach the target project how to convert
+useful interactions into reviewed memory deltas, rules and project-local skill
+candidates.
+
 Independent coordinates remain:
 
 ```text
@@ -161,6 +166,8 @@ with Source Atlas entry and promotion filter;
 public/concept positioning clarified: RepoKernel generates AI-readable project
 continuity structures for new and existing projects while remaining no-apply
 and no-runtime in the current line;
+planner now projects project learning rules into generated current state,
+AGENTS delta, semantic kernel and L2 deltas instructions;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant

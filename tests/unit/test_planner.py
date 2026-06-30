@@ -142,6 +142,23 @@ class PlannerTests(unittest.TestCase):
 
         self.assertTrue(all(item["authority_effect"] == "none" for item in plan["items"]))
 
+    def test_generated_kernel_carries_learning_protocol(self):
+        spec = seed()
+        plan = build_generation_plan(spec, bundle_provenance=bundle_for(spec))
+        by_path = {item["path"]: item for item in plan["items"]}
+
+        current_state = by_path[".repokernel/state/CURRENT_STATE.md"]["content"]
+        agents = by_path["AGENTS.md"]["content"]
+        skill_path = ".repokernel/skills/minimal-project-semantic-kernel/SKILL.md"
+        skill = by_path[skill_path]["content"]
+        deltas = by_path[".repokernel/deltas/README.md"]["content"]
+
+        self.assertIn("Project Learning Rule", current_state)
+        self.assertIn("Do not turn ordinary chat into project memory", agents)
+        self.assertIn("Project Learning Protocol", skill)
+        self.assertIn("Minimum-Action Rule", deltas)
+        self.assertIn("expected_next_action_change", deltas)
+
 
 if __name__ == "__main__":
     unittest.main()

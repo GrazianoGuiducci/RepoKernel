@@ -44,6 +44,15 @@ memory deltas;
 reentry points.
 ```
 
+Product implication:
+
+```text
+RepoKernel improvements are incomplete if they stay only in RepoKernel docs.
+Generic improvement logic must be projected into the generated Project Kernel
+surface so the target project can understand how to preserve useful
+interactions as deltas, rules or skill candidates.
+```
+
 ## Boundary
 
 This does not claim:

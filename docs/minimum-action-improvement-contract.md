@@ -1,15 +1,28 @@
 # Minimum-Action Improvement Contract
 
-Status: governance contract candidate for A1 observe-and-propose
+Status: generated Project Kernel learning contract and RepoKernel governance rule
 
 ## Purpose
 
-Every observed experience can improve RepoKernel, but not every observation
-deserves a new file, rule, hook or feature.
+Every observed experience can improve a RepoKernel-shaped project, but not
+every observation deserves a new file, rule, hook or feature.
 
 This contract defines how an external lesson, project run, reviewer comment,
 operator correction, target-repository friction or downstream system signal can
-be converted into a durable RepoKernel improvement without increasing noise.
+be converted into durable project memory without increasing noise.
+
+RepoKernel must use this contract in two places:
+
+```text
+1. inside RepoKernel itself, when improving the compiler, docs, tests or
+   promotion rules;
+2. inside generated Project Kernels, so the final project knows how to turn
+   useful interactions into deltas, rules, skill candidates and reentry state.
+```
+
+The second point is the primary product behavior. RepoKernel is a metatool: its
+improvement logic is useful only when it is transferred to the project object
+that RepoKernel stages or generates.
 
 ## Core Rule
 
@@ -72,18 +85,21 @@ fixtures, examples or public claims.
 Classify where the improvement belongs:
 
 ```text
+generated Project Kernel current state;
+generated Project Kernel process delta;
+generated Project Kernel semantic skill;
 RepoKernel core contract;
-RepoKernel documentation;
-RepoKernel test or fixture;
-process delta;
+RepoKernel documentation or test;
 review packet;
 portable promotion candidate;
 downstream private system;
 residue.
 ```
 
-Do not patch RepoKernel when the lesson belongs to a downstream private system.
-Do not patch a downstream system when the lesson belongs to RepoKernel core.
+Do not patch RepoKernel when the lesson belongs to a generated or downstream
+project. Do not patch a downstream system when the lesson belongs to RepoKernel
+core. When the lesson is generic, neutralize it first and then transfer it into
+the generated Project Kernel pattern.
 
 ## Minimum Useful Artifact
 
@@ -95,6 +111,9 @@ none / no_cycle:
 
 process delta:
   the signal changes project memory or review state.
+
+semantic skill note:
+  the signal changes how the project-specific AI assistant should work.
 
 documentation patch:
   the signal clarifies procedure, boundaries or user-facing behavior.
@@ -121,7 +140,8 @@ observe;
 classify;
 produce a tension report;
 propose a patch;
-record a process delta;
+record or stage a process delta;
+stage a project-local learning rule;
 prepare a promotion packet;
 stop for review.
 ```
@@ -169,7 +189,8 @@ assistant or an internal node:
 4. make the receiving system choose adoption under its own gate.
 ```
 
-RepoKernel improvement does not equal downstream activation.
+RepoKernel improvement does not equal downstream activation. Generated Project
+Kernel learning rules remain proposal-only until the target owner accepts them.
 
 ## Receipt Shape
 

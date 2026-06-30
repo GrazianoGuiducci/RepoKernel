@@ -1,7 +1,7 @@
 # Minimum-Action Improvement Contract Delta
 
 date: 2026-06-30
-status: accepted documentation/governance delta
+status: corrected documentation/governance delta
 
 ## Trigger
 
@@ -11,7 +11,7 @@ entropy and noise, increase clarity and avoid file accumulation.
 
 ## Change
 
-Added a neutral RepoKernel governance contract:
+Added a neutral improvement contract and corrected its intended transfer path:
 
 ```text
 docs/minimum-action-improvement-contract.md
@@ -43,6 +43,14 @@ experience
 ```
 
 If no next action changes, the correct result is `no_cycle`.
+
+Correction:
+
+```text
+This is not only a RepoKernel self-governance rule. RepoKernel is a metatool,
+so the rule must also be transferred into the generated Project Kernel object:
+current state, semantic skill and delta instructions.
+```
 
 ## Boundary
 

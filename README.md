@@ -15,6 +15,11 @@ state, source lineage, process packets, rules, skills, evidence, memory deltas
 and reentry points so that future AI-assisted work can continue from reviewed
 project memory instead of scattered chat context.
 
+The generated Project Kernel carries its own learning protocol. It tells the
+target project how useful interactions may become reviewed memory deltas,
+accepted rules or project-local skill candidates, while ordinary chat and
+unverified speculation stay out of durable project memory.
+
 ## One Compiler, Two Distribution Forms
 
 ```text
@@ -141,6 +146,10 @@ The intended value is not raw file generation. The value is giving a project a
 reviewable learning structure: useful interactions can become deltas, accepted
 corrections can become rules, repeated procedures can become project-local
 skills, and the next session can reenter through explicit state and evidence.
+
+This learning structure is staged into the project object itself. RepoKernel
+documentation is not enough; the target project must receive the rule that
+explains how to keep improving without accumulating noise.
 
 ## Guides
 

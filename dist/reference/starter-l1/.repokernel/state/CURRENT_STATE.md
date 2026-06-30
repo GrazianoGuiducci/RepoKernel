@@ -28,3 +28,11 @@ A starter L1 project kernel
 ## Unknowns
 
 - No unknowns supplied.
+
+## Project Learning Rule
+
+Useful interactions may become project memory only when they improve a
+future action. Preserve accepted corrections, reusable rules, source
+promotions, boundary clarifications and next-action changes. Leave
+ordinary chat, duplicate summaries and unresolved speculation out of the
+durable kernel until reviewed.

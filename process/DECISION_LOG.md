@@ -120,3 +120,19 @@ deltas and reentry points.
 Boundary: this positioning remains neutral and public-safe. It does not claim
 autonomous project intelligence, production readiness, target writes, apply,
 runtime, credential handling, Seed/THIA/Lab promotion or deployment.
+
+## 2026-06-30 - Improvement Logic Must Transfer To Generated Project Kernel
+
+Decision: correct the minimum-action improvement contract so it is projected
+into generated Project Kernel output, not only documented as RepoKernel
+self-governance.
+
+Reason: RepoKernel is a metatool. Its useful improvement logic must reach the
+final project object: current state, process deltas, semantic skill and
+project-local rules. Otherwise RepoKernel improves its own explanation but does
+not instill the target project with the capacity to understand how useful
+interactions become durable continuity.
+
+Boundary: the projection remains proposal-only and stage-only. It does not add
+apply authority, runtime hooks, background automation, autonomous promotion,
+target writes or downstream Seed/THIA/Lab activation.
