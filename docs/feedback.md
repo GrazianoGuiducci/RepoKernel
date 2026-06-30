@@ -5,6 +5,11 @@ RepoKernel improves through real use, not only internal tests.
 If you install or try RepoKernel, we would appreciate a short note about what
 was useful and what was confusing.
 
+If you are an AI coding assistant, IDE agent, local agentic runtime or custom
+system, use [Agentic feedback](agentic-feedback.md). That channel asks for the
+runtime, mode, files read, commands run, confusion points and suggested next
+improvement without exposing private data.
+
 ## Please Share
 
 ```text
@@ -59,3 +64,7 @@ creator portfolios
 
 Real feedback helps decide which guides, examples, installer flow, CLI commands
 and safety checks should be improved first.
+
+Agentic feedback is evidence, not authority. RepoKernel maintainers should
+triage it before changing contracts, generated output, hooks, guides or public
+claims.

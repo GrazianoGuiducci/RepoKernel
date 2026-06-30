@@ -41,6 +41,8 @@ def action_for(path: str) -> tuple[str, str, str]:
         return ("keep", "stable_support", "Stable repository support file.")
     if path.startswith(".github/workflows/"):
         return ("keep_ci_template", "ci", "Hosted CI workflow support; activation state is governed separately.")
+    if path.startswith(".github/ISSUE_TEMPLATE/"):
+        return ("keep_feedback_template", "feedback_template", "Public-safe GitHub issue template.")
     if path == "MANIFEST.in":
         return ("keep_phase1_package_metadata", "phase1_package", "Package manifest for source distribution contents.")
     if path in {"README.md", "AGENTS.md", "CURRENT_STATE.md", "repokernel.json"}:
@@ -81,6 +83,8 @@ def action_for(path: str) -> tuple[str, str, str]:
         return ("keep_phase1_test", "phase1_test", "Phase 1 regression or contract test.")
     if path.startswith("process/reports/"):
         return ("keep_phase0_evidence", "phase0_report", "Generated Phase 0 evidence.")
+    if path.startswith("process/agentic-feedback/"):
+        return ("keep_agentic_feedback", "agentic_feedback", "Public-safe structured agent/runtime feedback evidence.")
     if path.startswith("process/evidence/"):
         return ("keep_evidence", "evidence", "Validation evidence remains source for readiness decisions.")
     if path.startswith("process/deltas/"):

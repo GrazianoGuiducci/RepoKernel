@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 201,
+  "tracked_file_count": 212,
   "groups": [
     ".github",
     "dist",
@@ -21,6 +21,12 @@
     "tests"
   ],
   "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/agentic-system-feedback.md",
+      "group": ".github",
+      "kind": "file",
+      "suffix": ".md"
+    },
     {
       "path": ".github/workflows/ci.yml",
       "group": ".github",
@@ -100,6 +106,12 @@
       "suffix": ".md"
     },
     {
+      "path": "docs/agentic-feedback.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "docs/autopoietic-cycle-gap-analysis.md",
       "group": "docs",
       "kind": "file",
@@ -143,6 +155,12 @@
     },
     {
       "path": "docs/context-surface.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/contribution-lanes.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -245,6 +263,12 @@
     },
     {
       "path": "docs/guides/user-guide.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/integration-surfaces.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -371,6 +395,12 @@
     },
     {
       "path": "docs/skill-repo-lifecycle.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/staged-output-review.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -616,6 +646,12 @@
       "suffix": ".md"
     },
     {
+      "path": "process/agentic-feedback/2026-06-30-tm9-codex.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "process/deltas/2026-06-23-autopoietic-gap-review.md",
       "group": "process",
       "kind": "file",
@@ -664,6 +700,12 @@
       "suffix": ".md"
     },
     {
+      "path": "process/deltas/2026-06-30-integration-surfaces-and-agentic-feedback.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "process/deltas/2026-06-30-minimum-action-improvement-contract.md",
       "group": "process",
       "kind": "file",
@@ -677,6 +719,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-repokernel-positioning-clarity.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-30-tm7-vps-onboarding-feedback.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"
@@ -706,6 +754,18 @@
       "suffix": ".md"
     },
     {
+      "path": "process/reports/AGENTIC_FEEDBACK_CHANNEL_INTEGRATION_2026-06-30.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/EXTERNAL_CODER_COLD_RUN_SIMULATION_2026-06-30.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
       "path": "process/reports/EXTERNAL_CODER_FUNNEL_AUDIT_2026-06-30.md",
       "group": "process",
       "kind": "file",
@@ -713,6 +773,12 @@
     },
     {
       "path": "process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/TM7_VPS_REPOKERNEL_FEEDBACK_INTEGRATION_2026-06-30.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"

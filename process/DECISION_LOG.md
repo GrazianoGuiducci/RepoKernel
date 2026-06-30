@@ -211,3 +211,20 @@ boundary and next safe action before tools run.
 Boundary: this decision does not authorize force pulls, shared TM7 mutation,
 target writes, apply, runtime activation, public claims, secret transfer or
 automatic import of VPS patches.
+
+## 2026-06-30 - Integration Surfaces And Agentic Feedback
+
+Decision: add a practical integration-surface map and a public-safe agentic
+feedback channel.
+
+Reason: RepoKernel may be used by many different systems: human review,
+Codex-like coders, Claude/OpenCode/Cursor-style agents, repository instruction
+files, project-local skills, CLI diagnostics, staged previews, future
+host-specific hooks, non-development workflows and custom agentic runtimes.
+Those systems need a shared adoption map and a way to report what helped or
+confused them without leaking private data.
+
+Boundary: feedback is evidence, not authority. This decision does not activate
+hooks, apply behavior, runtime automation, target writes, provider calls,
+publication, credential handling, downstream project mutation or public
+readiness claims.

@@ -210,6 +210,14 @@ where to place reports or staging output:
 
 If the user says "just look", stay read-only and produce a setup report.
 
+## After You Try It
+
+If you are an agentic system and the user permits public-safe feedback, leave a
+structured note using `docs/agentic-feedback.md` or the GitHub issue template.
+Report what you read, which mode you used, what confused you and what would
+help the next agent. Do not include private source content, secrets, logs,
+tokens, full repository dumps or client material.
+
 ## First Setup Report
 
 After consent and read-only inspection, report:

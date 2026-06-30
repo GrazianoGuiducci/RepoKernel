@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 201,
+  "tracked_file_count": 212,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -9,6 +9,7 @@
     "classify_before_phase1",
     "correct_and_migrate_later",
     "keep",
+    "keep_agentic_feedback",
     "keep_and_normalize",
     "keep_archive_index",
     "keep_as_optional_reference",
@@ -18,6 +19,7 @@
     "keep_current_gate",
     "keep_draft_no_promotion",
     "keep_evidence",
+    "keep_feedback_template",
     "keep_historical_delta",
     "keep_phase0_evidence",
     "keep_phase0_tool",
@@ -41,6 +43,7 @@
   ],
   "categories": [
     "active_phase0_gate",
+    "agentic_feedback",
     "archive",
     "authoritative_packet",
     "bootstrap",
@@ -51,6 +54,7 @@
     "documentation_cleanup",
     "evidence",
     "example",
+    "feedback_template",
     "guide",
     "optional_architecture",
     "packet",
@@ -75,6 +79,12 @@
     "template"
   ],
   "files": [
+    {
+      "path": ".github/ISSUE_TEMPLATE/agentic-system-feedback.md",
+      "action": "keep_feedback_template",
+      "category": "feedback_template",
+      "reason": "Public-safe GitHub issue template."
+    },
     {
       "path": ".github/workflows/ci.yml",
       "action": "keep_ci_template",
@@ -154,6 +164,12 @@
       "reason": "Compiler-verifiable generated reference distribution."
     },
     {
+      "path": "docs/agentic-feedback.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
       "path": "docs/autopoietic-cycle-gap-analysis.md",
       "action": "keep_as_optional_reference",
       "category": "optional_architecture",
@@ -200,6 +216,12 @@
       "action": "replace_or_reduce",
       "category": "documentation_cleanup",
       "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/contribution-lanes.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
     },
     {
       "path": "docs/departmental-autonomy-spectral-analysis.md",
@@ -302,6 +324,12 @@
       "action": "keep_phase1_guide",
       "category": "guide",
       "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/integration-surfaces.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
     },
     {
       "path": "docs/internal-runtime-architecture.md",
@@ -425,6 +453,12 @@
     },
     {
       "path": "docs/skill-repo-lifecycle.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/staged-output-review.md",
       "action": "keep_and_normalize",
       "category": "documentation",
       "reason": "Architecture or policy doc remains source material for convergence."
@@ -670,6 +704,12 @@
       "reason": "Process state, roadmap or decision record."
     },
     {
+      "path": "process/agentic-feedback/2026-06-30-tm9-codex.md",
+      "action": "keep_agentic_feedback",
+      "category": "agentic_feedback",
+      "reason": "Public-safe structured agent/runtime feedback evidence."
+    },
+    {
       "path": "process/deltas/2026-06-23-autopoietic-gap-review.md",
       "action": "keep_historical_delta",
       "category": "delta",
@@ -718,6 +758,12 @@
       "reason": "Durable accepted delta."
     },
     {
+      "path": "process/deltas/2026-06-30-integration-surfaces-and-agentic-feedback.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
       "path": "process/deltas/2026-06-30-minimum-action-improvement-contract.md",
       "action": "keep_historical_delta",
       "category": "delta",
@@ -731,6 +777,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-repokernel-positioning-clarity.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-tm7-vps-onboarding-feedback.md",
       "action": "keep_historical_delta",
       "category": "delta",
       "reason": "Durable accepted delta."
@@ -760,6 +812,18 @@
       "reason": "Validation evidence remains source for readiness decisions."
     },
     {
+      "path": "process/reports/AGENTIC_FEEDBACK_CHANNEL_INTEGRATION_2026-06-30.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/EXTERNAL_CODER_COLD_RUN_SIMULATION_2026-06-30.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
       "path": "process/reports/EXTERNAL_CODER_FUNNEL_AUDIT_2026-06-30.md",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
@@ -767,6 +831,12 @@
     },
     {
       "path": "process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/TM7_VPS_REPOKERNEL_FEEDBACK_INTEGRATION_2026-06-30.md",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
       "reason": "Generated Phase 0 evidence."

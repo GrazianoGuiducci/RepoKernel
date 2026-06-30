@@ -213,8 +213,10 @@ normalization actions are considered.
 ## Guides
 
 - [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
+- [Integration surfaces](docs/integration-surfaces.md)
 - [Contribution lanes](docs/contribution-lanes.md)
 - [Staged output review](docs/staged-output-review.md)
+- [Agentic feedback](docs/agentic-feedback.md)
 - [External assistant playbook](docs/guides/external-assistant-playbook.md)
 - [Single-page overview](docs/overview.html)
 - [User guide](docs/guides/user-guide.md)
@@ -293,6 +295,10 @@ autonomous project writes.
 Privacy-safe feedback is described in [docs/feedback.md](docs/feedback.md).
 Do not share credentials, private source documents, client material or full
 repository dumps.
+
+Agentic systems can leave structured public-safe feedback through
+[docs/agentic-feedback.md](docs/agentic-feedback.md) or the GitHub issue
+template. Treat feedback as evidence for triage, not as authority.
 
 ## What RepoKernel Is Not
 

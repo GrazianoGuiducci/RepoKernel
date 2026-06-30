@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-30
-status: TM7-vps onboarding feedback integration validated locally; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
+status: integration surfaces and agentic feedback channel active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: TM7-vps onboarding feedback integration
-current_next: commit and push validated clean lane/contribution lane docs, external coder first output contract, REVIEW_ME_FIRST staging output and generated Starter L1 audit conformance
-first_safe_action: commit only the validated RepoKernel integration; keep TM7-vps patch import as pending unless TM3 supplies the diff
+active_surface: integration surfaces and agentic feedback channel
+current_next: validate integration-surfaces guide, agentic feedback guide, GitHub issue template and inventory classification
+first_safe_action: run phase0 inventory, source audit, unit tests and verify-dist before committing the feedback-channel integration
 ```
 
 ## Accepted Architecture
@@ -196,6 +196,11 @@ rule documented, first output contract strengthened, `not_needed` preserved as
 valid, staged output generates `REVIEW_ME_FIRST`, public capability source pass
 pins repo/ref/files read, and generated Starter L1 audit invariant is fixed in
 planner output;
+integration surfaces guide added to separate human read, coder guide,
+repository instructions, project-local skills, CLI diagnostics, staged preview,
+future hooks, non-development workflows and custom agentic systems;
+agentic feedback channel added with public-safe guide, GitHub issue template
+and TM9 Codex feedback receipt;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -276,6 +281,10 @@ Codex does not independently close Track A or authorize Track B.
     before the base RepoKernel fit is clear.
 11. For TMx or contributor work, keep the canonical checkout as a clean lane
     and use branch/worktree/patch contribution lanes for local audit fixes.
+12. Use `docs/integration-surfaces.md` before adding skills, hooks or runtime
+    integration claims.
+13. Use `docs/agentic-feedback.md` and the GitHub issue template to gather
+    structured public-safe feedback from external agentic systems.
 ```
 
 ## Residue Not To Follow
