@@ -43,6 +43,7 @@
 | `docs/public/repokernel-project-page.md` | public draft | Operator-gated project page copy |
 | `packets/FOR_CODEX/PUBLIC_DISTRIBUTION_COPY_REVIEW_PACKET_2026-06-26.md` | packet | Neutral copy alignment scope and blocked claims |
 | `docs/feedback.md` | feedback | Privacy-safe feedback request |
+| `docs/minimum-action-improvement-contract.md` | governance | Experience-to-improvement gate and minimum-action fitness rule |
 | `docs/guides/operational-procedure.md` | procedure | Current no-write product path |
 | `docs/guides/cli-reference.md` | guide | Current CLI surface |
 | `docs/skill-repo-lifecycle.md` | method | Skill lifecycle routing |

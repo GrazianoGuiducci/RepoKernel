@@ -262,6 +262,29 @@ pilot target snapshot.
 A change does not always require repeating every test. Each evidence record must
 state which checks are invalidated and which remain applicable.
 
+## Experience-To-Improvement Intake
+
+RepoKernel may improve from operator corrections, local validation failures,
+independent reviews, downstream system use and external repository observations.
+This does not mean every signal becomes a durable artifact.
+
+Before opening a review item, classify:
+
+```text
+source authority;
+surface owner;
+tension;
+minimum useful artifact;
+expected fitness gain;
+boundary;
+validation path.
+```
+
+Use [Minimum-Action Improvement Contract](../minimum-action-improvement-contract.md)
+as the gate. If the signal does not change the next action, prevent a repeated
+error or clarify a boundary, record `no_cycle` rather than adding a new
+document, feature or review branch.
+
 ## Release Gates
 
 ### Development

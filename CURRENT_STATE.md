@@ -46,6 +46,16 @@ repokernel-cycle
 repokernel-runtime
 ```
 
+Experience-driven improvement now has a minimum-action governance gate:
+
+```text
+experience -> source/surface classification -> tension -> expected gain
+-> minimum useful artifact -> review gate -> receipt
+```
+
+If a signal does not change the next action, prevent a repeated error or
+clarify a boundary, the correct outcome is `no_cycle`.
+
 Independent coordinates remain:
 
 ```text
@@ -146,6 +156,8 @@ GitHub Actions CI workflow template added for tests, verify-dist, minimal smoke
 path and source audit;
 interrupted-session recovery rule documented across recovery, context surface
 and operating guide, with sensitive-stream redaction boundary;
+minimum-action improvement contract documented for experience-driven deltas,
+with Source Atlas entry and promotion filter;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant

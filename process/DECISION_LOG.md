@@ -90,3 +90,19 @@ reentry and next-action logic must not reactivate the pilot implicitly.
 Boundary: do not read, pull, execute, mutate, stage against or cite the former
 private fixture as active unless the operator explicitly reauthorizes a neutral
 technical fixture later.
+
+## 2026-06-30 - Minimum-Action Improvement Contract
+
+Decision: add a minimum-action improvement contract for turning operator
+corrections, downstream-system experience and external observations into
+RepoKernel changes.
+
+Reason: RepoKernel should learn from real use without turning every signal into
+more files, review branches, hooks or premature runtime authority. A durable
+improvement must reduce more ambiguity, rework, unsafe authority drift or
+operator burden than it adds.
+
+Boundary: this decision does not activate apply, runtime, background hooks,
+Seed/THIA/Lab promotion, downstream mutation, external writes or public
+readiness claims. Downstream lessons must be neutralized before entering public
+RepoKernel surfaces.

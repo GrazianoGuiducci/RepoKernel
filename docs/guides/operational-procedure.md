@@ -17,6 +17,12 @@ RepoKernel is not a template copy. It is a semantic kernel compiler that helps
 a coder preserve project continuity, source lineage, state, packets, evidence,
 guides, boundaries and future reentry.
 
+When the procedure is driven by a new experience, correction or downstream
+system signal, apply the minimum-action improvement contract before adding a
+file, feature, hook or public claim. A durable change is justified only when it
+reduces more ambiguity, rework or unsafe authority drift than it adds. Otherwise
+the correct output is `no_cycle`.
+
 ## Roles
 
 ```text
@@ -329,6 +335,25 @@ privacy check
 no-write proof
 review packet
 next gate decision
+```
+
+For experience-driven improvement, also leave either:
+
+```text
+no_cycle
+```
+
+or a receipt with:
+
+```text
+source;
+surface owner;
+tension;
+minimum artifact;
+expected fitness gain;
+boundary;
+validation;
+next gate.
 ```
 
 ## Current Boundary

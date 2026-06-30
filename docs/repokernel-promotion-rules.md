@@ -44,3 +44,26 @@ residue
 
 Promotion requires explicit owner approval when it changes a public surface, canon, external package or another repository.
 
+## Experience Promotion Filter
+
+An experience from a downstream system, local node, client context, private
+assistant, Seed, THIA or Lab may become a RepoKernel improvement only after it
+passes the minimum-action filter:
+
+```text
+does it reduce ambiguity, rework, unsafe authority drift or duplicated files?
+can it be stated without private paths, secrets or product-specific claims?
+does RepoKernel own the rule, or does it belong to the downstream system?
+what is the smallest artifact that preserves the learning?
+what validation proves the change stayed bounded?
+```
+
+If the rule belongs to a downstream system, prepare a promotion packet or
+residue note instead of patching RepoKernel core. If the rule belongs to
+RepoKernel, neutralize it before adding it to public docs, tests or contracts.
+
+Relevant gate:
+
+```text
+docs/minimum-action-improvement-contract.md
+```
