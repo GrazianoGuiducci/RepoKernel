@@ -159,6 +159,25 @@ class PlannerTests(unittest.TestCase):
         self.assertIn("Minimum-Action Rule", deltas)
         self.assertIn("expected_next_action_change", deltas)
 
+    def test_generated_kernel_carries_clarity_cleanup_protocol(self):
+        spec = seed()
+        plan = build_generation_plan(spec, bundle_provenance=bundle_for(spec))
+        by_path = {item["path"]: item for item in plan["items"]}
+
+        current_state = by_path[".repokernel/state/CURRENT_STATE.md"]["content"]
+        first_packet = by_path[".repokernel/packets/FIRST_PACKET.md"]["content"]
+        agents = by_path["AGENTS.md"]["content"]
+        skill_path = ".repokernel/skills/minimal-project-semantic-kernel/SKILL.md"
+        skill = by_path[skill_path]["content"]
+        clarity = by_path[".repokernel/clarity/README.md"]["content"]
+
+        self.assertIn("Project Clarity Rule", current_state)
+        self.assertIn("Clarity Intake", first_packet)
+        self.assertIn("classify them before acting", agents)
+        self.assertIn("Clarity Cleanup Protocol", skill)
+        self.assertIn("proposed_action", clarity)
+        self.assertIn("delete_candidate", clarity)
+
 
 if __name__ == "__main__":
     unittest.main()

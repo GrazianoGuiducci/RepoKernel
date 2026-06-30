@@ -151,6 +151,11 @@ This learning structure is staged into the project object itself. RepoKernel
 documentation is not enough; the target project must receive the rule that
 explains how to keep improving without accumulating noise.
 
+Dirty or unclear file state is handled the same way: classify before cleanup.
+Generated L2 Project Kernels include a `.repokernel/clarity/` ledger and local
+rules for reviewing ambiguous files before delete, move, ignore or bulk
+normalization actions are considered.
+
 ## Guides
 
 - [Single-page overview](docs/overview.html)
@@ -159,6 +164,8 @@ explains how to keep improving without accumulating noise.
 - [Architecture guide](docs/guides/architecture.md)
 - [CLI reference](docs/guides/cli-reference.md)
 - [Operational procedure](docs/guides/operational-procedure.md)
+- [Clarity cleanup cycle](docs/clarity-cleanup-cycle.md)
+- [Meta-skill integration map](docs/meta-skill-integration-map.md)
 - [Evolution, versioning and review loop](docs/guides/evolution-versioning-and-review-loop.md)
 - [Compatibility matrix](docs/compatibility-matrix.md)
 - [Pre-public checklist](docs/pre-public-checklist.md)

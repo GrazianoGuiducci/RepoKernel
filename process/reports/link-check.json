@@ -1,10 +1,80 @@
 {
   "schema": "repokernel.phase0.link-check.v1",
-  "generated_on": "2026-06-24",
-  "checked_links": 2,
+  "generated_on": "2026-06-30",
+  "checked_links": 17,
   "broken_count": 0,
   "broken": [],
   "links": [
+    {
+      "source": "README.md",
+      "target": "docs/overview.html",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/user-guide.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/coder-guide.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/architecture.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/cli-reference.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/operational-procedure.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/clarity-cleanup-cycle.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/meta-skill-integration-map.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/evolution-versioning-and-review-loop.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/compatibility-matrix.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/pre-public-checklist.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "process/reviews/REVIEW_LEDGER.md",
+      "ok": true
+    },
     {
       "source": "README.md",
       "target": "docs/feedback.md",
@@ -13,6 +83,11 @@
     {
       "source": "README.md",
       "target": "LICENSE",
+      "ok": true
+    },
+    {
+      "source": "docs/guides/evolution-versioning-and-review-loop.md",
+      "target": "../minimum-action-improvement-contract.md",
       "ok": true
     }
   ]

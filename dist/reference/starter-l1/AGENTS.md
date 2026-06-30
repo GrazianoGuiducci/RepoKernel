@@ -13,4 +13,9 @@ apply gate says otherwise.
 When a useful interaction reveals a reusable correction, propose a memory
 delta only if it changes the next action, prevents a repeated error or
 clarifies a boundary. Do not turn ordinary chat into project memory.
+
+When files are dirty, unclear or unowned, classify them before acting:
+owned change, operator change, generated artifact, residue, sensitive
+surface or cleanup candidate. Do not delete, move, ignore or normalize
+files without an explicit cleanup gate and receipt.
 ```

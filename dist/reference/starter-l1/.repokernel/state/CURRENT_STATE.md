@@ -36,3 +36,9 @@ future action. Preserve accepted corrections, reusable rules, source
 promotions, boundary clarifications and next-action changes. Leave
 ordinary chat, duplicate summaries and unresolved speculation out of the
 durable kernel until reviewed.
+
+## Project Clarity Rule
+
+Dirty or unclear files are operational signals, not cleanup authority. First
+classify ownership, source, risk and next action; then propose the smallest
+safe cleanup with evidence and an owner gate.

@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
-  "generated_on": "2026-06-24",
-  "tracked_file_count": 129,
+  "generated_on": "2026-06-30",
+  "tracked_file_count": 193,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -13,6 +13,7 @@
     "keep_archive_index",
     "keep_as_optional_reference",
     "keep_authoritative_packet",
+    "keep_ci_template",
     "keep_classification_note",
     "keep_current_gate",
     "keep_draft_no_promotion",
@@ -28,6 +29,8 @@
     "keep_post_phase0_gate",
     "keep_process_record",
     "keep_prototype_or_wrapper",
+    "keep_reference_distribution",
+    "keep_reference_seed",
     "keep_registered_skill",
     "keep_until_self_host_migration",
     "migrate_later",
@@ -41,6 +44,7 @@
     "archive",
     "authoritative_packet",
     "bootstrap",
+    "ci",
     "compatibility_adapter",
     "delta",
     "documentation",
@@ -59,6 +63,8 @@
     "phase1_test",
     "post_phase0_gate",
     "process",
+    "reference_distribution",
+    "reference_seed",
     "registry",
     "script",
     "seed_candidate_draft",
@@ -69,6 +75,12 @@
     "template"
   ],
   "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "action": "keep_ci_template",
+      "category": "ci",
+      "reason": "Hosted CI workflow support; activation state is governed separately."
+    },
     {
       "path": ".gitignore",
       "action": "keep",
@@ -94,10 +106,52 @@
       "reason": "Stable repository support file."
     },
     {
+      "path": "MANIFEST.in",
+      "action": "keep_phase1_package_metadata",
+      "category": "phase1_package",
+      "reason": "Package manifest for source distribution contents."
+    },
+    {
       "path": "README.md",
       "action": "migrate_later",
       "category": "compatibility_adapter",
       "reason": "Root file remains active until .repokernel/ self-host migration."
+    },
+    {
+      "path": "dist/reference/starter-l1/.repokernel/packets/FIRST_PACKET.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
+    },
+    {
+      "path": "dist/reference/starter-l1/.repokernel/skills/starter-l1-semantic-kernel/SKILL.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
+    },
+    {
+      "path": "dist/reference/starter-l1/.repokernel/sources/SOURCE_ATLAS.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
+    },
+    {
+      "path": "dist/reference/starter-l1/.repokernel/state/CURRENT_STATE.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
+    },
+    {
+      "path": "dist/reference/starter-l1/AGENTS.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
+    },
+    {
+      "path": "dist/reference/starter-l1/README.md",
+      "action": "keep_reference_distribution",
+      "category": "reference_distribution",
+      "reason": "Compiler-verifiable generated reference distribution."
     },
     {
       "path": "docs/autopoietic-cycle-gap-analysis.md",
@@ -106,7 +160,19 @@
       "reason": "Optional plane or future constraint; not current implementation authority."
     },
     {
+      "path": "docs/ci/github-actions-ci.yml",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
       "path": "docs/claim-boundaries.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/clarity-cleanup-cycle.md",
       "action": "keep_and_normalize",
       "category": "documentation",
       "reason": "Architecture or policy doc remains source material for convergence."
@@ -116,6 +182,12 @@
       "action": "replace_or_reduce",
       "category": "documentation_cleanup",
       "reason": "Current docs require final-architecture alignment before stable release."
+    },
+    {
+      "path": "docs/compatibility-matrix.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
     },
     {
       "path": "docs/concept.md",
@@ -178,6 +250,12 @@
       "reason": "Phase 1 guide surface; explains contracts without authority."
     },
     {
+      "path": "docs/guides/evolution-versioning-and-review-loop.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
       "path": "docs/guides/examples/minimal-project.md",
       "action": "keep_phase1_guide",
       "category": "guide",
@@ -185,6 +263,18 @@
     },
     {
       "path": "docs/guides/operational-procedure.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/private-pilot-instructions.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/private-review-brief.md",
       "action": "keep_phase1_guide",
       "category": "guide",
       "reason": "Phase 1 guide surface; explains contracts without authority."
@@ -208,6 +298,24 @@
       "reason": "Optional plane or future constraint; not current implementation authority."
     },
     {
+      "path": "docs/meta-skill-integration-map.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/minimum-action-improvement-contract.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/overview.html",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
       "path": "docs/pi-reference.md",
       "action": "keep_and_normalize",
       "category": "documentation",
@@ -218,6 +326,30 @@
       "action": "keep_as_optional_reference",
       "category": "optional_architecture",
       "reason": "Optional plane or future constraint; not current implementation authority."
+    },
+    {
+      "path": "docs/pre-public-checklist.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/public-announcement-drafts.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/public/repokernel-portfolio-card.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
+    },
+    {
+      "path": "docs/public/repokernel-project-page.md",
+      "action": "keep_and_normalize",
+      "category": "documentation",
+      "reason": "Architecture or policy doc remains source material for convergence."
     },
     {
       "path": "docs/quickstart.md",
@@ -298,6 +430,24 @@
       "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
     },
     {
+      "path": "examples/minimal/project-model.json",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "examples/minimal/seed-spec.json",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
+      "path": "examples/minimal/source-manifest.json",
+      "action": "replace_with_generated_fixture",
+      "category": "example",
+      "reason": "Example must be regenerated from compiler once Phase 1+ supports it."
+    },
+    {
       "path": "packets/FOR_CODEX/A1_EXTERNAL_STYLE_PILOT_PACKET_2026-06-24.md",
       "action": "classify_before_phase1",
       "category": "packet",
@@ -364,6 +514,18 @@
       "reason": "Gate material only after Phase 0 acceptance."
     },
     {
+      "path": "packets/FOR_CODEX/PUBLIC_DISTRIBUTION_COPY_REVIEW_PACKET_2026-06-26.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
+      "path": "packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/REPOKERNEL_DISTRIBUTION_READINESS_GATE_2026-06-25.md",
       "action": "classify_before_phase1",
       "category": "packet",
@@ -394,6 +556,12 @@
       "reason": "Phase 0 ownership correction; no implementation authority."
     },
     {
+      "path": "packets/FOR_CODEX/TRACK_A_READBACK_CORRECTIONS_2026-06-25.md",
+      "action": "classify_before_phase1",
+      "category": "packet",
+      "reason": "Packet must be reviewed during convergence before Phase 1."
+    },
+    {
       "path": "packets/FOR_CODEX/V03_INTEGRATION.md",
       "action": "superseded_keep_until_archive_move",
       "category": "superseded_packet",
@@ -418,6 +586,12 @@
       "reason": "Source packet lineage; not direct implementation authority."
     },
     {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
       "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_EXTERNAL_REVIEW_REQUEST_2026-06-24.md",
       "action": "archive_after_acceptance",
       "category": "source_packet",
@@ -425,6 +599,12 @@
     },
     {
       "path": "packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md",
+      "action": "archive_after_acceptance",
+      "category": "source_packet",
+      "reason": "Source packet lineage; not direct implementation authority."
+    },
+    {
+      "path": "packets/FOR_GPT_PRO/REPOKERNEL_PUBLIC_DISTRIBUTION_AUDIT_2026-06-26.md",
       "action": "archive_after_acceptance",
       "category": "source_packet",
       "reason": "Source packet lineage; not direct implementation authority."
@@ -478,6 +658,42 @@
       "reason": "Durable accepted delta."
     },
     {
+      "path": "process/deltas/2026-06-25-stage-product-path-and-crystallization.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-26-interrupted-session-reentry.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-clarity-cleanup-and-meta-skill-map.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-generated-project-learning-transfer.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-minimum-action-improvement-contract.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-repokernel-positioning-clarity.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
       "path": "process/deltas/README.md",
       "action": "keep_historical_delta",
       "category": "delta",
@@ -502,6 +718,12 @@
       "reason": "Validation evidence remains source for readiness decisions."
     },
     {
+      "path": "process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
       "path": "process/reports/a1-external-style-pilot-2026-06-24.md",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
@@ -521,6 +743,12 @@
     },
     {
       "path": "process/reports/departmental-topology-decision.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reports/distribution-readiness-2026-06-25.md",
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
       "reason": "Generated Phase 0 evidence."
@@ -566,6 +794,42 @@
       "action": "keep_phase0_evidence",
       "category": "phase0_report",
       "reason": "Generated Phase 0 evidence."
+    },
+    {
+      "path": "process/reviews/REVIEW_LEDGER.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/reviews/RK-RVW-20260625-01/CODEX_RETURN.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/reviews/RK-RVW-20260625-01/CODEX_RETURN_CORRECTION.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/reviews/RK-RVW-20260625-01/GPT_PRO_CORRECTION_READBACK.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/reviews/RK-RVW-20260625-01/GPT_PRO_READBACK.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
+    },
+    {
+      "path": "process/reviews/RK-RVW-20260625-01/TRIAGE.md",
+      "action": "keep_process_record",
+      "category": "process",
+      "reason": "Process state, roadmap or decision record."
     },
     {
       "path": "pyproject.toml",
@@ -622,6 +886,12 @@
       "reason": "Phase 1 canonical contract schema."
     },
     {
+      "path": "schemas/target-snapshot.schema.json",
+      "action": "keep_phase1_schema",
+      "category": "phase1_schema",
+      "reason": "Phase 1 canonical contract schema."
+    },
+    {
       "path": "scripts/audit_repokernel_project.py",
       "action": "keep_prototype_or_wrapper",
       "category": "script",
@@ -659,6 +929,12 @@
     },
     {
       "path": "skills/autopoietic-cycle-controller/SKILL.md",
+      "action": "keep_registered_skill",
+      "category": "skill",
+      "reason": "Skill is governed by registry state and evidence."
+    },
+    {
+      "path": "skills/clarity-cleanup-steward/SKILL.md",
       "action": "keep_registered_skill",
       "category": "skill",
       "reason": "Skill is governed by registry state and evidence."
@@ -724,6 +1000,12 @@
       "reason": "Bootstrap remains active until .repokernel/sources migration."
     },
     {
+      "path": "specs/reference/starter-l1.seed.json",
+      "action": "keep_reference_seed",
+      "category": "reference_seed",
+      "reason": "Reviewed SeedSpec used for reproducible reference distribution."
+    },
+    {
       "path": "src/repokernel/__init__.py",
       "action": "keep_phase1_core",
       "category": "phase1_core",
@@ -731,6 +1013,12 @@
     },
     {
       "path": "src/repokernel/audit.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/bundle.py",
       "action": "keep_phase1_core",
       "category": "phase1_core",
       "reason": "Phase 1 core package surface."
@@ -767,6 +1055,72 @@
     },
     {
       "path": "src/repokernel/planner.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schema_validation.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/activation-report.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/generation-plan.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/project-model.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/seed-spec.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/skill-registry.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/source-manifest.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/schemas/target-snapshot.schema.json",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/snapshot.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/staging.py",
+      "action": "keep_phase1_core",
+      "category": "phase1_core",
+      "reason": "Phase 1 core package surface."
+    },
+    {
+      "path": "src/repokernel/version.py",
       "action": "keep_phase1_core",
       "category": "phase1_core",
       "reason": "Phase 1 core package surface."
@@ -814,6 +1168,24 @@
       "reason": "Template remains source material until compiler template layout exists."
     },
     {
+      "path": "tests/unit/fixtures.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_audit.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_bundle.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
       "path": "tests/unit/test_canonical.py",
       "action": "keep_phase1_test",
       "category": "phase1_test",
@@ -838,7 +1210,25 @@
       "reason": "Phase 1 regression or contract test."
     },
     {
+      "path": "tests/unit/test_schema_validator_parity.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
       "path": "tests/unit/test_schemas.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_snapshot.py",
+      "action": "keep_phase1_test",
+      "category": "phase1_test",
+      "reason": "Phase 1 regression or contract test."
+    },
+    {
+      "path": "tests/unit/test_verify_dist.py",
       "action": "keep_phase1_test",
       "category": "phase1_test",
       "reason": "Phase 1 regression or contract test."

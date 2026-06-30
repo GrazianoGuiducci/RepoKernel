@@ -39,10 +39,18 @@ def group_for(path: str) -> str:
 def action_for(path: str) -> tuple[str, str, str]:
     if path in {".gitignore", "LICENSE"}:
         return ("keep", "stable_support", "Stable repository support file.")
+    if path.startswith(".github/workflows/"):
+        return ("keep_ci_template", "ci", "Hosted CI workflow support; activation state is governed separately.")
+    if path == "MANIFEST.in":
+        return ("keep_phase1_package_metadata", "phase1_package", "Package manifest for source distribution contents.")
     if path in {"README.md", "AGENTS.md", "CURRENT_STATE.md", "repokernel.json"}:
         return ("migrate_later", "compatibility_adapter", "Root file remains active until .repokernel/ self-host migration.")
     if path == "pyproject.toml":
         return ("keep_phase1_package_metadata", "phase1_package", "Phase 1 package metadata for the core library.")
+    if path.startswith("specs/reference/"):
+        return ("keep_reference_seed", "reference_seed", "Reviewed SeedSpec used for reproducible reference distribution.")
+    if path.startswith("dist/reference/"):
+        return ("keep_reference_distribution", "reference_distribution", "Compiler-verifiable generated reference distribution.")
     if path == "process/FIRST_PACKET.md":
         return ("keep_current_gate", "active_phase0_gate", "Active Phase 0 packet.")
     if path == "registry/skills.json":

@@ -168,6 +168,15 @@ continuity structures for new and existing projects while remaining no-apply
 and no-runtime in the current line;
 planner now projects project learning rules into generated current state,
 AGENTS delta, semantic kernel and L2 deltas instructions;
+planner now projects project clarity rules into generated current state,
+AGENTS delta, first packet, semantic kernel and `.repokernel/clarity/` ledger;
+clarity-cleanup-steward added as a draft safe classifier for dirty or unclear
+file state, with no destructive cleanup authority;
+meta-skill integration map added to separate neutral RepoKernel faculties from
+private ANTI_G residue;
+phase0 inventory classifier now covers CI workflow files, package manifest,
+reference SeedSpecs and reference distributions; regenerated inventory reports
+show unclassified_count 0 and broken_links 0;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -232,6 +241,9 @@ Codex does not independently close Track A or authorize Track B.
 4. If another diagnostic pilot is selected, use a neutral, non-sensitive
    target and keep staging outside the target.
 5. Keep apply, runtime, external automation and public readiness blocked.
+6. Before TMx handoff, classify dirty or unclear files with
+   clarity-cleanup-steward and do not mutate shared `tm7` state without owner
+   gate.
 ```
 
 ## Residue Not To Follow

@@ -169,6 +169,7 @@ def _planned_files(project: dict[str, Any], level: str, *, project_model: dict[s
             ".repokernel/registry/skills.json": "{\n  \"schema\": \"repokernel.skill-registry.v1\",\n  \"skills\": []\n}\n",
             ".repokernel/evidence/README.md": _evidence_readme_content(),
             ".repokernel/deltas/README.md": _deltas_readme_content(name),
+            ".repokernel/clarity/README.md": _clarity_readme_content(name),
         })
     return files
 
@@ -187,6 +188,11 @@ def _root_agents_delta(name: str) -> str:
         "When a useful interaction reveals a reusable correction, propose a memory\n"
         "delta only if it changes the next action, prevents a repeated error or\n"
         "clarifies a boundary. Do not turn ordinary chat into project memory.\n"
+        "\n"
+        "When files are dirty, unclear or unowned, classify them before acting:\n"
+        "owned change, operator change, generated artifact, residue, sensitive\n"
+        "surface or cleanup candidate. Do not delete, move, ignore or normalize\n"
+        "files without an explicit cleanup gate and receipt.\n"
         "```\n"
     )
 
@@ -228,7 +234,11 @@ def _current_state_content(name: str, intent: str, product: str, model: dict[str
         "future action. Preserve accepted corrections, reusable rules, source\n"
         "promotions, boundary clarifications and next-action changes. Leave\n"
         "ordinary chat, duplicate summaries and unresolved speculation out of the\n"
-        "durable kernel until reviewed.\n"
+        "durable kernel until reviewed.\n\n"
+        "## Project Clarity Rule\n\n"
+        "Dirty or unclear files are operational signals, not cleanup authority. First\n"
+        "classify ownership, source, risk and next action; then propose the smallest\n"
+        "safe cleanup with evidence and an owner gate.\n"
     )
 
 
@@ -246,7 +256,11 @@ def _first_packet_content(name: str, intent: str, model: dict[str, Any]) -> str:
         "## Learning Intake\n\n"
         "If review discovers a reusable correction, record it as a proposed memory\n"
         "delta with source, boundary, expected next-action improvement and validation\n"
-        "needed. Do not promote it into project rules or skills without review.\n"
+        "needed. Do not promote it into project rules or skills without review.\n\n"
+        "## Clarity Intake\n\n"
+        "If review discovers dirty, unclear, duplicate or stale files, classify them\n"
+        "before acting. Record proposed cleanup as keep, commit, document, archive,\n"
+        "ignore, delete-candidate or ask-owner. Destructive cleanup requires a gate.\n"
     )
 
 
@@ -281,7 +295,12 @@ def _skill_content(slug: str, name: str, intent: str, model: dict[str, Any]) -> 
         " changes the next action, prevents a repeated error, clarifies a boundary\n"
         " or identifies a reusable method. If yes, propose a memory delta or\n"
         " project-local skill candidate with evidence and review status. If not,\n"
-        " leave it as non-durable chat.\n"
+        " leave it as non-durable chat.\n\n"
+        "## Clarity Cleanup Protocol\n\n"
+        "When the worktree or project memory contains dirty, unclear or unowned files,\n"
+        "treat that as clarity debt. Classify before changing anything, prefer a\n"
+        "receipt over a cleanup spree, and require explicit owner approval before\n"
+        "delete, move, ignore or bulk normalization actions.\n"
     )
 
 
@@ -315,6 +334,30 @@ def _deltas_readme_content(name: str) -> str:
         "Do not preserve ordinary chat, duplicate summaries, secrets, credentials,\n"
         "private material for public surfaces or speculation that has not changed a\n"
         "reviewed action.\n"
+    )
+
+
+def _clarity_readme_content(name: str) -> str:
+    return (
+        "# Clarity Cleanup\n\n"
+        f"Operational clarity ledger for {name}.\n\n"
+        "Use this area to classify dirty, unclear, stale, duplicate or unowned\n"
+        "project files before any cleanup action.\n\n"
+        "## Classification\n\n"
+        "```text\n"
+        "path:\n"
+        "observed_state: dirty | untracked | generated | stale | duplicate | unknown\n"
+        "owner: current-agent | operator | generated-tool | external | unknown\n"
+        "risk: safe | review_required | sensitive | destructive\n"
+        "proposed_action: keep | commit | document | archive | ignore | delete_candidate | ask_owner\n"
+        "evidence:\n"
+        "gate:\n"
+        "receipt:\n"
+        "```\n\n"
+        "## Boundary\n\n"
+        "This ledger does not authorize deletion, moving files, changing ignore rules,\n"
+        "normalizing line endings in bulk or rewriting history. It only makes the\n"
+        "cleanup decision inspectable.\n"
     )
 
 

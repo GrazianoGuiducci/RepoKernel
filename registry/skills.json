@@ -54,6 +54,19 @@
       "supersedes": []
     },
     {
+      "id": "clarity-cleanup-steward",
+      "version": "0.1.0",
+      "state": "draft",
+      "path": "skills/clarity-cleanup-steward/SKILL.md",
+      "risk": "safe",
+      "evidence": [
+        "docs/clarity-cleanup-cycle.md",
+        "process/deltas/2026-06-30-clarity-cleanup-and-meta-skill-map.md"
+      ],
+      "promotion_target": null,
+      "supersedes": []
+    },
+    {
       "id": "create-repokernel-project",
       "version": "0.2.0-dev",
       "state": "draft",

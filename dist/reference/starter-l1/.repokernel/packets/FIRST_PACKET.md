@@ -18,3 +18,9 @@ any apply gate is considered.
 If review discovers a reusable correction, record it as a proposed memory
 delta with source, boundary, expected next-action improvement and validation
 needed. Do not promote it into project rules or skills without review.
+
+## Clarity Intake
+
+If review discovers dirty, unclear, duplicate or stale files, classify them
+before acting. Record proposed cleanup as keep, commit, document, archive,
+ignore, delete-candidate or ask-owner. Destructive cleanup requires a gate.

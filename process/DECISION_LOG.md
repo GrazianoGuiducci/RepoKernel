@@ -136,3 +136,18 @@ interactions become durable continuity.
 Boundary: the projection remains proposal-only and stage-only. It does not add
 apply authority, runtime hooks, background automation, autonomous promotion,
 target writes or downstream Seed/THIA/Lab activation.
+
+## 2026-06-30 - Clarity Cleanup As A Gated Faculty
+
+Decision: add a clarity cleanup faculty and meta-skill integration map to
+RepoKernel.
+
+Reason: dirty, untracked, stale or unclear files slow reentry and can cause the
+agent to waste context deciding whether files are source, residue, generated
+output, operator work or cleanup candidates. RepoKernel should make that
+classification explicit and transferable to generated Project Kernels.
+
+Boundary: clarity cleanup is observe, classify, propose and receipt only. It
+does not authorize deletion, moving files, ignore-rule changes, bulk
+normalization, adjacent-repo cleanup, TM7 mutation, runtime hooks or background
+automation.
