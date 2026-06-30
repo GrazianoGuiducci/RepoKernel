@@ -39,6 +39,11 @@ docs/quickstart.md
 docs/guides/cli-reference.md
 ```
 
+Do not introduce optional public capability source repositories in the first
+answer unless the user asks what adjacent capabilities may help a specific
+project. First explain RepoKernel itself, the no-apply boundary and the consent
+gate.
+
 ## Plain Explanation
 
 RepoKernel is useful when a project needs to be easier for AI assistants and

@@ -20,6 +20,48 @@ target project how useful interactions may become reviewed memory deltas,
 accepted rules or project-local skill candidates, while ordinary chat and
 unverified speculation stay out of durable project memory.
 
+## Start Here For External Coders And Agents
+
+If you are Codex, Claude Code, OpenCode, Cursor, a custom agent or another AI
+coder evaluating this repository for a user, do not start by installing,
+cloning adjacent repositories or running commands against the user's project.
+
+First classify the evaluation mode:
+
+```text
+explain_only:
+  explain what RepoKernel is useful for; run nothing.
+
+public_repo_read:
+  read this public repository only.
+
+local_read_only_assessment:
+  inspect a user-approved local project without writing.
+
+no_write_diagnostic:
+  run RepoKernel diagnostics only after explicit permission.
+
+staged_preview:
+  stage proposed files into an empty external review directory.
+```
+
+First safe read order:
+
+```text
+README.md
+docs/guides/coder-first-evaluation-flow.md
+docs/guides/external-assistant-playbook.md
+docs/guides/user-guide.md
+docs/claim-boundaries.md
+docs/pre-public-checklist.md
+```
+
+The public capability source pass is not a first-contact step. Repositories
+such as `d-nd-ux-ai-seed`, `d-nd-seed`, `D-ND_LAB` and `KPhi1-EN` are optional
+public capability sources to inspect only after the target project audit and
+only to produce recommendations. They are not installed, copied or activated by
+default.
+
 ## One Compiler, Two Distribution Forms
 
 ```text
@@ -158,11 +200,11 @@ normalization actions are considered.
 
 ## Guides
 
+- [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
+- [External assistant playbook](docs/guides/external-assistant-playbook.md)
 - [Single-page overview](docs/overview.html)
 - [User guide](docs/guides/user-guide.md)
 - [Coder guide](docs/guides/coder-guide.md)
-- [External assistant playbook](docs/guides/external-assistant-playbook.md)
-- [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
 - [Architecture guide](docs/guides/architecture.md)
 - [CLI reference](docs/guides/cli-reference.md)
 - [Operational procedure](docs/guides/operational-procedure.md)

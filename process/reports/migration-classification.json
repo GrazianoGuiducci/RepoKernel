@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 200,
+  "tracked_file_count": 201,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -758,6 +758,12 @@
       "action": "keep_evidence",
       "category": "evidence",
       "reason": "Validation evidence remains source for readiness decisions."
+    },
+    {
+      "path": "process/reports/EXTERNAL_CODER_FUNNEL_AUDIT_2026-06-30.md",
+      "action": "keep_phase0_evidence",
+      "category": "phase0_report",
+      "reason": "Generated Phase 0 evidence."
     },
     {
       "path": "process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md",

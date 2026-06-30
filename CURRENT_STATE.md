@@ -188,6 +188,9 @@ d-nd-ux-ai-seed, d-nd-seed, D-ND_LAB and KPhi1-EN without automatic install or
 target mutation;
 LinkedIn introduction draft added as operator-gated public copy, with
 no-production/no-autonomous-modifier claim boundary preserved;
+external coder funnel audit completed; README now exposes the coder-first
+evaluation path before CLI commands, and public capability sources are marked
+as a second-stage recommendation pass only after target audit;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -263,6 +266,9 @@ Codex does not independently close Track A or authorize Track B.
 9. Use `docs/public-capability-source-pass.md` as the source for any future
    target-specific capability recommendation pass; keep it read-only until
    repeated use proves a stable report/schema.
+10. For external-coder onboarding, start from README.md "Start Here For
+    External Coders And Agents"; do not route adjacent public repositories
+    before the base RepoKernel fit is clear.
 ```
 
 ## Residue Not To Follow

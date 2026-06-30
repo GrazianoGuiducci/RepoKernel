@@ -18,6 +18,7 @@
 | `process/reports/current-tree.json` | inventory report | Generated tracked-file inventory |
 | `process/reports/migration-classification.json` | inventory report | Generated migration classification and unclassified count |
 | `process/reports/link-check.json` | link report | Generated internal Markdown link check |
+| `process/reports/EXTERNAL_CODER_FUNNEL_AUDIT_2026-06-30.md` | report | Cold-reader funnel audit for external coder onboarding |
 | `process/reports/phase0-validation-summary.md` | historical report | Phase 0 validation result and earlier blockers |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `process/deltas/2026-06-26-interrupted-session-reentry.md` | delta | Neutral recovery rule for interrupted sessions and sensitive stream redaction |

@@ -7,6 +7,16 @@
   "links": [
     {
       "source": "README.md",
+      "target": "docs/guides/coder-first-evaluation-flow.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/external-assistant-playbook.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
       "target": "docs/overview.html",
       "ok": true
     },
@@ -18,16 +28,6 @@
     {
       "source": "README.md",
       "target": "docs/guides/coder-guide.md",
-      "ok": true
-    },
-    {
-      "source": "README.md",
-      "target": "docs/guides/external-assistant-playbook.md",
-      "ok": true
-    },
-    {
-      "source": "README.md",
-      "target": "docs/guides/coder-first-evaluation-flow.md",
       "ok": true
     },
     {

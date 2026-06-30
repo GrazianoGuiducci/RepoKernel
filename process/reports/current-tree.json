@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 200,
+  "tracked_file_count": 201,
   "groups": [
     ".github",
     "dist",
@@ -701,6 +701,12 @@
     },
     {
       "path": "process/evidence/README.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/reports/EXTERNAL_CODER_FUNNEL_AUDIT_2026-06-30.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"

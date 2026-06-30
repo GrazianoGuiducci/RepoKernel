@@ -90,6 +90,12 @@ If the coder is only browsing a public repository, do not assume local CLI
 availability. Explain what RepoKernel can do from the docs, then ask whether a
 local read-only checkout is allowed.
 
+Do not open the public capability source pass during first contact unless the
+user has already selected a target project and authorized a read-only target
+assessment. External capability repositories can improve a later fit report,
+but they can confuse the first evaluation if they appear before the project
+need is clear.
+
 ## Evaluation Modes
 
 Use one of these modes explicitly:
@@ -118,6 +124,10 @@ write_gate:
   explicit approval. Current RepoKernel does not provide a general apply
   command.
 ```
+
+External capability sources belong after `local_read_only_assessment` or
+`no_write_diagnostic`, never before the user understands the base RepoKernel
+fit.
 
 ## User-Facing Explanation Shape
 

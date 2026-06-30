@@ -32,6 +32,23 @@ target project request
 This pass does not replace target audit. It runs only after the project need,
 domain, source authority and read boundary are clear.
 
+## Not A First-Contact Step
+
+Do not present this pass as the default starting point for a new user or coder.
+
+The first-contact funnel is:
+
+```text
+explain RepoKernel
+-> identify coder/runtime authority
+-> ask whether a target project should be assessed
+-> run read-only target assessment if authorized
+-> only then consider public capability sources
+```
+
+Opening adjacent repositories too early can confuse the evaluation. The user
+first needs to understand whether RepoKernel itself fits the project.
+
 ## Allowed Sources
 
 Initial public source allowlist:
