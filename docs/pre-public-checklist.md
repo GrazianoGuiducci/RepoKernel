@@ -1,7 +1,7 @@
 # Pre-Public Checklist
 
 status: active
-updated: 2026-06-26
+updated: 2026-06-30
 
 Use this checklist before describing RepoKernel publicly beyond a controlled
 experimental/research repository.
@@ -43,12 +43,14 @@ operator-approved public wording.
 ## Current Evidence
 
 ```text
-local unit suite: 47 passed on 2026-06-26
-verify-dist: valid locally on 2026-06-26
+local unit suite: 50 passed on 2026-06-30
+verify-dist: valid locally on 2026-06-30
 non-sensitive no-write replay: before_hash == after_hash; target_writes_performed == []
 CI workflow active path: .github/workflows/ci.yml
 CI workflow template: docs/ci/github-actions-ci.yml
-hosted CI result: success on current main after documentation hardening
+hosted CI result: needs current remote check before public tester request
+first-contact preview: available in docs/first-contact-preview.md
+agentic feedback channel: available, user permission required before submission
 ```
 
 ## Publication Asset

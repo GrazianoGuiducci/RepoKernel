@@ -103,7 +103,7 @@ a security boundary for private repositories;
 an autonomous repository modifier;
 autonomous project intelligence;
 a public alpha for non-technical users;
-a guarantee that a target project is safe or complete.
+a trust boundary for target project safety or completeness.
 ```
 
 ## Optional Public Capability Source Pass

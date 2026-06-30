@@ -39,12 +39,13 @@ L'obiettivo non e' dare autonomia cieca al sistema, ma creare una consapevolezza
 di contesto preservata: un kernel semantico che resta allineato ai dati,
 alle decisioni e alle verifiche del progetto.
 
-Questo apre una direzione interessante: prima di generare o rigenerare la
-struttura di un progetto, RepoKernel puo' valutare anche sorgenti pubbliche di
+Questo apre una direzione interessante: prima di generare o rigenerare una
+struttura di continuita', RepoKernel puo' valutare anche sorgenti pubbliche di
 capacita' gia' disponibili, come seed UX, seed operativi, lab di ricerca o
-kernel cognitivi legacy, e proporre solo cio' che e' utile per quel dominio.
+kernel cognitivi legacy, e indicare quali elementi hanno senso per quel
+dominio.
 
-La promessa, per ora, e' deliberatamente concreta:
+La direzione pratica e':
 
 meno contesto perso;
 meno ri-spiegazioni;
@@ -65,19 +66,9 @@ strumenti e agenti diversi.
 La direzione e' far diventare ogni progetto piu' riapribile, valutabile e
 continuabile.
 
-## Claim Boundary
+## Public Boundary
 
-Do not publish as:
-
-```text
-production-ready;
-autonomous repository modifier;
-guaranteed safe AI behavior;
-installer for arbitrary repositories;
-runtime agent.
-```
-
-Allowed public framing:
+Usare solo questo perimetro pubblico:
 
 ```text
 experimental no-apply generator;
@@ -86,3 +77,6 @@ reviewable project kernel;
 state, evidence, sources, rules and next-action layer;
 human-reviewed path before stronger automation.
 ```
+
+Non presentarlo come prodotto finito, installer generale, agente runtime o
+modificatore autonomo di repository.

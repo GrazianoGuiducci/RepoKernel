@@ -15,7 +15,7 @@ It does not claim that an AI model or a repository is conscious. It claims that 
 
 - The repository is conscious.
 - The system is autonomous without supervision.
-- The pattern guarantees correct AI behavior.
+- The pattern removes AI error.
 - The project improves itself without review.
 - Any scientific, market or adoption claim that has not been verified.
 
@@ -28,4 +28,3 @@ Your repository should tell the next AI where it is, what matters, what changed 
 ```
 
 Use deeper language only after the practical problem is understood.
-
