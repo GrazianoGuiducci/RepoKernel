@@ -18,7 +18,10 @@ Stay read-only and ask before cloning or running diagnostics.
 ```
 
 Assistant-facing guidance lives in
-[`external-assistant-playbook.md`](external-assistant-playbook.md).
+[`external-assistant-playbook.md`](external-assistant-playbook.md). If the
+assistant or AI IDE is not yet aware of RepoKernel, start from
+[`coder-first-evaluation-flow.md`](coder-first-evaluation-flow.md) so it can
+identify its runtime, permissions and safest next step before acting.
 
 ## Choose A Mode
 

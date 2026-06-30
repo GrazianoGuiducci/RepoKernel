@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.migration-classification.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 195,
+  "tracked_file_count": 197,
   "unclassified_count": 0,
   "unclassified": [],
   "actions": [
@@ -239,6 +239,12 @@
     },
     {
       "path": "docs/guides/cli-reference.md",
+      "action": "keep_phase1_guide",
+      "category": "guide",
+      "reason": "Phase 1 guide surface; explains contracts without authority."
+    },
+    {
+      "path": "docs/guides/coder-first-evaluation-flow.md",
       "action": "keep_phase1_guide",
       "category": "guide",
       "reason": "Phase 1 guide surface; explains contracts without authority."
@@ -677,6 +683,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-clarity-cleanup-and-meta-skill-map.md",
+      "action": "keep_historical_delta",
+      "category": "delta",
+      "reason": "Durable accepted delta."
+    },
+    {
+      "path": "process/deltas/2026-06-30-coder-first-evaluation-flow.md",
       "action": "keep_historical_delta",
       "category": "delta",
       "reason": "Durable accepted delta."

@@ -12,6 +12,12 @@ Should we clone it and use it on my project?
 The goal is to explain the value clearly, show concrete examples and ask for
 permission before cloning, inspecting or staging anything.
 
+If the assistant/coder is not already familiar with RepoKernel, first read
+[`coder-first-evaluation-flow.md`](coder-first-evaluation-flow.md). This guide
+explains how a Codex-like agent, Claude Code-like assistant, OpenCode-style CLI
+agent or custom agentic system should orient its own runtime and authority
+before talking to the user.
+
 ## Read First
 
 Before answering, read:
@@ -19,6 +25,7 @@ Before answering, read:
 ```text
 README.md
 docs/guides/user-guide.md
+docs/guides/coder-first-evaluation-flow.md
 docs/guides/use-cases.md
 docs/claim-boundaries.md
 docs/pre-public-checklist.md

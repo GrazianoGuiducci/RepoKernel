@@ -37,3 +37,10 @@ RepoKernel is useful. The assistant should explain the current value, give
 examples by project type, state the no-apply limits and ask for explicit
 permission before cloning, reading private folders, running diagnostics or
 staging proposed files.
+
+## Coder-First Evaluation
+
+Use the coder-first evaluation flow when the assistant itself may not understand
+RepoKernel yet. The first contact should orient the coder/agent runtime,
+separate explain/read/diagnose/stage/write authority and produce a user-facing
+fit assessment before any stronger action.

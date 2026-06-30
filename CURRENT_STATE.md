@@ -179,6 +179,9 @@ reference SeedSpecs and reference distributions; regenerated inventory reports
 show unclassified_count 0 and broken_links 0;
 external assistant first-contact playbook added so a coder can explain
 RepoKernel utility, examples, limits and consent gates before clone or setup;
+coder-first evaluation flow added so an unaware assistant or agentic runtime
+can orient itself, explain RepoKernel to the user and choose the correct
+explain/read/diagnose/stage/write gate before acting;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -248,6 +251,9 @@ Codex does not independently close Track A or authorize Track B.
    gate.
 7. Use `docs/guides/external-assistant-playbook.md` as the source for the next
    external narrative/onboarding pass.
+8. Use `docs/guides/coder-first-evaluation-flow.md` before the external
+   assistant playbook when the first reader is a coder/agent that is only
+   evaluating RepoKernel for a user.
 ```
 
 ## Residue Not To Follow

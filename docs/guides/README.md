@@ -17,6 +17,8 @@ Read by role:
 architecture.md
 user-guide.md
 coder-guide.md
+coder-first-evaluation-flow.md
+external-assistant-playbook.md
 use-cases.md
 application-types.md
 examples/minimal-project.md

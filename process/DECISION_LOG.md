@@ -165,3 +165,18 @@ which examples apply and what consent is required before acting.
 Boundary: the guide is explanatory and read-only by default. It does not
 authorize public tester requests, private repository cloning, target writes,
 apply behavior, runtime activation, credential handling or publication.
+
+## 2026-06-30 - Coder-First Evaluation Flow
+
+Decision: add a coder-first evaluation guide for assistants that may not yet
+understand RepoKernel and may only be present to evaluate it for a user.
+
+Reason: RepoKernel primarily speaks to the coder/agent layer. The first contact
+must help Codex-like, Claude Code-like, OpenCode-style or custom agentic
+runtimes identify their permissions, explain the value to the user, choose a
+fit mode and ask for the next gate without prematurely cloning, diagnosing,
+staging or writing.
+
+Boundary: the flow is guidance only. It does not authorize target reads, local
+diagnostics, staged previews, writes, public claims, automation or installation
+without separate user consent and runtime capability checks.
