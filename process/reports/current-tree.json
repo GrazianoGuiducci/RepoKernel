@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 197,
+  "tracked_file_count": 200,
   "groups": [
     ".github",
     "dist",
@@ -293,6 +293,18 @@
     },
     {
       "path": "docs/public-announcement-drafts.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/public-capability-source-pass.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/public/linkedin-repokernel-intro-draft.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -653,6 +665,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-minimum-action-improvement-contract.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-30-public-capability-source-pass.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"

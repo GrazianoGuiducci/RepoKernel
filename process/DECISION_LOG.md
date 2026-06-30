@@ -180,3 +180,18 @@ staging or writing.
 Boundary: the flow is guidance only. It does not authorize target reads, local
 diagnostics, staged previews, writes, public claims, automation or installation
 without separate user consent and runtime capability checks.
+
+## 2026-06-30 - Public Capability Source Pass
+
+Decision: add an optional public capability source pass after target audit and
+before Project Kernel generation/regeneration.
+
+Reason: RepoKernel should be able to recommend useful neutral public
+capabilities from related repositories without importing private THIA/D-ND
+state or automatically installing anything. This lets a new project receive a
+context-aware list of relevant UX, operating-substrate, lab-cycle or cognitive
+kernel references.
+
+Boundary: the pass is read-only and recommendation-only. It does not authorize
+private repo access, install/copy, target mutation, hook activation, Lab runs,
+publication or public readiness claims.

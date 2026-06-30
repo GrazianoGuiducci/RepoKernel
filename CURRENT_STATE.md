@@ -182,6 +182,12 @@ RepoKernel utility, examples, limits and consent gates before clone or setup;
 coder-first evaluation flow added so an unaware assistant or agentic runtime
 can orient itself, explain RepoKernel to the user and choose the correct
 explain/read/diagnose/stage/write gate before acting;
+public capability source pass added as an optional read-only recommendation
+step after target audit, using public neutral source candidates such as
+d-nd-ux-ai-seed, d-nd-seed, D-ND_LAB and KPhi1-EN without automatic install or
+target mutation;
+LinkedIn introduction draft added as operator-gated public copy, with
+no-production/no-autonomous-modifier claim boundary preserved;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -254,6 +260,9 @@ Codex does not independently close Track A or authorize Track B.
 8. Use `docs/guides/coder-first-evaluation-flow.md` before the external
    assistant playbook when the first reader is a coder/agent that is only
    evaluating RepoKernel for a user.
+9. Use `docs/public-capability-source-pass.md` as the source for any future
+   target-specific capability recommendation pass; keep it read-only until
+   repeated use proves a stable report/schema.
 ```
 
 ## Residue Not To Follow

@@ -168,6 +168,7 @@ normalization actions are considered.
 - [Operational procedure](docs/guides/operational-procedure.md)
 - [Clarity cleanup cycle](docs/clarity-cleanup-cycle.md)
 - [Meta-skill integration map](docs/meta-skill-integration-map.md)
+- [Public capability source pass](docs/public-capability-source-pass.md)
 - [Evolution, versioning and review loop](docs/guides/evolution-versioning-and-review-loop.md)
 - [Compatibility matrix](docs/compatibility-matrix.md)
 - [Pre-public checklist](docs/pre-public-checklist.md)
@@ -197,6 +198,7 @@ Current review and implementation sources:
 - [Full surface and pilot review](process/reports/REPOKERNEL_FULL_SURFACE_AND_PILOT_REVIEW_2026-06-25.md)
 - [Core and pilot completion packet](packets/FOR_CODEX/REPOKERNEL_CORE_AND_PILOT_COMPLETION_PACKET_2026-06-25.md)
 - [Review ledger](process/reviews/REVIEW_LEDGER.md)
+- [LinkedIn introduction draft](docs/public/linkedin-repokernel-intro-draft.md)
 
 The diagnostic evidence is not proof of production installation in a
 third-party repository.

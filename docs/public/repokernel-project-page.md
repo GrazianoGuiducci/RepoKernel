@@ -106,6 +106,32 @@ a public alpha for non-technical users;
 a guarantee that a target project is safe or complete.
 ```
 
+## Optional Public Capability Source Pass
+
+After a read-only target audit, RepoKernel can optionally inspect public,
+neutral capability sources and recommend which ones are useful for the target
+domain.
+
+Current candidate sources:
+
+```text
+GrazianoGuiducci/d-nd-ux-ai-seed:
+  agentic UX workspace and assistant-interface patterns.
+
+GrazianoGuiducci/d-nd-seed:
+  portable AI coder substrate, boot/reentry rules, profiles and guarded
+  capability routing.
+
+GrazianoGuiducci/D-ND_LAB:
+  domain research cycle, evidence report and falsifier patterns.
+
+GrazianoGuiducci/KPhi1-EN:
+  legacy cognitive-kernel architecture reference.
+```
+
+This pass is recommendation-only. It does not install, copy, activate hooks,
+run Lab cycles or mutate the target project.
+
 ## Links
 
 ```text
