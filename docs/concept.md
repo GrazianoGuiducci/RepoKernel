@@ -1,6 +1,13 @@
 # RepoKernel Concept
 
-RepoKernel is a repository pattern for making projects readable, continuable and improvable by AI systems over time.
+RepoKernel is a repository pattern for making projects readable, continuable
+and improvable by AI systems over time.
+
+It can be applied to new or existing projects as a project-local learning
+structure. The project keeps its own current state, source atlas, process
+packets, rules, skills, evidence, memory deltas and reentry points, so useful
+interactions can sediment into continuity instead of remaining scattered in chat
+history.
 
 The central loop is:
 
@@ -43,3 +50,7 @@ The loop is:
 observation -> packet -> action -> delta -> rule -> template/skill -> next repository or promotion
 ```
 
+RepoKernel is therefore a generator of intelligent project environments in a
+bounded sense: it gives projects the structure to remember, route, review and
+improve AI-assisted work. It is not a claim that the project becomes autonomous
+or that RepoKernel may write to the target without a later reviewed gate.

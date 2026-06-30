@@ -1,7 +1,7 @@
 # RepoKernel Portfolio Card
 
 status: draft_not_published
-updated: 2026-06-26
+updated: 2026-06-30
 surface: portfolio_card
 publication_gate: operator_approval_required
 
@@ -10,12 +10,13 @@ publication_gate: operator_approval_required
 ```text
 RepoKernel
 
-Experimental no-apply compiler for reviewable Project Kernels in AI-assisted
-development.
+Experimental no-apply generator for reviewable AI-readable Project Kernels.
 
-RepoKernel validates authorized project sources, builds target-bound generation
-plans and stages proposed project-kernel files outside the target repository
-for human review.
+RepoKernel turns authorized project intent and sources into a project-local
+continuity structure: current state, source atlas, process packets, rules,
+skills, evidence and memory deltas. In the current version it validates inputs,
+builds target-bound plans and stages proposed files outside the target
+repository for human review.
 
 Status: experimental, diagnostic, no apply command, no runtime.
 ```
@@ -23,8 +24,9 @@ Status: experimental, diagnostic, no apply command, no runtime.
 ## Short Variant
 
 ```text
-RepoKernel is an experimental no-apply compiler for making AI-assisted project
-setup more inspectable before any future write-capable step.
+RepoKernel is an experimental no-apply generator for making AI-assisted
+projects continuable, inspectable and reviewable before any future
+write-capable step.
 ```
 
 ## CTA Hierarchy
@@ -53,6 +55,7 @@ diagnostic;
 no-apply;
 no runtime;
 stages proposed files outside the target repository;
+structures project continuity, rules and skills;
 preserves review gates.
 ```
 
@@ -64,6 +67,7 @@ installer-ready;
 public alpha;
 safe for arbitrary repositories;
 autonomous repository modification;
+autonomous project intelligence;
 credential handling;
 runtime or daemon;
 write-capable apply gate.

@@ -106,3 +106,17 @@ Boundary: this decision does not activate apply, runtime, background hooks,
 Seed/THIA/Lab promotion, downstream mutation, external writes or public
 readiness claims. Downstream lessons must be neutralized before entering public
 RepoKernel surfaces.
+
+## 2026-06-30 - RepoKernel Product Positioning Clarified
+
+Decision: describe RepoKernel as a generator for AI-readable project continuity
+structures, not only as a diagnostic compiler.
+
+Reason: the tool is meant to introduce into new or existing projects a
+reviewable form in which useful AI interactions sediment into current state,
+source lineage, process packets, rules, project-local skills, evidence, memory
+deltas and reentry points.
+
+Boundary: this positioning remains neutral and public-safe. It does not claim
+autonomous project intelligence, production readiness, target writes, apply,
+runtime, credential handling, Seed/THIA/Lab promotion or deployment.

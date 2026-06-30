@@ -21,6 +21,7 @@
 | `process/reports/phase0-validation-summary.md` | historical report | Phase 0 validation result and earlier blockers |
 | `docs/recovery-procedure.md` | recovery | Minimal non-stale reentry through state, packet and atlas |
 | `process/deltas/2026-06-26-interrupted-session-reentry.md` | delta | Neutral recovery rule for interrupted sessions and sensitive stream redaction |
+| `process/deltas/2026-06-30-repokernel-positioning-clarity.md` | delta | Product-positioning clarification: project continuity generator, not runtime authority |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | historical implementation index | Earlier phased architecture entry point |
 | `packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md` | review request | Neutral independent review request that led to the current cycle |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | prior review | Earlier Phase 1 independent review and P0 findings |

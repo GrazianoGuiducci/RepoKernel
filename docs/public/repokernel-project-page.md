@@ -1,19 +1,21 @@
 # RepoKernel Project Page Draft
 
 status: draft_not_published
-updated: 2026-06-26
+updated: 2026-06-30
 surface: d-nd.com project page draft
 publication_gate: operator_approval_required
 
 ## Page Frame
 
-RepoKernel is an experimental no-apply compiler for reviewable Project Kernels
-in AI-assisted development.
+RepoKernel is an experimental no-apply generator for reviewable AI-readable
+Project Kernels.
 
-It exists to make project setup and evolution more inspectable before any
-future write-capable step. Instead of silently modifying a target repository,
-RepoKernel validates authorized inputs, builds a target-bound plan, stages
-proposed files outside the target and keeps human review as the gate.
+It exists to give new or existing projects a project-local continuity
+structure: current state, source atlas, process packets, rules, skills,
+evidence, memory deltas and reentry points. Instead of silently modifying a
+target repository, RepoKernel validates authorized inputs, builds a
+target-bound plan, stages proposed files outside the target and keeps human
+review as the gate.
 
 ## What It Does
 
@@ -34,6 +36,7 @@ inspect a target repository without writing to it;
 build a deterministic generation plan tied to the target snapshot;
 stage proposed project-kernel files outside the target repository;
 generate public-safe guides;
+describe project-local rules, skills and memory deltas;
 run diagnostic audits;
 verify the reference distribution.
 ```
@@ -50,11 +53,14 @@ current state;
 target evidence;
 decision boundaries;
 review gates;
+project-local rules and skills;
+memory deltas and reentry points;
 blocked claims and future authority.
 ```
 
-RepoKernel is a controlled experiment in making those elements explicit before
-granting stronger authority to any automation.
+RepoKernel is a controlled experiment in making those elements explicit, so
+useful interactions can become reviewed project memory before stronger
+authority is granted to any automation.
 
 ## Current Status
 
@@ -95,6 +101,7 @@ a daemon;
 a credential manager;
 a security boundary for private repositories;
 an autonomous repository modifier;
+autonomous project intelligence;
 a public alpha for non-technical users;
 a guarantee that a target project is safe or complete.
 ```

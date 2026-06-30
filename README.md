@@ -9,6 +9,12 @@ under `.repokernel/` without silently overwriting target repositories.
 Current status: `0.3.0.dev0`, experimental diagnostic compiler, no apply
 command.
 
+In practical terms, RepoKernel is a generator for AI-readable project
+continuity structures. It helps new or existing projects preserve current
+state, source lineage, process packets, rules, skills, evidence, memory deltas
+and reentry points so that future AI-assisted work can continue from reviewed
+project memory instead of scattered chat context.
+
 ## One Compiler, Two Distribution Forms
 
 ```text
@@ -130,6 +136,11 @@ your target snapshot
 RepoKernel does not require any D-ND project, private fixture or specific
 application. Use your own authorized inputs and keep staging outside the target
 repository.
+
+The intended value is not raw file generation. The value is giving a project a
+reviewable learning structure: useful interactions can become deltas, accepted
+corrections can become rules, repeated procedures can become project-local
+skills, and the next session can reenter through explicit state and evidence.
 
 ## Guides
 

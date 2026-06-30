@@ -11,7 +11,7 @@ branch: main
 
 ```text
 active_surface: pre-public hardening after semantic retrofit patch
-current_next: review neutral portfolio card and project page drafts; keep public tester request, subdomain and production claims blocked
+current_next: review neutral portfolio card and project page drafts with RepoKernel positioned as a no-apply generator of AI-readable project continuity structures; keep public tester request, subdomain and production claims blocked
 first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only operator-approved experimental diagnostic wording
 ```
 
@@ -158,6 +158,9 @@ interrupted-session recovery rule documented across recovery, context surface
 and operating guide, with sensitive-stream redaction boundary;
 minimum-action improvement contract documented for experience-driven deltas,
 with Source Atlas entry and promotion filter;
+public/concept positioning clarified: RepoKernel generates AI-readable project
+continuity structures for new and existing projects while remaining no-apply
+and no-runtime in the current line;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
