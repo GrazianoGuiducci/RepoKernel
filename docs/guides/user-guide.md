@@ -3,6 +3,23 @@
 Use RepoKernel when a project needs continuity across AI sessions, coders,
 documents, tools or repositories.
 
+## If You Are Asking An Assistant
+
+If you are asking a coding assistant what RepoKernel is useful for, ask for a
+read-only explanation first. The assistant should explain the value, current
+limits and likely first safe step before cloning, inspecting or staging
+anything.
+
+Useful first request:
+
+```text
+Read the RepoKernel docs and tell me whether it is useful for my project.
+Stay read-only and ask before cloning or running diagnostics.
+```
+
+Assistant-facing guidance lives in
+[`external-assistant-playbook.md`](external-assistant-playbook.md).
+
 ## Choose A Mode
 
 Direct Start creates a new kernel. Synthesis compiles from intent and sources.

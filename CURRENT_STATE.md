@@ -177,6 +177,8 @@ private ANTI_G residue;
 phase0 inventory classifier now covers CI workflow files, package manifest,
 reference SeedSpecs and reference distributions; regenerated inventory reports
 show unclassified_count 0 and broken_links 0;
+external assistant first-contact playbook added so a coder can explain
+RepoKernel utility, examples, limits and consent gates before clone or setup;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -244,6 +246,8 @@ Codex does not independently close Track A or authorize Track B.
 6. Before TMx handoff, classify dirty or unclear files with
    clarity-cleanup-steward and do not mutate shared `tm7` state without owner
    gate.
+7. Use `docs/guides/external-assistant-playbook.md` as the source for the next
+   external narrative/onboarding pass.
 ```
 
 ## Residue Not To Follow

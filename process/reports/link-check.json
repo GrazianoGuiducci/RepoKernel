@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.link-check.v1",
   "generated_on": "2026-06-30",
-  "checked_links": 17,
+  "checked_links": 19,
   "broken_count": 0,
   "broken": [],
   "links": [
@@ -18,6 +18,11 @@
     {
       "source": "README.md",
       "target": "docs/guides/coder-guide.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/guides/external-assistant-playbook.md",
       "ok": true
     },
     {
@@ -88,6 +93,11 @@
     {
       "source": "docs/guides/evolution-versioning-and-review-loop.md",
       "target": "../minimum-action-improvement-contract.md",
+      "ok": true
+    },
+    {
+      "source": "docs/guides/user-guide.md",
+      "target": "external-assistant-playbook.md",
       "ok": true
     }
   ]

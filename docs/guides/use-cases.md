@@ -29,3 +29,11 @@ repeatable cycles.
 
 Use A1 observe-and-propose mode. Inspect, propose a setup capsule and stop
 before any write.
+
+## Assistant-Guided First Contact
+
+Use the external assistant playbook when a user asks a coding assistant whether
+RepoKernel is useful. The assistant should explain the current value, give
+examples by project type, state the no-apply limits and ask for explicit
+permission before cloning, reading private folders, running diagnostics or
+staging proposed files.

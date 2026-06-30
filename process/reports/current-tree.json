@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 193,
+  "tracked_file_count": 195,
   "groups": [
     ".github",
     "dist",
@@ -203,6 +203,12 @@
     },
     {
       "path": "docs/guides/examples/minimal-project.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/guides/external-assistant-playbook.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -617,6 +623,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-clarity-cleanup-and-meta-skill-map.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-30-external-assistant-first-contact.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"

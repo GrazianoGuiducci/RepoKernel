@@ -151,3 +151,17 @@ Boundary: clarity cleanup is observe, classify, propose and receipt only. It
 does not authorize deletion, moving files, ignore-rule changes, bulk
 normalization, adjacent-repo cleanup, TM7 mutation, runtime hooks or background
 automation.
+
+## 2026-06-30 - External Assistant First-Contact Narrative
+
+Decision: add an assistant-facing guide for explaining RepoKernel to an
+external user before clone, inspection or staging.
+
+Reason: RepoKernel is meta-structural and can be difficult to understand from
+abstract descriptions alone. A coding assistant needs a plain answer path:
+what is useful now, what is not available yet, which project types benefit,
+which examples apply and what consent is required before acting.
+
+Boundary: the guide is explanatory and read-only by default. It does not
+authorize public tester requests, private repository cloning, target writes,
+apply behavior, runtime activation, credential handling or publication.

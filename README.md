@@ -161,6 +161,7 @@ normalization actions are considered.
 - [Single-page overview](docs/overview.html)
 - [User guide](docs/guides/user-guide.md)
 - [Coder guide](docs/guides/coder-guide.md)
+- [External assistant playbook](docs/guides/external-assistant-playbook.md)
 - [Architecture guide](docs/guides/architecture.md)
 - [CLI reference](docs/guides/cli-reference.md)
 - [Operational procedure](docs/guides/operational-procedure.md)

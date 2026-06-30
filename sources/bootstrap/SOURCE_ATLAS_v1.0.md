@@ -24,6 +24,7 @@
 | `process/deltas/2026-06-30-repokernel-positioning-clarity.md` | delta | Product-positioning clarification: project continuity generator, not runtime authority |
 | `process/deltas/2026-06-30-generated-project-learning-transfer.md` | delta | Corrective implementation: improvement logic is projected into generated Project Kernel output |
 | `process/deltas/2026-06-30-clarity-cleanup-and-meta-skill-map.md` | delta | Clarity cleanup faculty and neutral meta-skill integration map |
+| `process/deltas/2026-06-30-external-assistant-first-contact.md` | delta | Assistant-facing first-contact narrative and consent gate |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | historical implementation index | Earlier phased architecture entry point |
 | `packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md` | review request | Neutral independent review request that led to the current cycle |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | prior review | Earlier Phase 1 independent review and P0 findings |
@@ -50,6 +51,7 @@
 | `docs/clarity-cleanup-cycle.md` | governance | Dirty/unclear file classification before cleanup |
 | `docs/meta-skill-integration-map.md` | governance | Neutral transfer map from local meta-skills to RepoKernel faculties |
 | `docs/guides/operational-procedure.md` | procedure | Current no-write product path |
+| `docs/guides/external-assistant-playbook.md` | guide | Assistant-facing explanation, examples and consent gate for external first contact |
 | `docs/guides/cli-reference.md` | guide | Current CLI surface |
 | `docs/skill-repo-lifecycle.md` | method | Skill lifecycle routing |
 | `skills/repokernel-semantic-kernel/SKILL.md` | skill | Local repository kernel |
