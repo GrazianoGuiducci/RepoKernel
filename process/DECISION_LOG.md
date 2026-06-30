@@ -228,3 +228,21 @@ Boundary: feedback is evidence, not authority. This decision does not activate
 hooks, apply behavior, runtime automation, target writes, provider calls,
 publication, credential handling, downstream project mutation or public
 readiness claims.
+
+## 2026-06-30 - First Contact Preview And Hook Clarity
+
+Decision: clarify that RepoKernel does not activate hooks by default, while an
+external host may call RepoKernel through hooks, skills, commands or runtime
+adapters when that host owns the lifecycle and gate. Add a first-contact
+preview path for users who need to understand or safely test RepoKernel before
+using it on real work.
+
+Reason: users may be cautious about a metatool that changes project continuity.
+Coders need a small, trust-building path: explanation, fixture demo, synthetic
+demo, read-only assessment or external staged preview. This prevents premature
+installation and lets reviewers, creators and agentic integrators choose the
+right depth.
+
+Boundary: this decision does not authorize hook activation, target writes,
+background automation, credential handling, public feedback submission without
+permission, adjacent repository import or public readiness claims.

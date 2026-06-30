@@ -8,6 +8,9 @@ and what would make the next integration safer.
 Agentic feedback is public-safe evidence for maintainers. It is not authority
 to change contracts, generated output, hooks, public claims or target projects.
 
+Ask the user for permission before submitting feedback from a user evaluation.
+Do not turn a private support session into public evidence without consent.
+
 ## Who Should Use This
 
 Use this if you are:

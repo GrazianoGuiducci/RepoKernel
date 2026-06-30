@@ -10,10 +10,14 @@ host, one IDE, one language, one installer or one automation model.
 Integration is selected by the target context.
 
 ```text
-RepoKernel does not activate itself.
-RepoKernel does not grant hooks, skills, writes or runtime authority.
+RepoKernel does not activate itself by default.
+RepoKernel does not grant hooks, skills, writes or runtime authority by itself.
 RepoKernel provides contracts, diagnostics, plans and staged review output.
 ```
+
+An external host may decide to call RepoKernel through a skill, command, hook
+or runtime adapter. That activation belongs to the host system, not to
+RepoKernel by assumption.
 
 ## Possible Integration Surfaces
 
@@ -42,8 +46,10 @@ A4 reviewed target integration
 A5 host-specific hooks or runtime automation
 ```
 
-Current RepoKernel is designed for A0-A3. A4 requires explicit project review.
-A5 is future work and must be host-specific.
+Current RepoKernel is designed for A0-A3 as a neutral package. A4 requires
+explicit project review. A5 may be implemented by an external host when that
+host has its own lifecycle, authority model and test gate; RepoKernel does not
+activate A5 automatically.
 
 ## Skill Or Hook?
 
@@ -70,6 +76,30 @@ session close/reentry.
 
 Hooks are not the default. A weak hook adds noise and can create false
 authority. Start with docs, staged output and receipts.
+
+An external system can still choose hooks if they are natural for that system.
+Valid hook examples include:
+
+```text
+new project/domain created;
+new repository cloned;
+before assistant writes files;
+before commit;
+session close/reentry;
+periodic continuity audit requested by the user.
+```
+
+In that case, the host must define:
+
+```text
+hook_owner:
+hook_event:
+what_repo_kernel_may_read:
+what_repo_kernel_may stage:
+what_repo_kernel_must_not_touch:
+operator_or_policy_gate:
+rollback_or_disable_path:
+```
 
 ## Non-Development Use
 
@@ -105,6 +135,8 @@ Every integration should preserve:
 target:
 runtime:
 mode:
+activation_owner:
+activation_surface:
 sources_read:
 authority:
 files_or_surfaces_proposed:

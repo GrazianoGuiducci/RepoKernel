@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
 updated: 2026-06-30
-status: integration surfaces and agentic feedback channel active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
+status: first-contact preview and hook clarity active; integration surfaces and agentic feedback channel active; semantic retrofit patch implemented
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -11,8 +11,8 @@ branch: main
 
 ```text
 active_surface: integration surfaces and agentic feedback channel
-current_next: validate integration-surfaces guide, agentic feedback guide, GitHub issue template and inventory classification
-first_safe_action: run phase0 inventory, source audit, unit tests and verify-dist before committing the feedback-channel integration
+current_next: validate first-contact preview, hook clarity and anti-collapse coder boot
+first_safe_action: run phase0 inventory, source audit, unit tests and verify-dist before committing the preview/hook clarification
 ```
 
 ## Accepted Architecture
@@ -285,6 +285,11 @@ Codex does not independently close Track A or authorize Track B.
     integration claims.
 13. Use `docs/agentic-feedback.md` and the GitHub issue template to gather
     structured public-safe feedback from external agentic systems.
+14. Use `docs/first-contact-preview.md` when a user needs a safe demo or
+    trust-building preview before real target integration.
+15. Treat hooks as external-host activation surfaces: RepoKernel does not
+    activate them by default, but a host may use them if it owns lifecycle,
+    authority, gate and rollback.
 ```
 
 ## Residue Not To Follow

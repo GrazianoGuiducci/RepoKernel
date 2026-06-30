@@ -1,7 +1,7 @@
 {
   "schema": "repokernel.phase0.current-tree.v1",
   "generated_on": "2026-06-30",
-  "tracked_file_count": 212,
+  "tracked_file_count": 214,
   "groups": [
     ".github",
     "dist",
@@ -179,6 +179,12 @@
     },
     {
       "path": "docs/feedback.md",
+      "group": "docs",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "docs/first-contact-preview.md",
       "group": "docs",
       "kind": "file",
       "suffix": ".md"
@@ -689,6 +695,12 @@
     },
     {
       "path": "process/deltas/2026-06-30-external-assistant-first-contact.md",
+      "group": "process",
+      "kind": "file",
+      "suffix": ".md"
+    },
+    {
+      "path": "process/deltas/2026-06-30-first-contact-preview-and-hook-clarity.md",
       "group": "process",
       "kind": "file",
       "suffix": ".md"

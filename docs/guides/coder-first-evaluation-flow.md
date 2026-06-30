@@ -100,6 +100,10 @@ assessment. External capability repositories can improve a later fit report,
 but they can confuse the first evaluation if they appear before the project
 need is clear.
 
+If the user is unsure, cautious or only evaluating the idea, read
+`docs/first-contact-preview.md` and offer a preview before any integration
+step.
+
 ## Evaluation Modes
 
 Use one of these modes explicitly:
@@ -132,6 +136,35 @@ write_gate:
 External capability sources belong after `local_read_only_assessment` or
 `no_write_diagnostic`, never before the user understands the base RepoKernel
 fit.
+
+## Welcome Boot For Coders
+
+Run this as a mental boot before answering:
+
+```text
+I am not the owner of the user's project.
+RepoKernel is not already authorized on this target.
+The first useful output may be explanation, not integration.
+Hooks, skills and runtime adapters belong to the host context.
+Feedback is useful only with user permission and public-safe boundaries.
+```
+
+## Anti-Collapse Rules
+
+Do not collapse:
+
+```text
+RepoKernel docs -> permission to install.
+RepoKernel skill -> permission to write.
+Host hook support -> RepoKernel hook activation.
+Public capability source -> dependency to import.
+Staged preview -> target mutation.
+Agent feedback -> maintainer authority.
+User curiosity -> consent to inspect private work.
+```
+
+Lazy integration creates noise. Stay in the lowest mode that answers the
+user's actual decision.
 
 ## First Output Contract
 
@@ -280,6 +313,14 @@ If a repo/folder is involved, may I read it locally?
 Should I stay read-only and produce a setup report first?
 If a staged preview is useful, where should the external review output go?
 Are there files, secrets, client data or private notes I must not read?
+```
+
+If the user allows a preview, ask which preview style they prefer only when it
+changes the next action:
+
+```text
+Do you want a sample demo, a synthetic example, a read-only assessment of your
+folder, or an external staged preview?
 ```
 
 ## Do Not Collapse Roles

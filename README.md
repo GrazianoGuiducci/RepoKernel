@@ -213,6 +213,7 @@ normalization actions are considered.
 ## Guides
 
 - [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
+- [First contact preview](docs/first-contact-preview.md)
 - [Integration surfaces](docs/integration-surfaces.md)
 - [Contribution lanes](docs/contribution-lanes.md)
 - [Staged output review](docs/staged-output-review.md)

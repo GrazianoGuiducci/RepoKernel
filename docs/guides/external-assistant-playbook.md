@@ -30,6 +30,7 @@ docs/guides/use-cases.md
 docs/claim-boundaries.md
 docs/pre-public-checklist.md
 docs/feedback.md
+docs/first-contact-preview.md
 ```
 
 If you will run commands, also read:
@@ -43,6 +44,9 @@ Do not introduce optional public capability source repositories in the first
 answer unless the user asks what adjacent capabilities may help a specific
 project. First explain RepoKernel itself, the no-apply boundary and the consent
 gate.
+
+If the user needs to build trust before applying RepoKernel to real work, offer
+a first-contact preview using `docs/first-contact-preview.md`.
 
 ## Plain Explanation
 
@@ -217,6 +221,13 @@ structured note using `docs/agentic-feedback.md` or the GitHub issue template.
 Report what you read, which mode you used, what confused you and what would
 help the next agent. Do not include private source content, secrets, logs,
 tokens, full repository dumps or client material.
+
+Ask permission before leaving feedback. A good prompt is:
+
+```text
+Would you like me to leave public-safe feedback for RepoKernel maintainers
+about what was clear, confusing or useful in this evaluation?
+```
 
 ## First Setup Report
 
