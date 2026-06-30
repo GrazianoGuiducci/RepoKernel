@@ -71,6 +71,8 @@ class CliTests(unittest.TestCase):
             self.assertEqual(code, 0)
             self.assertEqual(report["boundary"], "staging_only_not_apply")
             self.assertEqual(report["target_writes_performed"], [])
+            self.assertIn("REVIEW_ME_FIRST.md", report["writes_performed"])
+            self.assertTrue((stage_dir / "REVIEW_ME_FIRST.md").is_file())
             self.assertTrue((stage_dir / ".repokernel" / "state" / "CURRENT_STATE.md").is_file())
             self.assertFalse(any(target_dir.iterdir()))
 

@@ -178,6 +178,19 @@ class PlannerTests(unittest.TestCase):
         self.assertIn("proposed_action", clarity)
         self.assertIn("delete_candidate", clarity)
 
+    def test_generated_kernel_passes_project_kernel_audit_invariants(self):
+        spec = seed()
+        plan = build_generation_plan(spec, bundle_provenance=bundle_for(spec))
+        by_path = {item["path"]: item for item in plan["items"]}
+
+        current_state = by_path[".repokernel/state/CURRENT_STATE.md"]["content"].lower()
+        first_packet = by_path[".repokernel/packets/FIRST_PACKET.md"]["content"].lower()
+
+        for key in ("active_surface", "current_next", "boundary", "first_safe_action"):
+            self.assertIn(key, current_state)
+        for key in ("objective", "source", "boundary", "first_safe_action", "memory delta"):
+            self.assertIn(key, first_packet)
+
 
 if __name__ == "__main__":
     unittest.main()

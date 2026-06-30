@@ -28,6 +28,8 @@
 | `process/deltas/2026-06-30-external-assistant-first-contact.md` | delta | Assistant-facing first-contact narrative and consent gate |
 | `process/deltas/2026-06-30-coder-first-evaluation-flow.md` | delta | Coder-first evaluation flow for unaware assistants and agentic runtimes |
 | `process/deltas/2026-06-30-public-capability-source-pass.md` | delta | Optional public capability source pass after target audit |
+| `process/deltas/2026-06-30-tm7-vps-onboarding-feedback.md` | delta | TM7-vps feedback integrated into contribution lanes, coder funnel and generated audit invariant |
+| `process/reports/TM7_VPS_REPOKERNEL_FEEDBACK_INTEGRATION_2026-06-30.md` | report | Local integration report for TM3/TM7-vps onboarding feedback |
 | `packets/FOR_CODEX/REPOKERNEL_FINAL_IMPLEMENTATION_PACKAGE_2026-06-23.md` | historical implementation index | Earlier phased architecture entry point |
 | `packets/FOR_GPT_PRO/REPOKERNEL_NEUTRAL_REVIEW_REQUEST_2026-06-25.md` | review request | Neutral independent review request that led to the current cycle |
 | `packets/FOR_GPT_PRO/REPOKERNEL_PHASE1_GPT_PRO_INDEPENDENT_REVIEW_2026-06-24.md` | prior review | Earlier Phase 1 independent review and P0 findings |
@@ -54,6 +56,8 @@
 | `docs/clarity-cleanup-cycle.md` | governance | Dirty/unclear file classification before cleanup |
 | `docs/meta-skill-integration-map.md` | governance | Neutral transfer map from local meta-skills to RepoKernel faculties |
 | `docs/public-capability-source-pass.md` | governance | Public neutral capability source allowlist and fit-report method |
+| `docs/contribution-lanes.md` | governance | Clean lane and contribution lane rule for RepoKernel update/contribution separation |
+| `docs/staged-output-review.md` | governance | REVIEW_ME_FIRST and staged output review contract |
 | `docs/public/linkedin-repokernel-intro-draft.md` | public draft | Operator-gated LinkedIn introduction copy |
 | `docs/guides/operational-procedure.md` | procedure | Current no-write product path |
 | `docs/guides/external-assistant-playbook.md` | guide | Assistant-facing explanation, examples and consent gate for external first contact |

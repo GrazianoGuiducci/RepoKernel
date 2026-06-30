@@ -76,6 +76,7 @@ capability_candidates:
   - capability:
     source_repo:
     source_ref:
+    files_read:
     why_relevant:
     maturity:
     suggested_use:
@@ -120,7 +121,12 @@ auto_publish
 
 ```text
 pin source:
-  record repository URL and commit/ref when used for a staged recommendation.
+  record repository URL, commit/ref and exact files read when used for a
+  staged recommendation.
+
+pin retrieval:
+  record retrieval mode, read time and whether the source was public web,
+  public checkout or local private source.
 
 separate public from private:
   use public repo content only unless the operator explicitly authorizes a

@@ -36,6 +36,10 @@ RepoKernel is useful only if it improves continuity, authority, reentry,
 evidence, cleanup or safe next action. If the user only needs a normal README,
 bug fix or one-off script, say that RepoKernel may be unnecessary.
 
+`RepoKernel not needed` is not a failure. It is the correct answer when the
+project does not show a continuity, authority, reentry, evidence or cleanup
+problem that justifies a Project Kernel.
+
 ## Coder Self-Orientation
 
 Before answering the user, the coder should identify itself in practical terms:
@@ -128,6 +132,26 @@ write_gate:
 External capability sources belong after `local_read_only_assessment` or
 `no_write_diagnostic`, never before the user understands the base RepoKernel
 fit.
+
+## First Output Contract
+
+Before clone, local inspection, diagnostics or staging, the first coder answer
+must give the user a bounded decision object:
+
+```text
+mode_used:
+repo_or_project:
+runtime:
+RepoKernel fit: useful | not_needed | defer
+why:
+what_not_to_do:
+safe_next_step:
+approval_needed:
+if_staging: create or read REVIEW_ME_FIRST before any target write
+```
+
+This output is meant to protect both sides: the user gets a plain answer, and
+the coder gets a mode boundary before using tools.
 
 ## User-Facing Explanation Shape
 
@@ -243,6 +267,7 @@ missing_context:
 recommended_mode:
 safe_next_step:
 approval_needed:
+fit_result: useful | not_needed | defer
 ```
 
 ## Consent Questions

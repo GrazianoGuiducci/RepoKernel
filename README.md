@@ -26,6 +26,11 @@ If you are Codex, Claude Code, OpenCode, Cursor, a custom agent or another AI
 coder evaluating this repository for a user, do not start by installing,
 cloning adjacent repositories or running commands against the user's project.
 
+If you maintain a local RepoKernel checkout, keep one clean lane aligned to
+`origin/main` for receiving updates. Put local discoveries, audit fixes and
+experiments in a separate branch, worktree or patch. See
+[Contribution lanes](docs/contribution-lanes.md).
+
 First classify the evaluation mode:
 
 ```text
@@ -61,6 +66,10 @@ such as `d-nd-ux-ai-seed`, `d-nd-seed`, `D-ND_LAB` and `KPhi1-EN` are optional
 public capability sources to inspect only after the target project audit and
 only to produce recommendations. They are not installed, copied or activated by
 default.
+
+`RepoKernel not needed` is a valid first evaluation result. If continuity,
+authority, reentry or evidence problems are not present, say so and avoid
+adding machinery.
 
 ## One Compiler, Two Distribution Forms
 
@@ -149,6 +158,9 @@ PYTHONPATH=src python -m repokernel.cli <command>
 `stage` renders proposals into an explicit empty review directory. It is not an
 apply operation and must not modify the target repository.
 
+Every staged directory now includes `REVIEW_ME_FIRST.md`. Read it before
+inspecting generated files or considering any target write.
+
 There is intentionally no `apply` command in the current line.
 
 ## Minimal Local Smoke Path
@@ -201,6 +213,8 @@ normalization actions are considered.
 ## Guides
 
 - [Coder-first evaluation flow](docs/guides/coder-first-evaluation-flow.md)
+- [Contribution lanes](docs/contribution-lanes.md)
+- [Staged output review](docs/staged-output-review.md)
 - [External assistant playbook](docs/guides/external-assistant-playbook.md)
 - [Single-page overview](docs/overview.html)
 - [User guide](docs/guides/user-guide.md)

@@ -1,13 +1,28 @@
 {
   "schema": "repokernel.phase0.link-check.v1",
   "generated_on": "2026-06-30",
-  "checked_links": 24,
+  "checked_links": 27,
   "broken_count": 0,
   "broken": [],
   "links": [
     {
       "source": "README.md",
+      "target": "docs/contribution-lanes.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
       "target": "docs/guides/coder-first-evaluation-flow.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/contribution-lanes.md",
+      "ok": true
+    },
+    {
+      "source": "README.md",
+      "target": "docs/staged-output-review.md",
       "ok": true
     },
     {

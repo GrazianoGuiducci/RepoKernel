@@ -195,3 +195,19 @@ kernel references.
 Boundary: the pass is read-only and recommendation-only. It does not authorize
 private repo access, install/copy, target mutation, hook activation, Lab runs,
 publication or public readiness claims.
+
+## 2026-06-30 - TMx Clean Lane And External Coder Output Contract
+
+Decision: integrate TM7-vps onboarding feedback as a RepoKernel governance
+rule: keep a clean lane aligned to `origin/main`, keep local discoveries in
+contribution lanes, and require external coders to produce a first output
+contract before clone, diagnostics, staging or writes.
+
+Reason: RepoKernel is a metatool that must stay easy to update while still
+learning from node-local discoveries. External coders may arrive only to
+evaluate it for a user, so the first response must explain fit, non-fit,
+boundary and next safe action before tools run.
+
+Boundary: this decision does not authorize force pulls, shared TM7 mutation,
+target writes, apply, runtime activation, public claims, secret transfer or
+automatic import of VPS patches.

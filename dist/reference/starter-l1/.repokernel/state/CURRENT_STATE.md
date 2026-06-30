@@ -6,6 +6,7 @@ status: draft_review_required
 ```text
 active_surface: Starter L1
 current_next: review staged RepoKernel proposal before any target write
+first_safe_action: review staged RepoKernel proposal and REVIEW_ME_FIRST before any target write
 authority: proposal_only
 ```
 

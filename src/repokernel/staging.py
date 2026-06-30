@@ -31,6 +31,9 @@ def stage_generation_plan(plan: dict[str, Any], output_dir: Path) -> dict[str, A
 
     staged: list[str] = []
     skipped: list[dict[str, str]] = []
+    review_path = output_dir / "REVIEW_ME_FIRST.md"
+    review_path.write_text(_review_me_first_content(plan), encoding="utf-8", newline="\n")
+    staged.append("REVIEW_ME_FIRST.md")
     for item in plan.get("items", []):
         action = item.get("action")
         rel = normalize_relative_path(item.get("path", ""))
@@ -58,3 +61,40 @@ def stage_generation_plan(plan: dict[str, Any], output_dir: Path) -> dict[str, A
         "skipped": skipped,
         "boundary": "staging_only_not_apply",
     }
+
+
+def _review_me_first_content(plan: dict[str, Any]) -> str:
+    target = plan.get("target", {})
+    target_mode = target.get("mode", "unknown") if isinstance(target, dict) else "unknown"
+    target_path = target.get("path", "unknown") if isinstance(target, dict) else "unknown"
+    stageable = [
+        item.get("path", "")
+        for item in plan.get("items", [])
+        if item.get("action") in STAGEABLE_ACTIONS and isinstance(item.get("path"), str)
+    ]
+    stageable_lines = "\n".join(f"- `{path}`" for path in sorted(stageable)) or "- No stageable plan items."
+    return (
+        "# Review Me First\n\n"
+        "status: staged_review_gate\n\n"
+        "This directory is a RepoKernel staging output. It is not an apply result,\n"
+        "not a target write and not approval to mutate the target project.\n\n"
+        "```text\n"
+        f"plan_id: {plan.get('plan_id', 'unknown')}\n"
+        f"target_mode: {target_mode}\n"
+        f"target_path: {target_path}\n"
+        "boundary: staging_only_not_apply\n"
+        "first_safe_action: compare this staged output with the target project before any write gate\n"
+        "approval_needed: target write, commit, PR, apply step or automation\n"
+        "```\n\n"
+        "## Read Order\n\n"
+        "1. `REVIEW_ME_FIRST.md`\n"
+        "2. `.repokernel/state/CURRENT_STATE.md`\n"
+        "3. `.repokernel/packets/FIRST_PACKET.md`\n"
+        "4. `.repokernel/sources/SOURCE_ATLAS.md`\n"
+        "5. `AGENTS.md` adapter delta\n\n"
+        "## Generated Or Proposed Files\n\n"
+        f"{stageable_lines}\n\n"
+        "## Approval Boundary\n\n"
+        "Accepting this preview requires a separate reviewed gate. Until then, keep\n"
+        "the target repository untouched and treat these files as proposal evidence.\n"
+    )

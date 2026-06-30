@@ -1,7 +1,7 @@
 # RepoKernel Current State
 
-updated: 2026-06-26
-status: pre-public copy alignment active; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
+updated: 2026-06-30
+status: TM7-vps onboarding feedback integration validated locally; semantic retrofit patch implemented; experimental diagnostic repo visibility possible with limited claims
 repository: GrazianoGuiducci/RepoKernel
 visibility: public
 license: MIT
@@ -10,9 +10,9 @@ branch: main
 ## Active Surface
 
 ```text
-active_surface: pre-public hardening after semantic retrofit patch
-current_next: review neutral portfolio card and project page drafts with RepoKernel positioned as a no-apply generator of AI-readable project continuity structures; keep public tester request, subdomain and production claims blocked
-first_safe_action: keep apply/runtime/public-alpha claims blocked; publish only operator-approved experimental diagnostic wording
+active_surface: TM7-vps onboarding feedback integration
+current_next: commit and push validated clean lane/contribution lane docs, external coder first output contract, REVIEW_ME_FIRST staging output and generated Starter L1 audit conformance
+first_safe_action: commit only the validated RepoKernel integration; keep TM7-vps patch import as pending unless TM3 supplies the diff
 ```
 
 ## Accepted Architecture
@@ -191,6 +191,11 @@ no-production/no-autonomous-modifier claim boundary preserved;
 external coder funnel audit completed; README now exposes the coder-first
 evaluation path before CLI commands, and public capability sources are marked
 as a second-stage recommendation pass only after target audit;
+TM7-vps onboarding feedback integrated locally: clean lane/contribution lane
+rule documented, first output contract strengthened, `not_needed` preserved as
+valid, staged output generates `REVIEW_ME_FIRST`, public capability source pass
+pins repo/ref/files read, and generated Starter L1 audit invariant is fixed in
+planner output;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -203,8 +208,8 @@ version-locked diagnostic pilot execution if explicitly authorized later;
 independent pilot evaluation;
 trusted collaborator or public experimental readiness;
 apply transaction, runtime, Seed promotion and external automation.
-residual alpha blockers: live SkillRegistry contract mismatch, generated
-Starter L1 audit invariant, TargetSnapshot path/hash/identity limits, uniform
+residual alpha blockers: live SkillRegistry contract mismatch,
+TargetSnapshot path/hash/identity limits, uniform
 snapshot JSON Schema validation inside plan, source revision provenance in
 artifacts.
 semantic retrofit still requires independent review and controlled pilot
@@ -269,6 +274,8 @@ Codex does not independently close Track A or authorize Track B.
 10. For external-coder onboarding, start from README.md "Start Here For
     External Coders And Agents"; do not route adjacent public repositories
     before the base RepoKernel fit is clear.
+11. For TMx or contributor work, keep the canonical checkout as a clean lane
+    and use branch/worktree/patch contribution lanes for local audit fixes.
 ```
 
 ## Residue Not To Follow
