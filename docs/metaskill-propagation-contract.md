@@ -69,6 +69,15 @@ project_kernel_rule:
 skill_candidate:
   propose a project-local skill only when repeated use justifies it.
 
+capability_manifest:
+  propose a project-local manifest when skill-like behavior may be consumed by
+  an autonomous runtime, product workbench, agent loop or service surface.
+
+receipt_reducer:
+  propose a deterministic reducer or validator when a receipt class is stable
+  enough to map to a finite state and next legal action without model
+  reinterpretation.
+
 promotion_packet:
   neutral transfer packet for another source lane.
 ```
@@ -84,6 +93,20 @@ avoid copying the rule everywhere;
 check owner, source, gate, validation and receipt;
 adopt only when it improves this project;
 record why the local incarnation is useful here;
+```
+
+If the local incarnation is autonomous or semi-autonomous capability use, the
+generated Project Kernel should also ask future coders to define:
+
+```text
+capability manifest;
+allowed and blocked actions;
+side-effect class;
+receipt schema;
+reducer or validator when the receipt is stable;
+human gate trigger;
+stop condition;
+next legal action.
 ```
 
 The rule belongs inside the staged project object. A RepoKernel-only document is
@@ -118,4 +141,17 @@ gate:
 validation:
 receipt:
 next_action:
+```
+
+For autonomous capability candidates, add:
+
+```text
+capability_id:
+allowed_actions:
+blocked_actions:
+side_effect_class:
+receipt_schema:
+reducer_or_validator:
+human_gate_required_when:
+stop_condition:
 ```

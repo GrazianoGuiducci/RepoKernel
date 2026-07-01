@@ -210,6 +210,11 @@ project-local adoption;
 planner now projects a Metaskill Propagation Protocol into generated semantic
 kernel skills so the target Project Kernel receives the rule instead of leaving
 it only in RepoKernel docs;
+capability manifest projection added to the metaskill propagation contract:
+when a project-local incarnation may be consumed by autonomous runtime, product
+workbench or agent loop, the staged Project Kernel should request manifest,
+allowed/blocked actions, side-effect class, receipt schema, reducer/validator,
+human gate, stop condition and next legal action before runtime authority;
 ```
 
 ## Not Yet Verified Or Not Yet Conformant
@@ -305,6 +310,9 @@ Codex does not independently close Track A or authorize Track B.
 17. For metaskills or transferable invariants, use
     docs/metaskill-propagation-contract.md and adopt locally only with owner,
     source, gate, validation and receipt.
+18. For autonomous or semi-autonomous capability candidates, use the capability
+    manifest projection in docs/metaskill-propagation-contract.md. Do not let a
+    runtime call human/coder skills as hidden authority.
 ```
 
 ## Residue Not To Follow

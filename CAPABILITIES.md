@@ -17,6 +17,7 @@ Capabilities are proposals until the local owner accepts them.
 | Public capability source pass | candidate | 0.3.0.dev0 | a target project may benefit from public neutral sources after audit | recommendation only |
 | Agentic feedback channel | candidate | 0.3.0.dev0 | external AI systems can report installation or evaluation friction | public-safe feedback only |
 | Metaskill propagation contract | candidate | 0.3.0.dev0 | a reusable invariant emerges in one surface and may need project-local adoption | owner/source/gate/validation/receipt required |
+| Capability manifest projection | candidate | 0.3.0.dev0 | skill-like behavior may enter autonomous runtime, product workbench or agent loop | manifest/receipt/reducer guidance only |
 
 ## Update Reading Rule
 
